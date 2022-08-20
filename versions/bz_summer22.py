@@ -1,4 +1,4 @@
-#Version used at Childern's university, VZ, May2022
+#Version Summer Camp at Unibz, Aug-Sept 2022
 import streamlit as st
 import streamlit.components.v1 as components
 import urllib.parse
@@ -1082,7 +1082,7 @@ components.iframe(urlis, height=1000, scrolling=True)
 st.markdown("""---""")
 st.write("Un progetto di / A project of:")
 st.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/unilogo.png",width=600)
-version="ve2.0.12"
+version="BZSC.0.0.1"
 
 # st.write("IoTgo version "+version)
 # # st.markdown("<h6 style='text-align: right; color: grey;'>By Mehdi Rizvi | "+version+"</h6>", unsafe_allow_html=True)
