@@ -1089,8 +1089,8 @@ components.iframe(urlis, height=1000, scrolling=True)
 
 #st.button("Refresh")
 st.markdown("""---""")
-st.write("Un progetto di / A project of:")
-st.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/unilogo.png",width=600)
+#st.write("Un progetto di / A project of:")
+#st.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/unilogo.png",width=600)
 version="BZSC.0.0.1"
 
 # st.write("IoTgo version "+version)
