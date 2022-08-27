@@ -762,7 +762,7 @@ output_code = {
 "iconHappy":"basic.showIcon(IconNames.Happy)\n\tbasic.pause(1000)",
 "iconNone": "basic.clearScreen()\n\tbasic.pause(1000)",
 "iconSad": "basic.showIcon(IconNames.Sad)\n\tbasic.pause(1000)",
-"sendData": "radio.sendValue(\"inputName\",1)\n\tbasic.pause(4000)", #was: "radio.sendValue(\"inputName\",inputValue)",
+"sendData": "radio.sendValue(\"inputName\",1)\n\tbasic.pause(2000)", #was: "radio.sendValue(\"inputName\",inputValue)",
 "EB_whiteLEDon":"envirobit.setLEDs(envirobit.OnOff.On)",
 "EB_whiteLEDoff":"envirobit.setLEDs(envirobit.OnOff.Off)",
 "fanOff" : "pins.digitalWritePin(DigitalPin.P1,0)\n\tbasic.pause(1000)",
@@ -881,9 +881,9 @@ def genURL (*args):#input_name, output_name):#here i am collecting chunks of cod
                 if eachIOpair[1] in output_code:
                     if eachIOpair[1]=="sendData":
                         if p2ptype=='invio dati': #gamelevel==0:
-                            if_body_code=output_code[eachIOpair[1]].replace("inputName",input_name[0][0:8]).replace("inputValue","1")
+                            if_body_code=output_code[eachIOpair[1]].replace("inputName",input_name[0][0:8])#.replace("inputValue","1")
                         elif p2ptype=='ricevo dati': #gamelevel==1:
-                            if_body_code=output_code[eachIOpair[1]].replace("inputName",input_name[1][0:8]).replace("inputValue","1")
+                            if_body_code=output_code[eachIOpair[1]].replace("inputName",input_name[1][0:8])#.replace("inputValue","1")
                         #if_body_code=output_code[eachIOpair[1]].replace("inputName",input_name[gamelevel]).replace("inputValue","1")
                        ##if_body_code=output_code[eachIOpair[1]].replace("inputName",input_name[gamelevel]).replace("inputValue",input_sensorValue[input_name[gamelevel]])
                     else:
@@ -891,8 +891,9 @@ def genURL (*args):#input_name, output_name):#here i am collecting chunks of cod
                 if eachIOpair[1] in output_else_code:
                     if eachIOpair[1]=="sendData":
                         if p2ptype=='invio dati': #gamelevel==0:
-                            if_body_code=output_else_code[eachIOpair[1]].replace("inputName",input_name[0][0:8]).replace("inputValue","0")
-                    else_code = output_else_code[eachIOpair[1]]+ '\n'
+                            else_code=output_else_code[eachIOpair[1]].replace("inputName",input_name[0][0:8])
+                    else:
+                        else_code = output_else_code[eachIOpair[1]]+ '\n'
                 else:
                     else_code="basic.pause(100)"
                 if eachIOpair[0] in output_else_code:#special cases for forecast: get_temp
