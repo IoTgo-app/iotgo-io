@@ -1,6 +1,7 @@
-This folder contains the versions used in differnt iotgo workshops. 
+This repo contains various versions used in differnt iotgo workshops.
+See folder "versions" for code.
 
-Links for IoTgo apps are as following: 
+Streamlit links for the IoTgo apps are as following: 
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/iotgo-app/iotgo-io/main/versions/bz_teachers.py) BZ: Teachers, 2021, (IT), with scanner,(Makecode) 
 
@@ -14,11 +15,12 @@ Links for IoTgo apps are as following:
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/iotgo-app/iotgo-io/main/webapp/iotgopascoli_extended.py) BZ: Pascoli, 2022 (IT), without scanner, with multiple hardware kits, (Makecode) 
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/iotgo-app/iotgo-io/main/versions/MI_cini.py) VE: Childern's Univerisity, May 2022 (IT), without scanner, with multiple hardware kits, (Makecode)  (p2p only)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/iotgo-app/iotgo-io/main/versions/MI_cini.py) VE: Childern's Univerisity, May 2022 (IT), without scanner, with microbit v1 and v2, (Makecode)  (p2p only)
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/iotgo-app/iotgo-io/main/versions/ve_kuni.py) MI: CINI-node workshop, May 2022 (IT), without scanner, with multiple hardware kits, (Makecode+JS)  (phy+p2p )
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://iotgo-app-iotgo-io-versionsbz-summer22-ri00gi.streamlitapp.com/) BZ: Summer Camp, Aug-Sept 2022 (IT), without scanner,  with microbit v1 and v2 and moisture sensor, (Makecode+JS)  (phy+p2p )
+
  Upcoming apps: 
- - BZ: Summer camp 2022 
  - MI, Gallarate: CS-curriculum app, September 2022
  - All-in-one customizable app.
