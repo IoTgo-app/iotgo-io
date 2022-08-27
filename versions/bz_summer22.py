@@ -1053,41 +1053,42 @@ htmliframe='''
 
 '''
 
-
-
-
-
 #st.write("updateS")
 components.iframe(urlis, height=1000, scrolling=True)   
 #components.html(htmliframe, height=1000, scrolling=False)
 
 
 
+warnings=0
+externalWarning=False
+radioGroupWarning=False
+receiveDataWarning=False
+#warnings:
+if input_name[0]=="soilMoistureHigh" or input_name[0]=="soilMoistureLow" or  input_name[1]=="soilMoistureHigh" or input_name[1]=="soilMoistureLow":
+    externalWarning=True
+    warnings+=1
+if secondLevel==True:
+    radioGroupWarning=True
+    warnings+=1
+if p2ptype=="ricevo dati":
+    receiveDataWarning=True
+    warnings+=1
+
+if warnings>0:
+    with st.expander("\U000026A0 Attenzione ("+str(warnings)+")", expanded=True):
+        if externalWarning==True:
+            st.warning(':electric_plug: ricorda che il sensore di umidità del suolo è esterno. Deve essere fissato fisicamente al micro:bit.')
+        if radioGroupWarning==True:
+            st.warning(':mega: ricorda che il numero del gruppo deve corrispondere a quello dei tuoi amici con cui stai comunicando.')
+        if receiveDataWarning==True:
+            st.warning(':exclamation: ricorda che devi cambiare la parola "replace" nel tuo codice con quello che ti aspetti di ricevere dai tuoi amici')
 
 
-
-#with code_col:
-#	st.subheader("")
-#	st.subheader("")
-#	st.markdown(
-#        """
-#        <style> .font{
-#        font-size:50px;}
-#        </style>
-#        """,
-#        unsafe_allow_html=True,
-#        )
-#	st.code(jscode,language="javascript")
-
-
-
-#e,edit  = st.columns([1,1])
-#with edit:
-#        #st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/blankcard.png", width=60)
-#        st.markdown("[Modifica codice...]("+urlis+")", unsafe_allow_html=True)
 
 
  
+
+
 
 #st.button("Refresh")
 st.markdown("""---""")
