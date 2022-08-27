@@ -19,7 +19,7 @@ Streamlit links for the IoTgo apps are as following:
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/iotgo-app/iotgo-io/main/versions/ve_kuni.py) MI: CINI-node workshop, May 2022 (IT), without scanner, with multiple hardware kits, (Makecode+JS)  (phy+p2p )
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://iotgo-app-iotgo-io-versionsbz-summer22-ri00gi.streamlitapp.com/) BZ: Summer Camp, Aug-Sept 2022 (IT), without scanner,  with microbit v1 and v2 and moisture sensor, (Makecode+JS)  (phy+p2p )
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://iotgo-app-iotgo-io-versionsbz-summer22-ri00gi.streamlitapp.com/) BZ: DCC Summer Camp, Aug-Sept 2022 (IT), without scanner,  with microbit v1 and v2 and moisture sensor, (Makecode+JS)  (phy+p2p )
 
  Upcoming apps: 
  - MI, Gallarate: CS-curriculum app, September 2022
