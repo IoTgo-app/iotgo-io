@@ -762,7 +762,7 @@ output_code = {
 "iconHappy":"basic.showIcon(IconNames.Happy)\n\tbasic.pause(1000)",
 "iconNone": "basic.clearScreen()\n\tbasic.pause(1000)",
 "iconSad": "basic.showIcon(IconNames.Sad)\n\tbasic.pause(1000)",
-"sendData": "radio.sendValue(\"inputName\",1)\n\tbasic.pause(2001)", #was: "radio.sendValue(\"inputName\",inputValue)",
+"sendData": "radio.sendValue(\"inputName\",1)\n\tbasic.pause(4000)", #was: "radio.sendValue(\"inputName\",inputValue)",
 "EB_whiteLEDon":"envirobit.setLEDs(envirobit.OnOff.On)",
 "EB_whiteLEDoff":"envirobit.setLEDs(envirobit.OnOff.Off)",
 "fanOff" : "pins.digitalWritePin(DigitalPin.P1,0)\n\tbasic.pause(1000)",
