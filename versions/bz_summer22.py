@@ -1,4 +1,6 @@
 #Version Summer Camp at Unibz, Aug-Sept 2022
+#old url for app: https://share.streamlit.io/app/iotgo-app-iotgo-io-versionsbz-summer22-ri00gi/
+#new url for app: https://iotgo-dcc.streamlitapp.com/
 import streamlit as st
 import streamlit.components.v1 as components
 import urllib.parse
@@ -567,7 +569,7 @@ package_suffix = {
  
 
 on_end = {
-  	"recieveData":'\nradio.onReceivedValue(function (name, value){\n\t if (name == "replace" && value == 1){\n\t\t received = 1\n\t}\n})\n\t else if (name == "replace" && value == 0){\n\t\t received = 0\n\t}\n})}fi',
+  	"recieveData":'\nradio.onReceivedValue(function (name, value){\n\t if (name == "replace" && value == 1){\n\t\t received = 1\n\t}\n})\n\telse if (name == "replace" && value == 0){\n\t\t received = 0\n\t}\n})}',
     #was: '\nradio.onReceivedValue(function (name, value) {\n\tif (name == "replace" && value == 1) {\n\t\t received = 1\n\t}\n})',
         } 
 
