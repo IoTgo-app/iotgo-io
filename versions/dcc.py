@@ -1,4 +1,11 @@
 #cloned from kuni version 
+#
+# DEPRECATED. Newer version: bz_summer22.py
+#
+#
+######################
+
+
 import streamlit as st
 import streamlit.components.v1 as components
 import urllib.parse
