@@ -569,7 +569,8 @@ package_suffix = {
  
 
 on_end = {
-  	"recieveData":'\nradio.onReceivedValue(function (name, value){\n\t if (name == "replaceaaa" && value == 1){\n\t\t received = 1\n\t}\n})\n\telse if (name == "replace" && value == 0){\n\t\t received = 0\n\t}\n})}',
+  	"recieveData":'\nradio.onReceivedValue(function (name, value){\n\t if (name == "replace" && value == 1){\n\t\t received = 1\n\t}\n}\n\t else if (name == "replace" && value == 0){\n\t\t received = 0\n\t}\n}})',
+
     #was: '\nradio.onReceivedValue(function (name, value) {\n\tif (name == "replace" && value == 1) {\n\t\t received = 1\n\t}\n})',
         } 
 
