@@ -34,11 +34,11 @@ def genURL (groupnum,p2ptype,gamelevel,*args):#input_name, output_name):#here i 
                 if eachIOpair[1] in output_code:
                     if eachIOpair[1]=="sendData":
                         if p2ptype=='invio dati': #gamelevel==0:
-                            if_body_code=output_code[eachIOpair[1]].replace("inputName",input_name[0][0:8])#.replace("inputValue","1")
+                            if_body_code=output_code[eachIOpair[1]]#.replace("inputName",input_name[0][0:8])#.replace("inputValue","1")
                             #if_body_code=output_code[eachIOpair[1]].replace("inputName",input_name[0][0:8])#.replace("inputValue","1")
                         elif p2ptype=='ricevo dati': #gamelevel==1:
-                            if_body_code=output_code[eachIOpair[1]].replace("inputName",input_name[1][0:8])#.replace("inputValue","1")
-                            if_body_code=output_code[eachIOpair[1]].replace("inputName",input_name[1][0:8])#.replace("inputValue","1")
+                            if_body_code=output_code[eachIOpair[1]]#.replace("inputName",input_name[1][0:8])#.replace("inputValue","1")
+                            if_body_code=output_code[eachIOpair[1]]#.replace("inputName",input_name[1][0:8])#.replace("inputValue","1")
                             #if_body_code=output_code[eachIOpair[1]].replace("inputName",input_name[gamelevel]).replace("inputValue","1")
                             ##if_body_code=output_code[eachIOpair[1]].replace("inputName",input_name[gamelevel]).replace("inputValue",input_sensorValue[input_name[gamelevel]])
                     else:
@@ -46,10 +46,10 @@ def genURL (groupnum,p2ptype,gamelevel,*args):#input_name, output_name):#here i 
                 if eachIOpair[1] in output_else_code:
                     if eachIOpair[1]=="sendData":
                         if p2ptype=='invio dati': #gamelevel==0:
-                            else_code=output_else_code[eachIOpair[1]].replace("inputName",input_name[0][0:8])  
+                            else_code=output_else_code[eachIOpair[1]]#.replace("inputName",input_name[0][0:8])  
                            #else_code=output_else_code[eachIOpair[1]].replace("inputName",input_name[0][0:8])   
                         elif p2ptype=='ricevo dati': #gamelevel==1:
-                            else_code=output_else_code[eachIOpair[1]].replace("inputName",input_name[1][0:8])#.replace("inputValue","1")
+                            else_code=output_else_code[eachIOpair[1]]#.replace("inputName",input_name[1][0:8])#.replace("inputValue","1")
                             #else_code=output_else_code[eachIOpair[1]].replace("inputName",input_name[1][0:8])#.replace("inputValue","1")
                     else:
                         else_code = output_else_code[eachIOpair[1]]+ '\n'
