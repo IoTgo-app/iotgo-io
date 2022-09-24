@@ -121,7 +121,9 @@ elif gamelevel==1:
 	
 
 
-#tab1, tab2 = st.tabs(["Cards & Code", "Warnings and Suggestions"])
+#tab1, tab2, tab3 = st.tabs(["Le tue carte", "Il tuo codice","Attenzione"])
+
+
 
 
 # show cards------------------------------------------
