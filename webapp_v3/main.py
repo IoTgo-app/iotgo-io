@@ -194,7 +194,9 @@ def showSuggestions():
 
 
 if appTabs==True:
-    tab1, tab2, tab3 = st.tabs(["Le tue carte      ", " | Il tuo codice      "," | Suggerimenti"])
+    tab1, tab2, tab3 = st.tabs(["Le tue carte      ",
+                             "-      Il tuo codice     ",
+                             "-      Suggerimenti      "])
     with tab1:
         showCards()
     with tab2:
