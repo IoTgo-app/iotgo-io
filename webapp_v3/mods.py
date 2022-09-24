@@ -20,3 +20,12 @@ fix_sidebar= """
 [data-testid="stSidebar"][aria-expanded="false"] > div:first-child {width: 350px;margin-left: -350px;}
 </style>
 """
+
+add_space_between_tabs = """
+<style>
+button[data-baseweb="tab"] {
+  font-size: 26px;
+}
+</style>
+"""
+
