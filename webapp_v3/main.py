@@ -7,7 +7,7 @@ import textwrap
 
 import inputs_IT, outputs_IT
 from translations_IT import it2en_inout
-
+from imageURL import imageURL
 
 import mods #for custom modifications to streamlit 
 st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sidebar_state="expanded")
@@ -91,171 +91,10 @@ output_name[1]=it2en_inout[output2]
 
 
 
-
-
-
-grabURL =    {
-    "pictoral":     "-thing-art-1.png",
-    "sculpture":    "-thing-art-2.png",
-    "decor":        "-thing-art-3.png",    
-    "model":        "-thing-art-4.png",
-    "ceramic":      "-thing-art-5.png",
-    "textile":      "-thing-art-6.png" ,   
-    "jewellery":    "-thing-art-7.png",
-    "book":         "-thing-art-8.png",
-    "informative":  "-thing-art-9.png",    
-    "thing_blank":        "-thing-art-0.png",
-    
-    "engagePeople":     "-mission-1.png",
-    "makePeopleUnderstand":"-mission-2.png",
-    "inspirePeople":    "-mission-3.png",    
-    "addUtility":       "-mission-4.png",
-    "addDimension":     "-mission-5.png",
-    "connectEmotionally":"-mission-6.png",    
-    "connectMemories":  "-mission-7.png",
-    "getToKnowPeople":  "-mission-8.png",
-    "mission_blank":    "-mission-0.png",  
-    "91":               "-mission-91.png",    
-    "92":               "-mission-92.png",
-    "93":               "-mission-93.png",
-    "94":               "-mission-94.png",    
-
-    "myself":           "-persona-1.png",
-    "elderly":          "-persona-2.png",
-    "teenager":         "-persona-3.png",
-    "child":            "-persona-4.png",
-    "minority":         "-persona-5.png",
-    "physciallyChallenged":"-persona-6.png",
-    "immigrant":        "-persona-7.png",
-    "pet":              "-persona-8.png",
-    "anyone":           "-persona-9.png",
-    "persona_blank":            "-persona-0.png",
-    "new_user":         "-control-1.png",
-    "new_idea":         "-control-2.png",
-  	
-    "noMission"     :   "-noMission.png",  
-    "noThing"       :   "-noThing.png",  
-    "noPersona"     :   "-noPersona.png",  
-    "noInput"       :   "-noInput.png",  
-    "noOutput"      :   "-noOutput.png",
-    "none"          :   "",
-    "blankCard"     :   "blankcard.png",
-    "blank"     :   "blankcard.png",
-
-    "codeCard"      :   "-codecard.png",
-    "playerCard"    :   "-playercard.png",#not used in app
-
-    
-    "buttonNotPress":   "-inputPhysical-buttonNotPress.png",
-    "buttonPress":      "-inputPhysical-buttonPress.png",
-    "accelLow":         "-inputPhysical-accelLow.png",
-    "accelHigh" :       "-inputPhysical-accelHigh.png",
-    "compassN" :        "-inputPhysical-compassN.png",
-    "compassE" :        "-inputPhysical-compassE.png",
-    "compassS" :        "-inputPhysical-compassS.png",
-    "compassW" :        "-inputPhysical-compassW.png",
-    "gestureShake":     "-inputPhysical-gestureShake.png",
-    "gestureTilt" :     "-inputPhysical-gestureTilt.png",
-    "movementNotPresent":"-inputPhysical-movementNotPresent.png",
-    "movementPresent" : "-inputPhysical-movementPresent.png",
-    "noiseLow"  :       "-inputPhysical-noiseLow.png",
-    "noiseHigh"	:       "-inputPhysical-noiseHigh.png",
-    "touchYes" 	:       "-inputPhysical-touchYes.png",
-    "touchNo"	:       "-inputPhysical-touchNo.png",
-    "sliderLow":        "-inputPhysical-sliderLow.png",
-    "sliderMid":        "-inputPhysical-sliderMid.png",#not used. 
-    "sliderHigh":       "-inputPhysical-sliderHigh.png",
-    "tempLow"  :        "-inputPhysical-tempLow.png",
-    "tempHigh" :        "-inputPhysical-tempHigh.png",
-    "lightlevelLow" :   "-inputPhysical-lightlevelLow.png",
-    "lightlevelHigh":   "-inputPhysical-lightlevelHigh.png",
-    
-        
-    "forecastTempHigh" :    "-inputCloud-ForecastTempreatureHigh.png",
-    "forecastTempLow" :     "-inputCloud-ForecastTempreatureLow.png",
-    "forecastHumidityHigh" :"-inputCloud-ForecastHumidityHigh.png",
-    "forecastHumidityLow" : "-inputCloud-ForecastHumidityLow.png",
-    "forecastWindHigh" :    "-inputCloud-ForecastWindHigh.png",
-    "forecastWindLow" :     "-inputCloud-ForecastWindLow.png",
-    "forecastprecipHigh" :  "-inputCloud-ForecastPercipitationHigh.png",
-    "forecastprecipLow" :   "-inputCloud-ForecastPercipitationLow.png",
-    "todayStartOfMonth" :   "-inputCloud-TodayMonthStart.png",
-    "todayWeekday" :        "-inputCloud-TodayWeekday.png",
-    "todayWeekend":         "-inputCloud-TodayWeekend.png",
-    "todaySummerMonth":     "-inputCloud-TodaySummerMonth.png",
-    "todayNewYear":         "-inputCloud-TodayNewYearDay.png",
-    "timeForSchool" :       "-inputCloud-TimeForSchool.png",     
-    
-    
-    "iconHappy":    "-outputPhysical-iconHappy.png",
-    "iconSad":      "-outputPhysical-iconSad.png",
-    "iconNone":    "-outputPhysical-iconNone.png",
-    "lightOn":      "-outputPhysical-lightOn.png",
-    "lightOff":     "-outputPhysical-lightOff.png",
-    "musicHappy":   "-outputPhysical-musicHappy.png",
-    "musicSad" :    "-outputPhysical-musicSad.png",
-    "musicNone" :   "-outputPhysical-musicNone.png", 
-	
-    "musicAlarm" :   "-outputPhysical-musicAlarm.png", 
-	
-    "displayText" : "-outputPhysical-displayText.png",  
-    "displayInput": "-outputPhysical-displayInput.png",
-    "displayNone" : "-outputPhysical-displayNone.png", 
-    "showStripRainbow" :"-outputPhysical-showStripRainbow.png",
-    "showStripBlack" :"-outputPhysical-showStripBlack.png",
-
-    "showStripGreen" :"-outputPhysical-showStripGreen.png",
-    "showStripRed" :"-outputPhysical-showStripRed.png",
-	
-    "fanOn" :       "-outputPhysical-fanOn.png",	 
-    "fanOff"  :     "-outputPhysical-fanOff.png",
-    "rotateMin":    "-outputPhysical-rotateMin.png", 
-    "rotateMid":    "-outputPhysical-rotateMax.png",#not used. 
-    "rotateMax":    "-outputPhysical-rotateMax.png",
-    
-    "tweetText"  :  "-outputCloud-TweetText.png", 
-    "tweetInput" :  "-outputCloud-TweetValue.png",   
-    "logInput"   :  "-outputCloud-LogValue.png", #fixed
-
-    "sendData":"-sendData.png",
-    "recieveData":"-recieveData.png",
-	
-"EB_humidityHigh"	:"-inputPhysical-EB_humidityHigh.png",
-"EB_humidityLow"	:"-inputPhysical-EB_humidityLow.png",
-"EB_pressureHigh"	:"-inputPhysical-EB_pressureHigh.png",
-"EB_pressureLow"	:"-inputPhysical-EB_pressureLow.png",
-"EB_noiseHigh"		:"-inputPhysical-EB_noiseHigh.png",
-"EB_noiseLow"		:"-inputPhysical-EB_noiseLow.png",
-"EB_tempHigh"		:"-inputPhysical-EB_tempHigh.png",
-"EB_tempLow"		:"-inputPhysical-EB_tempLow.png",
-"EB_lightlevelHigh"	:"-inputPhysical-EB_lightlevelHigh.png",
-"EB_lightlevelLow"	:"-inputPhysical-EB_lightlevelLow.png",
-"EB_colorIsRed"		:"-inputPhysical-EB_colorIsRed.png",
-"EB_colorIsGreen"	:"-inputPhysical-EB_colorIsGreen.png",
-"EB_colorIsBlue"	:"-inputPhysical-EB_colorIsBlue.png",
-"EB_colorIsBlack"	:"-inputPhysical-EB_colorIsBlack.png",
-"EB_clapYes"		:"-inputPhysical-EB_clapYes.png",
-"EB_clapNo"		:"-inputPhysical-EB_clapNo.png",
-"EB_whiteLEDon"		:"-outputPhysical-EB_whiteLEDon.png",
-"EB_whiteLEDoff"	:"-outputPhysical-EB_whiteLEDoff.png",
-
-
-"soilMoistureHigh":"-inputPhysical-soilMoistureHigh.png",
-"soilMoistureLow":"-inputPhysical-soilMoistureLow.png",#new
-}
-
-
-
-
-
-
-
-
-
-input0path=  baseURL+langPrefix[lang]+grabURL[ input_name[0]]
-output0path= baseURL+langPrefix[lang]+grabURL[output_name[0]]
-input1path=  baseURL+langPrefix[lang]+grabURL[ input_name[1]]
-output1path= baseURL+langPrefix[lang]+grabURL[output_name[1]]
+input0path=  baseURL+langPrefix[lang]+imageURL[ input_name[0]]
+output0path= baseURL+langPrefix[lang]+imageURL[output_name[0]]
+input1path=  baseURL+langPrefix[lang]+imageURL[ input_name[1]]
+output1path= baseURL+langPrefix[lang]+imageURL[output_name[1]]
     
  
 
