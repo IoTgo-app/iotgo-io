@@ -17,6 +17,7 @@ st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sideb
 st.markdown(mods.hide_menu_style, unsafe_allow_html=True)
 st.markdown(mods.hide_img_fs, unsafe_allow_html=True)
 st.markdown(mods.fix_sidebar,unsafe_allow_html=True)
+st.markdown(mods.add_space_between_tabs, unsafe_allow_html=True)
 
 #################################################################################à
 langPrefix=['EN','IT','DE','UR']
