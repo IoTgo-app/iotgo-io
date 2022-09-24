@@ -27,6 +27,8 @@ button[data-baseweb="tab"] {
   font-size: 20px;
 }
 </style>
+
+
 """
 hide_top_padding = """
 <style>
