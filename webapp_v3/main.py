@@ -44,8 +44,8 @@ codetitle=""
 codesubtitle=""
 groupnum="0"
 gamelevel=0
-#def resetCards():
-#	gamelevel=0	 
+def resetCards():
+    gamelevel=0	 
 
 ########################### app sidebar ########################################à
 #add iotgo logo
