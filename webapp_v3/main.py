@@ -8,12 +8,12 @@ import textwrap
 import inputs_IT, outputs_IT
 
 import mods #for custom modifications to streamlit 
+st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sidebar_state="expanded")
 st.markdown(mods.hide_menu_style, unsafe_allow_html=True)
 st.markdown(mods.hide_img_fs, unsafe_allow_html=True)
 st.markdown(mods.fix_sidebar,unsafe_allow_html=True)
 
 
-st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sidebar_state="expanded")
 st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=300)
 st.sidebar.markdown("""---""")
 
