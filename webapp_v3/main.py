@@ -194,9 +194,9 @@ def showSuggestions():
 
 
 
-
+st.markdown('Streamlit is **_really_ cool**.')
 if appTabs==True:
-    tab1, tab2, tab3 = st.tabs([":flower_playing_cards:Le tue carte", "Il tuo codice","Suggerimenti"])
+    tab1, tab2, tab3 = st.tabs([st.markdown(':flower_playing_cards: Le tue carte'), "Il tuo codice","Suggerimenti"])
     with tab1:
         showCards()
     with tab2:
