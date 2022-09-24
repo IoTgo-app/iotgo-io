@@ -2,7 +2,8 @@ from code_components import input_code, output_else_code, output_code
 from code_components import package_suffix, input_sensorValue
 from code_components import on_end, on_start  
 
-def genURL (groupnum,p2ptype,gamelevel,*args):#input_name, output_name):#here i am collecting chunks of code, encoding them, and concatenating them into a URL:
+
+def genURL (groupnum,p2ptype,gamelevel,codetitle,codesubtitle,*args):#input_name, output_name):#here i am collecting chunks of code, encoding them, and concatenating them into a URL:
     #----------on-start-code---------
     on_start_code=[]
     on_end_code=[]
