@@ -18,7 +18,6 @@ st.markdown(mods.hide_menu_style, unsafe_allow_html=True)
 st.markdown(mods.hide_img_fs, unsafe_allow_html=True)
 st.markdown(mods.fix_sidebar,unsafe_allow_html=True)
 
-
 #################################################################################à
 langPrefix=['EN','IT','DE','UR']
 lang=1
@@ -27,6 +26,8 @@ codetitle=""
 codesubtitle=""
 groupnum="0"
 p2p=True
+appTabs=True
+
 
 
 ########################### app sidebar ########################################à
@@ -121,77 +122,95 @@ elif gamelevel==1:
 	
 
 
-#tab1, tab2, tab3 = st.tabs(["Le tue carte", "Il tuo codice","Attenzione"])
+def showCards():
+    # show cards------------------------------------------
+    input_col, plus_col, output_col, pad, code_col,pad2,= st.columns([1,1,1,1,1,2])
+    #input_col, plus_col, output_col, pad, code_col= st.columns([1,1,1,1,6])
+    with input_col:    
+        st.write(" se...")
+        # ("Input1:")
+        st.image(inputcard0path, width=cardWidth) 
+        # ("Input2:")
+        if gamelevel==1: st.image(inputcard1path, width=cardWidth) 
+    with plus_col:    
+        st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/blankcard.png", width=vertiPaddingWidthhalf)
+        st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/plus.png", width=pluscardwidht) 
+        if gamelevel==1: st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/plus.png", width=pluscardwidht) 
+
+    with output_col:    
+        st.write(" allora...")
+        # ("Output1:")
+        st.image(outputcard0path, width=cardWidth) 
+        # ("Output1:")
+        if gamelevel==1: st.image(outputcard1path, width=cardWidth) 
 
 
 
 
-# show cards------------------------------------------
-input_col, plus_col, output_col, pad, code_col,pad2,= st.columns([1,1,1,1,1,2])
-#input_col, plus_col, output_col, pad, code_col= st.columns([1,1,1,1,6])
-with input_col:    
-	st.write(" se...")
-	# ("Input1:")
-	st.image(inputcard0path, width=cardWidth) 
-	# ("Input2:")
-	if gamelevel==1: st.image(inputcard1path, width=cardWidth) 
-with plus_col:    
-	st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/blankcard.png", width=vertiPaddingWidthhalf)
-	st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/plus.png", width=pluscardwidht) 
-	if gamelevel==1: st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/plus.png", width=pluscardwidht) 
-
-with output_col:    
-	st.write(" allora...")
-	# ("Output1:")
-	st.image(outputcard0path, width=cardWidth) 
-	# ("Output1:")
-	if gamelevel==1: st.image(outputcard1path, width=cardWidth) 
-
-# show block code------------------------------------------
-if prevUrlis != urlis:
-	with st.spinner('Plz wait. Generating code for you....'):
-    		time.sleep(0.1)
-prevUrlis=urlis
-e,edit  = st.columns([1,1])
-with edit:
-        #st.markdown("[Modifica...]("+urlis+")", unsafe_allow_html=True)
-	st.write("[Modifica codice...]("+urlis+")")
-components.iframe(urlis, height=1000, scrolling=True)
+def showBlockCode():
+    # show block code------------------------------------------
+    if prevUrlis != urlis:
+        with st.spinner('Plz wait. Generating code for you....'):
+                time.sleep(0.1)
+    prevUrlis=urlis
+    e,edit  = st.columns([1,1])
+    with edit:
+            #st.markdown("[Modifica...]("+urlis+")", unsafe_allow_html=True)
+        st.write("[Modifica codice...]("+urlis+")")
+    components.iframe(urlis, height=1000, scrolling=True)
 
 
-# show Python code------------------------------------------
-#components.html(htmliframe, height=1000, scrolling=False)
+
+#def showPythonCode():
+    # show Python code------------------------------------------
+    #components.html(htmliframe, height=1000, scrolling=False)
 
 
-# show code warnings and suggestions------------------------- 
-warnings=0
-externalWarning=False
-radioGroupWarning=False
-receiveDataWarning=False
-#warnings:
-if input_name[0]=="soilMoistureHigh" or input_name[0]=="soilMoistureLow" or  input_name[1]=="soilMoistureHigh" or input_name[1]=="soilMoistureLow":
-    externalWarning=True
-    warnings+=1
-if secondLevel==True:
-    radioGroupWarning=True
-    warnings+=1
-if p2ptype=="ricevo dati":
-    receiveDataWarning=True
-    warnings+=1
+def showSuggestions():
+    # show code warnings and suggestions------------------------- 
+    warnings=0
+    externalWarning=False
+    radioGroupWarning=False
+    receiveDataWarning=False
+    #warnings:
+    if input_name[0]=="soilMoistureHigh" or input_name[0]=="soilMoistureLow" or  input_name[1]=="soilMoistureHigh" or input_name[1]=="soilMoistureLow":
+        externalWarning=True
+        warnings+=1
+    if secondLevel==True:
+        radioGroupWarning=True
+        warnings+=1
+    if p2ptype=="ricevo dati":
+        receiveDataWarning=True
+        warnings+=1
 
-if warnings>0:
-    with st.expander("\U000026A0 Attenzione ("+str(warnings)+")", expanded=True):
-        if externalWarning==True:
-            st.warning(':electric_plug: ricorda che il sensore di umidità del suolo è esterno. Deve essere fissato fisicamente al micro:bit.')
-        if radioGroupWarning==True:
-            st.warning(':mega: ricorda che il numero del gruppo deve corrispondere a quello dei tuoi amici con cui stai comunicando.')
-        if receiveDataWarning==True:
-            st.warning(':exclamation: ricorda che devi cambiare la parola "replace" nel tuo codice con quello che ti aspetti di ricevere dai tuoi amici')
+    if warnings>0:
+        with st.expander("\U000026A0 Attenzione ("+str(warnings)+")", expanded=True):
+            if externalWarning==True:
+                st.warning(':electric_plug: ricorda che il sensore di umidità del suolo è esterno. Deve essere fissato fisicamente al micro:bit.')
+            if radioGroupWarning==True:
+                st.warning(':mega: ricorda che il numero del gruppo deve corrispondere a quello dei tuoi amici con cui stai comunicando.')
+            if receiveDataWarning==True:
+                st.warning(':exclamation: ricorda che devi cambiare la parola "replace" nel tuo codice con quello che ti aspetti di ricevere dai tuoi amici')
 
 
 
 
- 
+if appTabs==True:
+    tab1, tab2, tab3 = st.tabs(["Le tue carte", "Il tuo codice","Suggerimenti"])
+    with tab1:
+        showCards()
+    with tab2:
+        showBlockCode()
+    with tab3:
+        showSuggestions()
+else:
+    showCards()
+    showBlockCode()
+    showSuggestions()
+
+
+
+
 ########################### app footer ########################################à
 st.markdown("""---""")
 #st.write("Un progetto di / A project of:")
