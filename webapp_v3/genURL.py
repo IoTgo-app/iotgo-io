@@ -3,9 +3,9 @@
 
 
 def genURL (*args):#input_name, output_name):#here i am collecting chunks of code, encoding them, and concatenating them into a URL:
-     #----------on-start-code---------
-     freeplaymode=True #legacy
-     alwaysfreeplaymode=True #legacy
+    #----------on-start-code---------
+    freeplaymode=True #legacy
+    alwaysfreeplaymode=True #legacy
     on_start_code=[]
     on_end_code=[]
     jscode=""
