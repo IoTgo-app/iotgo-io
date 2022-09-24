@@ -5,6 +5,7 @@ import urllib.parse
 import time
 import textwrap
 
+
 import inputs_IT, outputs_IT
 from translations_IT import it2en_inout
 from imageURL import imageURL
@@ -12,18 +13,15 @@ from code_components import input_code, output_else_code, output_code
 from code_components import package_suffix, input_sensorValue
 from code_components import on_end, on_start  
 from genURL import genURL
+import mods #for custom modifications to default streamlit app style
 
 
-import mods #for custom modifications to streamlit 
+#apply custom modifications to default streamlit app style
 st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sidebar_state="expanded")
 st.markdown(mods.hide_menu_style, unsafe_allow_html=True)
 st.markdown(mods.hide_img_fs, unsafe_allow_html=True)
 st.markdown(mods.fix_sidebar,unsafe_allow_html=True)
 
-
-
-st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=300)
-st.sidebar.markdown("""---""")
 
 
 langPrefix=['EN','IT','DE','UR']
@@ -46,9 +44,13 @@ codetitle=""
 codesubtitle=""
 groupnum="0"
 gamelevel=0
-def resetCards():
-	gamelevel=0	 
+#def resetCards():
+#	gamelevel=0	 
 
+########################### app sidebar ########################################à
+#add iotgo logo
+st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=300)
+st.sidebar.markdown("""---""")
 
 
 if p2p==True:
@@ -118,15 +120,14 @@ elif gamelevel==1:
 
 
 
-########################### app structure ########################################à
+########################### app body ########################################à
 cardWidth=150
 pluscardwidht=150
 missionCardWidth=160
 vertiPaddingWidth=35
 vertiPaddingWidthhalf=17
 
-#st.image("http://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/applogo-hor.png",width=380)
-#st.header("IoTgo")
+
 
 #input_col, plus_col, output_col, pad, code_col= st.columns([1,1,1,1,6])
 input_col, plus_col, output_col, pad, code_col,pad2,= st.columns([1,1,1,1,1,2])
