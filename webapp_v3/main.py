@@ -27,10 +27,14 @@ st.markdown(mods.fix_sidebar,unsafe_allow_html=True)
 langPrefix=['EN','IT','DE','UR']
 lang=1
 baseURL=   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/cards_v2/"
+codetitle=""
+codesubtitle=""
+groupnum="0"
+p2p=True
 
 
-input_options=  ('no Input',) 
-output_options=  ('no Output',)
+#input_options=  ('no Input',) 
+#output_options=  ('no Output',)
 input_options=  ('no Input',) + inputs_IT.microbitv1 + inputs_IT.microbitv2 +inputs_IT.exOthers  
 output_options=  ('no Output',) + outputs_IT.microbitv1 + outputs_IT.microbitv2+ outputs_IT.exBosonKit
 
@@ -39,16 +43,7 @@ input1="no Input"
 output1="no Output"
 input2="no Input"
 output2="no Output"
-
-p2p=True
-
-
-codetitle=""
-codesubtitle=""
-groupnum="0"
 gamelevel=0
-
-
 def resetCards():
     gamelevel=0	 
 
