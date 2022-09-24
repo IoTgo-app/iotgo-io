@@ -192,6 +192,8 @@ def showSuggestions():
                 st.warning(':mega: ricorda che il numero del gruppo deve corrispondere a quello dei tuoi amici con cui stai comunicando.')
             if receiveDataWarning==True:
                 st.warning(':exclamation: ricorda che devi cambiare la parola "replace" nel tuo codice con quello che ti aspetti di ricevere dai tuoi amici')
+    else:
+        st.write('Nessun suggerimento disponibile al momento.')
 
 
 if appTabs==True:
@@ -226,5 +228,5 @@ badges="""
 [![Mehdi Rizvi](https://img.shields.io/badge/Author-@rizMehdi-grey.svg?colorA=gray&colorB=dodgerblue&logo=github)](https://github.com/rizMehdi/)
 """
 st.sidebar.markdown(badges,  unsafe_allow_html=False)
-
+st.sidebar.markdown("""---""")
  
