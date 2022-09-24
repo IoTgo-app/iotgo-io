@@ -5,8 +5,8 @@ import urllib.parse
 import time
 import textwrap
 
-import inputs_output_IT
-
+import inputs_outputs_IT
+#import customStreamlitModifications
 st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sidebar_state="expanded")
 
 codetitle=""
