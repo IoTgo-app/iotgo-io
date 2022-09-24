@@ -30,15 +30,9 @@ button[data-baseweb="tab"] {
 
 
 """
-hide_top_padding2 = """
+hide_top_padding = """
     <style>
         div.block-container {padding-top:0.1rem;}
     </style>
 """
  
-hide_top_padding = """
-    <style>
-        .reportview-container .main .block-container{{
-            padding-top: 0rem;
-        }}
-    </style>"""
