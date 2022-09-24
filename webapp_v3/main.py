@@ -18,6 +18,9 @@ st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/imag
 st.sidebar.markdown("""---""")
 
 
+langPrefix=['EN','IT','DE','UR']
+lang=1
+baseURL=   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/cards_v2/"
 
 
 input_options=  ('no Input',) 
@@ -26,15 +29,8 @@ input_options=  ('no Input',) + inputs_IT.microbitv1 + inputs_IT.microbitv2 +inp
 output_options=  ('no Output',) + outputs_IT.microbitv1 + outputs_IT.microbitv2+ outputs_IT.exBosonKit
 
 
-
-
-
-
-
-
 input2="no Input"
 output2="no Output"
-
 p2p=True
 
 
@@ -78,10 +74,6 @@ if secondLevel==True:
 		input2="no Input"
 		output2="no Output"
  
-
-
-
-
 
 
 
@@ -212,13 +204,6 @@ output_name[1]=it2en_inout[output2]
 
 
 
-langPrefix=['EN','IT','DE','UR']
-lang=1
-
-
-baseURLoldest="https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/cards/"
-baseURLold=   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v2/images/cards_v2/"
-baseURL=   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/cards_v2/"
 
 
 
