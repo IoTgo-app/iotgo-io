@@ -35,8 +35,11 @@ input_options=  ('no Input',) + inputs_IT.microbitv1 + inputs_IT.microbitv2 +inp
 output_options=  ('no Output',) + outputs_IT.microbitv1 + outputs_IT.microbitv2+ outputs_IT.exBosonKit
 
 
+input1="no Input"
+output1="no Output"
 input2="no Input"
 output2="no Output"
+
 p2p=True
 
 
