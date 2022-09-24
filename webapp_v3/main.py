@@ -1,11 +1,12 @@
-#Version Summer Camp at Unibz, Aug-Sept 2022
-#old url for app: https://share.streamlit.io/app/iotgo-app-iotgo-io-versionsbz-summer22-ri00gi/
-#new url for app: https://iotgo-dcc.streamlitapp.com/
+
 import streamlit as st
 import streamlit.components.v1 as components
 import urllib.parse
 import time
 import textwrap
+
+import inputs-output-IT
+
 st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sidebar_state="expanded")
 
 codetitle=""
@@ -45,103 +46,6 @@ st.markdown(fix_sidebar,unsafe_allow_html=True)
 
 
 	 
-inputs_microbitv1= ("l\'accelerazione è alta" ,
-		    "l\'accelerazione è basso" ,
-		    "il pulsante non è premuto",
-		    "il pulsante è premuto",
-		    "la bussola punta ad Est",
-		    "la bussola punta a Nord" ,
-		    "la bussola punta a Sud" ,
-		    "la bussola punta ad Ovest" ,
-		    "il gesto è scuotere" ,
-		    "il gesto è inclinare" ,
-		    "l\'intensità di luce è alta",
-		    'l\'intensità di luce è bassa',
-		    'la temperatura è alta' ,
-		    'la temperatura è bassa' ,
-	
-		   )
-inputs_microbitv2= ( "il rumore è alto" ,
-		    'il rumore è basso' ,
-		    'il logo non è toccato', #v2 
-		    'il logo è toccato' ,#v2 
-		   )
-inputs_exBosonKit= ('non c\'è movimento nei dintorni (BosonKit)' ,
-'c\'è movimento nei dintorni (BosonKit)' ,
-'il cursore è al massimo (BosonKit)' ,
-'il cursore è al minimo (BosonKit)' ,
-#"il cursore è al medio (BosonKit)" ,
-		   )
-inputs_exEnviroBit= ("c\'è tanta umidità (Envirobit)",
-"c\'è poca umidità (Envirobit)",
-"la pressione atmosferica è alta (Envirobit)",
-"la pressione atmosferica è bassa (Envirobit)",
-'il rumore è alto (Envirobit)' ,
-'Il rumore è basso (Envirobit)' ,
-"la temperatura è alta (Envirobit)" ,
-"la temperatura è bassa (Envirobit)" ,
-"l\'intensità di luce è alta (Envirobit)",
-"l\'intensità di luce è bassa (Envirobit)",
-"il colore  è rosso (Envirobit)",
-"il colore  è verde (Envirobit)",
-"il colore  è blu (Envirobit)",
-"il colore  è nero (Envirobit)",
-"c\'è un applauso (Envirobit)",
-"non c’è un applauso (Envirobit)",
-)
-
-inputs_exCloudBitPi= ()
-
-inputs_exOthers= ("l\'umidità del suolo è bassa",
-"l\'umidità del suolo è alta",
-)
-
-
-inputs_p2p= ('recezione dati',)
-
-
-outputs_microbitv1= ('suona una melodia allegra' ,
-'smette di suonare' ,
-'suona una melodia triste' ,
-"suona un allarme" ,
-'mostra un numero' ,
-'smette di mostrare testi o numeri' ,
-'mostra del testo' ,
-'mostra un\'icona felice',
-'smette di mostrare un\'icona',
-'mostra un\'icona triste', 
-		    )
-
-outputs_microbitv2= ()
-
-
-# outputs_exBosonKit= ('spegne un ventilatore (BosonKit)' ,
-# 'accende un ventilatore (BosonKit)' ,
-# 'spegne una luce (BosonKit)',
-# 'accende una luce (BosonKit)',
-# 'fa ruotare il motore (BosonKit)' ,
-# 'smette di ruotare il motore (BosonKit)' ,
-# 'spegne un\'animazione luminosa (BosonKit)',
-# 'attiva un\'animazione luminosa (BosonKit)' ,
-# 'spegne un\'animazione luminosa verde (BosonKit)',
-# 'spegne un\'animazione luminosa rossa (BosonKit)',
-# 		     )
-
-outputs_exBosonKit= ('spegne un ventilatore (BosonKit)' ,
-'accende un ventilatore (BosonKit)' ,
-'spegne un\'animazione luminosa (BosonKit)',
-'attiva un\'animazione luminosa (BosonKit)' ,
-)
-
-
-outputs_exEnviroBit=()
-#"accende i LED bianchi (Envirobit)"
-#"spegne i LED bianchi (Envirobit)"
-
-outputs_exCloudBitPi= ()
-outputs_exOthers= ()
-
-outputs_p2p= ('invio dati',)	
 
 input_options=  ('no Input',) 
 output_options=  ('no Output',)
@@ -149,45 +53,20 @@ output_options=  ('no Output',)
 
 def resetCards():
 	gamelevel=0
-	#secondLevel=False
-# 	if p2ptype=="invio dati":
-# 		input1="no Input"
-# 		output1='invio dati'
-# 	elif p2ptype=="recezione dati":
-# 		input1="no Input"
-# 		output1='recezione dati'
-# 	input2="no Input"
-# 	output2="no Output"
+
 
 st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=300)
-# st.sidebar.image("http://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/applogo3.png",width=200)
 st.sidebar.markdown("""---""")
 
-# hardware = st.sidebar.radio("Seleziona l\'elettronica che hai",("Solo Micro:bit", "Micro:bit con BosonKit"))
-# # hardware = st.sidebar.radio("Seleziona l\'elettronica che hai",("Solo Micro:bit", "Micro:bit con BosonKit", "Micro:bit con EnviroBit"))
-# if hardware == "Solo Micro:bit":
-# 	input_options=  ('no Input',) + inputs_microbitv1 + inputs_microbitv2 + inputs_exOthers
-# 	output_options=  ('no Output',) + outputs_microbitv1 + outputs_microbitv2 +outputs_exOthers 
-# elif hardware == "Micro:bit con BosonKit":
-# 	input_options=  ('no Input',) + inputs_microbitv1 + inputs_microbitv2 + inputs_exBosonKit 
-# 	output_options=  ('no Output',) + outputs_microbitv1 + outputs_microbitv2 + outputs_exBosonKit
-# # elif hardware == "Micro:bit con EnviroBit":
-# # 	input_options=  ('no Input',) + inputs_microbitv1 + inputs_microbitv2 +  inputs_exEnviroBit
-# # 	output_options=  ('no Output',) + outputs_microbitv1 + outputs_microbitv2 + outputs_exEnviroBit
 
 
 input_options=  ('no Input',) + inputs_microbitv1 + inputs_microbitv2 +inputs_exOthers  
 output_options=  ('no Output',) + outputs_microbitv1 + outputs_microbitv2+ outputs_exBosonKit
 
-#st.sidebar.markdown("""---""")
-#input1 =  st.sidebar.selectbox('Seleziona la tua carta di input', input_options)
-#output1 = st.sidebar.selectbox('Seleziona la tua carta di output', output_options)
-#st.sidebar.markdown("""---""")
 
 input2="no Input"
 output2="no Output"
 
-# st.sidebar.markdown("""---""")#p2p = st.sidebar.checkbox('Attiva il livello peer-2-peer')
 p2p=True
 
 if p2p==True:
