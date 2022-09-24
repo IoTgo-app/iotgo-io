@@ -160,7 +160,7 @@ with tab1:
     # show Python code------------------------------------------
     #components.html(htmliframe, height=1000, scrolling=False)
 
-with tab2
+with tab2:
     # show code warnings and suggestions------------------------- 
     warnings=0
     externalWarning=False
