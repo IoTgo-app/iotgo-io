@@ -6,42 +6,46 @@ import time
 import textwrap
 
 import inputs_IT, outputs_IT
-import mods
-st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sidebar_state="expanded")
+
+import mods #for custom modifications to streamlit 
 st.markdown(mods.hide_menu_style, unsafe_allow_html=True)
 st.markdown(mods.hide_img_fs, unsafe_allow_html=True)
 st.markdown(mods.fix_sidebar,unsafe_allow_html=True)
 
 
-
-
-codetitle=""
-codesubtitle=""
-groupnum="0"
-gamelevel=0
-	 
-
-input_options=  ('no Input',) 
-output_options=  ('no Output',)
-
-
-def resetCards():
-	gamelevel=0
-
-
+st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sidebar_state="expanded")
 st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=300)
 st.sidebar.markdown("""---""")
 
 
 
+
+input_options=  ('no Input',) 
+output_options=  ('no Output',)
 input_options=  ('no Input',) + inputs_IT.microbitv1 + inputs_IT.microbitv2 +inputs_IT.exOthers  
 output_options=  ('no Output',) + outputs_IT.microbitv1 + outputs_IT.microbitv2+ outputs_IT.exBosonKit
+
+
+
+
+
+
 
 
 input2="no Input"
 output2="no Output"
 
 p2p=True
+
+
+codetitle=""
+codesubtitle=""
+groupnum="0"
+gamelevel=0
+def resetCards():
+	gamelevel=0	 
+
+
 
 if p2p==True:
 	p2ptype = st.sidebar.radio("Sono...",('invio dati', 'ricevo dati'),on_change=resetCards)
