@@ -47,6 +47,8 @@ codetitle=""
 codesubtitle=""
 groupnum="0"
 gamelevel=0
+
+
 def resetCards():
     gamelevel=0	 
 
@@ -113,9 +115,9 @@ urlis=""
 prevUrlis="https://makecode.microbit.org/--docs?md=%0A%0A%60%60%60%20blocks%0Abasic.pause%281000%29%0Abasic.forever%28function%20%28%29%20%7B%0A%20%20%20%20if%20%28true%29%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%0A%7D%29%0A%60%60%60%0A%0A"
 jscode=""
 if gamelevel==0:
-	urlis,jscode=genURL([input_name[0],output_name[0]])
+	urlis,jscode=genURL([input_name[0],output_name[0]],groupnum)
 elif gamelevel==1:
-	urlis,jscode=genURL([input_name[0],output_name[0]],[input_name[1],output_name[1]])
+	urlis,jscode=genURL([input_name[0],output_name[0]],[input_name[1],output_name[1]].groupnum)
 	
 
 
