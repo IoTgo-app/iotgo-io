@@ -5,7 +5,7 @@ import urllib.parse
 import time
 import textwrap
 
-import inputs, outputs
+import inputs_IT, outputs_IT
 #import customStreamlitModifications
 st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sidebar_state="expanded")
 
@@ -60,8 +60,8 @@ st.sidebar.markdown("""---""")
 
 
 
-input_options=  ('no Input',) + inputs.microbitv1 + inputs.microbitv2 +inputs.exOthers  
-output_options=  ('no Output',) + outputs.microbitv1 + outputs.microbitv2+ output.exBosonKit
+input_options=  ('no Input',) + inputs_IT.microbitv1 + inputs_IT.microbitv2 +inputs_IT.exOthers  
+output_options=  ('no Output',) + outputs_IT.microbitv1 + outputs_IT.microbitv2+ output_IT.exBosonKit
 
 
 input2="no Input"
