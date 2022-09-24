@@ -8,13 +8,10 @@ import textwrap
 import inputs_IT, outputs_IT
 from translations_IT import it2en_inout
 from imageURL import imageURL
-#from code_components import input_code, output_else_code, output_code 
-#from code_components import package_suffix, input_sensorValue
-#from code_components import on_end, on_start  
 from genURL import genURL
 import mods #for custom modifications to default streamlit app style
 
-
+#################################################################################à
 #apply custom modifications to default streamlit app style
 st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sidebar_state="expanded")
 st.markdown(mods.hide_menu_style, unsafe_allow_html=True)
@@ -22,7 +19,7 @@ st.markdown(mods.hide_img_fs, unsafe_allow_html=True)
 st.markdown(mods.fix_sidebar,unsafe_allow_html=True)
 
 
-
+#################################################################################à
 langPrefix=['EN','IT','DE','UR']
 lang=1
 baseURL=   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/cards_v2/"
@@ -32,24 +29,27 @@ groupnum="0"
 p2p=True
 
 
-#input_options=  ('no Input',) 
-#output_options=  ('no Output',)
+########################### app sidebar ########################################à
+#add iotgo logo
+st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=300)
+st.sidebar.markdown("""---""")
+
+#populate input and output lists:
 input_options=  ('no Input',) + inputs_IT.microbitv1 + inputs_IT.microbitv2 +inputs_IT.exOthers  
 output_options=  ('no Output',) + outputs_IT.microbitv1 + outputs_IT.microbitv2+ outputs_IT.exBosonKit
 
-
+#initialize variables
 input1="no Input"
 output1="no Output"
 input2="no Input"
 output2="no Output"
 gamelevel=0
+input_name= ["no Input"  ,"no Input"]#  ,"no Input"]
+output_name=["no Output" ,"no Output"]# ,"no Output"]
+
 def resetCards():
     gamelevel=0	 
 
-########################### app sidebar ########################################à
-#add iotgo logo
-st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=300)
-st.sidebar.markdown("""---""")
 
 if p2p==True:
 	p2ptype = st.sidebar.radio("Sono...",('invio dati', 'ricevo dati'),on_change=resetCards)
@@ -83,19 +83,13 @@ if secondLevel==True:
 
 
 
-
-
-input_name= ["no Input"  ,"no Input"  ,"no Input"]
-output_name=["no Output" ,"no Output" ,"no Output"]
-
-
+#translate ITalian input output names to base ENglish variable names
 input_name[0]= it2en_inout[input1]
 output_name[0]=it2en_inout[output1]
 input_name[1]= it2en_inout[input2]
 output_name[1]=it2en_inout[output2]
 
-
-
+#build image URLs for cards
 inputcard0path=  baseURL+langPrefix[lang]+imageURL[ input_name[0]]
 outputcard0path= baseURL+langPrefix[lang]+imageURL[output_name[0]]
 inputcard1path=  baseURL+langPrefix[lang]+imageURL[ input_name[1]]
@@ -104,7 +98,7 @@ outputcard1path= baseURL+langPrefix[lang]+imageURL[output_name[1]]
  
 
 
-
+########################### generate code and code URL ########################################à
 urlis=""
 prevUrlis="https://makecode.microbit.org/--docs?md=%0A%0A%60%60%60%20blocks%0Abasic.pause%281000%29%0Abasic.forever%28function%20%28%29%20%7B%0A%20%20%20%20if%20%28true%29%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%0A%7D%29%0A%60%60%60%0A%0A"
 jscode=""
