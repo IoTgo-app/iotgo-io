@@ -224,6 +224,7 @@ def genURL (*args):#input_name, output_name):#here i am collecting chunks of cod
 
 
 
+
 if gamelevel==0:
 	urlis,jscode=genURL([input_name[0],output_name[0]])
 elif gamelevel==1:
@@ -281,43 +282,8 @@ with edit:
 	
 	
 	
-htmliframeold='''
-<a id="status" href = test.html></a>blah
-<iframe src="
-'''+urlis+'''
-" id="iframe_a" title="Iframe Example" height="1000"  width="700" style="border:none;" scrolling="yes" loading="eager"></iframe>
 
-<script type="text/javascript">
-   var iframe = document.getElementById('iframe_a');
-    var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-    var statusText = "not loaded";
-    if (  iframeDoc.readyState  == 'complete' ) {
-        iframe.contentWindow.onload = function(){ 
-	    statusText = "loaded";
-	    document.getElementById("status").innerHTML ="loaded";
-        }
-	else {
-	document.getElementById("status").innerHTML ="not loaded";
-	};
-     
-</script>
-'''
 
-htmliframe='''
-<a id="status" href = test.html></a>blah
-<iframe src="
-'''+urlis+'''
-" id="iframe_a" title="Iframe Example" height="1000"  width="700" style="border:none;" scrolling="yes" loading="eager"></iframe>
-
-<script type="text/javascript">
-    document.getElementById('iframe_a').onload= function() {
-    document.getElementById("status").innerHTML="done";
-    };
-</script>
-
-'''
-
-#st.write("updateS")
 components.iframe(urlis, height=1000, scrolling=True)   
 #components.html(htmliframe, height=1000, scrolling=False)
 
@@ -358,7 +324,7 @@ if warnings>0:
 st.markdown("""---""")
 #st.write("Un progetto di / A project of:")
 #st.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/unilogo.png",width=600)
-version="BZSC.0.0.1"
+version="V3.0.0.1"
 
 # st.write("IoTgo version "+version)
 # # st.markdown("<h6 style='text-align: right; color: grey;'>By Mehdi Rizvi | "+version+"</h6>", unsafe_allow_html=True)
