@@ -8,7 +8,7 @@ import textwrap
 import inputs_IT, outputs_IT
 from translations_IT import it2en_inout
 from imageURL import imageURL
-from code_components import input_code, , output_else_code, output_code 
+from code_components import input_code, output_else_code, output_code 
 from code_components import package_suffix, input_sensorValue
 from code_components import on_end, on_start  
 
