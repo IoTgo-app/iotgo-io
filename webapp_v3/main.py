@@ -6,45 +6,19 @@ import time
 import textwrap
 
 import inputs_IT, outputs_IT
-#import customStreamlitModifications
+import mods
 st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sidebar_state="expanded")
+st.markdown(mods.hide_menu_style, unsafe_allow_html=True)
+st.markdown(mods.hide_img_fs, unsafe_allow_html=True)
+st.markdown(mods.fix_sidebar,unsafe_allow_html=True)
+
+
+
 
 codetitle=""
 codesubtitle=""
 groupnum="0"
 gamelevel=0
-
-
-
-hide_menu_style = """
-        <style>
-        #MainMenu {visibility: hidden; }
-        footer {visibility: hidden;}
-        </style>
-        """
-
-hide_img_fs = '''
-<style>
-button[title="View fullscreen"]{
-    visibility: hidden;}
-</style>
-'''
-
-fix_sidebar= """
-<style>
-[data-testid="stSidebar"][aria-expanded="true"] > div:first-child {width: 350px;}
-[data-testid="stSidebar"][aria-expanded="false"] > div:first-child {width: 350px;margin-left: -350px;}
-</style>
-"""
-
-
-
-
-st.markdown(hide_menu_style, unsafe_allow_html=True)
-st.markdown(hide_img_fs, unsafe_allow_html=True)
-st.markdown(fix_sidebar,unsafe_allow_html=True)
-
-
 	 
 
 input_options=  ('no Input',) 
@@ -61,7 +35,7 @@ st.sidebar.markdown("""---""")
 
 
 input_options=  ('no Input',) + inputs_IT.microbitv1 + inputs_IT.microbitv2 +inputs_IT.exOthers  
-output_options=  ('no Output',) + outputs_IT.microbitv1 + outputs_IT.microbitv2+ output_IT.exBosonKit
+output_options=  ('no Output',) + outputs_IT.microbitv1 + outputs_IT.microbitv2+ outputs_IT.exBosonKit
 
 
 input2="no Input"
