@@ -5,7 +5,7 @@ import urllib.parse
 import time
 import textwrap
 
-import inputs-output-IT
+import inputs_output_IT
 
 st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sidebar_state="expanded")
 
