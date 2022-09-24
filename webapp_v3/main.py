@@ -19,6 +19,7 @@ st.markdown(mods.hide_img_fs, unsafe_allow_html=True)
 st.markdown(mods.fix_sidebar,unsafe_allow_html=True)
 st.markdown(mods.fix_tabs, unsafe_allow_html=True)
 st.markdown(mods.hide_top_padding, unsafe_allow_html=True)
+
 #################################################################################à
 langPrefix=['EN','IT','DE','UR']
 lang=1
