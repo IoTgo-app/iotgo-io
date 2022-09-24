@@ -6,7 +6,7 @@ import time
 import textwrap
 
 import inputs_IT, outputs_IT
-from translations import it2en_inout
+from translations_IT import it2en_inout
 
 
 import mods #for custom modifications to streamlit 
