@@ -81,9 +81,20 @@ if secondLevel==True:
 		output2="no Output"
  
 
+
+########################### app body ########################################à
+
 #initialize list of inputs and outputs------------------------------------------
 input_name= ["no Input"  ,"no Input"]#  ,"no Input"]
 output_name=["no Output" ,"no Output"]# ,"no Output"]
+
+#initialize image sizes-----------------------------------------------------------
+cardWidth=150
+pluscardwidht=150
+missionCardWidth=160
+vertiPaddingWidth=35
+vertiPaddingWidthhalf=17
+
 
 #translate ITalian input output names to base ENglish variable names------------
 input_name[0]= it2en_inout[input1]
@@ -91,16 +102,15 @@ output_name[0]=it2en_inout[output1]
 input_name[1]= it2en_inout[input2]
 output_name[1]=it2en_inout[output2]
 
+
 #build image URLs for cards-----------------------------------------------------
 inputcard0path=  baseURL+langPrefix[lang]+imageURL[ input_name[0]]
 outputcard0path= baseURL+langPrefix[lang]+imageURL[output_name[0]]
 inputcard1path=  baseURL+langPrefix[lang]+imageURL[ input_name[1]]
 outputcard1path= baseURL+langPrefix[lang]+imageURL[output_name[1]]
     
- 
 
-
-########################### generate code and code URL ########################################à
+# generate code and code URL----------------------------------------------------
 urlis=""
 prevUrlis="https://makecode.microbit.org/--docs?md=%0A%0A%60%60%60%20blocks%0Abasic.pause%281000%29%0Abasic.forever%28function%20%28%29%20%7B%0A%20%20%20%20if%20%28true%29%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%0A%7D%29%0A%60%60%60%0A%0A"
 jscode=""
@@ -112,12 +122,7 @@ elif gamelevel==1:
 
 
 
-########################### app body ########################################à
-cardWidth=150
-pluscardwidht=150
-missionCardWidth=160
-vertiPaddingWidth=35
-vertiPaddingWidthhalf=17
+
 
 ###show cards------------------------------------------
 input_col, plus_col, output_col, pad, code_col,pad2,= st.columns([1,1,1,1,1,2])
