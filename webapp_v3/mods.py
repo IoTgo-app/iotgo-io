@@ -28,4 +28,9 @@ button[data-baseweb="tab"] {
 }
 </style>
 """
+hide_top_padding = """
+<style>
+.css-hi6a2p {padding-top: 0rem;}
+</style>
 
+"""
