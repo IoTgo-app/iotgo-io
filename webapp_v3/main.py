@@ -193,10 +193,8 @@ def showSuggestions():
                 st.warning(':exclamation: ricorda che devi cambiare la parola "replace" nel tuo codice con quello che ti aspetti di ricevere dai tuoi amici')
 
 
-
-st.markdown('Streamlit is **_really_ cool**.')
 if appTabs==True:
-    tab1, tab2, tab3 = st.tabs([st.markdown(':flower_playing_cards: Le tue carte'), "Il tuo codice","Suggerimenti"])
+    tab1, tab2, tab3 = st.tabs('Le tue carte      '), " | Il tuo codice      "," | Suggerimenti"])
     with tab1:
         showCards()
     with tab2:
