@@ -1,11 +1,5 @@
-
-
-
-
 def genURL (*args):#input_name, output_name):#here i am collecting chunks of code, encoding them, and concatenating them into a URL:
     #----------on-start-code---------
-    freeplaymode=True #legacy
-    alwaysfreeplaymode=True #legacy
     on_start_code=[]
     on_end_code=[]
     jscode=""
@@ -30,7 +24,7 @@ def genURL (*args):#input_name, output_name):#here i am collecting chunks of cod
     jscode= jscode + 'basic.forever(function () {' + '\n'
     #-----------if-else-code---------
     if_body_code=""
-    if freeplaymode==True or alwaysfreeplaymode==True:
+    if True:#freeplaymode==True or alwaysfreeplaymode==True:
         for eachIOpair in args: #in,out
             if True:#eachIOpair[0] != "noInput" and eachIOpair[1] != "noOuput":
                 if eachIOpair[1] in output_code:
