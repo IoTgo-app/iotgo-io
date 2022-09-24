@@ -106,13 +106,12 @@ output1path= baseURL+langPrefix[lang]+imageURL[output_name[1]]
  
 
 
-urlis=""
-prevUrlis="https://makecode.microbit.org/--docs?md=%0A%0A%60%60%60%20blocks%0Abasic.pause%281000%29%0Abasic.forever%28function%20%28%29%20%7B%0A%20%20%20%20if%20%28true%29%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%0A%7D%29%0A%60%60%60%0A%0A"
-jscode=""
+
+freeplaymode=True #legacy
+alwaysfreeplaymode=True #legacy
 
 
-freeplaymode=True
-alwaysfreeplaymode=True
+
 def genURL (*args):#input_name, output_name):#here i am collecting chunks of code, encoding them, and concatenating them into a URL:
      #----------on-start-code---------
     on_start_code=[]
@@ -224,7 +223,9 @@ def genURL (*args):#input_name, output_name):#here i am collecting chunks of cod
 
 
 
-
+urlis=""
+prevUrlis="https://makecode.microbit.org/--docs?md=%0A%0A%60%60%60%20blocks%0Abasic.pause%281000%29%0Abasic.forever%28function%20%28%29%20%7B%0A%20%20%20%20if%20%28true%29%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%0A%7D%29%0A%60%60%60%0A%0A"
+jscode=""
 if gamelevel==0:
 	urlis,jscode=genURL([input_name[0],output_name[0]])
 elif gamelevel==1:
@@ -232,13 +233,13 @@ elif gamelevel==1:
 	
 
 
+
+########################### app structure ########################################à
 cardWidth=150
 pluscardwidht=150
 missionCardWidth=160
 vertiPaddingWidth=35
 vertiPaddingWidthhalf=17
-
-
 
 #st.image("http://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/applogo-hor.png",width=380)
 #st.header("IoTgo")
@@ -279,16 +280,11 @@ with edit:
 	st.write("[Modifica codice...]("+urlis+")")
 
 
-	
-	
-	
-
-
 components.iframe(urlis, height=1000, scrolling=True)   
 #components.html(htmliframe, height=1000, scrolling=False)
 
 
-
+########################### code warnings and suggestions ########################################à
 warnings=0
 externalWarning=False
 radioGroupWarning=False
@@ -317,10 +313,7 @@ if warnings>0:
 
 
  
-
-
-
-#st.button("Refresh")
+########################### app footer ########################################à
 st.markdown("""---""")
 #st.write("Un progetto di / A project of:")
 #st.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/unilogo.png",width=600)
