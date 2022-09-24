@@ -31,8 +31,8 @@ button[data-baseweb="tab"] {
 
 """
 hide_top_padding = """
-<style>
-.css-1outpf7  {padding-top: 0rem;}
-</style>
-
+    <style>
+        div.block-container {padding-top:0rem;}
+    </style>
 """
+ 
