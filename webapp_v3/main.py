@@ -212,7 +212,7 @@ else:
 
 
 ########################### app footer ########################################à
-st.markdown("""---""")
+st.sidebar.markdown("""---""")
 #st.write("Un progetto di / A project of:")
 #st.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/unilogo.png",width=600)
 version="V3.0.0.1"
@@ -224,6 +224,6 @@ badges="""
 ![Version](https://img.shields.io/badge/IoTgo%20Version-"""+version+"""-orange) 
 [![Mehdi Rizvi](https://img.shields.io/badge/Author-@rizMehdi-grey.svg?colorA=gray&colorB=dodgerblue&logo=github)](https://github.com/rizMehdi/)
 """
-st.markdown(badges,  unsafe_allow_html=False)
+st.sidebar.markdown(badges,  unsafe_allow_html=False)
 
  
