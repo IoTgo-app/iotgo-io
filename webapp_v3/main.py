@@ -44,8 +44,7 @@ output1="no Output"
 input2="no Input"
 output2="no Output"
 gamelevel=0
-input_name= ["no Input"  ,"no Input"]#  ,"no Input"]
-output_name=["no Output" ,"no Output"]# ,"no Output"]
+
 
 def resetCards():
     gamelevel=0	 
@@ -64,8 +63,9 @@ if p2p==True:
 		output1="no Output"
 		gamelevel=0
 
-st.sidebar.markdown("""---""")		
+st.sidebar.markdown("""---""")	
 secondLevel = st.sidebar.checkbox('Aggiungere un ulteriore livello di comunicazione')
+
 if secondLevel==True:
 	gamelevel=1
 	if p2ptype=='invio dati':
@@ -81,7 +81,9 @@ if secondLevel==True:
 		output2="no Output"
  
 
-
+#initialize list of inputs and outputs
+input_name= ["no Input"  ,"no Input"]#  ,"no Input"]
+output_name=["no Output" ,"no Output"]# ,"no Output"]
 
 #translate ITalian input output names to base ENglish variable names
 input_name[0]= it2en_inout[input1]
@@ -122,20 +124,17 @@ vertiPaddingWidthhalf=17
 #input_col, plus_col, output_col, pad, code_col= st.columns([1,1,1,1,6])
 input_col, plus_col, output_col, pad, code_col,pad2,= st.columns([1,1,1,1,1,2])
 with input_col:    
-	#st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/blankcard.png", width=vertiPaddingWidth)
 	st.write(" se...")
 	# ("Input1:")
 	st.image(inputcard0path, width=cardWidth) 
 	# ("Input2:")
 	if gamelevel==1: st.image(inputcard1path, width=cardWidth) 
 with plus_col:    
-	#st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/blankcard.png", width=vertiPaddingWidth*2)
 	st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/blankcard.png", width=vertiPaddingWidthhalf)
 	st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/plus.png", width=pluscardwidht) 
 	if gamelevel==1: st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/plus.png", width=pluscardwidht) 
 
 with output_col:    
-	#st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/blankcard.png", width=vertiPaddingWidth)
 	st.write(" allora...")
 	# ("Output1:")
 	st.image(outputcard0path, width=cardWidth) 
@@ -145,7 +144,6 @@ with output_col:
 if prevUrlis != urlis:
 	with st.spinner('Plz wait. Generating code for you....'):
     		time.sleep(0.1)
-	#st.success('Done!')
 prevUrlis=urlis
 
 
@@ -156,7 +154,6 @@ with edit:
 
 
 components.iframe(urlis, height=1000, scrolling=True)   
-#components.html(htmliframe, height=1000, scrolling=False)
 
 
 ########################### code warnings and suggestions ########################################à
