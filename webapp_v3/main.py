@@ -154,6 +154,7 @@ with edit:
 
 
 components.iframe(urlis, height=1000, scrolling=True)   
+#components.html(htmliframe, height=1000, scrolling=False)
 
 
 ########################### code warnings and suggestions ########################################à
