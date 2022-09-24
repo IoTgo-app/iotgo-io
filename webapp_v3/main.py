@@ -147,7 +147,7 @@ def showCards():
 
 
 
-def showBlockCode():
+def showBlockCode(prevUrlis,urlis):
     # show block code------------------------------------------
     if prevUrlis != urlis:
         with st.spinner('Plz wait. Generating code for you....'):
@@ -200,12 +200,12 @@ if appTabs==True:
     with tab1:
         showCards()
     with tab2:
-        showBlockCode()
+        showBlockCode(prevUrlis,urlis)
     with tab3:
         showSuggestions()
 else:
     showCards()
-    showBlockCode()
+    showBlockCode(prevUrlis,urlis)
     showSuggestions()
 
 
