@@ -30,15 +30,15 @@ p2p=True
 
 
 ########################### app sidebar ########################################à
-#add iotgo logo
+#add iotgo logo-----------------------------------------------------------
 st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=300)
 st.sidebar.markdown("""---""")
 
-#populate input and output lists:
+#populate input and output lists------------------------------------------
 input_options=  ('no Input',) + inputs_IT.microbitv1 + inputs_IT.microbitv2 +inputs_IT.exOthers  
 output_options=  ('no Output',) + outputs_IT.microbitv1 + outputs_IT.microbitv2+ outputs_IT.exBosonKit
 
-#initialize variables
+#initialize variables-----------------------------------------------------
 input1="no Input"
 output1="no Output"
 input2="no Input"
@@ -81,17 +81,17 @@ if secondLevel==True:
 		output2="no Output"
  
 
-#initialize list of inputs and outputs
+#initialize list of inputs and outputs------------------------------------------
 input_name= ["no Input"  ,"no Input"]#  ,"no Input"]
 output_name=["no Output" ,"no Output"]# ,"no Output"]
 
-#translate ITalian input output names to base ENglish variable names
+#translate ITalian input output names to base ENglish variable names------------
 input_name[0]= it2en_inout[input1]
 output_name[0]=it2en_inout[output1]
 input_name[1]= it2en_inout[input2]
 output_name[1]=it2en_inout[output2]
 
-#build image URLs for cards
+#build image URLs for cards-----------------------------------------------------
 inputcard0path=  baseURL+langPrefix[lang]+imageURL[ input_name[0]]
 outputcard0path= baseURL+langPrefix[lang]+imageURL[output_name[0]]
 inputcard1path=  baseURL+langPrefix[lang]+imageURL[ input_name[1]]
@@ -119,10 +119,9 @@ missionCardWidth=160
 vertiPaddingWidth=35
 vertiPaddingWidthhalf=17
 
-
-
-#input_col, plus_col, output_col, pad, code_col= st.columns([1,1,1,1,6])
+###show cards------------------------------------------
 input_col, plus_col, output_col, pad, code_col,pad2,= st.columns([1,1,1,1,1,2])
+#input_col, plus_col, output_col, pad, code_col= st.columns([1,1,1,1,6])
 with input_col:    
 	st.write(" se...")
 	# ("Input1:")
@@ -141,23 +140,23 @@ with output_col:
 	# ("Output1:")
 	if gamelevel==1: st.image(outputcard1path, width=cardWidth) 
 
+###show block code------------------------------------------
 if prevUrlis != urlis:
 	with st.spinner('Plz wait. Generating code for you....'):
     		time.sleep(0.1)
 prevUrlis=urlis
-
-
 e,edit  = st.columns([1,1])
 with edit:
         #st.markdown("[Modifica...]("+urlis+")", unsafe_allow_html=True)
 	st.write("[Modifica codice...]("+urlis+")")
+components.iframe(urlis, height=1000, scrolling=True)
 
 
-components.iframe(urlis, height=1000, scrolling=True)   
+###show Python code------------------------------------------
 #components.html(htmliframe, height=1000, scrolling=False)
 
 
-########################### code warnings and suggestions ########################################à
+###show code warnings and suggestions------------------------- 
 warnings=0
 externalWarning=False
 radioGroupWarning=False
