@@ -21,7 +21,7 @@ fix_sidebar= """
 </style>
 """
 
-add_space_between_tabs = """
+add_space_between_tabs= """
 <style>
 button[data-baseweb="tab"] {
   font-size: 26px;
