@@ -33,7 +33,7 @@ appTabs=True
 
 ########################### app sidebar ########################################à
 #add iotgo logo-----------------------------------------------------------
-st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=300)
+st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=200)
 st.sidebar.markdown("""---""")
 
 #populate input and output lists------------------------------------------
