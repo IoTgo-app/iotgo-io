@@ -131,7 +131,7 @@ with input_col:
 	#st.image("https://raw.githubusercontent.com/rizMehdi/IoTgo/main/images/blankcard.png", width=vertiPaddingWidth)
 	st.write(" se...")
 	# ("Input1:")
-	st.image(input0path, width=cardWidth) 
+	st.image(inputcard0path, width=cardWidth) 
 	# ("Input2:")
 	if gamelevel==1: st.image(inputcard1path, width=cardWidth) 
 with plus_col:    
