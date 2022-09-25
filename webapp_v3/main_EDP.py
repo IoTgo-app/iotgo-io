@@ -110,12 +110,12 @@ vertiPaddingWidth=35
 vertiPaddingWidthhalf=17
 
 image_placeholder = st.empty()
-image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
-def editCodeSkeleton():
-    image_placeholder.write("not we select inputs and outputs.")
+# image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
+# def editCodeSkeleton():
+#     image_placeholder.write("not we select inputs and outputs.")
 
 # image_placeholder = st.empty()
-# if editbutton==False: #not st.button('➡ Cambia input oppure output'):
+# if not st.button('➡ Cambia input oppure output'):
 #     image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
 # else: 
 #     image_placeholder.write("not we select inputs and outputs.")
@@ -125,7 +125,10 @@ col1, col2 = st.columns(2)
 with col1:
     st.button('➡ Back', key='backbutton' )
 with col2:
-    st.button('➡ Cambia input oppure output', key='editbutton',on_click=editCodeSkeleton())
+    #st.button('➡ Cambia input oppure output', key='editbutton',on_click=editCodeSkeleton())
+    if st.button('➡ Cambia input oppure output'):
+        image_placeholder.write("not we select inputs and outputs.")
+
 
 # st.image(baseURL_codeSkeletons+skeleton+'.png')
 
