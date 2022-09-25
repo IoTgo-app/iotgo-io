@@ -110,7 +110,7 @@ vertiPaddingWidth=35
 vertiPaddingWidthhalf=17
 
 image_placeholder = st.empty()
-# image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
+image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
 # def editCodeSkeleton():
 #     image_placeholder.write("not we select inputs and outputs.")
 
