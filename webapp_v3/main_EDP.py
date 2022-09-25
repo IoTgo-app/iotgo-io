@@ -68,8 +68,8 @@ def sidebar_editExample():
 
 
 sidebar_placeholder = st.empty()
-# with sidebar_placeholder.container():
-#     skeleton = sidebar_selectExample()
+with sidebar_placeholder.container():
+    skeleton = sidebar_selectExample()
 
 # container = st.container()
 
