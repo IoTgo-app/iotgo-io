@@ -52,6 +52,15 @@ gamelevel=0
 def resetCards():
     gamelevel=0	 
 
+skeleton_list= ["lvl1 1con-1in-1out", 
+                "lvl1 1con-1in-2out", 
+                "lvl1 1con-2in-1out"]
+
+
+skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
+
+
+
 
 if p2p==True:
 	p2ptype = st.sidebar.radio("Sono...",('invio dati', 'ricevo dati'),on_change=resetCards)
