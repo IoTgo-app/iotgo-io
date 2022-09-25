@@ -68,10 +68,13 @@ def sidebar_editExample():
 
 
 sidebar_placeholder = st.empty()
-with sidebar_placeholder.container():
-    skeleton = sidebar_selectExample()
+# with sidebar_placeholder.container():
+#     skeleton = sidebar_selectExample()
 
+# container = st.container()
 
+# sidebar_placeholder=st.sidebar.empty()
+# sidebar_container=sidebar_placeholder.container()
 
 
 
@@ -136,7 +139,12 @@ image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
 col1, col2 = st.columns(2)
 
 with col1:
-    st.button('⬅ Cambia esempio', key='backbutton' )
+    if st.button('⬅ Cambia esempio', key='backbutton' )
+        with sidebar_placeholder.container():
+            skeleton = sidebar_selectExample()
+    else:
+        with sidebar_placeholder.container():
+            skeleton = sidebar_editExample()
 with col2:
     #st.button('➡ Cambia input oppure output', key='editbutton',on_click=editCodeSkeleton())
     if st.button('➡ Cambia input oppure output'):
