@@ -61,9 +61,15 @@ def sidebar_selectExample():
     skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
     return skeleton
 
+def sidebar_editExample():
+    input0is=st.sidebar.selectbox('Select an input',['x','y'])
+    output0is=st.sidebar.selectbox('Select an output',['a','b'])
+    return input0is,output0is
+
+
 sidebar_placeholder = st.empty()
 with sidebar_placeholder.container():
-    sidebar_selectExample():
+    skeleton = sidebar_selectExample():
 
 
 
