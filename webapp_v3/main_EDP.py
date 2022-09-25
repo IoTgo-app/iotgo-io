@@ -109,7 +109,7 @@ missionCardWidth=160
 vertiPaddingWidth=35
 vertiPaddingWidthhalf=17
 
-st.image(baseURL_codeSkeletons+skeleton)
+st.image(baseURL_codeSkeletons+skeleton+'.png')
 
 # #translate ITalian input output names to base ENglish variable names------------
 # input_name[0]= it2en_inout[input1]
