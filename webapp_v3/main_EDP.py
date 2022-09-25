@@ -123,7 +123,7 @@ image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
 col1, col2 = st.columns(2)
 
 with col1:
-    st.button('➡ Back', key='backbutton' )
+    st.button('⬅ Cambia esempio', key='backbutton' )
 with col2:
     #st.button('➡ Cambia input oppure output', key='editbutton',on_click=editCodeSkeleton())
     if st.button('➡ Cambia input oppure output'):
