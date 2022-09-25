@@ -144,7 +144,9 @@ col1, col2 = st.columns(2)
 
 with col1:
     # backbtn_placeholder=st.empty()
-    if not st.button('⬅ Cambia esempio', key='backbutton' ):
+    if st.button('⬅ Cambia esempio', key='backbutton' ):
+        st.empty()
+    else:
         with sidebar_placeholder:
             input0is=st.sidebar.selectbox('Select an input',['x','y'])
             output0is=st.sidebar.selectbox('Select an output',['a','b'])        
