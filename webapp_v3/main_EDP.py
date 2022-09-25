@@ -57,8 +57,15 @@ skeleton_list= ["lvl1-1con-1in-1out",
                 "lvl1-1con-1in-2out", 
                 "lvl1-1con-2in-1out"]
 
+def sidebar_selectExample():
+    skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
+    return skeleton
 
-skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
+sidebar_placeholder = st.empty()
+with sidebar_placeholder.container():
+    sidebar_selectExample():
+
+
 
 
 
