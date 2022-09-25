@@ -67,7 +67,9 @@ def sidebar_editExample():
     return input0is,output0is
 
 
-sidebar_placeholder = st.empty()
+sidebar_placeholder = st.sidebar.empty()
+skeleton=sidebar_placeholder.selectbox('Select an example',skeleton_list)
+
 # with sidebar_placeholder.container():
 #     skeleton = sidebar_selectExample()
 
@@ -146,7 +148,7 @@ with col1:
         # with sidebar_placeholder.container():
         #     inn,outt = sidebar_editExample()
     else:
-        skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
+        skeleton=sidebar_placeholder.selectbox('Select an example',skeleton_list)
         # with sidebar_placeholder.container():
             # st.sidebar.write('dup')
             
