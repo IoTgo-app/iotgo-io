@@ -69,7 +69,7 @@ def sidebar_editExample():
 
 sidebar_placeholder = st.empty()
 with sidebar_placeholder.container():
-    skeleton = sidebar_selectExample():
+    skeleton = sidebar_selectExample()
 
 
 
