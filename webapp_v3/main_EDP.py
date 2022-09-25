@@ -114,7 +114,7 @@ image_placeholder = st.empty()
 if not st.button('➡ Cambia input oppure output'):
     image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
 else: 
-    st.write("not we select inputs and outputs.")
+    image_placeholder.write("not we select inputs and outputs.")
 
 
 # st.image(baseURL_codeSkeletons+skeleton+'.png')
