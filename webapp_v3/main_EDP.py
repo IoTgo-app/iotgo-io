@@ -113,7 +113,7 @@ vertiPaddingWidthhalf=17
 
 
 image_placeholder = st.empty()
-if not st.button('➡ Cambia input oppure output'):
+if editbutton==False: #not st.button('➡ Cambia input oppure output'):
     image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
 else: 
     image_placeholder.write("not we select inputs and outputs.")
