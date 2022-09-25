@@ -68,8 +68,8 @@ def sidebar_editExample():
 
 
 sidebar_placeholder = st.empty()
-with sidebar_placeholder.container():
-    skeleton = sidebar_selectExample()
+# with sidebar_placeholder.container():
+#     skeleton = sidebar_selectExample()
 
 # container = st.container()
 
@@ -138,13 +138,17 @@ image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
 
 col1, col2 = st.columns(2)
 
+
 with col1:
     if not st.button('⬅ Cambia esempio', key='backbutton' ):
-        with sidebar_placeholder.container():
-            inn,outt = sidebar_editExample()
+        input0is=st.sidebar.selectbox('Select an input',['x','y'])
+        output0is=st.sidebar.selectbox('Select an output',['a','b'])
+        # with sidebar_placeholder.container():
+        #     inn,outt = sidebar_editExample()
     else:
-        with sidebar_placeholder.container():
-            st.sidebar.write('dup')
+        skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
+        # with sidebar_placeholder.container():
+            # st.sidebar.write('dup')
             
 with col2:
     #st.button('➡ Cambia input oppure output', key='editbutton',on_click=editCodeSkeleton())
