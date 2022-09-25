@@ -109,13 +109,20 @@ missionCardWidth=160
 vertiPaddingWidth=35
 vertiPaddingWidthhalf=17
 
-st.image(baseURL_codeSkeletons+skeleton+'.png')
-# st.write(baseURL_codeSkeletons+skeleton+'.png')
 
-if st.button('➡ Cambia input oppure output'):
-    st.write('changing')
-else:
-    st.write('not changing')
+image_placeholder = st.empty()
+if not st.button('➡ Cambia input oppure output'):
+    image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
+else: 
+    st.write("not we select inputs and outputs.")
+
+
+# st.image(baseURL_codeSkeletons+skeleton+'.png')
+
+# if st.button('➡ Cambia input oppure output'):
+#     st.write('changing')
+# else:
+#     st.write('not changing')
 
 
 
