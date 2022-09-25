@@ -20,7 +20,7 @@ st.markdown(mods.fix_sidebar,unsafe_allow_html=True)
 st.markdown(mods.fix_tabs, unsafe_allow_html=True)
 st.markdown(mods.hide_top_padding, unsafe_allow_html=True)
 
-#################################################################################à
+############################# app settings ##########################################à
 langPrefix=['EN','IT','DE','UR']
 lang=1
 baseURL=   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/cards_v2/"
