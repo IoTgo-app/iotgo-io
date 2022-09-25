@@ -139,7 +139,7 @@ image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
 col1, col2 = st.columns(2)
 
 with col1:
-    if st.button('⬅ Cambia esempio', key='backbutton' )
+    if st.button('⬅ Cambia esempio', key='backbutton' ):
         with sidebar_placeholder.container():
             skeleton = sidebar_selectExample()
     else:
