@@ -111,6 +111,14 @@ vertiPaddingWidthhalf=17
 
 st.image(baseURL_codeSkeletons+skeleton+'.png')
 # st.write(baseURL_codeSkeletons+skeleton+'.png')
+
+if st.button('➡ Cambia input oppure output'):
+    st.write('changing')
+else:
+    st.write('not changing')
+
+
+
 # #translate ITalian input output names to base ENglish variable names------------
 # input_name[0]= it2en_inout[input1]
 # output_name[0]=it2en_inout[output1]
