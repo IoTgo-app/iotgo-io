@@ -29,7 +29,7 @@ codesubtitle=""
 groupnum="0"
 p2p=True
 appTabs=True
-version="V3b.0.0.1"
+version="EDB.0.0.1"
 
 
 ########################### app sidebar ########################################à
@@ -234,7 +234,7 @@ st.sidebar.markdown("""---""")
 # # st.markdown("<h6 style='text-align: right; color: grey;'>By Mehdi Rizvi | "+version+"</h6>", unsafe_allow_html=True)
 
 badges="""
-![Version](https://img.shields.io/badge/IoTgo-EDB%20Version-"""+version+"""-orange) 
+![Version](https://img.shields.io/badge/IoTgo%20Version-"""+version+"""-orange) 
 [![Mehdi Rizvi](https://img.shields.io/badge/Author-@rizMehdi-grey.svg?colorA=gray&colorB=dodgerblue&logo=github)](https://github.com/rizMehdi/)
 """
 st.sidebar.markdown(badges,  unsafe_allow_html=False)
