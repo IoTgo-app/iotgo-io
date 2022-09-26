@@ -1,32 +1,47 @@
 basic.clearScreen()
 let conto = 0
 let valore_caratteristico = 0
-/**
- * CESTINO SORRIDENTE
- */
-basic.forever(function () {
-    if (input.buttonIsPressed(Button.A)) {
-        basic.showIcon(IconNames.Happy)
-    }
-})
-/**
- * ALBERO ANIMATO
- */
-basic.forever(function () {
-    if (input.buttonIsPressed(Button.A)) {
-        basic.showIcon(IconNames.Heart)
-        basic.showIcon(IconNames.SmallHeart)
-    }
-})
-/**
- * OROLOGIO SEGNAFREDDO
- */
-basic.forever(function () {
-    if (input.buttonIsPressed(Button.A) && input.temperature() < 10) {
-        basic.showIcon(IconNames.Sad)
-    }
-})
-/**
+
+
+
+thisdict = {
+    "1" : 
+        """
+        /**
+        * CESTINO SORRIDENTE
+        */
+        basic.forever(function () {
+            if (input.buttonIsPressed(Button.A)) {
+                basic.showIcon(IconNames.Happy)
+            }
+        })
+        """, 
+    "1" : 
+        """
+        /**
+        * ALBERO ANIMATO
+        */
+        basic.forever(function () {
+            if (input.buttonIsPressed(Button.A)) {
+                basic.showIcon(IconNames.Heart)
+                basic.showIcon(IconNames.SmallHeart)
+            }
+        })
+        """, 
+    "1" : 
+        """
+        /**
+        * OROLOGIO SEGNAFREDDO
+        */
+        basic.forever(function () {
+            if (input.buttonIsPressed(Button.A) && input.temperature() < 10) {
+                basic.showIcon(IconNames.Sad)
+            }
+        })
+        """, 
+    "1" : 
+        """
+        /**
  * TAVOLO GIOCO X 2, FACCINA E MUSICA
  */
 basic.forever(function () {
@@ -37,7 +52,10 @@ basic.forever(function () {
         music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
     }
 })
-/**
+        """, 
+    "1" : 
+        """
+        /**
  * CAVALLO SFIDA X 2, O  FACCINA O MUSICA
  */
 basic.forever(function () {
@@ -47,6 +65,9 @@ basic.forever(function () {
         music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
     }
 })
+        """, 
+    "1" : 
+        """
 /**
  * PANCHINA x DUE., CON FACCINA E POI MUSICALE
  */
@@ -58,7 +79,10 @@ basic.forever(function () {
         }
     }
 })
-/**
+        """, 
+    "1" : 
+        """
+        /**
  * IL CANESTRO MOSTRA-PUNTEGGIO
  */
 basic.forever(function () {
@@ -67,6 +91,10 @@ basic.forever(function () {
         basic.showString("" + (conto))
     }
 })
+        """, 
+    "1" : 
+        """
+        
 /**
  * IL DADO MUSICALE
  */
@@ -78,6 +106,9 @@ basic.forever(function () {
         music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
     }
 })
+        """, 
+    "1" : 
+        """
 /**
  * ALBERO ANIMATO, ALTRIMENTI SPENTO
  */
@@ -89,6 +120,9 @@ basic.forever(function () {
         basic.clearScreen()
     }
 })
+        """, 
+    "1" : 
+        """
 /**
  * CESTINO SORRIDENTE, ALTRIMENTI SPENTO
  */
@@ -98,8 +132,11 @@ basic.forever(function () {
     } else {
         basic.clearScreen()
     }
-})
-/**
+}) 
+        """, 
+    "1" : 
+        """
+        /**
  * OROLOGIO SEGNAFREDDO, ALTRIMENTI SPENTO
  */
 basic.forever(function () {
@@ -109,7 +146,10 @@ basic.forever(function () {
         basic.clearScreen()
     }
 })
-/**
+        """, 
+    "1" : 
+        """
+        /**
  * TAVOLO GIOCO X 2, FACCINA E MUSICA, ALTRIMENTI SPENTO
  */
 basic.forever(function () {
@@ -124,6 +164,10 @@ basic.forever(function () {
         music.stopAllSounds()
     }
 })
+        """, 
+    "1" : 
+        """
+        
 /**
  * CAVALLO SFIDA X 2, O  FACCINA O MUSICA, ALTRIMENTI SPENTO
  */
@@ -137,7 +181,10 @@ basic.forever(function () {
         music.stopAllSounds()
     }
 })
-/**
+        """, 
+    "1" : 
+        """
+        /**
  * PANCHINA x DUE., CON FACCINA E POI MUSICALE, ALTRIMENTI SPENTA
  */
 basic.forever(function () {
@@ -152,6 +199,10 @@ basic.forever(function () {
         basic.clearScreen()
     }
 })
+        """, 
+    "1" : 
+        """
+
 /**
  * IL CANESTRO MOSTRA-PUNTEGGIO, ALTRIMENTI SPENTO
  */
@@ -163,6 +214,10 @@ basic.forever(function () {
         basic.clearScreen()
     }
 })
+        """, 
+    "1" : 
+        """
+        
 /**
  * IL DADO MUSICALE, ALTRIMENTI SPENTO
  */
@@ -176,3 +231,19 @@ basic.forever(function () {
         music.stopAllSounds()
     }
 })
+        """, 
+
+        
+        
+}
+
+
+
+
+
+
+
+
+
+
+
