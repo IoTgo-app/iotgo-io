@@ -33,7 +33,7 @@ default_IO = {
 
 
 code_skeletons = {
-    "lvl1-1con-1in-1out" : 
+    "lvl1a1-1in_1out" : 
         """
         /**
         * CESTINO SORRIDENTE
@@ -44,7 +44,7 @@ code_skeletons = {
             }
         })
         """, 
-    "lvl1-1con-1in-2out" : 
+    "lvl1b1-1in_2out" : 
         """
         /**
         * ALBERO ANIMATO
@@ -56,7 +56,7 @@ code_skeletons = {
             }
         })
         """, 
-    "lvl1-1con-2in-1out" : 
+    "lvl1c1-2in_1out : 
         """
         /**
         * OROLOGIO SEGNAFREDDO
@@ -67,7 +67,7 @@ code_skeletons = {
             }
         })
         """, 
-    "lvl1-2con-2in-2out" : 
+    "lvl2a1-1in_1out-1in_1out" : 
         """
                 /**
         * TAVOLO GIOCO X 2, FACCINA E MUSICA
@@ -81,7 +81,7 @@ code_skeletons = {
             }
         })
         """, 
-    "lvl1-1con-2in-2out" : 
+    "lvl2b1-1in_1out_elif_1in_1out" : 
         """
                 /**
         * CAVALLO SFIDA X 2, O  FACCINA O MUSICA
@@ -94,7 +94,7 @@ code_skeletons = {
             }
         })
         """, 
-    "lvl1-2con-2in-2out" : 
+    "lvl2c1-1in_1out-nest-1in_1out" : 
         """
         /**
         * PANCHINA x DUE., CON FACCINA E POI MUSICALE
@@ -108,7 +108,7 @@ code_skeletons = {
             }
         })
         """, 
-    "lvl1-1con-1in-2out" : 
+    "lvl3a1-1in_1out_var" : 
         """
                 /**
         * IL CANESTRO MOSTRA-PUNTEGGIO
@@ -120,7 +120,7 @@ code_skeletons = {
             }
         })
         """, 
-    "lvl1-1con-1in-2out" : 
+    "lvl3b1-1var_1out" : 
         """
         /**
         * IL DADO MUSICALE
@@ -137,7 +137,7 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl1a2-1in_1out_else" : 
         """
         /**
         * ALBERO ANIMATO, ALTRIMENTI SPENTO
@@ -151,7 +151,7 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl1b1-1in_2out_else" : 
         """
         /**
         * CESTINO SORRIDENTE, ALTRIMENTI SPENTO
@@ -164,7 +164,7 @@ code_skeletons = {
             }
         }) 
         """, 
-    "1" : 
+    "lvl1c2-2in_1out_else" : 
         """
                 /**
         * OROLOGIO SEGNAFREDDO, ALTRIMENTI SPENTO
@@ -177,7 +177,7 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl2a2-1in_1out_else-1in_1out_else" : 
         """
         /**
         * TAVOLO GIOCO X 2, FACCINA E MUSICA, ALTRIMENTI SPENTO
@@ -195,7 +195,7 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl2b2-1in_1out_elif_1in_1out_else" : 
         """
         /**
         * CAVALLO SFIDA X 2, O  FACCINA O MUSICA, ALTRIMENTI SPENTO
@@ -211,7 +211,7 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl2c2-1in_1out-nest-1in_1out_else_else" : 
         """
         /**
         * PANCHINA x DUE., CON FACCINA E POI MUSICALE, ALTRIMENTI SPENTA
@@ -229,7 +229,7 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl3a2-1in_1out_var_else" : 
         """
         /**
         * IL CANESTRO MOSTRA-PUNTEGGIO, ALTRIMENTI SPENTO
@@ -243,7 +243,7 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl3b2-1var_1out_else" : 
         """   
         /**
         * IL DADO MUSICALE, ALTRIMENTI SPENTO
