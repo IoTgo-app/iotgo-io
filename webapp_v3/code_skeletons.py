@@ -54,8 +54,8 @@ code_skeletons = {
         * CESTINO SORRIDENTE
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A)) {
-                basic.showIcon(IconNames.Happy)
+            if (_in1_) {
+                _out1_
             }
         })
         """, 
@@ -65,9 +65,9 @@ code_skeletons = {
         * ALBERO ANIMATO
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A)) {
-                basic.showIcon(IconNames.Heart)
-                basic.showIcon(IconNames.SmallHeart)
+            if (_in1_) {
+                _out1_
+                _out2_
             }
         })
         """, 
@@ -77,8 +77,8 @@ code_skeletons = {
         * OROLOGIO SEGNAFREDDO
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A) && input.temperature() < 10) {
-                basic.showIcon(IconNames.Sad)
+            if (_in1_ && _in2_) {
+                _out1_
             }
         })
         """, 
@@ -88,12 +88,10 @@ code_skeletons = {
         * TAVOLO GIOCO X 2, FACCINA E MUSICA
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A)) {
-                basic.showIcon(IconNames.Happy)
-            }
-            if (input.buttonIsPressed(Button.B)) {
-                music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
-            }
+            if (_in1_) {
+                _out1_            }
+            if (_in2_) {
+                _out2_            }
         })
         """, 
     "lvl2b1-1in_1out_elif_1in_1out" : 
@@ -102,10 +100,10 @@ code_skeletons = {
         * CAVALLO SFIDA X 2, O  FACCINA O MUSICA
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A)) {
-                basic.showIcon(IconNames.Happy)
-            } else if (input.buttonIsPressed(Button.B)) {
-                music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
+            if (_in1_) {
+                _out1_
+            } else if (_in2_) {
+                _out2_
             }
         })
         """, 
@@ -115,10 +113,10 @@ code_skeletons = {
         * PANCHINA x DUE., CON FACCINA E POI MUSICALE
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A)) {
-                basic.showIcon(IconNames.Happy)
-                if (input.buttonIsPressed(Button.B)) {
-                    music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
+            if (_in1_) {
+                _out1_
+                if (_in2_) {
+                _out2_
                 }
             }
         })
@@ -129,9 +127,9 @@ code_skeletons = {
         * IL CANESTRO MOSTRA-PUNTEGGIO
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A)) {
+            if (_in1_) {
                 conto += 1
-                basic.showString("" + (conto))
+                _out1_
             }
         })
         """, 
@@ -152,17 +150,18 @@ code_skeletons = {
             }
         })
         """, 
+
+
     "lvl1a2-1in_1out_else" : 
         """
         /**
         * ALBERO ANIMATO, ALTRIMENTI SPENTO
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A)) {
-                basic.showIcon(IconNames.Heart)
-                basic.showIcon(IconNames.SmallHeart)
+            if (_in1_) {
+                _out1_
             } else {
-                basic.clearScreen()
+                _out1_
             }
         })
         """, 
@@ -172,10 +171,10 @@ code_skeletons = {
         * CESTINO SORRIDENTE, ALTRIMENTI SPENTO
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A)) {
-                basic.showIcon(IconNames.Happy)
+            if (_in1_) {
+                _out1_
             } else {
-                basic.clearScreen()
+                _out1_
             }
         }) 
         """, 
@@ -185,10 +184,10 @@ code_skeletons = {
         * OROLOGIO SEGNAFREDDO, ALTRIMENTI SPENTO
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A) && input.temperature() < 10) {
-                basic.showIcon(IconNames.Sad)
+            if (_in1_ && _in2_) {
+                _out1_
             } else {
-                basic.clearScreen()
+                _out1_
             }
         })
         """, 
@@ -198,15 +197,15 @@ code_skeletons = {
         * TAVOLO GIOCO X 2, FACCINA E MUSICA, ALTRIMENTI SPENTO
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A)) {
-                basic.showIcon(IconNames.Happy)
+            if (_in1_) {
+                _out1_
             } else {
-                basic.clearScreen()
+                _out1_
             }
-            if (input.buttonIsPressed(Button.B)) {
-                music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
+            if (_in2_) {
+                _out2_
             } else {
-                music.stopAllSounds()
+                _out2_
             }
         })
         """, 
@@ -216,13 +215,13 @@ code_skeletons = {
         * CAVALLO SFIDA X 2, O  FACCINA O MUSICA, ALTRIMENTI SPENTO
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A)) {
-                basic.showIcon(IconNames.Happy)
-            } else if (input.buttonIsPressed(Button.B)) {
-                music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
+            if (_in1_) {
+                _out1_
+            } else if (_in2_) {
+                _out2_
             } else {
-                basic.clearScreen()
-                music.stopAllSounds()
+                _out1_
+                _out2_
             }
         })
         """, 
@@ -232,15 +231,15 @@ code_skeletons = {
         * PANCHINA x DUE., CON FACCINA E POI MUSICALE, ALTRIMENTI SPENTA
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A)) {
-                basic.showIcon(IconNames.Happy)
-                if (input.buttonIsPressed(Button.B)) {
-                    music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
+            if (_in1_) {
+                _out1_
+                if (_in2_) {
+                    _out2_
                 } else {
-                    music.stopAllSounds()
+                    _out2_
                 }
             } else {
-                basic.clearScreen()
+                _out1_
             }
         })
         """, 
@@ -250,11 +249,11 @@ code_skeletons = {
         * IL CANESTRO MOSTRA-PUNTEGGIO, ALTRIMENTI SPENTO
         */
         basic.forever(function () {
-            if (input.buttonIsPressed(Button.A)) {
+            if (_in1_) {
                 conto += 1
-                basic.showString("" + (conto))
+                _out1_
             } else {
-                basic.clearScreen()
+                _out1_
             }
         })
         """, 
