@@ -2,10 +2,11 @@ basic.clearScreen()
 let conto = 0
 let valore_caratteristico = 0
 
-
-
+default_IO = {
+    "lvl1-1con-1in-1out" : {},
+}
 code_skeletons = {
-    "1" : 
+    "lvl1-1con-1in-1out" : 
         """
         /**
         * CESTINO SORRIDENTE
