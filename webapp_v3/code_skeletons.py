@@ -1,10 +1,37 @@
-basic.clearScreen()
-let conto = 0
-let valore_caratteristico = 0
+
+example_list= [
+    "lvl1a1-1in_1out",
+    "lvl1a2-1in_1out_else",
+
+    "lvl1b1-1in_2out",
+    "lvl1b2-1in_2out_else",
+
+    "lvl1c1-2in_1out",
+    "lvl1c2-2in_1out_else",
+    
+    "lvl2a1-1in_1out-1in_1out",
+    "lvl2a2-1in_1out_else-1in_1out_else",
+
+    "lvl2b1-1in_1out_elif_1in_1out",
+    "lvl2b2-1in_1out_elif_1in_1out_else",
+
+    "lvl2c1-1in_1out-nest-1in_1out",
+    "lvl2c2-1in_1out-nest-1in_1out_else_else",
+
+    "lvl3a1-1in_1out_var",
+    "lvl3a2-1in_1out_var_else",
+
+    "lvl3b1-1var_1out",
+    "lvl3b2-1var_1out_else",
+
+]
+
 
 default_IO = {
-    "lvl1-1con-1in-1out" : {},
+    "lvl1-1con-1in-1out" : "toadd"
 }
+
+
 code_skeletons = {
     "lvl1-1con-1in-1out" : 
         """
@@ -17,7 +44,7 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl1-1con-1in-2out" : 
         """
         /**
         * ALBERO ANIMATO
@@ -29,7 +56,7 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl1-1con-2in-1out" : 
         """
         /**
         * OROLOGIO SEGNAFREDDO
@@ -40,7 +67,7 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl1-2con-2in-2out" : 
         """
                 /**
         * TAVOLO GIOCO X 2, FACCINA E MUSICA
@@ -54,7 +81,7 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl1-1con-2in-2out" : 
         """
                 /**
         * CAVALLO SFIDA X 2, O  FACCINA O MUSICA
@@ -67,7 +94,7 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl1-2con-2in-2out" : 
         """
         /**
         * PANCHINA x DUE., CON FACCINA E POI MUSICALE
@@ -81,7 +108,7 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl1-1con-1in-2out" : 
         """
                 /**
         * IL CANESTRO MOSTRA-PUNTEGGIO
@@ -93,12 +120,14 @@ code_skeletons = {
             }
         })
         """, 
-    "1" : 
+    "lvl1-1con-1in-2out" : 
         """
-        
         /**
         * IL DADO MUSICALE
         */
+        basic.clearScreen()
+        let conto = 0
+        let valore_caratteristico = 0
         basic.forever(function () {
             basic.pause(2000)
             valore_caratteristico += randint(1, 6)
@@ -219,6 +248,10 @@ code_skeletons = {
         /**
         * IL DADO MUSICALE, ALTRIMENTI SPENTO
         */
+        basic.clearScreen()
+        let conto = 0
+        let valore_caratteristico = 0
+
         basic.forever(function () {
             basic.pause(2000)
             valore_caratteristico += randint(1, 6)
