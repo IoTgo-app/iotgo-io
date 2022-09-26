@@ -22,13 +22,27 @@ example_list= [
     "lvl3a2-1in_1out_var_else",
 
     "lvl3b1-1var_1out",
-    "lvl3b2-1var_1out_else",
-
+    "lvl3b2-1var_1out_else"
 ]
 
 
 default_IO = {
-    "lvl1-1con-1in-1out" : "toadd"
+    "lvl1a1-1in_1out"                   :{"in1":"","out1":""},
+    "lvl1a2-1in_1out_else"              :{"in1":"","out1":""},
+    "lvl1b1-1in_2out"                   :{"in1":"","out1":"","out2":""},
+    "lvl1b2-1in_2out_else"              :{"in1":"","out1":"","out2":""},
+    "lvl1c1-2in_1out"                   :{"in1":"","in2":"","out1":""},
+    "lvl1c2-2in_1out_else"              :{"in1":"","in2":"","out1":""},
+    "lvl2a1-1in_1out-1in_1out"          :{"in1":"","out1":"","in2":"","out2":""},
+    "lvl2a2-1in_1out_else-1in_1out_else":{"in1":"","out1":"","in2":"","out2":""},
+    "lvl2b1-1in_1out_elif_1in_1out"     :{"in1":"","out1":"","in2":"","out2":""},
+    "lvl2b2-1in_1out_elif_1in_1out_else":{"in1":"","out1":"","in2":"","out2":""},
+    "lvl2c1-1in_1out-nest-1in_1out"     :{"in1":"","out1":"","in2":"","out2":""},
+    "lvl2c2-1in_1out-nest-1in_1out_else_else":{"in1":"","out1":"","in2":"","out2":""},
+    "lvl3a1-1in_1out_var"               :{"in1":"","out1":""},  
+    "lvl3a2-1in_1out_var_else"          :{"in1":"","out1":""},
+    "lvl3b1-1var_1out"                  :{"in1":"","out1":""},
+    "lvl3b2-1var_1out_else"             :{"in1":"","out1":""}
 }
 
 
