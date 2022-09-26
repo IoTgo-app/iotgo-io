@@ -173,8 +173,10 @@ code_skeletons = {
         basic.forever(function () {
             if (_in1_) {
                 _out1_
+                _out2_
             } else {
                 _out1_
+                _out2_
             }
         }) 
         """, 
@@ -276,8 +278,7 @@ code_skeletons = {
                 music.stopAllSounds()
             }
         })
-        """, 
-     
+        """
 }
 
 
