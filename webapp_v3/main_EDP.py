@@ -145,13 +145,14 @@ with col1:
         sidebar_mode="select_example"
         with sidebar_placeholder1:
             skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
-    else:
-        if sidebar_mode=="edit_example" 
+    #else:
+        #if sidebar_mode=="edit_example"
      
             
 with col2:
     if st.button('➡ Cambia input oppure output'):
         image_placeholder.write("not we select inputs and outputs.")
+        sidebar_mode="edit_example"
         with sidebar_placeholder1:
             input0is=st.sidebar.selectbox('Select an input',['x','y'])
             output0is=st.sidebar.selectbox('Select an output',['a','b'])   
