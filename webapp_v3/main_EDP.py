@@ -157,8 +157,8 @@ with back_btn_col:
     if sidebar_mode=="edit_example":
         if st.button('⬅ Cambia esempio'):
             sidebar_mode="select_example"
-            with sidebar_placeholder2:
-                st.sidebar.empty()
+            # with sidebar_placeholder2:
+            #     st.sidebar.empty()
     else:
         st.empty()
      
@@ -166,18 +166,17 @@ with fore_btn_col:
     if sidebar_mode=="select_example":
         if st.button('➡ Cambia input oppure output'):
             sidebar_mode="edit_example"
-            with sidebar_placeholder2:
-                input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
-                output0is=st.sidebar.selectbox('Select an output',['a','b'])
-                if prevInput != input0is or prevOutput != ouput0is:
-                    io_changed=True
-                    updateCode()
-                    prevInput=input0is
-                    prevOutput=output0is
+            # with sidebar_placeholder2:
+            #     input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
+            #     output0is=st.sidebar.selectbox('Select an output',['a','b'])
+            #     if prevInput != input0is or prevOutput != ouput0is:
+            #         io_changed=True
+            #         updateCode()
+            #         prevInput=input0is
+            #         prevOutput=output0is
     else:
         st.empty() 
-        st.write("this should be gone")
-        sidebar_mode="app_start"
+        # sidebar_mode="app_start"
 
 
 if sidebar_mode=="app_start":
