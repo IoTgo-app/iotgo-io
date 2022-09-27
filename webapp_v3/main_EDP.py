@@ -116,9 +116,9 @@ sidebar_placeholder1 = st.sidebar.empty()
 sidebar_placeholder2 = st.sidebar.empty()
 
 
-# if sidebar_mode=="select_example":
-#     with sidebar_placeholder1:
-#         skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
+if sidebar_mode=="select_example":
+    with sidebar_placeholder1:
+        skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
 
 ########################### app body ########################################à
 
@@ -147,18 +147,21 @@ with col1:
     # backbtn_placeholder=st.empty()
     if st.button('⬅ Cambia esempio', key='backbutton' ):
         sidebar_mode="select_example"
-        with sidebar_placeholder1:
-            skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
+        # with sidebar_placeholder1:
+        #     skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
+        with sidebar_placeholder2:
+            st.sidebar.empty()
     #else:
         #if sidebar_mode=="edit_example"
      
-            
 with col2:
     if st.button('➡ Cambia input oppure output'):
         sidebar_mode="edit_example"
         with sidebar_placeholder1:
+            st.sidebar.empty()
+        with sidebar_placeholder2:
             input0is=st.sidebar.selectbox('Select an input',['x','y'])
-            output0is=st.sidebar.selectbox('Select an output',['a','b'])   
+            output0is=st.sidebar.selectbox('Select an output',['a','b'])  
 
 if sidebar_mode=="app_start":
     code_placeholder.write("")
