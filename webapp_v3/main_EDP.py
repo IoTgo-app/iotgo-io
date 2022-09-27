@@ -163,8 +163,8 @@ with fore_btn_col:
         if st.button('➡ Cambia input oppure output'):
             sidebar_mode="edit_example"
             with sidebar_placeholder2:
-                input0is=st.sidebar.selectbox( 'Select an input',['x','y'], on_click=mark_io_changed())
-                output0is=st.sidebar.selectbox('Select an output',['a','b'],on_click=mark_io_changed())
+                input0is=st.sidebar.selectbox( 'Select an input',['x','y'], on_click=mark_io_changed)
+                output0is=st.sidebar.selectbox('Select an output',['a','b'],on_click=mark_io_changed)
     else:
         st.empty() 
         st.write("this should be gone")
