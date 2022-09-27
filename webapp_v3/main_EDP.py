@@ -111,7 +111,7 @@ def sidebar_editExample():
     return input0is,output0is
 
 
-sidebar_mode="select_example" #"edit_example" #"app_start"
+sidebar_mode="app_start" #"edit_example" #"app_start"
 sidebar_placeholder1 = st.sidebar.empty()
 sidebar_placeholder2 = st.sidebar.empty()
 
