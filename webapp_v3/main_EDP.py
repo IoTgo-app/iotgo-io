@@ -103,7 +103,7 @@ skeleton_list= ["",
                 "lvl1-1con-2in-1out"]
 io_changed=False
 
-def updateCode()
+def updateCode():
     st.write("codeupdated")
     io_changed=False
 
@@ -169,6 +169,7 @@ with fore_btn_col:
                 output0is=st.sidebar.selectbox('Select an output',['a','b'])
                 if prevInput != input0is or prevOutput != ouput0is:
                     io_changed=True
+                    updateCode()
                     prevInput=input0is
                     prevOutput=output0is
     else:
