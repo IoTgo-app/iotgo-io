@@ -158,7 +158,7 @@ with col2:
     if st.button('➡ Cambia input oppure output'):
         sidebar_mode="edit_example"
         with sidebar_placeholder1:
-            st.sidebar.empty()
+            st.empty()
         with sidebar_placeholder2:
             input0is=st.sidebar.selectbox('Select an input',['x','y'])
             output0is=st.sidebar.selectbox('Select an output',['a','b'])  
