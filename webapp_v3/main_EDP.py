@@ -111,7 +111,7 @@ def sidebar_editExample():
     return input0is,output0is
 
 
-sidebar_mode="select_example" #"edit_example"
+sidebar_mode="select_example" #"edit_example" #"app_start"
 sidebar_placeholder1 = st.sidebar.empty()
 sidebar_placeholder2 = st.sidebar.empty()
 
@@ -133,7 +133,11 @@ missionCardWidth=160
 vertiPaddingWidth=35
 vertiPaddingWidthhalf=17
 
-image_placeholder = st.empty()
+
+
+code_col, padding1 = st.columns([3,1])
+with code_col:
+    code_placeholder = st.empty()
 
 
 col1, col2 = st.columns(2)
@@ -151,15 +155,19 @@ with col1:
             
 with col2:
     if st.button('➡ Cambia input oppure output'):
-        image_placeholder.write("not we select inputs and outputs.")
         sidebar_mode="edit_example"
         with sidebar_placeholder1:
             input0is=st.sidebar.selectbox('Select an input',['x','y'])
             output0is=st.sidebar.selectbox('Select an output',['a','b'])   
 
+if sidebar_mode=="app_start":
+    code_placeholder.write("")
+elif sidebar_mode=="select_example":
+    code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
+elif sidebar_mode=="edit_example":
+    code_placeholder.write("not we select inputs and outputs.")
 
-image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
-
+st.sidebar.write(sidebar_mode)
 
 
 
