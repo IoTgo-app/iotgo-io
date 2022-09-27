@@ -123,6 +123,8 @@ sidebar_placeholder2 = st.sidebar.empty()
 
 prevSkeleton=""
 skeleton=""
+prevInput=""
+prevOutput=""
 if sidebar_mode=="select_example" or sidebar_mode=="app_start":
     with sidebar_placeholder1:
         skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
