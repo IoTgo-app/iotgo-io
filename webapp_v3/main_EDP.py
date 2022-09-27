@@ -145,13 +145,15 @@ col1, col2 = st.columns(2)
 
 with col1:
     # backbtn_placeholder=st.empty()
-    if st.button('⬅ Cambia esempio', key='backbutton' ):
-        sidebar_mode="select_example"
-        # with sidebar_placeholder1:
-        #     skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
-        with sidebar_placeholder2:
-            st.sidebar.empty()
-    #else:
+    if sidebar_mode=="edit_example":
+        if st.button('⬅ Cambia esempio', key='backbutton' ):
+            sidebar_mode="select_example"
+            # with sidebar_placeholder1:
+            #     skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
+            with sidebar_placeholder2:
+                st.sidebar.empty()
+    else:
+        st.empty()
         #if sidebar_mode=="edit_example"
      
 with col2:
