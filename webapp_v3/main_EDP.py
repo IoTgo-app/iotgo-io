@@ -101,7 +101,10 @@ skeleton_list= ["",
                 "lvl1-1con-1in-1out", 
                 "lvl1-1con-1in-2out", 
                 "lvl1-1con-2in-1out"]
-
+io_changed=False
+def mark_io_changed():
+    io_changed=True:
+    st.write("io changed")
 def sidebar_selectExample():
     skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
     return skeleton
@@ -160,8 +163,8 @@ with fore_btn_col:
         if st.button('➡ Cambia input oppure output'):
             sidebar_mode="edit_example"
             with sidebar_placeholder2:
-                input0is=st.sidebar.selectbox('Select an input',['x','y'])
-                output0is=st.sidebar.selectbox('Select an output',['a','b'])
+                input0is=st.sidebar.selectbox( 'Select an input',['x','y'], on_click=mark_io_changed())
+                output0is=st.sidebar.selectbox('Select an output',['a','b'],on_click=mark_io_changed())
     else:
         st.empty() 
         st.write("this should be gone")
