@@ -97,7 +97,8 @@ def resetCards():
 # 		input2="no Input"
 # 		output2="no Output"
  
-skeleton_list= ["lvl1-1con-1in-1out", 
+skeleton_list= ["",
+                "lvl1-1con-1in-1out", 
                 "lvl1-1con-1in-2out", 
                 "lvl1-1con-2in-1out"]
 
@@ -115,10 +116,14 @@ sidebar_mode="app_start" #"edit_example" #"app_start"
 sidebar_placeholder1 = st.sidebar.empty()
 sidebar_placeholder2 = st.sidebar.empty()
 
-
+prevSkeleton=""
+skeleton=""
 if sidebar_mode=="select_example" or sidebar_mode=="app_start":
     with sidebar_placeholder1:
         skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
+            if not skeleton==prevSkeleton:
+                prevSkeleton=skeleton
+                sidebar_mode="select_example"
 
 ########################### app body ########################################à
 
