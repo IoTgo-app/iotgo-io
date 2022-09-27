@@ -133,6 +133,8 @@ missionCardWidth=160
 vertiPaddingWidth=35
 vertiPaddingWidthhalf=17
 
+image_placeholder = st.empty()
+
 
 col1, col2 = st.columns(2)
 
@@ -156,7 +158,6 @@ with col2:
             output0is=st.sidebar.selectbox('Select an output',['a','b'])   
 
 
-image_placeholder = st.empty()
 image_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
 
 
