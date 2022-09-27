@@ -26,7 +26,7 @@ ITdescription2var= {#keys should contain the IT description needed to be shown i
     "3b2_toAddITdescription"  : "lvl3b2-1var_1out_else"
 }
 
-example_list= [
+ITexample_list= [
     "lvl1a1-1in_1out",
     "lvl1a2-1in_1out_else",
 
