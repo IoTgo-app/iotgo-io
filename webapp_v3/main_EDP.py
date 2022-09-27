@@ -103,7 +103,7 @@ skeleton_list= ["",
                 "lvl1-1con-2in-1out"]
 io_changed=False
 def mark_io_changed():
-    io_changed=True:
+    io_changed=True
     st.write("io changed")
 def sidebar_selectExample():
     skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
