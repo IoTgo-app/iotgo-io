@@ -121,9 +121,9 @@ skeleton=""
 if sidebar_mode=="select_example" or sidebar_mode=="app_start":
     with sidebar_placeholder1:
         skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
-            if not skeleton==prevSkeleton:
-                prevSkeleton=skeleton
-                sidebar_mode="select_example"
+        if not skeleton==prevSkeleton:
+            prevSkeleton=skeleton
+            sidebar_mode="select_example"
 
 ########################### app body ########################################à
 
