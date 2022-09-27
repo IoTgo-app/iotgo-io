@@ -210,7 +210,7 @@ elif sidebar_mode=="edit_example":
     st.write("not we select inputs and outputs.")
 
 
-st.sidebar.write(sidebar_mode)
+st.sidebar.write("programState="+sidebar_mode)
 
 
 
