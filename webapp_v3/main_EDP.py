@@ -152,13 +152,16 @@ with back_btn_col:
         #if sidebar_mode=="edit_example"
      
 with fore_btn_col:
-    if st.button('➡ Cambia input oppure output'):
-        sidebar_mode="edit_example"
-        with sidebar_placeholder1:
-            st.empty()
-        with sidebar_placeholder2:
-            input0is=st.sidebar.selectbox('Select an input',['x','y'])
-            output0is=st.sidebar.selectbox('Select an output',['a','b'])  
+    if sidebar_mode=="select_example":
+        if st.button('➡ Cambia input oppure output'):
+            sidebar_mode="edit_example"
+            with sidebar_placeholder1:
+                st.empty()
+            with sidebar_placeholder2:
+                input0is=st.sidebar.selectbox('Select an input',['x','y'])
+                output0is=st.sidebar.selectbox('Select an output',['a','b'])
+    else:
+        st.empty() 
 
 if sidebar_mode=="app_start":
     code_placeholder.write("")
