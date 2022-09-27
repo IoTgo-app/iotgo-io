@@ -165,6 +165,8 @@ with fore_btn_col:
     else:
         st.empty() 
         st.write("this should be gone")
+        sidebar_mode=="app_start":
+
 
 if sidebar_mode=="app_start":
     code_placeholder.write("")
