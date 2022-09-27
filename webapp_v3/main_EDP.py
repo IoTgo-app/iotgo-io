@@ -172,7 +172,7 @@ elif sidebar_mode=="select_example":
     sidebar_placeholder1.empty()
 elif sidebar_mode=="edit_example":
     code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
-    code_placeholder.write("not we select inputs and outputs.")
+    st.write("not we select inputs and outputs.")
 
 
 st.sidebar.write(sidebar_mode)
