@@ -148,20 +148,19 @@ with code_col:
 back_btn_col, fore_btn_col = st.columns(2)
 with back_btn_col:
     if sidebar_mode=="edit_example":
-        if st.button('⬅ Cambia esempio', key='backbutton' ):
+        if st.button('⬅ Cambia esempio'):
             sidebar_mode="select_example"
             with sidebar_placeholder2:
                 st.sidebar.empty()
     else:
         st.empty()
-        #if sidebar_mode=="edit_example"
      
 with fore_btn_col:
     if sidebar_mode=="select_example":
         if st.button('➡ Cambia input oppure output'):
             sidebar_mode="edit_example"
             with sidebar_placeholder1:
-                st.empty()
+                st.sidebar.empty()
             with sidebar_placeholder2:
                 input0is=st.sidebar.selectbox('Select an input',['x','y'])
                 output0is=st.sidebar.selectbox('Select an output',['a','b'])
