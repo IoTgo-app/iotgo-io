@@ -159,8 +159,6 @@ with fore_btn_col:
     if sidebar_mode=="select_example":
         if st.button('➡ Cambia input oppure output'):
             sidebar_mode="edit_example"
-            with sidebar_placeholder1:
-                st.sidebar.empty()
             with sidebar_placeholder2:
                 input0is=st.sidebar.selectbox('Select an input',['x','y'])
                 output0is=st.sidebar.selectbox('Select an output',['a','b'])
@@ -171,8 +169,12 @@ if sidebar_mode=="app_start":
     code_placeholder.write("")
 elif sidebar_mode=="select_example":
     code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
+    with sidebar_placeholder1:
+        st.sidebar.empty()
 elif sidebar_mode=="edit_example":
+    code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
     code_placeholder.write("not we select inputs and outputs.")
+
 
 st.sidebar.write(sidebar_mode)
 
