@@ -116,9 +116,9 @@ sidebar_placeholder1 = st.sidebar.empty()
 sidebar_placeholder2 = st.sidebar.empty()
 
 
-if sidebar_mode=="select_example":
-    with sidebar_placeholder1:
-        skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
+# if sidebar_mode=="select_example":
+#     with sidebar_placeholder1:
+#         skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
 
 ########################### app body ########################################à
 
