@@ -164,6 +164,7 @@ with fore_btn_col:
                 output0is=st.sidebar.selectbox('Select an output',['a','b'])
     else:
         st.empty() 
+        st.write("this should be gone")
 
 if sidebar_mode=="app_start":
     code_placeholder.write("")
