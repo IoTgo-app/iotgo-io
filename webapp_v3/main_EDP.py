@@ -167,7 +167,7 @@ with back_btn_col:
 
 fore_btn_placeholder=st.empty()
 with fore_btn_col:
-    forebtnClicked=fore_btn_placeholder.button('➡ Cambia input oppure output'):
+    forebtnClicked=fore_btn_placeholder.button('➡ Cambia input oppure output')
     if sidebar_mode=="select_example":
         if forebtnClicked:
             sidebar_mode="edit_example"
