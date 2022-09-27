@@ -181,7 +181,7 @@ with fore_btn_col:
                     prevOutput=output0is
     else:
         fore_btn_placeholder.empty() #NOT WORKING#NOT WORKING, use PLACEHOLDERS?
-
+        st.write("should be no edit button")
 
 # with fore_btn_col:
 #     if sidebar_mode=="select_example":
