@@ -161,12 +161,15 @@ with back_btn_col:
             sidebar_mode="select_example"
             with sidebar_placeholder2:
                 st.sidebar.empty()#NOT WORKING
+            
     else:
-        st.empty()#NOT WORKING
-     
+        st.empty()
+
+fore_btn_placeholder=st.empty()
 with fore_btn_col:
+    forebtnClicked=fore_btn_placeholder.button('➡ Cambia input oppure output'):
     if sidebar_mode=="select_example":
-        if st.button('➡ Cambia input oppure output'):
+        if forebtnClicked:
             sidebar_mode="edit_example"
             with sidebar_placeholder2:
                 input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
@@ -177,7 +180,23 @@ with fore_btn_col:
                     prevInput=input0is
                     prevOutput=output0is
     else:
-        st.empty() #NOT WORKING
+        fore_btn_placeholder.empty() #NOT WORKING#NOT WORKING, use PLACEHOLDERS?
+
+
+# with fore_btn_col:
+#     if sidebar_mode=="select_example":
+#         if st.button('➡ Cambia input oppure output'):
+#             sidebar_mode="edit_example"
+#             with sidebar_placeholder2:
+#                 input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
+#                 output0is=st.sidebar.selectbox('Select an output',['a','b'])
+#                 if prevInput != input0is or prevOutput != ouput0is:
+#                     io_changed=True
+#                     updateCode()
+#                     prevInput=input0is
+#                     prevOutput=output0is
+#     else:
+#         st.empty() #NOT WORKING#NOT WORKING, use PLACEHOLDERS?
         # sidebar_mode="app_start"
 
 
