@@ -1,6 +1,6 @@
 
 
-description2var= {#keys should contain the IT description needed to be shown in the app for each example.
+ITdescription2var= {#keys should contain the IT description needed to be shown in the app for each example.
     "1a1_toAddITdescription"  : "lvl1a1-1in_1out",
     "1a2_toAddITdescription"  : "lvl1a2-1in_1out_else",
     
