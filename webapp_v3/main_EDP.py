@@ -192,7 +192,8 @@ elif sidebar_mode=="editing_example":
     st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.1")
+
 
 
 
