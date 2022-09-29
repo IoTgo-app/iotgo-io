@@ -168,8 +168,10 @@ if sidebar_mode=="example_selected":
             input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
             output0is=st.sidebar.selectbox('Select an output',['a','b'])
             if prevInput != input0is or prevOutput != ouput0is:
-                io_changed=True
-                updateCode()
+                # io_changed=True
+                # updateCode()
+                st.write("code updated")
+                # io_changed=False
                 prevInput=input0is
                 prevOutput=output0is
 
