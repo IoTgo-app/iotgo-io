@@ -181,11 +181,11 @@ if sidebar_mode=="example_selected":
         with sidebar_placeholder2:
             # input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
             st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
-            st.write(sidebar_mode)
+        st.write(sidebar_mode)
         with sidebar_placeholder3:
             # output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
             st.session_state['output0is'] =st.selectbox('Select an output',['a','b'])#,key='selOutput')
-            st.write(sidebar_mode)
+        st.write(sidebar_mode)
         if prevInput != st.session_state['input0is'] and prevOutput != st.session_state['output0is']:
                 # io_changed=True
                 # updateCode()
@@ -217,7 +217,7 @@ if sidebar_mode=="editing_example":
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.8 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.9 ")
 st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
