@@ -149,9 +149,9 @@ with code_col:
     code_placeholder = st.empty()
 
 if 'input0is' not in st.session_state:
-    st.session_state['input0is'] = ""
+    st.session_state['input0is'] = "x"
 if 'output0is' not in st.session_state:
-    st.session_state['output0is'] = ""
+    st.session_state['output0is'] = "a"
 if 'skeleton' not in st.session_state:
     st.session_state['skeleton'] = ""
 
@@ -211,7 +211,7 @@ elif sidebar_mode=="editing_example":
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.4 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.5 ")
 st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
