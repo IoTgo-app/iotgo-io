@@ -154,17 +154,17 @@ if sidebar_mode=="app_start":
         skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
         if not skeleton==prevSkeleton:
             prevSkeleton=skeleton
-            sidebar_mode="select_example"
+            sidebar_mode="example_selected"
 
 edit_placeholder = st.empty()
 if sidebar_mode=="edit_example":
     isclick = edit_placeholder.button('Edit example')
     if isclick:
-        sidebar_mode="select_example"
+        sidebar_mode="example_selected"
         edit_placeholder.empty()
 
 change_placeholder = st.empty()
-if sidebar_mode=="select_example":
+if sidebar_mode=="example_selected":
     isclick = change_placeholder.button('Change example')
     if isclick:
         sidebar_mode="app_start"
@@ -174,7 +174,7 @@ if sidebar_mode=="select_example":
 
 if sidebar_mode=="app_start":
     code_placeholder.write("")
-elif sidebar_mode=="select_example":
+elif sidebar_mode=="example_selected":
     code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
 elif sidebar_mode=="edit_example":
     code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
