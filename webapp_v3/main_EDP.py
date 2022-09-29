@@ -154,6 +154,8 @@ if 'output0is' not in st.session_state:
     st.session_state['output0is'] = ""
 if 'skeleton' not in st.session_state:
     st.session_state['skeleton'] = ""
+if 'sidebar_mode' not in st.session_state:
+    st.session_state['sidebar_mode'] = "app_start"
 
 
 if sidebar_mode=="app_start":
@@ -210,7 +212,7 @@ elif sidebar_mode=="editing_example":
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.4 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.5 ")
 st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
