@@ -165,27 +165,11 @@ with back_btn_col:
     else:
         st.empty()
 
-fore_btn_placeholder=st.empty()
-with fore_btn_col:
-    forebtnClicked=fore_btn_placeholder.button('➡ Cambia input oppure output')
-    if sidebar_mode=="select_example":
-        if forebtnClicked:
-            sidebar_mode="edit_example"
-            with sidebar_placeholder2:
-                input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
-                output0is=st.sidebar.selectbox('Select an output',['a','b'])
-                if prevInput != input0is or prevOutput != ouput0is:
-                    io_changed=True
-                    updateCode()
-                    prevInput=input0is
-                    prevOutput=output0is
-    else:
-        fore_btn_placeholder.empty() #NOT WORKING#NOT WORKING, use PLACEHOLDERS?
-        st.write("should be no edit button")
-
+# fore_btn_placeholder=st.empty()
 # with fore_btn_col:
+#     forebtnClicked=fore_btn_placeholder.button('➡ Cambia input oppure output')
 #     if sidebar_mode=="select_example":
-#         if st.button('➡ Cambia input oppure output'):
+#         if forebtnClicked:
 #             sidebar_mode="edit_example"
 #             with sidebar_placeholder2:
 #                 input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
@@ -196,8 +180,24 @@ with fore_btn_col:
 #                     prevInput=input0is
 #                     prevOutput=output0is
 #     else:
-#         st.empty() #NOT WORKING#NOT WORKING, use PLACEHOLDERS?
-        # sidebar_mode="app_start"
+#         fore_btn_placeholder.empty() #NOT WORKING#NOT WORKING, use PLACEHOLDERS?
+#         st.write("should be no edit button")
+
+with fore_btn_col:
+    if sidebar_mode=="select_example":
+        if st.button('➡ Cambia input oppure output'):
+            sidebar_mode="edit_example"
+            with sidebar_placeholder2:
+                input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
+                output0is=st.sidebar.selectbox('Select an output',['a','b'])
+                if prevInput != input0is or prevOutput != ouput0is:
+                    io_changed=True
+                    updateCode()
+                    prevInput=input0is
+                    prevOutput=output0is
+    else:
+        st.empty() #NOT WORKING#NOT WORKING, use PLACEHOLDERS?
+        sidebar_mode="app_start"
 
 
 if sidebar_mode=="app_start":
