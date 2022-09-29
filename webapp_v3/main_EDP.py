@@ -190,12 +190,14 @@ if sidebar_mode=="app_start":
     code_placeholder.write("")
 elif sidebar_mode=="example_selected":
     code_placeholder.image(baseURL_codeSkeletons+str(skeleton)+'.png')
+    st.write(baseURL_codeSkeletons+str(skeleton)+'.png')
 elif sidebar_mode=="editing_example":
     code_placeholder.image(baseURL_codeSkeletons+str(skeleton)+'.png')
+    st.write(baseURL_codeSkeletons+str(skeleton)+'.png')
     st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.5")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.6")
 
 # with st.form("my_form"):
 #    st.write("Inside the form")
