@@ -189,6 +189,8 @@ if sidebar_mode=="example_selected":
                 # io_changed=False
             prevInput=st.session_state['input0is']
             prevOutput=st.session_state['output0is']
+        else:
+            st.sidebar.write("waiting for change")
 
 change_placeholder = st.sidebar.empty()
 if sidebar_mode=="editing_example":
@@ -203,12 +205,12 @@ elif sidebar_mode=="example_selected":
     code_placeholder.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     # st.write(baseURL_codeSkeletons+str(skeleton)+'.png')
 elif sidebar_mode=="editing_example":
-    # code_placeholder.image(baseURL_codeSkeletons+str(skeleton)+'.png')
-    st.write(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
+    code_placeholder.image(baseURL_codeSkeletons+str(skeleton)+'.png')
+    # st.write(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.1 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.2 ")
 
 # with st.form("my_form"):
 #    st.write("Inside the form")
