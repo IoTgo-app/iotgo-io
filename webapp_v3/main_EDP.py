@@ -154,29 +154,70 @@ with code_col:
 # back_btn_placeholder=st.empty()
 # fore_btn_placeholder=st.empty()
 
-back_btn_col, fore_btn_col = st.columns(2)
-with back_btn_col:
-    if sidebar_mode=="edit_example":
-        if st.button('⬅ Cambia esempio'):
-            sidebar_mode="select_example"
-            with sidebar_placeholder2:
-                st.sidebar.empty()#NOT WORKING
-            
-    else:
-        st.empty()
 
-
-placeholder = st.empty()
-if sidebar_mode=="app_start":
-    isclick = placeholder.button('delete this button')
+edit_placeholder = st.empty()
+if sidebar_mode=="edit_example":
+    isclick = edit_placeholder.button('Edit example')
     if isclick:
-        placeholder.empty()
+        sidebar_mode="select_example":
+        edit_placeholder.empty()
 
-# fore_btn_placeholder=st.empty()
+change_placeholder = st.empty()
+if sidebar_mode=="select_example":
+    isclick = change_placeholder.button('Change example')
+    if isclick:
+        sidebar_mode="edit_example"
+        change_placeholder.empty()
+
+
+
+if sidebar_mode=="app_start":
+    code_placeholder.write("")
+elif sidebar_mode=="select_example":
+    code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
+elif sidebar_mode=="edit_example":
+    code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
+    st.write("now we select inputs and outputs.")
+
+st.markdown("---")
+st.sidebar.write("programState="+sidebar_mode)
+
+
+
+# back_btn_col, fore_btn_col = st.columns(2)
+# with back_btn_col:
+#     if sidebar_mode=="edit_example":
+#         if st.button('⬅ Cambia esempio'):
+#             sidebar_mode="select_example"
+#             with sidebar_placeholder2:
+#                 st.sidebar.empty()#NOT WORKING
+            
+#     else:
+#         st.empty()
+
+
+
+# # fore_btn_placeholder=st.empty()
+# # with fore_btn_col:
+# #     forebtnClicked=fore_btn_placeholder.button('➡ Cambia input oppure output')
+# #     if sidebar_mode=="select_example":
+# #         if forebtnClicked:
+# #             sidebar_mode="edit_example"
+# #             with sidebar_placeholder2:
+# #                 input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
+# #                 output0is=st.sidebar.selectbox('Select an output',['a','b'])
+# #                 if prevInput != input0is or prevOutput != ouput0is:
+# #                     io_changed=True
+# #                     updateCode()
+# #                     prevInput=input0is
+# #                     prevOutput=output0is
+# #     else:
+# #         fore_btn_placeholder.empty() #NOT WORKING#NOT WORKING, use PLACEHOLDERS?
+# #         st.write("should be no edit button")
+
 # with fore_btn_col:
-#     forebtnClicked=fore_btn_placeholder.button('➡ Cambia input oppure output')
 #     if sidebar_mode=="select_example":
-#         if forebtnClicked:
+#         if st.button('➡ Cambia input oppure output'):
 #             sidebar_mode="edit_example"
 #             with sidebar_placeholder2:
 #                 input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
@@ -187,37 +228,10 @@ if sidebar_mode=="app_start":
 #                     prevInput=input0is
 #                     prevOutput=output0is
 #     else:
-#         fore_btn_placeholder.empty() #NOT WORKING#NOT WORKING, use PLACEHOLDERS?
-#         st.write("should be no edit button")
-
-with fore_btn_col:
-    if sidebar_mode=="select_example":
-        if st.button('➡ Cambia input oppure output'):
-            sidebar_mode="edit_example"
-            with sidebar_placeholder2:
-                input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
-                output0is=st.sidebar.selectbox('Select an output',['a','b'])
-                if prevInput != input0is or prevOutput != ouput0is:
-                    io_changed=True
-                    updateCode()
-                    prevInput=input0is
-                    prevOutput=output0is
-    else:
-        st.empty() #NOT WORKING#NOT WORKING, use PLACEHOLDERS?
-        sidebar_mode="app_start"
+#         st.empty() #NOT WORKING#NOT WORKING, use PLACEHOLDERS?
+#         sidebar_mode="app_start"
 
 
-if sidebar_mode=="app_start":
-    code_placeholder.write("")
-elif sidebar_mode=="select_example":
-    code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
-    sidebar_placeholder1.empty()
-elif sidebar_mode=="edit_example":
-    code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
-    st.write("now we select inputs and outputs.")
-
-st.markdown("---")
-st.sidebar.write("programState="+sidebar_mode)
 
 
 
