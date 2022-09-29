@@ -179,15 +179,15 @@ if sidebar_mode=="example_selected":
         with sidebar_placeholder2:
             # input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
             # st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
-            input0is =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
-            if not input0is==st.session_state['prevInput']:
+            st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
+            if st.session_state['prevInput']==st.session_state['input0is']:
                 io_changed=True
                 sidebar_mode="editing_example"
-                st.session_state['output0is']="x changed"
-                st.session_state['prevInput']=input0is
+                st.session_state['output0is']="caught"
+                st.session_state['prevInput']=st.session_state['input0is']
             else:
                 st.write("it never works")
-                st.session_state['output0is']="x not changed yet"
+                st.session_state['output0is']="not working"
         # with sidebar_placeholder3:
         #     # output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
         #     st.session_state['output0is'] =st.selectbox('Select an output',['a','b'])#,key='selOutput')
@@ -210,8 +210,7 @@ if sidebar_mode=="example_selected":
 #         change_placeholder.empty()
 
 
-st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.5 ")
+
 
 
 
@@ -225,8 +224,8 @@ st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2
 #     #st.write(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     # st.write("now we select inputs and outputs.")
 
-
-
+st.sidebar.markdown("---")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 1.9 ")
 st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
