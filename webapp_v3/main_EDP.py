@@ -164,15 +164,13 @@ if sidebar_mode=="example_selected":
         sidebar_mode="editing_example"
         edit_placeholder.empty()
 
-change_placeholder = st.empty()
+change_placeholder = st.sidebar.empty()
 if sidebar_mode=="editing_example":
     isclick = change_placeholder.button('Change example')
     if isclick:
         sidebar_mode="app_start"
         change_placeholder.empty()
         sidebar_placeholder.empty()
-
-
 
 if sidebar_mode=="app_start":
     code_placeholder.write("")
@@ -183,7 +181,7 @@ elif sidebar_mode=="editing_example":
     st.write("now we select inputs and outputs.")
 
 st.markdown("---")
-st.sidebar.write("programState="+sidebar_mode+" - version 5")
+st.sidebar.write("programState="+sidebar_mode+" - version 6")
 
 
 
