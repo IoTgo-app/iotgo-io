@@ -152,7 +152,7 @@ with code_col:
 
 if sidebar_mode=="app_start":
     with sidebar_placeholder:
-        skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
+        skeleton=st.sidebar.selectbox('Select an example',skeleton_list, key='1')
         if not skeleton==prevSkeleton:
             prevSkeleton=skeleton
             sidebar_mode="example_selected"
@@ -165,7 +165,7 @@ if sidebar_mode=="example_selected":
         sidebar_mode="editing_example"
         edit_placeholder.empty()
         with sidebar_placeholder:
-            skeleton=st.sidebar.selectbox('Select an example',skeleton_list, disabled=True)
+            skeleton=st.sidebar.selectbox('Select an example',skeleton_list, disabled=True, key='2')
         # sidebar_placeholder.  'Button', disabled=True
         with sidebar_placeholder2:
             input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
