@@ -147,12 +147,11 @@ code_col, padding1 = st.columns([3,1])
 with code_col:
     code_placeholder = st.empty()
 
-# back_btn_placeholder=st.empty()
-# fore_btn_placeholder=st.empty()
+
 
 if sidebar_mode=="app_start":
     with sidebar_placeholder:
-        skeleton=st.selectbox('Select an example',skeleton_list, key='1')
+        skeleton=st.selectbox('Select an example',skeleton_list, key='selector')
         if not skeleton==prevSkeleton:
             prevSkeleton=skeleton
             sidebar_mode="example_selected"
@@ -168,8 +167,8 @@ if sidebar_mode=="example_selected":
             st.empty()#selectbox('Select an example',skeleton_list, disabled=True, key='2')
         # sidebar_placeholder.  'Button', disabled=True
         with sidebar_placeholder2:
-            input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
-            output0is=st.sidebar.selectbox('Select an output',['a','b'])
+            input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
+            output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
             if prevInput != input0is or prevOutput != output0is:
                 # io_changed=True
                 # updateCode()
