@@ -158,21 +158,21 @@ if 'sidebar_mode' not in st.session_state:
     st.session_state['sidebar_mode'] = "app_start"
 
 
-if sidebar_mode=="app_start":
+if st.session_state['sidebar_mode']=="app_start":
     with sidebar_placeholder:
         st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)#, key='selector')
         # skeleton=st.selectbox('Select an example',skeleton_list, key='selector')
         
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
-            sidebar_mode="example_selected"
+            st.session_state['sidebar_mode']="example_selected"
             # sidebar_placeholder.empty()
 
 edit_placeholder = st.empty()
 if sidebar_mode=="example_selected":
     isclick = edit_placeholder.button('Edit example')
     if isclick:
-        sidebar_mode="editing_example"
+        st.session_state['sidebar_mode']="editing_example"
         edit_placeholder.empty()
         with sidebar_placeholder:
             st.empty()#selectbox('Select an example',skeleton_list, disabled=True, key='2')
@@ -195,24 +195,24 @@ if sidebar_mode=="example_selected":
             st.sidebar.write("waiting for change")
 
 change_placeholder = st.sidebar.empty()
-if sidebar_mode=="editing_example":
+if st.session_state['sidebar_mode']=="editing_example":
     isclick = change_placeholder.button('Select another example')
     if isclick:
         sidebar_mode="app_start"
         change_placeholder.empty()
 
-if sidebar_mode=="app_start":
+if st.session_state['sidebar_mode']=="app_start":
     code_placeholder.write("")
-elif sidebar_mode=="example_selected":
+elif st.session_state['sidebar_mode']=="example_selected":
     code_placeholder.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     # st.write(baseURL_codeSkeletons+str(skeleton)+'.png')
-elif sidebar_mode=="editing_example":
+elif st.session_state['sidebar_mode']=="editing_example":
     code_placeholder.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     #st.write(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.5 ")
+st.sidebar.write("Stats for mehdi: programState = "+st.session_state['sidebar_mode']+" \n- version 9.6 ")
 st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
