@@ -157,14 +157,14 @@ if sidebar_mode=="app_start":
             sidebar_mode="example_selected"
 
 edit_placeholder = st.empty()
-if sidebar_mode=="edit_example":
+if sidebar_mode=="example_selected":
     isclick = edit_placeholder.button('Edit example')
     if isclick:
-        sidebar_mode="example_selected"
+        sidebar_mode="editing_example"
         edit_placeholder.empty()
 
 change_placeholder = st.empty()
-if sidebar_mode=="example_selected":
+if sidebar_mode=="editing_example":
     isclick = change_placeholder.button('Change example')
     if isclick:
         sidebar_mode="app_start"
@@ -176,7 +176,7 @@ if sidebar_mode=="app_start":
     code_placeholder.write("")
 elif sidebar_mode=="example_selected":
     code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
-elif sidebar_mode=="edit_example":
+elif sidebar_mode=="editing_example":
     code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
     st.write("now we select inputs and outputs.")
 
