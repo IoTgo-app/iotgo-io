@@ -180,6 +180,7 @@ if sidebar_mode=="example_selected":
             st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
             if not prevInput==st.session_state['input0is']:
                 io_changed=True
+                st.session_state['input0is']="caught"
                 prevInput=st.session_state['input0is']
         # with sidebar_placeholder3:
         #     # output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
@@ -218,7 +219,7 @@ if sidebar_mode=="example_selected":
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 1.3 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 1.4 ")
 st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
