@@ -121,8 +121,8 @@ def sidebar_editExample():
 
 prevSkeleton=""
 skeleton=""
-prevInput=""
-prevOutput=""
+prevInput="x" # get default value for this skeleton
+prevOutput="a" # get default value for this skeleton
 
 
 ########################### app body ########################################à
