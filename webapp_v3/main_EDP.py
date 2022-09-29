@@ -159,7 +159,7 @@ edit_placeholder = st.empty()
 if sidebar_mode=="edit_example":
     isclick = edit_placeholder.button('Edit example')
     if isclick:
-        sidebar_mode="select_example":
+        sidebar_mode="select_example"
         edit_placeholder.empty()
 
 change_placeholder = st.empty()
