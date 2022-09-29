@@ -180,8 +180,8 @@ elif sidebar_mode=="editing_example":
     code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
     st.write("now we select inputs and outputs.")
 
-st.markdown("---")
-st.sidebar.write("programState="+sidebar_mode+" - version 6")
+st.sidebar.markdown("---")
+st.sidebar.write("programState="+sidebar_mode+" \n- version 6")
 
 
 
