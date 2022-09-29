@@ -142,6 +142,7 @@ vertiPaddingWidthhalf=17
 sidebar_mode="app_start" #"edit_example" #"app_start"
 sidebar_placeholder = st.sidebar.empty()
 sidebar_placeholder2 = st.sidebar.empty()
+sidebar_placeholder3 = st.sidebar.empty()
 
 code_col, padding1 = st.columns([3,1])
 with code_col:
@@ -168,15 +169,16 @@ if sidebar_mode=="example_selected":
         # sidebar_placeholder.  'Button', disabled=True
         with sidebar_placeholder2:
             input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
+        with sidebar_placeholder3:
             output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
-            if prevInput != input0is or prevOutput != output0is:
+        if prevInput != input0is or prevOutput != output0is:
                 # io_changed=True
                 # updateCode()
-                st.write("code updated")
-                st.balloons()
+            st.write("code updated")
+            st.balloons()
                 # io_changed=False
-                prevInput=input0is
-                prevOutput=output0is
+            prevInput=input0is
+            prevOutput=output0is
 
 change_placeholder = st.sidebar.empty()
 if sidebar_mode=="editing_example":
@@ -196,7 +198,7 @@ elif sidebar_mode=="editing_example":
     st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.7")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.8")
 
 # with st.form("my_form"):
 #    st.write("Inside the form")
