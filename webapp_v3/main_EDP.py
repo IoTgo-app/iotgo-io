@@ -169,7 +169,7 @@ if st.session_state['sidebar_mode']=="app_start":
             # sidebar_placeholder.empty()
 
 edit_placeholder = st.empty()
-if sidebar_mode=="example_selected":
+if st.session_state['sidebar_mode']=="example_selected":
     isclick = edit_placeholder.button('Edit example')
     if isclick:
         st.session_state['sidebar_mode']="editing_example"
@@ -198,7 +198,7 @@ change_placeholder = st.sidebar.empty()
 if st.session_state['sidebar_mode']=="editing_example":
     isclick = change_placeholder.button('Select another example')
     if isclick:
-        sidebar_mode="app_start"
+        st.session_state['sidebar_mode']="app_start"
         change_placeholder.empty()
 
 if st.session_state['sidebar_mode']=="app_start":
@@ -212,7 +212,7 @@ elif st.session_state['sidebar_mode']=="editing_example":
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+st.session_state['sidebar_mode']+" \n- version 9.6 ")
+st.sidebar.write("Stats for mehdi: programState = "+st.session_state['sidebar_mode']+" \n- version 9.7 ")
 st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
