@@ -164,7 +164,9 @@ if sidebar_mode=="example_selected":
     if isclick:
         sidebar_mode="editing_example"
         edit_placeholder.empty()
-        sidebar_placeholder.empty()
+        with sidebar_placeholder:
+            skeleton=st.sidebar.selectbox('Select an example',skeleton_list, disabled=True)
+        # sidebar_placeholder.  'Button', disabled=True
         with sidebar_placeholder2:
             input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
             output0is=st.sidebar.selectbox('Select an output',['a','b'])
@@ -176,6 +178,8 @@ if sidebar_mode=="example_selected":
                 # io_changed=False
                 prevInput=input0is
                 prevOutput=output0is
+                    # with sidebar_placeholder:
+                    #     skeleton=st.sidebar.selectbox('Select an example',skeleton_list, disabled=False)
 
 change_placeholder = st.sidebar.empty()
 if sidebar_mode=="editing_example":
@@ -194,7 +198,7 @@ elif sidebar_mode=="editing_example":
     st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.3")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.4")
 
 # with st.form("my_form"):
 #    st.write("Inside the form")
