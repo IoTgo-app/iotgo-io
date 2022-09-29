@@ -172,6 +172,7 @@ if sidebar_mode=="example_selected":
                 # io_changed=True
                 # updateCode()
                 st.write("code updated")
+                st.balloons()
                 # io_changed=False
                 prevInput=input0is
                 prevOutput=output0is
@@ -193,7 +194,7 @@ elif sidebar_mode=="editing_example":
     st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.2")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.3")
 
 
 
