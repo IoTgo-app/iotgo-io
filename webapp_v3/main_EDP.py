@@ -165,6 +165,12 @@ with back_btn_col:
     else:
         st.empty()
 
+
+placeholder = st.empty()
+isclick = placeholder.button('delete this button')
+if isclick:
+    placeholder.empty()
+
 # fore_btn_placeholder=st.empty()
 # with fore_btn_col:
 #     forebtnClicked=fore_btn_placeholder.button('➡ Cambia input oppure output')
@@ -207,9 +213,9 @@ elif sidebar_mode=="select_example":
     sidebar_placeholder1.empty()
 elif sidebar_mode=="edit_example":
     code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
-    st.write("not we select inputs and outputs.")
+    st.write("now we select inputs and outputs.")
 
-
+st.markdown("---")
 st.sidebar.write("programState="+sidebar_mode)
 
 
