@@ -158,13 +158,10 @@ if 'skeleton' not in st.session_state:
 
 if sidebar_mode=="app_start":
     with sidebar_placeholder:
-        st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)#, key='selector')
-        # skeleton=st.selectbox('Select an example',skeleton_list, key='selector')
-        
+        st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)#, key='selector')        
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
             sidebar_mode="example_selected"
-            # sidebar_placeholder.empty()
     code_placeholder.write("")
 
 
@@ -181,18 +178,19 @@ if sidebar_mode=="example_selected":
         with sidebar_placeholder2:
             # input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
             st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
+            if not prevInput==st.session_state['input0is']:
+                io_changed=True
+                prevInput=st.session_state['input0is']
         with sidebar_placeholder3:
             # output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
             st.session_state['output0is'] =st.selectbox('Select an output',['a','b'])#,key='selOutput')
-        if prevInput != st.session_state['input0is'] or prevOutput != st.session_state['output0is']:
-                # io_changed=True
-                # updateCode()
+            if not prevOutput==st.session_state['Output0is']:
+                io_changed=True
+                prevOutput=st.session_state['output0is']
+        if io_changed:
             st.write("code updated with "+st.session_state['input0is']+" and "+st.session_state['output0is'])
-
             st.balloons()
                 # io_changed=False
-            prevInput=st.session_state['input0is']
-            prevOutput=st.session_state['output0is']
         else:
             st.sidebar.write("waiting for change")
 
@@ -220,7 +218,7 @@ if sidebar_mode=="example_selected":
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 1.1 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 1.2 ")
 st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
