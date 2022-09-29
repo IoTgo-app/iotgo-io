@@ -167,9 +167,10 @@ with back_btn_col:
 
 
 placeholder = st.empty()
-isclick = placeholder.button('delete this button')
-if isclick:
-    placeholder.empty()
+if sidebar_mode=="app_start":
+    isclick = placeholder.button('delete this button')
+    if isclick:
+        placeholder.empty()
 
 # fore_btn_placeholder=st.empty()
 # with fore_btn_col:
