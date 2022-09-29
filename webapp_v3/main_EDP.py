@@ -178,8 +178,6 @@ if sidebar_mode=="example_selected":
                 # io_changed=False
                 prevInput=input0is
                 prevOutput=output0is
-                    # with sidebar_placeholder:
-                    #     skeleton=st.sidebar.selectbox('Select an example',skeleton_list, disabled=False)
 
 change_placeholder = st.sidebar.empty()
 if sidebar_mode=="editing_example":
@@ -187,14 +185,13 @@ if sidebar_mode=="editing_example":
     if isclick:
         sidebar_mode="app_start"
         change_placeholder.empty()
-        # sidebar_placeholder.empty()
 
 if sidebar_mode=="app_start":
     code_placeholder.write("")
 elif sidebar_mode=="example_selected":
-    code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
+    code_placeholder.image(baseURL_codeSkeletons+str(skeleton)+'.png')
 elif sidebar_mode=="editing_example":
-    code_placeholder.image(baseURL_codeSkeletons+skeleton+'.png')
+    code_placeholder.image(baseURL_codeSkeletons+str(skeleton)+'.png')
     st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
