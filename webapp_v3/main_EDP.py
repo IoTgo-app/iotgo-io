@@ -141,7 +141,7 @@ vertiPaddingWidthhalf=17
 
 sidebar_mode="app_start" #"edit_example" #"app_start"
 sidebar_placeholder = st.sidebar.empty()
-# sidebar_placeholder2 = st.sidebar.empty()
+sidebar_placeholder2 = st.sidebar.empty()
 
 code_col, padding1 = st.columns([3,1])
 with code_col:
@@ -164,7 +164,8 @@ if sidebar_mode=="example_selected":
     if isclick:
         sidebar_mode="editing_example"
         edit_placeholder.empty()
-        with sidebar_placeholder:
+        sidebar_placeholder2.empty()
+        with sidebar_placeholder2:
             input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
             output0is=st.sidebar.selectbox('Select an output',['a','b'])
             if prevInput != input0is or prevOutput != output0is:
@@ -192,7 +193,7 @@ elif sidebar_mode=="editing_example":
     st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.1")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.2")
 
 
 
