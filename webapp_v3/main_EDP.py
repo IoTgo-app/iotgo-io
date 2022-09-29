@@ -192,7 +192,7 @@ if st.session_state['sidebar_mode']=="example_selected":
             prevInput=st.session_state['input0is']
             prevOutput=st.session_state['output0is']
         else:
-            st.sidebar.write("waiting for change")
+            st.write("waiting for change")
 
 change_placeholder = st.sidebar.empty()
 if st.session_state['sidebar_mode']=="editing_example":
@@ -212,7 +212,7 @@ elif st.session_state['sidebar_mode']=="editing_example":
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+st.session_state['sidebar_mode']+" \n- version 9.7 ")
+st.sidebar.write("Stats for mehdi: programState = "+st.session_state['sidebar_mode']+" \n- version 9.8 ")
 st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
