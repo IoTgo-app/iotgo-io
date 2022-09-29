@@ -194,7 +194,7 @@ if sidebar_mode=="example_selected":
 
 change_placeholder = st.sidebar.empty()
 if sidebar_mode=="editing_example":
-    isclick = change_placeholder.button('Change example')
+    isclick = change_placeholder.button('Select another example')
     if isclick:
         sidebar_mode="app_start"
         change_placeholder.empty()
@@ -205,13 +205,13 @@ elif sidebar_mode=="example_selected":
     code_placeholder.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     # st.write(baseURL_codeSkeletons+str(skeleton)+'.png')
 elif sidebar_mode=="editing_example":
-    code_placeholder.image(baseURL_codeSkeletons+str(skeleton)+'.png')
-    # st.write(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
+    code_placeholder.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
+    #st.write(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.2 ")
-
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.3 ")
+st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
 #    slider_val = st.slider("Form slider")
