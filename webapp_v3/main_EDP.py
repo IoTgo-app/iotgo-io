@@ -181,12 +181,10 @@ if sidebar_mode=="example_selected":
         with sidebar_placeholder2:
             # input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
             st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
-        st.write(sidebar_mode)
         with sidebar_placeholder3:
             # output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
             st.session_state['output0is'] =st.selectbox('Select an output',['a','b'])#,key='selOutput')
-        st.write(sidebar_mode)
-        if prevInput != st.session_state['input0is'] and prevOutput != st.session_state['output0is']:
+        if prevInput != st.session_state['input0is'] or prevOutput != st.session_state['output0is']:
                 # io_changed=True
                 # updateCode()
             st.write("code updated with "+st.session_state['input0is']+" and "+st.session_state['output0is'])
@@ -201,8 +199,8 @@ if sidebar_mode=="example_selected":
 change_placeholder = st.sidebar.empty()
 if sidebar_mode=="editing_example":
     code_placeholder.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
-    isclick = change_placeholder.button('Select another example')
-    if isclick:
+    isclick2 = change_placeholder.button('Select another example')
+    if isclick2:
         sidebar_mode="app_start"
         change_placeholder.empty()
 
