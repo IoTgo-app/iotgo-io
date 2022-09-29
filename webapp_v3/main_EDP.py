@@ -150,7 +150,7 @@ with code_col:
 # fore_btn_placeholder=st.empty()
 
 if sidebar_mode=="app_start":
-    with sidebar_placeholder1:
+    with sidebar_placeholder:
         skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
         if not skeleton==prevSkeleton:
             prevSkeleton=skeleton
@@ -169,6 +169,7 @@ if sidebar_mode=="editing_example":
     if isclick:
         sidebar_mode="app_start"
         change_placeholder.empty()
+        sidebar_placeholder.empty()
 
 
 
@@ -181,7 +182,8 @@ elif sidebar_mode=="editing_example":
     st.write("now we select inputs and outputs.")
 
 st.markdown("---")
-st.sidebar.write("programState="+sidebar_mode+" - version 3")
+st.sidebar.write("programState="+sidebar_mode+" - version 4")
+
 
 
 
