@@ -208,7 +208,7 @@ elif sidebar_mode=="editing_example":
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.9 \n"+st.session_state)
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.0 ")
 
 # with st.form("my_form"):
 #    st.write("Inside the form")
