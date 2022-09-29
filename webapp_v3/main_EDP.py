@@ -148,13 +148,21 @@ code_col, padding1 = st.columns([3,1])
 with code_col:
     code_placeholder = st.empty()
 
+if 'input0is' not in st.session_state:
+    st.session_state['input0is'] = ""
+if 'output0is' not in st.session_state:
+    st.session_state['output0is'] = ""
+if 'skeleton' not in st.session_state:
+    st.session_state['skeleton'] = ""
 
 
 if sidebar_mode=="app_start":
     with sidebar_placeholder:
-        skeleton=st.selectbox('Select an example',skeleton_list, key='selector')
-        if not skeleton==prevSkeleton:
-            prevSkeleton=skeleton
+        st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list, key='selector')
+        # skeleton=st.selectbox('Select an example',skeleton_list, key='selector')
+        
+        if not st.session_state['skeleton']==prevSkeleton:
+            prevSkeleton=st.session_state['skeleton']
             sidebar_mode="example_selected"
             # sidebar_placeholder.empty()
 
@@ -168,9 +176,11 @@ if sidebar_mode=="example_selected":
             st.empty()#selectbox('Select an example',skeleton_list, disabled=True, key='2')
         # sidebar_placeholder.  'Button', disabled=True
         with sidebar_placeholder2:
-            input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
+            # input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
+            st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'],key='selInput')
         with sidebar_placeholder3:
-            output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
+            # output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
+            st.session_state['output0is'] =st.selectbox('Select an output',['a','b'],key='selOutput')
         if prevInput != input0is or prevOutput != output0is:
                 # io_changed=True
                 # updateCode()
@@ -190,15 +200,15 @@ if sidebar_mode=="editing_example":
 if sidebar_mode=="app_start":
     code_placeholder.write("")
 elif sidebar_mode=="example_selected":
-    code_placeholder.image(baseURL_codeSkeletons+str(skeleton)+'.png')
-    st.write(baseURL_codeSkeletons+str(skeleton)+'.png')
+    code_placeholder.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
+    # st.write(baseURL_codeSkeletons+str(skeleton)+'.png')
 elif sidebar_mode=="editing_example":
-    code_placeholder.image(baseURL_codeSkeletons+str(skeleton)+'.png')
-    st.write(baseURL_codeSkeletons+str(skeleton)+'.png')
-    st.write("now we select inputs and outputs.")
+    # code_placeholder.image(baseURL_codeSkeletons+str(skeleton)+'.png')
+    st.write(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
+    # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.8")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8.9 \n"+st.session_state)
 
 # with st.form("my_form"):
 #    st.write("Inside the form")
