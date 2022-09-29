@@ -117,9 +117,7 @@ def sidebar_editExample():
     return input0is,output0is
 
 
-sidebar_mode="app_start" #"edit_example" #"app_start"
-sidebar_placeholder1 = st.sidebar.empty()
-sidebar_placeholder2 = st.sidebar.empty()
+
 
 prevSkeleton=""
 skeleton=""
@@ -141,6 +139,9 @@ vertiPaddingWidth=35
 vertiPaddingWidthhalf=17
 
 
+sidebar_mode="app_start" #"edit_example" #"app_start"
+sidebar_placeholder = st.sidebar.empty()
+# sidebar_placeholder2 = st.sidebar.empty()
 
 code_col, padding1 = st.columns([3,1])
 with code_col:
@@ -182,7 +183,7 @@ elif sidebar_mode=="editing_example":
     st.write("now we select inputs and outputs.")
 
 st.markdown("---")
-st.sidebar.write("programState="+sidebar_mode+" - version 4")
+st.sidebar.write("programState="+sidebar_mode+" - version 5")
 
 
 
