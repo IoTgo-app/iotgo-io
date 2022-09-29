@@ -184,7 +184,6 @@ if sidebar_mode=="example_selected":
         with sidebar_placeholder3:
             # output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
             st.session_state['output0is'] =st.selectbox('Select an output',['a','b'])#,key='selOutput')
-        st.write(i am here...)
         if prevInput != st.session_state['input0is'] or prevOutput != st.session_state['output0is']:
                 # io_changed=True
                 # updateCode()
