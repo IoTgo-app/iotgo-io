@@ -184,7 +184,7 @@ if sidebar_mode=="example_selected":
         if prevInput != st.session_state['input0is'] or prevOutput != st.session_state['output0is']:
                 # io_changed=True
                 # updateCode()
-            st.write("code updated with "+=st.session_state['input0is']+" and "+=st.session_state['output0is'])
+            st.write("code updated with "+st.session_state['input0is']+" and "+st.session_state['output0is'])
 
             st.balloons()
                 # io_changed=False
@@ -211,7 +211,7 @@ elif sidebar_mode=="editing_example":
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.5 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 9.6 ")
 st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
