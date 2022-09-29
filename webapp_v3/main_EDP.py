@@ -164,8 +164,7 @@ if sidebar_mode=="example_selected":
     if isclick:
         sidebar_mode="editing_example"
         edit_placeholder.empty()
-        with sidebar_placeholder:
-            skeleton=st.sidebar.selectbox('Select an example',skeleton_list, disabled=True, key='2')
+        sidebar_placeholder.selectbox('Select an example',skeleton_list, disabled=True, key='1')
         # sidebar_placeholder.  'Button', disabled=True
         with sidebar_placeholder2:
             input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
