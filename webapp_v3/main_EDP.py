@@ -156,7 +156,7 @@ if sidebar_mode=="app_start":
         if not skeleton==prevSkeleton:
             prevSkeleton=skeleton
             sidebar_mode="example_selected"
-            sidebar_placeholder.empty()
+            # sidebar_placeholder.empty()
 
 edit_placeholder = st.empty()
 if sidebar_mode=="example_selected":
@@ -164,6 +164,14 @@ if sidebar_mode=="example_selected":
     if isclick:
         sidebar_mode="editing_example"
         edit_placeholder.empty()
+        with sidebar_placeholder:
+            input0is=st.sidebar.selectbox( 'Select an input',['x','y'])
+            output0is=st.sidebar.selectbox('Select an output',['a','b'])
+            if prevInput != input0is or prevOutput != ouput0is:
+                io_changed=True
+                updateCode()
+                prevInput=input0is
+                prevOutput=output0is
 
 change_placeholder = st.sidebar.empty()
 if sidebar_mode=="editing_example":
@@ -182,7 +190,7 @@ elif sidebar_mode=="editing_example":
     st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 7")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 8")
 
 
 
