@@ -125,12 +125,7 @@ prevSkeleton=""
 skeleton=""
 prevInput=""
 prevOutput=""
-if sidebar_mode=="select_example" or sidebar_mode=="app_start":
-    with sidebar_placeholder1:
-        skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
-        if not skeleton==prevSkeleton:
-            prevSkeleton=skeleton
-            sidebar_mode="select_example"
+
 
 ########################### app body ########################################à
 
@@ -154,6 +149,12 @@ with code_col:
 # back_btn_placeholder=st.empty()
 # fore_btn_placeholder=st.empty()
 
+if sidebar_mode=="app_start":
+    with sidebar_placeholder1:
+        skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
+        if not skeleton==prevSkeleton:
+            prevSkeleton=skeleton
+            sidebar_mode="select_example"
 
 edit_placeholder = st.empty()
 if sidebar_mode=="edit_example":
@@ -166,7 +167,7 @@ change_placeholder = st.empty()
 if sidebar_mode=="select_example":
     isclick = change_placeholder.button('Change example')
     if isclick:
-        sidebar_mode="edit_example"
+        sidebar_mode="app_start"
         change_placeholder.empty()
 
 
