@@ -156,6 +156,7 @@ if sidebar_mode=="app_start":
         if not skeleton==prevSkeleton:
             prevSkeleton=skeleton
             sidebar_mode="example_selected"
+            sidebar_placeholder.empty()
 
 edit_placeholder = st.empty()
 if sidebar_mode=="example_selected":
@@ -170,7 +171,7 @@ if sidebar_mode=="editing_example":
     if isclick:
         sidebar_mode="app_start"
         change_placeholder.empty()
-        sidebar_placeholder.empty()
+        # sidebar_placeholder.empty()
 
 if sidebar_mode=="app_start":
     code_placeholder.write("")
@@ -181,7 +182,7 @@ elif sidebar_mode=="editing_example":
     st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("programState="+sidebar_mode+" \n- version 6")
+st.sidebar.write("Stats for mehdi: programState="+sidebar_mode+" \n- version 7")
 
 
 
