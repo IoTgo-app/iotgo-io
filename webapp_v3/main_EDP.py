@@ -181,7 +181,7 @@ elif sidebar_mode=="edit_example":
     st.write("now we select inputs and outputs.")
 
 st.markdown("---")
-st.sidebar.write("programState="+sidebar_mode+"version 1")
+st.sidebar.write("programState="+sidebar_mode+" - version 2")
 
 
 
