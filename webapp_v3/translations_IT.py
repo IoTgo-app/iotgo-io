@@ -9,7 +9,7 @@ textIT={ #this text will appear on the app in various places to guide the user
   "Download this code"  : "Download this code: (in italian)",
   }
 
-ITexample_list= [ #this is the description of the examples code which user will select through a dropdown menu
+exampleListIT= [ #this is the description of the examples code which user will select through a dropdown menu
     "1a1_toAddITdescription" ,#for the code i.e. "1a1" refer to the labelled taxonomy diagram
     "1a2_toAddITdescription" ,
     
