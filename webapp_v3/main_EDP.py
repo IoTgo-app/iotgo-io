@@ -172,20 +172,24 @@ with select_placeholder:
             st.session_state['sidebar_mode']="example_selected"
     # elif sidebar_mode=="example_selected":
     elif st.session_state['sidebar_mode']=="editing_example":
-        st.empty()
         st.write("Editing example: \n" + st.session_state['skeleton'])
-
-with input_placeholder:
-    if st.session_state['sidebar_mode']=="app_start":
-        st.empty()
-    elif st.session_state['sidebar_mode']=="example_selected":
-        st.empty()
-    elif st.session_state['sidebar_mode']=="editing_example":
         st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:
             st.session_state['sidebar_mode']="editing_example"
             st.session_state['prevInput']=st.session_state['input0is']
             st.balloons()
+
+# with input_placeholder:
+#     if st.session_state['sidebar_mode']=="app_start":
+#         st.empty()
+#     elif st.session_state['sidebar_mode']=="example_selected":
+#         st.empty()
+#     elif st.session_state['sidebar_mode']=="editing_example":
+#         st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
+#         if not st.session_state['prevInput']==st.session_state['input0is']:
+#             st.session_state['sidebar_mode']="editing_example"
+#             st.session_state['prevInput']=st.session_state['input0is']
+#             st.balloons()
 
 with change_placeholder:
     if st.session_state['sidebar_mode']=="app_start":
