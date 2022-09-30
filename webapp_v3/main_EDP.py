@@ -157,10 +157,10 @@ input_placeholder   = st.sidebar.container()#empty()
 output_placeholder  = st.sidebar.container()#empty()
 change_placeholder  = st.sidebar.container()#empty()
 
-code_col, padding1 = st.columns([3,1])
+code_col, padding1  = st.columns([3,1])
 with code_col:
     code_placeholder = st.container()#empty()
-edit_placeholder    = st.container()#empty()
+edit_placeholder     = st.container()#empty()
 
 with select_placeholder:
     if sidebar_mode=="app_start" or "example_selected":
@@ -171,6 +171,7 @@ with select_placeholder:
     # elif sidebar_mode=="example_selected":
     elif sidebar_mode=="editing_example":
         st.empty()
+        st.write("Editing example: \n" + st.session_state['skeleton'])
 
 with input_placeholder:
     if sidebar_mode=="app_start":
@@ -178,7 +179,6 @@ with input_placeholder:
     elif sidebar_mode=="example_selected":
         st.empty()
     elif sidebar_mode=="editing_example":
-        st.write("Editing example: \n" + st.session_state['skeleton'])
         st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:
             sidebar_mode="editing_example"
@@ -270,7 +270,7 @@ with edit_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.9 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 3.1 ")
 st.session_state
 
 
