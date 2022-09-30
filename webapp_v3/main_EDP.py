@@ -169,13 +169,16 @@ if sidebar_mode=="app_start":
 
 edit_placeholder = st.empty()
 if sidebar_mode=="example_selected":
+    # st.sidebar.write("You selected: " + st.session_state['skeleton'])
     code_placeholder.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     isclick = edit_placeholder.button('Edit example')
     if isclick:
         sidebar_mode="editing_example"
+        # st.sidebar.write("Editing example: " + st.session_state['skeleton'])
         edit_placeholder.empty()
         with sidebar_placeholder:
-            st.empty()
+            # st.empty()
+            st.write("Editing example: \n" + st.session_state['skeleton'])
         with sidebar_placeholder2:
             # input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
             # st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
@@ -225,7 +228,7 @@ if sidebar_mode=="example_selected":
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 1.9 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.1 ")
 st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
