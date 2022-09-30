@@ -1,5 +1,7 @@
 
 
+
+
 ITdescription2var= {#keys should contain the IT description needed to be shown in the app for each example.
     "1a1_toAddITdescription"  : "lvl1a1-1in_1out",
     "1a2_toAddITdescription"  : "lvl1a2-1in_1out_else",
@@ -25,32 +27,6 @@ ITdescription2var= {#keys should contain the IT description needed to be shown i
     "3b1_toAddITdescription"  : "lvl3b1-1var_1out",
     "3b2_toAddITdescription"  : "lvl3b2-1var_1out_else"
 }
-
-ITexample_list= [
-    "lvl1a1-1in_1out",
-    "lvl1a2-1in_1out_else",
-
-    "lvl1b1-1in_2out",
-    "lvl1b2-1in_2out_else",
-
-    "lvl1c1-2in_1out",
-    "lvl1c2-2in_1out_else",
-    
-    "lvl2a1-1in_1out-1in_1out",
-    "lvl2a2-1in_1out_else-1in_1out_else",
-
-    "lvl2b1-1in_1out_elif_1in_1out",
-    "lvl2b2-1in_1out_elif_1in_1out_else",
-
-    "lvl2c1-1in_1out-nest-1in_1out",
-    "lvl2c2-1in_1out-nest-1in_1out_else_else",
-
-    "lvl3a1-1in_1out_var",
-    "lvl3a2-1in_1out_var_else",
-
-    "lvl3b1-1var_1out",
-    "lvl3b2-1var_1out_else"
-]
 
 
 default_IO = {

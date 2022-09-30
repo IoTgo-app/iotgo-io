@@ -1,5 +1,47 @@
-#st.sidebar.write('You selected:', input1,output1,input2,output2)
-it2en_inout={
+
+textIT={ #this text will appear on the app in various places to guide the user
+  "Select an example:"   : "Select an example: (in italian)",
+  "Select an output:"    : "Select an output: (in italian)",
+  "Select an input:"     : "Select an input: (in italian)",
+  "Change example"      : "Change example: (in italian)",#or select another example
+  "Edit this example"   : "Edit this example: (in italian)",
+  "You have selected:"   : "You have selected: (in italian)",
+  "Download this code"  : "Download this code: (in italian)",
+  }
+
+ITexample_list= [ #this is the description of the examples code which user will select through a dropdown menu
+    "1a1_toAddITdescription" ,#for the code i.e. "1a1" refer to the labelled taxonomy diagram
+    "1a2_toAddITdescription" ,
+    
+    "1b1_toAddITdescription" ,
+    "1b2_toAddITdescription" ,
+
+    "1c1_toAddITdescription" ,
+    "1c2_toAddITdescription" ,
+    
+    "2a1_toAddITdescription" ,
+    "2a2_toAddITdescription" ,
+
+    "2b1_toAddITdescription" ,
+    "2b2_toAddITdescription" ,
+
+    "2c1_toAddITdescription" ,
+    "2c2_toAddITdescription" ,
+
+    "3a1_toAddITdescription" ,
+    "3a2_toAddITdescription" ,
+
+    "3b1_toAddITdescription" ,
+    "3b2_toAddITdescription"  
+]
+
+
+it2en_inout={ #this is the text description of input, ouput cards.
+  # NEW Cards to be added, 
+  # if any new card is to be added, just add the text as a key, 
+  # and put anything in the value, i will take care of the rest.
+  # text can be revised of existing cards
+  # Should match the description that on the printed cards
 "il rumore è alto":"noiseHigh" ,
 'il rumore è basso':"noiseLow" ,
 'il logo non è toccato':"touchNo" , #v2 
@@ -68,49 +110,3 @@ it2en_inout={
 "l\'umidità del suolo è bassa":"soilMoistureLow",#new
 "l\'umidità del suolo è alta":"soilMoistureHigh",#new
 }
-
-it2en_inoutold= {
-    "Il pulsante premuto":"buttonPress",
-    'Il pulsante non è premuto':"buttonNotPress",
-    'L\'accelerazione è basso':"accelLow" , 
-    'L\'accelerazione è alta':"accelHigh"  , 
-    'La bussola punta ad Est':"compassE"  , 
-    'La bussola punta ad Ovest':"compassW"  , 
-    'La bussola punta a Nord':"compassN"  , 
-    'La bussola punta a Sud':"compassS"  , 
-    'Il gesto è scuotere':"gestureShake"  , 
-    'Il gesto è inclinare':"gestureTilt"  , 
-    'C\'è movimento nei dintorni':"movementPresent"  , 
-    'Non c\'è movimento nei dintorni':"movementNotPresent"  , 
-    'Il rumore è basso':"noiseLow"  , 
-    'Il rumore è alto':"noiseHigh"  ,
-    'Il cursore è al minimo':"sliderLow"  , 
-    'Il cursore è al massimo':"sliderHigh"  , 
-    'La temperatura è bassa':"tempLow"  , 
-    'La temperatura è alta':"tempHigh"  ,
-    'L\'intensità di luce è bassa':"lightlevelLow",
-    'L\'intensità di luce è alta':"lightlevelHigh",
-    'Il logo è toccato':"touchYes" ,#v2  
-    'Il logo non è toccato':"touchNo"  , #v2    
-    'no Input':"noInput",
-    'recezione dati' :"recieveData",
-    'Mostra un\'icona felice':"iconHappy",
-    'Mostra un\'icona triste':"iconSad",
-    'Smette di mostrare un\'icona':"iconNone",
-  	'Accende una luce':"lightOn",
- 	'Spegne una luce':"lightOff", 
-  	'Suona una melodia triste':"musicSad" , 
-  	'Suona una melodia allegra':"musicHappy"  , 
-	'Smette di suonare':"musicNone"  , 
-	'Mostra del testo':"displayText"  , 
-	'Mostra un numero':"displayInput"  , 
-	'Smette di mostrare testi o numeri':"displayNone"  , 
-	'Attiva un\'animazione luminosa':"showStripRainbow"  , 
-	'Spegne un\'animazione luminosa':"showStripBlack", 
-	'Accende un ventilatore':"fanOn"  , 
-	'Spegne un ventilatore':"fanOff"  ,
-	'Fa ruotare il motore':"rotateMin"  ,   
-	'no Output':"noOutput", 
-        'invio dati' :"sendData",
-    }
-
