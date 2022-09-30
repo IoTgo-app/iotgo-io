@@ -3,9 +3,7 @@ textIT={ #this text will appear on the app in various places to guide the user
   "Select an example:"   : "Select an example: (in italian)",
   "Select an output:"    : "Select an output: (in italian)",
   "Select an input:"     : "Select an input: (in italian)",
-  
-  "Change example"      : "Change example: (in italian)",
-   #or Select another example
+  "Select another example"      : "Select another example: (in italian)",
   
   "Edit this example"   : "Edit this example: (in italian)",
   #or Change input or ouput in this example
