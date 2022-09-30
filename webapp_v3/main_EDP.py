@@ -189,22 +189,21 @@ if sidebar_mode=="editing_example":
         # input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
         st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:
-            io_changed=True
+            # io_changed=True
             sidebar_mode="editing_example"
             st.session_state['output0is']="caught"
             st.session_state['prevInput']=st.session_state['input0is']
-        # else:
-            #     st.write("it never works")
-            #     st.session_state['output0is']="not working"
+            st.balloons()
+            st.write("code changed")
     # with output_placeholder:
         #     # output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
         #     st.session_state['output0is'] =st.selectbox('Select an output',['a','b'])#,key='selOutput')
         #     if not prevOutput==st.session_state['Output0is']:
         #         io_changed=True
         #         prevOutput=st.session_state['output0is']
-    if io_changed:
+        # if io_changed:
             # st.write("code updated with "+st.session_state['input0is']+" and "+st.session_state['output0is'])
-        st.balloons()
+        # st.balloons()
                 # io_changed=False
     else:
         st.sidebar.write("waiting for change")
@@ -212,9 +211,12 @@ if sidebar_mode=="editing_example":
     if isclick2:
         sidebar_mode="app_start"
         change_placeholder.empty()
+        input_placeholder.empty()
 
 
-
+st.sidebar.markdown("---")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.4 ")
+st.session_state
 
 
 
@@ -228,9 +230,7 @@ if sidebar_mode=="editing_example":
 #     #st.write(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     # st.write("now we select inputs and outputs.")
 
-st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.2 ")
-st.session_state
+
 # with st.form("my_form"):
 #    st.write("Inside the form")
 #    slider_val = st.slider("Form slider")
