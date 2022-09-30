@@ -216,7 +216,7 @@ if sidebar_mode=="editing_example":
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.5 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.6 ")
 st.session_state
 
 
