@@ -128,6 +128,8 @@ if 'input0is' not in st.session_state:
     st.session_state['input0is'] = "x"
 if 'prevInput' not in st.session_state:
     st.session_state['prevInput'] = "x"
+
+
 if 'output0is' not in st.session_state:
     st.session_state['output0is'] = "a"
 if 'skeleton' not in st.session_state:
@@ -209,14 +211,14 @@ if sidebar_mode=="editing_example":
     #     st.sidebar.write("waiting for change")
     isclick2 = change_placeholder.button('Select another example')
     if isclick2:
-        sidebar_mode="app_start"
+        sidebar_mode="example_selected"
         change_placeholder.empty()
-        input_placeholder.empty()
+        # input_placeholder.empty()
         st.session_state['skeleton']=prevSkeleton
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.6 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.7 ")
 st.session_state
 
 
