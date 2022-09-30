@@ -169,7 +169,7 @@ with select_placeholder:
         st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)#, key='selector')        
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
-            sidebar_mode="example_selected"
+            st.session_state['sidebar_mode']="example_selected"
     # elif sidebar_mode=="example_selected":
     elif st.session_state['sidebar_mode']=="editing_example":
         st.empty()
@@ -273,7 +273,7 @@ with edit_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 3.3 ")
+st.sidebar.write("Stats for mehdi: programState = "+st.session_state['sidebar_mode']+" \n- version 3.5 ")
 st.session_state
 
 
