@@ -170,7 +170,6 @@ with select_placeholder:
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
             st.session_state['sidebar_mode']="example_selected"
-    # elif sidebar_mode=="example_selected":
     elif st.session_state['sidebar_mode']=="editing_example":
         st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
         # st.write("Editing example: \n" + st.session_state['skeleton'])
@@ -222,7 +221,7 @@ with edit_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 3.8 ")
+st.sidebar.write("version 3.9 ")
 st.session_state 
 
 
