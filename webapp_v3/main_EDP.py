@@ -210,7 +210,7 @@ with edit_placeholder:
         st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')        
         isClick=st.button('Edit example')
         if isClick:
-            sidebar_mode="app_start"
+            sidebar_mode="editing_example"
     elif sidebar_mode=="editing_example":
         st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
 
@@ -270,7 +270,7 @@ with edit_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.8 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.9 ")
 st.session_state
 
 
