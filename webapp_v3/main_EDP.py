@@ -161,8 +161,8 @@ change_placeholder  = st.sidebar.container()#empty()
 
 code_col, padding1  = st.columns([3,1])
 with code_col:
-    code_placeholder = st.container()#empty()
-edit_placeholder     = st.container()#empty()
+    code_placeholder = st.empty()
+edit_placeholder     = st.empty()
 
 with select_placeholder:
     if st.session_state['sidebar_mode']=="app_start" or "example_selected":
@@ -203,19 +203,18 @@ with code_placeholder:
     elif st.session_state['sidebar_mode']=="example_selected":
         st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     elif st.session_state['sidebar_mode']=="editing_example":
-        st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
+        # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
         st.write("editing this....")
 
 with edit_placeholder:
     if st.session_state['sidebar_mode']=="app_start":
-        st.write("")
+        st.empty()
     elif st.session_state['sidebar_mode']=="example_selected":
-        st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')        
         isClick=st.button('Edit example')
         if isClick:
             st.session_state['sidebar_mode']="editing_example"
     elif st.session_state['sidebar_mode']=="editing_example":
-        st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
+        st.empty()
 
 
 # if sidebar_mode=="app_start":
@@ -273,7 +272,7 @@ with edit_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+st.session_state['sidebar_mode']+" \n- version 3.5 ")
+st.sidebar.write("Stats for mehdi: programState = "+st.session_state['sidebar_mode']+" \n- version 3.6 ")
 st.session_state
 
 
