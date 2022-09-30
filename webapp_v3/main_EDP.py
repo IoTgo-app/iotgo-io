@@ -153,12 +153,13 @@ sidebar_mode        = "app_start" #"edit_example" #"app_start"
 select_placeholder  = st.sidebar.empty()
 input_placeholder   = st.sidebar.empty()
 output_placeholder  = st.sidebar.empty()
-edit_placeholder    = st.empty()
 change_placeholder  = st.sidebar.empty()
 
 code_col, padding1 = st.columns([3,1])
 with code_col:
     code_placeholder = st.empty()
+edit_placeholder    = st.empty()
+
 
 if sidebar_mode=="app_start":
     with select_placeholder:
