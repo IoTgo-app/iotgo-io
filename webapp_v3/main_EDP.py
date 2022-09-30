@@ -212,6 +212,7 @@ if sidebar_mode=="editing_example":
         sidebar_mode="app_start"
         change_placeholder.empty()
         input_placeholder.empty()
+        st.session_state['skeleton']=prevSkeleton
 
 
 st.sidebar.markdown("---")
