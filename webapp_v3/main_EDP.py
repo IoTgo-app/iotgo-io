@@ -217,6 +217,11 @@ with edit_placeholder:
         st.empty()
 
 
+st.sidebar.markdown("---")
+st.sidebar.write("version 3.7 ")
+st.session_state 
+
+
 # if sidebar_mode=="app_start":
 #     with select_placeholder:
 #         st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)#, key='selector')        
@@ -271,9 +276,9 @@ with edit_placeholder:
 #         st.session_state['skeleton']=prevSkeleton
 
 
-st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+st.session_state['sidebar_mode']+" \n- version 3.6 ")
-st.session_state
+# st.sidebar.markdown("---")
+# st.sidebar.write("Stats for mehdi: programState = "+st.session_state['sidebar_mode']+" \n- version 3.7 ")
+# st.session_state
 
 
 
