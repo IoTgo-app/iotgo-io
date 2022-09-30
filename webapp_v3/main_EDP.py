@@ -134,6 +134,8 @@ if 'output0is' not in st.session_state:
     st.session_state['output0is'] = "a"
 if 'skeleton' not in st.session_state:
     st.session_state['skeleton'] = ""
+if 'sidebar_mode' not in st.session_state:
+    st.session_state['sidebar_mode'] = "app_start"
 
 
 
@@ -151,7 +153,7 @@ vertiPaddingWidth=35
 vertiPaddingWidthhalf=17
 
 
-sidebar_mode        = "app_start" #"edit_example" #"app_start"
+# sidebar_mode        = "app_start" #"edit_example" #"app_start"
 select_placeholder  = st.sidebar.container()#empty()
 input_placeholder   = st.sidebar.container()#empty()
 output_placeholder  = st.sidebar.container()#empty()
@@ -163,55 +165,56 @@ with code_col:
 edit_placeholder     = st.container()#empty()
 
 with select_placeholder:
-    if sidebar_mode=="app_start" or "example_selected":
+    if st.session_state['sidebar_mode']=="app_start" or "example_selected":
         st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)#, key='selector')        
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
             sidebar_mode="example_selected"
     # elif sidebar_mode=="example_selected":
-    elif sidebar_mode=="editing_example":
+    elif st.session_state['sidebar_mode']=="editing_example":
         st.empty()
         st.write("Editing example: \n" + st.session_state['skeleton'])
 
 with input_placeholder:
-    if sidebar_mode=="app_start":
+    if st.session_state['sidebar_mode']=="app_start":
         st.empty()
-    elif sidebar_mode=="example_selected":
+    elif st.session_state['sidebar_mode']=="example_selected":
         st.empty()
-    elif sidebar_mode=="editing_example":
+    elif st.session_state['sidebar_mode']=="editing_example":
         st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:
-            sidebar_mode="editing_example"
+            st.session_state['sidebar_mode']="editing_example"
             st.session_state['prevInput']=st.session_state['input0is']
             st.balloons()
 
 with change_placeholder:
-    if sidebar_mode=="app_start":
+    if st.session_state['sidebar_mode']=="app_start":
         st.empty()
-    elif sidebar_mode=="example_selected":
+    elif st.session_state['sidebar_mode']=="example_selected":
         st.empty()
-    elif sidebar_mode=="editing_example":
+    elif st.session_state['sidebar_mode']=="editing_example":
         isclick2 = change_placeholder.button('Select another example')
         if isclick2:
-            sidebar_mode="example_selected"
+            st.session_state['sidebar_mode']="example_selected"
 
 with code_placeholder:
-    if sidebar_mode=="app_start":
-        st.write("")
-    elif sidebar_mode=="example_selected":
+    if st.session_state['sidebar_mode']=="app_start":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="example_selected":
         st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
-    elif sidebar_mode=="editing_example":
+    elif st.session_state['sidebar_mode']=="editing_example":
         st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
+        st.write("editing this....")
 
 with edit_placeholder:
-    if sidebar_mode=="app_start":
+    if st.session_state['sidebar_mode']=="app_start":
         st.write("")
-    elif sidebar_mode=="example_selected":
+    elif st.session_state['sidebar_mode']=="example_selected":
         st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')        
         isClick=st.button('Edit example')
         if isClick:
-            sidebar_mode="editing_example"
-    elif sidebar_mode=="editing_example":
+            st.session_state['sidebar_mode']="editing_example"
+    elif st.session_state['sidebar_mode']=="editing_example":
         st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
 
 
@@ -270,7 +273,7 @@ with edit_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 3.1 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 3.3 ")
 st.session_state
 
 
