@@ -149,37 +149,39 @@ vertiPaddingWidth=35
 vertiPaddingWidthhalf=17
 
 
-sidebar_mode="app_start" #"edit_example" #"app_start"
-sidebar_placeholder = st.sidebar.empty()
-sidebar_placeholder2 = st.sidebar.empty()
-sidebar_placeholder3 = st.sidebar.empty()
+sidebar_mode        = "app_start" #"edit_example" #"app_start"
+select_placeholder  = st.sidebar.empty()
+input_placeholder   = st.sidebar.empty()
+output_placeholder  = st.sidebar.empty()
+edit_placeholder    = st.empty()
+change_placeholder  = st.sidebar.empty()
 
 code_col, padding1 = st.columns([3,1])
 with code_col:
     code_placeholder = st.empty()
 
 if sidebar_mode=="app_start":
-    with sidebar_placeholder:
+    with select_placeholder:
         st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)#, key='selector')        
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
             sidebar_mode="example_selected"
+    with input_placeholder:
+        st.empty()
     code_placeholder.write("")
 
 
-edit_placeholder = st.empty()
 if sidebar_mode=="example_selected":
-    # st.sidebar.write("You selected: " + st.session_state['skeleton'])
     code_placeholder.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     isclick = edit_placeholder.button('Edit example')
     if isclick:
         sidebar_mode="editing_example"
         # st.sidebar.write("Editing example: " + st.session_state['skeleton'])
         edit_placeholder.empty()
-        with sidebar_placeholder:
+        with select_placeholder:
             # st.empty()
             st.write("Editing example: \n" + st.session_state['skeleton'])
-        with sidebar_placeholder2:
+        with input_placeholder:
             # input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
             st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
             if not st.session_state['prevInput']==st.session_state['input0is']:
@@ -190,7 +192,7 @@ if sidebar_mode=="example_selected":
             # else:
             #     st.write("it never works")
             #     st.session_state['output0is']="not working"
-        # with sidebar_placeholder3:
+        # with output_placeholder:
         #     # output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
         #     st.session_state['output0is'] =st.selectbox('Select an output',['a','b'])#,key='selOutput')
         #     if not prevOutput==st.session_state['Output0is']:
@@ -203,13 +205,12 @@ if sidebar_mode=="example_selected":
         else:
             st.sidebar.write("waiting for change")
 
-# change_placeholder = st.sidebar.empty()
-# if sidebar_mode=="editing_example":
-#     code_placeholder.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
-#     isclick2 = change_placeholder.button('Select another example')
-#     if isclick2:
-#         sidebar_mode="app_start"
-#         change_placeholder.empty()
+if sidebar_mode=="editing_example":
+    code_placeholder.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
+    isclick2 = change_placeholder.button('Select another example')
+    if isclick2:
+        sidebar_mode="app_start"
+        change_placeholder.empty()
 
 
 
@@ -227,7 +228,7 @@ if sidebar_mode=="example_selected":
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.1 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.2 ")
 st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
