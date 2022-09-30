@@ -182,32 +182,32 @@ if sidebar_mode=="example_selected":
         with select_placeholder:
             # st.empty()
             st.write("Editing example: \n" + st.session_state['skeleton'])
-        with input_placeholder:
-            # input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
-            st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
-            if not st.session_state['prevInput']==st.session_state['input0is']:
-                io_changed=True
-                sidebar_mode="editing_example"
-                st.session_state['output0is']="caught"
-                st.session_state['prevInput']=st.session_state['input0is']
-            # else:
+
+if sidebar_mode=="editing_example":
+    code_placeholder.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
+    with input_placeholder:
+        # input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
+        st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
+        if not st.session_state['prevInput']==st.session_state['input0is']:
+            io_changed=True
+            sidebar_mode="editing_example"
+            st.session_state['output0is']="caught"
+            st.session_state['prevInput']=st.session_state['input0is']
+        # else:
             #     st.write("it never works")
             #     st.session_state['output0is']="not working"
-        # with output_placeholder:
+    # with output_placeholder:
         #     # output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
         #     st.session_state['output0is'] =st.selectbox('Select an output',['a','b'])#,key='selOutput')
         #     if not prevOutput==st.session_state['Output0is']:
         #         io_changed=True
         #         prevOutput=st.session_state['output0is']
-        if io_changed:
+    if io_changed:
             # st.write("code updated with "+st.session_state['input0is']+" and "+st.session_state['output0is'])
-            st.balloons()
+        st.balloons()
                 # io_changed=False
-        else:
-            st.sidebar.write("waiting for change")
-
-if sidebar_mode=="editing_example":
-    code_placeholder.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
+    else:
+        st.sidebar.write("waiting for change")
     isclick2 = change_placeholder.button('Select another example')
     if isclick2:
         sidebar_mode="app_start"
