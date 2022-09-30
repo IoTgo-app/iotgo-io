@@ -180,14 +180,14 @@ if sidebar_mode=="example_selected":
             # input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
             # st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
             st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
-            if st.session_state['prevInput']==st.session_state['input0is']:
+            if not st.session_state['prevInput']==st.session_state['input0is']:
                 io_changed=True
                 sidebar_mode="editing_example"
                 st.session_state['output0is']="caught"
                 st.session_state['prevInput']=st.session_state['input0is']
-            else:
-                st.write("it never works")
-                st.session_state['output0is']="not working"
+            # else:
+            #     st.write("it never works")
+            #     st.session_state['output0is']="not working"
         # with sidebar_placeholder3:
         #     # output0is=st.selectbox('Select an output',['a','b'],key='selOutput')
         #     st.session_state['output0is'] =st.selectbox('Select an output',['a','b'])#,key='selOutput')
