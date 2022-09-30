@@ -205,8 +205,8 @@ if sidebar_mode=="editing_example":
             # st.write("code updated with "+st.session_state['input0is']+" and "+st.session_state['output0is'])
         # st.balloons()
                 # io_changed=False
-    else:
-        st.sidebar.write("waiting for change")
+    # else:
+    #     st.sidebar.write("waiting for change")
     isclick2 = change_placeholder.button('Select another example')
     if isclick2:
         sidebar_mode="app_start"
@@ -215,7 +215,7 @@ if sidebar_mode=="editing_example":
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.4 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.5 ")
 st.session_state
 
 
