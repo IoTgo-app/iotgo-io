@@ -13,6 +13,7 @@ textIT={ #this text will appear on the app in various places to guide the user
   "You have selected:"   : "You have selected: (in italian)",
   
   "Download this code"  : "Download this code: (in italian)",
+  #or Open this code in the editor
   }
 
 exampleListIT= [ #these are the names of the examples code which user will select through a dropdown menu
