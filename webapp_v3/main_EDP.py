@@ -150,9 +150,9 @@ vertiPaddingWidthhalf=17
 
 
 sidebar_mode="app_start" #"edit_example" #"app_start"
-sidebar_placeholder = st.empty()
-sidebar_placeholder2 = st.empty()
-sidebar_placeholder3 = st.empty()
+sidebar_placeholder = st.sidebar.empty()
+sidebar_placeholder2 = st.sidebar.empty()
+sidebar_placeholder3 = st.sidebar.empty()
 
 code_col, padding1 = st.columns([3,1])
 with code_col:
@@ -181,7 +181,6 @@ if sidebar_mode=="example_selected":
             st.write("Editing example: \n" + st.session_state['skeleton'])
         with sidebar_placeholder2:
             # input0is=st.selectbox( 'Select an input',['x','y'],key='selInput')
-            # st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
             st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
             if not st.session_state['prevInput']==st.session_state['input0is']:
                 io_changed=True
@@ -228,7 +227,7 @@ if sidebar_mode=="example_selected":
     # st.write("now we select inputs and outputs.")
 
 st.sidebar.markdown("---")
-st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.2 ")
+st.sidebar.write("Stats for mehdi: programState = "+sidebar_mode+" \n- version 2.1 ")
 st.session_state
 # with st.form("my_form"):
 #    st.write("Inside the form")
