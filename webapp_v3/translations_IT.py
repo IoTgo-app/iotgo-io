@@ -3,14 +3,20 @@ textIT={ #this text will appear on the app in various places to guide the user
   "Select an example:"   : "Select an example: (in italian)",
   "Select an output:"    : "Select an output: (in italian)",
   "Select an input:"     : "Select an input: (in italian)",
-  "Change example"      : "Change example: (in italian)",#or select another example
+  
+  "Change example"      : "Change example: (in italian)",
+   #or Select another example
+  
   "Edit this example"   : "Edit this example: (in italian)",
+  #or Change input or ouput in this example
+  
   "You have selected:"   : "You have selected: (in italian)",
+  
   "Download this code"  : "Download this code: (in italian)",
   }
 
 exampleListIT= [ #these are the names of the examples code which user will select through a dropdown menu
-    "1a1_toAddITdescription" ,#for the code i.e. "1a1" refer to the labelled taxonomy diagram
+    "1a1_toAddITdescription" ,#match the code i.e. "1a1" to the labelled taxonomy diagram
     "1a2_toAddITdescription" ,
     
     "1b1_toAddITdescription" ,
