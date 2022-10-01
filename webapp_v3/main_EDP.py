@@ -117,7 +117,7 @@ with select_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
         st.write("you selected:" + st.session_state['skeleton'])
     elif st.session_state['sidebar_mode']=="app_start" or "example_selected":
-        st.session_state['skeleton']=st.selectbox(textIT('Select an example:'),skeleton_list)
+        st.session_state['skeleton']=st.selectbox(textIT['Select an example:'],skeleton_list)
         # st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)        
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
@@ -181,7 +181,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.6.2 ")
+st.sidebar.write("version 6.6.3 ")
 # st.session_state 
 
 
