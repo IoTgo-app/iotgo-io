@@ -170,6 +170,8 @@ with select_placeholder:
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
             st.session_state['sidebar_mode']="example_selected"
+    else:
+        st.empty()
     # elif st.session_state['sidebar_mode']=="editing_example":
     #     select_placeholder.empty()
         # st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
