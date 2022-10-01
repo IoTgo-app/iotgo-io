@@ -208,6 +208,8 @@ with change_placeholder:
         if isclick2:
             st.session_state['sidebar_mode']="example_selected"
             change_placeholder.empty()
+            st.experimental_rerun()
+
     else:
         st.empty()
 
@@ -224,7 +226,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 5.6 ")
+st.sidebar.write("version 5.7 ")
 st.session_state 
 
 
