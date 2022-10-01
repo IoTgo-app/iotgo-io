@@ -16,7 +16,7 @@ import mods #for custom modifications to default streamlit app style
 st.set_page_config(page_title="IoTgo",page_icon=None,layout="wide",initial_sidebar_state="expanded")
 st.markdown(mods.hide_menu_style, unsafe_allow_html=True)
 st.markdown(mods.hide_img_fs, unsafe_allow_html=True)
-st.markdown(mods.fix_sidebar,unsafe_allow_html=True)
+st.markdown(mods.fix_sidebar, unsafe_allow_html=True)
 st.markdown(mods.fix_tabs, unsafe_allow_html=True)
 st.markdown(mods.hide_top_padding, unsafe_allow_html=True)
 
@@ -92,23 +92,12 @@ skeleton_list= ["",
                 "lvl1-1con-2in-1out"]
 io_changed=False
 
-def updateCode():
-    st.write("codeupdated")
-    io_changed=False
-
-# def sidebar_selectExample():
-#     skeleton=st.sidebar.selectbox('Select an example',skeleton_list)
-#     return skeleton
-
-# def sidebar_editExample():
-#     input0is=st.sidebar.selectbox('Select an input',['x','y'])
-#     output0is=st.sidebar.selectbox('Select an output',['a','b'])
-#     return input0is,output0is
+# def updateCode():
+#     st.write("codeupdated")
+#     io_changed=False
 
 
-
-
-prevSkeleton=""
+prevSkeleton="" ####MOVE TO SESSION STATE
 skeleton=""
 prevInput="x" # get default value for this skeleton
 prevOutput="a" # get default value for this skeleton
@@ -117,13 +106,10 @@ if 'input0is' not in st.session_state:
     st.session_state['input0is'] = "x"
 if 'prevInput' not in st.session_state:
     st.session_state['prevInput'] = "x"
-
-
 if 'output0is' not in st.session_state:
     st.session_state['output0is'] = "a"
 if 'prevOutput' not in st.session_state:
     st.session_state['prevOutput'] = "x"
-
 if 'skeleton' not in st.session_state:
     st.session_state['skeleton'] = ""
 if 'sidebar_mode' not in st.session_state:
@@ -207,7 +193,6 @@ with change_placeholder:
             st.session_state['sidebar_mode']="app_start"
             change_placeholder.empty()
             st.experimental_rerun()
-
     else:
         st.empty()
 
