@@ -2,7 +2,7 @@
 textIT={ #this text will appear on the app in various places to guide the user
   "Select an example:"   : "Scegli un esempio:",
   "Select an output:"    : "Scegli un output:",
-  "Select an input:"     : "Scegli un input",
+  "Select an input:"     : "Scegli un input:",
   "Select another example"      : "Scegli un altro esempio",
   
   "Edit this example"   : "Modifica questo esempio",
