@@ -49,12 +49,12 @@ it2en_inout={ #this is the text description of input, ouput cards.
   # Should match the description that on the printed cards
 "il rumore è alto":"noiseHigh" ,
 'il rumore è basso':"noiseLow" ,
-'il logo non è toccato':"touchNo" , #v2 
 'il logo è toccato':"touchYes" ,#v2 
+'il logo non è toccato':"touchNo" , #v2 
 "l\'accelerazione è alta":"accelHigh" ,
 "l\'accelerazione è bassa":"accelLow" , #RG: fixed typo
-"il pulsante non è premuto":"buttonNotPress",
 "il pulsante è premuto":"buttonPress",
+"il pulsante non è premuto":"buttonNotPress",
 "la bussola punta ad Est":"compassE" ,
 "la bussola punta a Nord":"compassN" ,
 "la bussola punta a Sud":"compassS" ,
@@ -82,40 +82,40 @@ it2en_inout={ #this is the text description of input, ouput cards.
 "il colore  è nero (Envirobit)": "EB_colorIsBlack",
 "c\'è un applauso (Envirobit)": "EB_clapYes",
 "non c’è un applauso (Envirobit)": "EB_clapNo",
-'non c\'è movimento nei dintorni (BosonKit)':"movementNotPresent" ,
 'c\'è movimento nei dintorni (BosonKit)':"movementPresent" ,
+'non c\'è movimento nei dintorni (BosonKit)':"movementNotPresent" ,
 'il cursore è al massimo (BosonKit)':"sliderHigh" ,
 'il cursore è al minimo (BosonKit)':"sliderLow" ,
-"il cursore è al medio (BosonKit)":"sliderMid" ,
+"il cursore è a metà (BosonKit)":"sliderMid" , #RG: fixed another typo
 'no Input':"noInput",
 'suona una melodia allegra':"musicHappy" ,
-'smette di suonare':"musicNone" ,
 'suona una melodia triste':"musicSad" ,
 "suona un allarme":"musicAlarm" ,
+'smette di suonare':"musicNone" ,
 'mostra un numero':"displayInput" ,
-'smette di mostrare testi o numeri':"displayNone" ,
 'mostra del testo':"displayText" ,
+'smette di mostrare testi o numeri':"displayNone" ,
 'mostra un\'icona felice':"iconHappy",
-'smette di mostrare un\'icona':"iconNone",
+'mostra un\'icona triste':"iconSad",
 #RG: new cards: START
 'mostra un\'icona grande':"iconBig",
 'mostra un\'icona piccola':"iconSmall",
 #RG: new cards: END
-'mostra un\'icona triste':"iconSad",
+'smette di mostrare un\'icona':"iconNone",  
 'invio dati' :"sendData",
 "accende i LED bianchi (Envirobit)": "EB_whiteLEDon",
 "spegne i LED bianchi (Envirobit)": "EB_whiteLEDoff",
-'spegne un ventilatore (BosonKit)':"fanOff" ,
 'accende un ventilatore (BosonKit)':"fanOn" ,
-'spegne una luce (BosonKit)':"lightOff",
+'spegne un ventilatore (BosonKit)':"fanOff" ,
 'accende una luce (BosonKit)':"lightOn",
-'fa ruotare il motore (BosonKit)':"rotateMax" ,
+'spegne una luce (BosonKit)':"lightOff",
+'ruota il motore (BosonKit)':"rotateMax" , #RG: fixed another typo
 'smette di ruotare il motore (BosonKit)':"rotateMin" ,
-'spegne un\'animazione luminosa (BosonKit)':"showStripBlack",
 'attiva un\'animazione luminosa (BosonKit)':"showStripRainbow" ,
-'spegne un\'animazione luminosa verde (BosonKit)':"showStripGreen",
-'spegne un\'animazione luminosa rossa (BosonKit)':"showStripRed",
+#'spegne un\'animazione luminosa verde (BosonKit)':"showStripGreen", #RG: they are removed from cards, because confusing
+#'spegne un\'animazione luminosa rossa (BosonKit)':"showStripRed",   #RG: they are removed from cards, because confusing
+'spegne un\'animazione luminosa (BosonKit)':"showStripBlack",
 'no Output':"noOutput", 
-"l\'umidità del suolo è bassa":"soilMoistureLow",#new
 "l\'umidità del suolo è alta":"soilMoistureHigh",#new
+"l\'umidità del suolo è bassa":"soilMoistureLow",#new
 }
