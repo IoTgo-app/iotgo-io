@@ -220,12 +220,13 @@ with edit_placeholder:
             st.session_state['sidebar_mode']="editing_example"
             edit_placeholder.empty()
             select_placeholder.empty()
+            st.balloons()
     elif st.session_state['sidebar_mode']=="editing_example":
         st.empty()
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 4.2 ")
+st.sidebar.write("version 4.3 ")
 st.session_state 
 
 
