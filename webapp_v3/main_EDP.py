@@ -132,6 +132,9 @@ if 'prevInput' not in st.session_state:
 
 if 'output0is' not in st.session_state:
     st.session_state['output0is'] = "a"
+if 'prevOutput' not in st.session_state:
+    st.session_state['prevOutput'] = "x"
+
 if 'skeleton' not in st.session_state:
     st.session_state['skeleton'] = ""
 if 'sidebar_mode' not in st.session_state:
@@ -232,7 +235,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.6.0 ")
+st.sidebar.write("version 6.6.1 ")
 st.session_state 
 
 
