@@ -4,9 +4,9 @@
 
 
 default_IO = {
-    "lvl1a1-1in_1out"                   :{"in1":"","out1":""},
-    "lvl1a2-1in_1out_else"              :{"in1":"","out1":""},
-    "lvl1b1-1in_2out"                   :{"in1":"","out1":"","out2":""},
+    "lvl1a1-1in_1out"                   :{"in1":"replaced","out1":"replaced"},
+    "lvl1a2-1in_1out_else"              :{"in1":"replaced","out1":"replaced"},
+    "lvl1b1-1in_2out"                   :{"in1":"replaced","out1":"replaced","out2":"replaced"},
     "lvl1b2-1in_2out_else"              :{"in1":"","out1":"","out2":""},
     "lvl1c1-2in_1out"                   :{"in1":"","in2":"","out1":""},
     "lvl1c2-2in_1out_else"              :{"in1":"","in2":"","out1":""},
@@ -492,6 +492,13 @@ code_examples = {
         """
 }
 
+
+def addIO(skeleton_name):
+    currentSkeleton=code_skeletons[skeleton_name]
+    IO2add=default_IO[skeleton_name]
+    for eachKey, eachVal in IO2add.items():
+        currentSkeleton=currentSkeleton.replace(eachKey, eachVal)
+    return currentSkeleton
 
 
 

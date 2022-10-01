@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 import time
 import textwrap
 
-
+from code_skeletons import addIO
 import inputs_IT, outputs_IT
 from translations_IT import it2en_inout, exampleListIT, textIT, ITdescription2var
 from imageURL import imageURL
@@ -178,7 +178,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.6.3 ")
+st.sidebar.write("version 6.6.4")
 # st.session_state 
 
 
