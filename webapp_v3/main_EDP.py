@@ -56,35 +56,6 @@ def resetCards():
 
 
 
-# if p2p==True:
-# 	p2ptype = st.sidebar.radio("Sono...",('invio dati', 'ricevo dati'),on_change=resetCards)
-# 	if p2ptype=='invio dati':
-# 		input1 = st.sidebar.selectbox('Seleziona la tua carta di input',input_options)
-# 		output1= 'invio dati' 
-# 	elif  p2ptype=='ricevo dati': #'ricevo dati'
-# 		output1 = st.sidebar.selectbox('Seleziona la tua carta di output', output_options)
-# 		input1='recezione dati'
-# 	else:
-# 		input1="no Input"
-# 		output1="no Output"
-# 		gamelevel=0
-
-# st.sidebar.markdown("""---""")	
-# secondLevel = st.sidebar.checkbox('Aggiungere un ulteriore livello di comunicazione')
-
-# if secondLevel==True:
-# 	gamelevel=1
-# 	if p2ptype=='invio dati':
-# 		st.sidebar.write('Stavi inviando dati, ora riceviamo anche i dati:')
-# 		output2 = st.sidebar.selectbox('Seleziona la tua carta di output ', output_options)
-# 		input2='recezione dati'
-# 	elif  p2ptype=='ricevo dati':  
-# 		st.sidebar.write('Stavi ricevendo dati, ora inviamo anche i dati:')		
-# 		input2 = st.sidebar.selectbox('Seleziona la tua carta di input ',input_options)
-# 		output2= 'invio dati' 
-# 	else:
-# 		input2="no Input"
-# 		output2="no Output"
  
 skeleton_list= ["",
                 "lvl1-1con-1in-1out", 
@@ -483,3 +454,37 @@ st.sidebar.write("version 6.6.1 ")
 # st.sidebar.markdown(badges,  unsafe_allow_html=False)
 # st.sidebar.markdown("""---""")
  
+
+
+
+
+
+# if p2p==True:
+# 	p2ptype = st.sidebar.radio("Sono...",('invio dati', 'ricevo dati'),on_change=resetCards)
+# 	if p2ptype=='invio dati':
+# 		input1 = st.sidebar.selectbox('Seleziona la tua carta di input',input_options)
+# 		output1= 'invio dati' 
+# 	elif  p2ptype=='ricevo dati': #'ricevo dati'
+# 		output1 = st.sidebar.selectbox('Seleziona la tua carta di output', output_options)
+# 		input1='recezione dati'
+# 	else:
+# 		input1="no Input"
+# 		output1="no Output"
+# 		gamelevel=0
+
+# st.sidebar.markdown("""---""")	
+# secondLevel = st.sidebar.checkbox('Aggiungere un ulteriore livello di comunicazione')
+
+# if secondLevel==True:
+# 	gamelevel=1
+# 	if p2ptype=='invio dati':
+# 		st.sidebar.write('Stavi inviando dati, ora riceviamo anche i dati:')
+# 		output2 = st.sidebar.selectbox('Seleziona la tua carta di output ', output_options)
+# 		input2='recezione dati'
+# 	elif  p2ptype=='ricevo dati':  
+# 		st.sidebar.write('Stavi ricevendo dati, ora inviamo anche i dati:')		
+# 		input2 = st.sidebar.selectbox('Seleziona la tua carta di input ',input_options)
+# 		output2= 'invio dati' 
+# 	else:
+# 		input2="no Input"
+# 		output2="no Output"
