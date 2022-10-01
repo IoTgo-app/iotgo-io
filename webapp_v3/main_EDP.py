@@ -196,11 +196,17 @@ with input_placeholder:
             st.session_state['prevInput']=st.session_state['input0is']
     else:
         st.empty()
-    # elif st.session_state['sidebar_mode']=="app_start":
-    #     st.empty()
-    # elif st.session_state['sidebar_mode']=="example_selected":
-    #     st.empty()
 
+with output_placeholder:
+    if st.session_state['sidebar_mode']=="editing_example":
+        st.session_state['output0is'] =st.selectbox( 'Select an output',['a','b'])#,key='selInput')
+        if not st.session_state['prevOutput']==st.session_state['output0is']:
+            # st.session_state['sidebar_mode']="editing_example"
+            st.balloons()    
+            st.session_state['prevOutput']=st.session_state['output0is']
+    else:
+        st.empty()
+ 
 
 with change_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
@@ -226,7 +232,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 5.9 ")
+st.sidebar.write("version 6.6.0 ")
 st.session_state 
 
 
