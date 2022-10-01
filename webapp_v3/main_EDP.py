@@ -199,6 +199,7 @@ with change_placeholder:
         isclick2 = change_placeholder.button('Select another example')
         if isclick2:
             st.session_state['sidebar_mode']="example_selected"
+            change_placeholder.empty()
 
 with code_placeholder:
     if st.session_state['sidebar_mode']=="app_start":
@@ -216,12 +217,13 @@ with edit_placeholder:
         isClick=st.button('Edit example')
         if isClick:
             st.session_state['sidebar_mode']="editing_example"
+            edit_placeholder.empty()
     elif st.session_state['sidebar_mode']=="editing_example":
         st.empty()
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 3.9 ")
+st.sidebar.write("version 4.0 ")
 st.session_state 
 
 
