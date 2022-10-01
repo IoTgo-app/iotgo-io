@@ -171,7 +171,7 @@ with select_placeholder:
             st.session_state['sidebar_mode']="editing_example"
             st.session_state['prevInput']=st.session_state['input0is']
             st.balloons()
-    elif st.session_state['sidebar_mode']=="app_start" or "example_selected":
+    if st.session_state['sidebar_mode']=="app_start" or "example_selected":
         st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)#, key='selector')        
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
@@ -185,9 +185,9 @@ with edit_placeholder:
             edit_placeholder.empty()
             select_placeholder.empty()
             st.balloons()
-    elif st.session_state['sidebar_mode']=="app_start":
+    if st.session_state['sidebar_mode']=="app_start":
         st.empty()
-    elif st.session_state['sidebar_mode']=="editing_example":
+    if st.session_state['sidebar_mode']=="editing_example":
         st.empty()
 
 
@@ -206,9 +206,9 @@ with edit_placeholder:
 with change_placeholder:
     if st.session_state['sidebar_mode']=="app_start":
         st.empty()
-    elif st.session_state['sidebar_mode']=="example_selected":
+    if st.session_state['sidebar_mode']=="example_selected":
         st.empty()
-    elif st.session_state['sidebar_mode']=="editing_example":
+    if st.session_state['sidebar_mode']=="editing_example":
         isclick2 = change_placeholder.button('Select another example')
         if isclick2:
             st.session_state['sidebar_mode']="example_selected"
@@ -217,9 +217,9 @@ with change_placeholder:
 with code_placeholder:
     if st.session_state['sidebar_mode']=="app_start":
         st.empty()
-    elif st.session_state['sidebar_mode']=="example_selected":
+    if st.session_state['sidebar_mode']=="example_selected":
         st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
-    elif st.session_state['sidebar_mode']=="editing_example":
+    if st.session_state['sidebar_mode']=="editing_example":
         # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
         st.write("editing this....")
 
@@ -227,7 +227,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 4.6 ")
+st.sidebar.write("version 4.7 ")
 st.session_state 
 
 
