@@ -6,7 +6,7 @@ import textwrap
 
 
 import inputs_IT, outputs_IT
-from translations_IT import it2en_inout
+from translations_IT import it2en_inout, exampleListIT, textIT, ITdescription2var
 from imageURL import imageURL
 from genURL import genURL
 import mods #for custom modifications to default streamlit app style
@@ -52,17 +52,6 @@ gamelevel=0
 
 def resetCards():
     gamelevel=0	 
-
-
-
-# with sidebar_placeholder.container():
-#     skeleton = sidebar_selectExample()
-
-# container = st.container()
-
-# sidebar_placeholder=st.sidebar.empty()
-# sidebar_container=sidebar_placeholder.container()
-
 
 
 
@@ -236,7 +225,7 @@ with code_placeholder:
 
 st.sidebar.markdown("---")
 st.sidebar.write("version 6.6.1 ")
-st.session_state 
+# st.session_state 
 
 
 # if sidebar_mode=="app_start":

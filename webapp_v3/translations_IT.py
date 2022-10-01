@@ -41,6 +41,33 @@ exampleListIT= [ #these are the names of the example programs which users will s
 ]
 
 
+ITdescription2var= {#keys should contain the IT description needed to be shown in the app for each example.
+    "1a1_toAddITdescription"  : "lvl1a1-1in_1out",
+    "1a2_toAddITdescription"  : "lvl1a2-1in_1out_else",
+    
+    "1b1_toAddITdescription"  : "lvl1b1-1in_2out",
+    "1b2_toAddITdescription"  : "lvl1b2-1in_2out_else",
+
+    "1c1_toAddITdescription"  : "lvl1c1-2in_1out",
+    "1c2_toAddITdescription"  : "lvl1c2-2in_1out_else",
+    
+    "2a1_toAddITdescription"  : "lvl2a1-1in_1out-1in_1out",
+    "2a2_toAddITdescription"  : "lvl2a2-1in_1out_else-1in_1out_else",
+
+    "2b1_toAddITdescription"  : "lvl2b1-1in_1out_elif_1in_1out",
+    "2b2_toAddITdescription"  : "lvl2b2-1in_1out_elif_1in_1out_else",
+
+    "2c1_toAddITdescription"  : "lvl2c1-1in_1out-nest-1in_1out",
+    "2c2_toAddITdescription"  : "lvl2c2-1in_1out-nest-1in_1out_else_else",
+
+    "3a1_toAddITdescription"  : "lvl3a1-1in_1out_var",
+    "3a2_toAddITdescription"  : "lvl3a2-1in_1out_var_else",
+
+    "3b1_toAddITdescription"  : "lvl3b1-1var_1out",
+    "3b2_toAddITdescription"  : "lvl3b2-1var_1out_else"
+}
+
+
 it2en_inout={ #this is the text description of input, ouput cards.
   # NEW Cards to be added, 
   # if any new card is to be added, just add the text as a key, 
