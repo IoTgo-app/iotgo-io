@@ -165,21 +165,31 @@ with code_col:
 edit_placeholder     = st.empty()
 
 with select_placeholder:
-    if st.session_state['sidebar_mode']=="app_start" or "example_selected":
-        st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)#, key='selector')        
-        if not st.session_state['skeleton']==prevSkeleton:
-            prevSkeleton=st.session_state['skeleton']
-            st.session_state['sidebar_mode']="example_selected"
-    # else:
-    #     select_placeholder.empty()
-    elif st.session_state['sidebar_mode']=="editing_example":
-        select_placeholder.empty()
+    if st.session_state['sidebar_mode']=="editing_example":
         st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
-        # st.write("Editing example: \n" + st.session_state['skeleton'])
         if not st.session_state['prevInput']==st.session_state['input0is']:
             st.session_state['sidebar_mode']="editing_example"
             st.session_state['prevInput']=st.session_state['input0is']
             st.balloons()
+    elif st.session_state['sidebar_mode']=="app_start" or "example_selected":
+        st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)#, key='selector')        
+        if not st.session_state['skeleton']==prevSkeleton:
+            prevSkeleton=st.session_state['skeleton']
+            st.session_state['sidebar_mode']="example_selected"
+    
+with edit_placeholder:
+    if st.session_state['sidebar_mode']=="example_selected":
+        isClick=st.button('Edit example')
+        if isClick:
+            st.session_state['sidebar_mode']="editing_example"
+            edit_placeholder.empty()
+            select_placeholder.empty()
+            st.balloons()
+    elif st.session_state['sidebar_mode']=="app_start":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="editing_example":
+        st.empty()
+
 
 # with input_placeholder:
 #     if st.session_state['sidebar_mode']=="app_start":
@@ -213,18 +223,7 @@ with code_placeholder:
         # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
         st.write("editing this....")
 
-with edit_placeholder:
-    if st.session_state['sidebar_mode']=="example_selected":
-        isClick=st.button('Edit example')
-        if isClick:
-            st.session_state['sidebar_mode']="editing_example"
-            edit_placeholder.empty()
-            select_placeholder.empty()
-            st.balloons()
-    elif st.session_state['sidebar_mode']=="app_start":
-        st.empty()
-    elif st.session_state['sidebar_mode']=="editing_example":
-        st.empty()
+
 
 
 st.sidebar.markdown("---")
