@@ -166,7 +166,8 @@ edit_placeholder     = st.empty()
 
 with select_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.write("you selected" + st.session_state['skeleton'])
+        st.write("you selected:" + st.session_state['skeleton'])
+        st.experimental_rerun()
     elif st.session_state['sidebar_mode']=="app_start" or "example_selected":
         st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)#, key='selector')        
         if not st.session_state['skeleton']==prevSkeleton:
@@ -183,10 +184,7 @@ with edit_placeholder:
             st.balloons()
     else:
         st.empty()
-    # elif st.session_state['sidebar_mode']=="app_start":
-    #     st.empty()
-    # elif st.session_state['sidebar_mode']=="editing_example":
-    #     st.empty()
+ 
 
 
 with input_placeholder:
@@ -226,7 +224,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 5.3 ")
+st.sidebar.write("version 5.4 ")
 st.session_state 
 
 
