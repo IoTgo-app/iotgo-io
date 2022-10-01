@@ -170,14 +170,14 @@ with select_placeholder:
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
             st.session_state['sidebar_mode']="example_selected"
-    elif st.session_state['sidebar_mode']=="editing_example":
-        select_placeholder.empty()
-        st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
-        # st.write("Editing example: \n" + st.session_state['skeleton'])
-        if not st.session_state['prevInput']==st.session_state['input0is']:
-            st.session_state['sidebar_mode']="editing_example"
-            st.session_state['prevInput']=st.session_state['input0is']
-            st.balloons()
+    # elif st.session_state['sidebar_mode']=="editing_example":
+    #     select_placeholder.empty()
+        # st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
+        # # st.write("Editing example: \n" + st.session_state['skeleton'])
+        # if not st.session_state['prevInput']==st.session_state['input0is']:
+        #     st.session_state['sidebar_mode']="editing_example"
+        #     st.session_state['prevInput']=st.session_state['input0is']
+        #     st.balloons()
 
 # with input_placeholder:
 #     if st.session_state['sidebar_mode']=="app_start":
@@ -219,12 +219,13 @@ with edit_placeholder:
         if isClick:
             st.session_state['sidebar_mode']="editing_example"
             edit_placeholder.empty()
+            select_placeholder.empty()
     elif st.session_state['sidebar_mode']=="editing_example":
         st.empty()
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 4.1 ")
+st.sidebar.write("version 4.2 ")
 st.session_state 
 
 
