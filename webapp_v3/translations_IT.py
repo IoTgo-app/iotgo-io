@@ -1,20 +1,20 @@
 
 textIT={ #this text will appear on the app in various places to guide the user
-  "Select an example:"   : "Select an example: (in italian)",
-  "Select an output:"    : "Select an output: (in italian)",
-  "Select an input:"     : "Select an input: (in italian)",
-  "Select another example"      : "Select another example: (in italian)",
+  "Select an example:"   : "Scegli un esempio:",
+  "Select an output:"    : "Scegli un output:",
+  "Select an input:"     : "Scegli un input",
+  "Select another example"      : "Scegli un altro esempio",
   
-  "Edit this example"   : "Edit this example: (in italian)",
-  #or Change input or ouput in this example
+  "Edit this example"   : "Modifica questo esempio",
+  #or Change input or ouput in this example #RG they are two different interactions
   
-  "You have selected:"   : "You have selected: (in italian)",
+  "You have selected:"   : "Hai scelto:",
   
-  "Download this code"  : "Download this code: (in italian)",
+  "Download this program"  : "Scarica il programma",
   #or Open this code in the editor
   }
 
-exampleListIT= [ #these are the names of the examples code which user will select through a dropdown menu
+exampleListIT= [ #these are the names of the example programs which users will select through a dropdown menu
     "1a1_toAddITdescription" ,#match the code i.e. "1a1" to the labelled taxonomy diagram
     "1a2_toAddITdescription" ,
     
@@ -52,7 +52,7 @@ it2en_inout={ #this is the text description of input, ouput cards.
 'il logo non è toccato':"touchNo" , #v2 
 'il logo è toccato':"touchYes" ,#v2 
 "l\'accelerazione è alta":"accelHigh" ,
-"l\'accelerazione è basso":"accelLow" ,
+"l\'accelerazione è bassa":"accelLow" , #RG: fixed typo
 "il pulsante non è premuto":"buttonNotPress",
 "il pulsante è premuto":"buttonPress",
 "la bussola punta ad Est":"compassE" ,
@@ -97,6 +97,10 @@ it2en_inout={ #this is the text description of input, ouput cards.
 'mostra del testo':"displayText" ,
 'mostra un\'icona felice':"iconHappy",
 'smette di mostrare un\'icona':"iconNone",
+#RG: new cards: START
+'mostra un\'icona grande':"iconBig",
+'mostra un\'icona piccola':"iconSmall",
+#RG: new cards: END
 'mostra un\'icona triste':"iconSad",
 'invio dati' :"sendData",
 "accende i LED bianchi (Envirobit)": "EB_whiteLEDon",
