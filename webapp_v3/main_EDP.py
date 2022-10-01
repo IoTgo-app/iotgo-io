@@ -216,9 +216,9 @@ with change_placeholder:
 with code_placeholder:
     if st.session_state['sidebar_mode']=="app_start":
         st.empty()
-    if st.session_state['sidebar_mode']=="example_selected":
+    elif st.session_state['sidebar_mode']=="example_selected":
         st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
-    if st.session_state['sidebar_mode']=="editing_example":
+    elif st.session_state['sidebar_mode']=="editing_example":
         # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
         st.write("editing this....")
 
@@ -226,7 +226,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 5.7 ")
+st.sidebar.write("version 5.8 ")
 st.session_state 
 
 
