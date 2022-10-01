@@ -154,7 +154,7 @@ vertiPaddingWidthhalf=17
 
 
 # sidebar_mode        = "app_start" #"edit_example" #"app_start"
-select_placeholder  = st.sidebar.container()#empty()
+select_placeholder  = st.sidebar.empty()
 input_placeholder   = st.sidebar.container()#empty()
 output_placeholder  = st.sidebar.container()#empty()
 change_placeholder  = st.sidebar.container()#empty()
@@ -181,10 +181,12 @@ with edit_placeholder:
             edit_placeholder.empty()
             select_placeholder.empty()
             st.balloons()
-    elif st.session_state['sidebar_mode']=="app_start":
+    else:
         st.empty()
-    elif st.session_state['sidebar_mode']=="editing_example":
-        st.empty()
+    # elif st.session_state['sidebar_mode']=="app_start":
+    #     st.empty()
+    # elif st.session_state['sidebar_mode']=="editing_example":
+    #     st.empty()
 
 
 with input_placeholder:
@@ -194,22 +196,26 @@ with input_placeholder:
             st.session_state['sidebar_mode']="editing_example"
             st.session_state['prevInput']=st.session_state['input0is']
             st.balloons()    
-    elif st.session_state['sidebar_mode']=="app_start":
+    else:
         st.empty()
-    elif st.session_state['sidebar_mode']=="example_selected":
-        st.empty()
+    # elif st.session_state['sidebar_mode']=="app_start":
+    #     st.empty()
+    # elif st.session_state['sidebar_mode']=="example_selected":
+    #     st.empty()
 
 
 with change_placeholder:
-    if st.session_state['sidebar_mode']=="app_start":
-        st.empty()
-    if st.session_state['sidebar_mode']=="example_selected":
-        st.empty()
+    # if st.session_state['sidebar_mode']=="app_start":
+    #     st.empty()
+    # if st.session_state['sidebar_mode']=="example_selected":
+    #     st.empty()
     if st.session_state['sidebar_mode']=="editing_example":
         isclick2 = change_placeholder.button('Select another example')
         if isclick2:
             st.session_state['sidebar_mode']="example_selected"
             change_placeholder.empty()
+    else:
+        st.empty()
 
 with code_placeholder:
     if st.session_state['sidebar_mode']=="app_start":
@@ -224,7 +230,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 4.8 ")
+st.sidebar.write("version 4.9 ")
 st.session_state 
 
 
