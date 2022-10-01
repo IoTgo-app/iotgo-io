@@ -115,7 +115,7 @@ edit_placeholder     = st.empty()
 
 with select_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.write("you selected:" + st.session_state['skeleton'])
+        st.write(textIT['You have selected: '] + st.session_state['skeleton'])
     elif st.session_state['sidebar_mode']=="app_start" or "example_selected":
         st.session_state['skeleton']=st.selectbox(textIT['Select an example:'],skeleton_list)
         # st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)        
@@ -125,7 +125,7 @@ with select_placeholder:
     
 with edit_placeholder:
     if st.session_state['sidebar_mode']=="example_selected":
-        isClick=st.button('Edit example')
+        isClick=st.button(textIT['Edit this example'])
         if isClick:
             st.session_state['sidebar_mode']="editing_example"
             edit_placeholder.empty()
@@ -139,20 +139,17 @@ with edit_placeholder:
 
 with input_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.session_state['input0is'] =st.selectbox( 'Select an input',['x','y'])#,key='selInput')
+        st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],['x','y'])#,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:
-            # st.session_state['sidebar_mode']="editing_example"
-            st.balloons()    
+            # st.balloons()    
             st.session_state['prevInput']=st.session_state['input0is']
     else:
         st.empty()
 
 with output_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.session_state['output0is'] =st.selectbox( 'Select an output',['a','b'])#,key='selInput')
+        st.session_state['output0is'] =st.selectbox( textIT['Select an output:'],['a','b'])#,key='selInput')
         if not st.session_state['prevOutput']==st.session_state['output0is']:
-            # st.session_state['sidebar_mode']="editing_example"
-            st.balloons()    
             st.session_state['prevOutput']=st.session_state['output0is']
     else:
         st.empty()
@@ -160,7 +157,7 @@ with output_placeholder:
 
 with change_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        isclick2 = change_placeholder.button('Select another example')
+        isclick2 = change_placeholder.button(textIT['Select another example'])
         if isclick2:
             st.session_state['sidebar_mode']="app_start"
             change_placeholder.empty()
