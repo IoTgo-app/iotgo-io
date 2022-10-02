@@ -148,7 +148,7 @@ with input_placeholder:
 
 with output_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.session_state['output0is'] =st.selectbox( textIT['Select an output:'],ouput_options)#,key='selInput')
+        st.session_state['output0is'] =st.selectbox( textIT['Select an output:'],output_options)#,key='selInput')
         if not st.session_state['prevOutput']==st.session_state['output0is']:
             st.session_state['prevOutput']=st.session_state['output0is']
     else:
