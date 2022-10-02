@@ -139,7 +139,7 @@ with edit_placeholder:
 
 with input_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],['x','y'])#,key='selInput')
+        st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],input_options)#,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:
             # st.balloons()    
             st.session_state['prevInput']=st.session_state['input0is']
@@ -148,7 +148,7 @@ with input_placeholder:
 
 with output_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.session_state['output0is'] =st.selectbox( textIT['Select an output:'],['a','b'])#,key='selInput')
+        st.session_state['output0is'] =st.selectbox( textIT['Select an output:'],ouput_options)#,key='selInput')
         if not st.session_state['prevOutput']==st.session_state['output0is']:
             st.session_state['prevOutput']=st.session_state['output0is']
     else:
@@ -180,7 +180,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.7.0")
+st.sidebar.write("version 6.7.1")
 # st.session_state 
 
 
