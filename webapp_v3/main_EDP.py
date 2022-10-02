@@ -86,7 +86,7 @@ if 'skeleton' not in st.session_state:
 if 'sidebar_mode' not in st.session_state:
     st.session_state['sidebar_mode'] = "app_start"
 if 'io_list' not in st.session_state:
-    if not st.session_state['skeleton']="":
+    if not st.session_state['skeleton']=="":
         st.session_state['io_list'] = default_IO[st.session_state['skeleton']]
     else:
         st.session_state['io_list'] = {"empty",""}
@@ -188,7 +188,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.7.3")
+st.sidebar.write("version 6.7.4")
 # st.session_state 
 
 
