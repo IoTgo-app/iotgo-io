@@ -110,7 +110,7 @@ change_placeholder  = st.sidebar.container()#empty()
 
 code_col, padding1  = st.columns([3,1])
 with code_col:
-    code_placeholder = st.empty()
+    code_placeholder = st.container()
 edit_placeholder     = st.empty()
 
 with select_placeholder:
@@ -173,12 +173,13 @@ with code_placeholder:
     elif st.session_state['sidebar_mode']=="editing_example":
         # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
         st.write("editing this....")
+        st.code(addIO(st.session_state['skeleton']), language="javascript")
 
 
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.6.4")
+st.sidebar.write("version 6.6.5")
 # st.session_state 
 
 
