@@ -144,7 +144,7 @@ with edit_placeholder:
 
 with input_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],input_options)#,key='selInput')
+        st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],input_options,default="il pulsante è premuto")#,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']
             temp=default_IO[st.session_state['skeleton']]
