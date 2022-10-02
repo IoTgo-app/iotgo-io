@@ -527,6 +527,7 @@ def addDefaultIO(skeleton_name):
 
 
 def changeIO(skeleton_name,IO2change):
+    currentSkeleton=code_skeletons[skeleton_name]
     for eachKey, eachVal in IO2change.items():
         if eachKey=="in1":
             currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", input_code[eachVal])
