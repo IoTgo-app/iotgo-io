@@ -57,10 +57,10 @@ def resetCards():
 
 
  
-skeleton_list= ["",
-                "lvl1-1con-1in-1out", 
-                "lvl1-1con-1in-2out", 
-                "lvl1-1con-2in-1out"]
+# skeleton_list= ["",
+                # "lvl1-1con-1in-1out", 
+                # "lvl1-1con-1in-2out", 
+                # "lvl1-1con-2in-1out"]
 io_changed=False
 
 # def updateCode():
@@ -117,7 +117,7 @@ with select_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
         st.write(textIT['You have selected: '] + st.session_state['skeleton'])
     elif st.session_state['sidebar_mode']=="app_start" or "example_selected":
-        st.session_state['skeleton']=st.selectbox(textIT['Select an example:'],skeleton_list)
+        st.session_state['skeleton']=st.selectbox(textIT['Select an example:'],code_skeletons)
         # st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)        
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']

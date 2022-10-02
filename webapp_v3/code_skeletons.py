@@ -4,6 +4,7 @@
 
 
 default_IO = {
+    "":{},
     "lvl1a1-1in_1out"                   :{"in1":"replaced","out1":"replaced"},
     "lvl1a2-1in_1out_else"              :{"in1":"replaced","out1":"replaced"},
     "lvl1b1-1in_2out"                   :{"in1":"replaced","out1":"replaced","out2":"replaced"},
@@ -25,6 +26,7 @@ default_IO = {
 
 
 code_skeletons = {
+    "":"",
     "lvl1a1-1in_1out" : 
         """
         /**
