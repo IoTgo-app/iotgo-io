@@ -513,7 +513,7 @@ code_examples = {
 
 
 
-def addIO(skeleton_name):
+def addDefaultIO(skeleton_name):
     currentSkeleton=code_skeletons[skeleton_name]
     IO2add=default_IO[skeleton_name]
     for eachKey, eachVal in IO2add.items():
@@ -522,6 +522,24 @@ def addIO(skeleton_name):
         if eachKey=="out1" or eachKey=="out2":
             currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_code[eachVal])
         if eachKey=="out1else" or eachKey=="out2else":
+            currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_else_code[eachVal])
+    return currentSkeleton
+
+
+def changeIO(skeleton_name,IO2change):
+    
+    for eachKey, eachVal in IO2change.items():
+        if eachKey=="in1":
+            currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", input_code[eachVal])
+        if eachKey=="in2":
+            currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", input_code[eachVal])
+        if eachKey=="out1":
+            currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_code[eachVal])
+        if eachKey=="out2":
+            currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_code[eachVal])
+        if eachKey=="out1else":
+            currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_code[eachVal]) 
+        if eachKey=="out2else":
             currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_else_code[eachVal])
     return currentSkeleton
 

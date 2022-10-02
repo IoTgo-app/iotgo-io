@@ -85,6 +85,11 @@ if 'skeleton' not in st.session_state:
     st.session_state['skeleton'] = ""
 if 'sidebar_mode' not in st.session_state:
     st.session_state['sidebar_mode'] = "app_start"
+if 'io_list' not in st.session_state:
+    if not st.session_state['skeleton']="":
+        st.session_state['io_list'] = default_IO[st.session_state['skeleton']]
+    else:
+        st.session_state['io_list'] = {"empty",""}
 
 
 
@@ -142,6 +147,7 @@ with input_placeholder:
         st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],input_options)#,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']
+            st.session_state['io_list']['in1']=st.session_state['input0is']
             st.experimental_rerun()
     else:
         st.empty()
@@ -151,6 +157,7 @@ with output_placeholder:
         st.session_state['output0is'] =st.selectbox( textIT['Select an output:'],output_options)#,key='selInput')
         if not st.session_state['prevOutput']==st.session_state['output0is']:
             st.session_state['prevOutput']=st.session_state['output0is']
+            st.session_state['io_list']['out1']=st.session_state['output0is']
             st.experimental_rerun()
     else:
         st.empty()
@@ -170,12 +177,12 @@ with code_placeholder:
     if st.session_state['sidebar_mode']=="app_start":
         st.empty()
     elif st.session_state['sidebar_mode']=="example_selected":
-        st.code(addIO(st.session_state['skeleton']), language="javascript")
+        st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
         # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     elif st.session_state['sidebar_mode']=="editing_example":
         # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
         st.write("editing this....")
-        st.code(addIO(st.session_state['skeleton']), language="javascript")
+        st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
 
 
 
