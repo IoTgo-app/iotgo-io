@@ -144,15 +144,16 @@ with edit_placeholder:
 
 with input_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
+        # 
+        # 
+        # set index to a variable. check if index of defaultIO in list of IO. 
+        # make sure the default index is same as that one on next re.run
         st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],input_options)#,index=2) #,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']
             temp=default_IO[st.session_state['skeleton']]
             temp["in1"]=it2en_inout[st.session_state['input0is']]
             st.session_state['io_list']  = temp
-    # for eachKey, eachVal in IO2add.items():
-    #     if eachKey=="in1" or eachKey=="in2":
-    #         currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", input_code[eachVal])
             st.experimental_rerun()
     else:
         st.empty()
@@ -162,7 +163,9 @@ with output_placeholder:
         st.session_state['output0is'] =st.selectbox( textIT['Select an output:'],output_options)#,key='selInput')
         if not st.session_state['prevOutput']==st.session_state['output0is']:
             st.session_state['prevOutput']=st.session_state['output0is']
-            # st.session_state['io_list']['out1']=st.session_state['output0is']
+            temp=default_IO[st.session_state['skeleton']]
+            temp["out1"]=it2en_inout[st.session_state['output0is']]
+            st.session_state['io_list']  = temp            
             st.experimental_rerun()
     else:
         st.empty()
