@@ -89,7 +89,7 @@ if 'io_list' not in st.session_state:
     if not st.session_state['skeleton']=="":
         st.session_state['io_list'] = default_IO[st.session_state['skeleton']]
     else:
-        st.session_state['io_list'] = {"empty",""}
+        st.session_state['io_list'] = {}
 
 
 
@@ -147,7 +147,12 @@ with input_placeholder:
         st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],input_options)#,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']
-            st.session_state['io_list']['in1']=st.session_state['input0is']
+            temp=default_IO[skeleton_name]
+            temp["in1"]=st.session_state['input0is']
+            st.session_state['io_list']  = temp
+    # for eachKey, eachVal in IO2add.items():
+    #     if eachKey=="in1" or eachKey=="in2":
+    #         currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", input_code[eachVal])
             st.experimental_rerun()
     else:
         st.empty()
@@ -157,7 +162,7 @@ with output_placeholder:
         st.session_state['output0is'] =st.selectbox( textIT['Select an output:'],output_options)#,key='selInput')
         if not st.session_state['prevOutput']==st.session_state['output0is']:
             st.session_state['prevOutput']=st.session_state['output0is']
-            st.session_state['io_list']['out1']=st.session_state['output0is']
+            # st.session_state['io_list']['out1']=st.session_state['output0is']
             st.experimental_rerun()
     else:
         st.empty()
@@ -188,7 +193,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.7.5")
+st.sidebar.write("version 6.7.6")
 # st.session_state 
 
 
