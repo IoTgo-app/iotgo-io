@@ -147,7 +147,7 @@ with input_placeholder:
         st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],input_options)#,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']
-            temp=default_IO[skeleton_name]
+            temp=default_IO[st.session_state['skeleton']]
             temp["in1"]=st.session_state['input0is']
             st.session_state['io_list']  = temp
     # for eachKey, eachVal in IO2add.items():
@@ -193,7 +193,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.7.8")
+st.sidebar.write("version 6.7.9")
 # st.session_state 
 
 
