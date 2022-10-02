@@ -193,7 +193,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.8.0")
+st.sidebar.write("version 6.8.1")
 # st.session_state 
 
 
