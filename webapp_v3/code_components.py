@@ -90,6 +90,7 @@ input_code = {
 "accelLow":"input.acceleration(Dimension.X) < 511" ,
 "buttonNotPress":"!input.buttonIsPressed(Button.A)",
 "buttonPress":"input.buttonIsPressed(Button.A)",
+"buttonPressB":"input.buttonIsPressed(Button.B)",#NEWsep22
 "compassE" :"input.compassHeading() >= 45 && input.compassHeading() < 135" ,
 "compassN" :"input.compassHeading() < 45" ,
 "compassS" :"input.compassHeading() >= 135 && input.compassHeading() < 225" ,
