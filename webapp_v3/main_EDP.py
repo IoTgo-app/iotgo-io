@@ -144,11 +144,11 @@ with edit_placeholder:
 
 with input_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],input_options,index=2) #,key='selInput')
+        st.session_state['input0is'] =st.selectbox( textIT['Select an input:'])#,input_options,index=2) #,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']
             temp=default_IO[st.session_state['skeleton']]
-            temp["in1"]=st.session_state['input0is']
+            temp["in1"]=st.session_state[it2en_inout['input0is']]
             st.session_state['io_list']  = temp
     # for eachKey, eachVal in IO2add.items():
     #     if eachKey=="in1" or eachKey=="in2":
@@ -193,7 +193,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.8.3")
+st.sidebar.write("version 6.8.4")
 # st.session_state 
 
 
