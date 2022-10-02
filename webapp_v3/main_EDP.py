@@ -35,8 +35,8 @@ version="EDB.0.0.1"
 
 ########################### app sidebar ########################################à
 #add iotgo logo-----------------------------------------------------------
-st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=200)
-st.sidebar.markdown("""---""")
+st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=150)
+# st.sidebar.markdown("""---""")
 
 #populate input and output lists------------------------------------------
 input_options=  ('no Input',) + inputs_IT.microbitv1 + inputs_IT.microbitv2 +inputs_IT.exOthers  
