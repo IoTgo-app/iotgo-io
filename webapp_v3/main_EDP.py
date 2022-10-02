@@ -142,7 +142,7 @@ with input_placeholder:
         st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],input_options)#,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']
-            code_placeholder.code(addIO(st.session_state['skeleton']), language="javascript")
+            st.experimental_rerun()
     else:
         st.empty()
 
@@ -151,6 +151,7 @@ with output_placeholder:
         st.session_state['output0is'] =st.selectbox( textIT['Select an output:'],output_options)#,key='selInput')
         if not st.session_state['prevOutput']==st.session_state['output0is']:
             st.session_state['prevOutput']=st.session_state['output0is']
+            st.experimental_rerun()
     else:
         st.empty()
  
@@ -180,7 +181,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.7.2")
+st.sidebar.write("version 6.7.3")
 # st.session_state 
 
 
