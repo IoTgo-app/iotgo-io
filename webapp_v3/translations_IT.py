@@ -1,8 +1,10 @@
 
 textIT={ #this text will appear on the app in various places to guide the user
   "Select an example:"   : "Scegli un esempio:",
-  "Select an output:"    : "Scegli un output:",
-  "Select an input:"     : "Scegli un input:",
+  "Select an output:"    : "Cambia un output:",
+  "Select an input:"     : "Cambia un input:",
+  "Select another output:"    : "Cambia un altro output:",
+  "Select another input:"     : "Cambia un altro input:",##############
   "Select another example"      : "Scegli un altro esempio",
   "Edit this example"   : "Modifica questo esempio",#or Change input or ouput in this example #RG they are two different interactions
   "You have selected: "   : "Hai scelto: ",
