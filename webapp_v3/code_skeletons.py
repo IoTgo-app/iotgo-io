@@ -527,7 +527,6 @@ def addDefaultIO(skeleton_name):
 
 
 def changeIO(skeleton_name,IO2change):
-    
     for eachKey, eachVal in IO2change.items():
         if eachKey=="in1":
             currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", input_code[eachVal])
@@ -538,7 +537,7 @@ def changeIO(skeleton_name,IO2change):
         if eachKey=="out2":
             currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_code[eachVal])
         if eachKey=="out1else":
-            currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_code[eachVal]) 
+            currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_else_code[eachVal]) 
         if eachKey=="out2else":
             currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_else_code[eachVal])
     return currentSkeleton

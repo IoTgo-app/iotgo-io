@@ -89,7 +89,7 @@ if 'io_list' not in st.session_state:
     if not st.session_state['skeleton']=="":
         st.session_state['io_list'] = default_IO[st.session_state['skeleton']]
     else:
-        st.session_state['io_list'] = {}
+        st.session_state['io_list'] = {"":""}
 
 
 
@@ -193,7 +193,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.7.6")
+st.sidebar.write("version 6.7.7")
 # st.session_state 
 
 
