@@ -48,7 +48,7 @@ code_skeletons = {
             }
         })
         """, 
-    "lvl1c1-2in_1out : 
+    "lvl1c1-2in_1out" : 
         """
         /**
         * OROLOGIO SEGNAFREDDO
@@ -283,7 +283,7 @@ code_examples = {
             }
         })
         """, 
-    "lvl1c1-2in_1out : 
+    "lvl1c1-2in_1out" : 
         """
         /**
         * OROLOGIO SEGNAFREDDO
