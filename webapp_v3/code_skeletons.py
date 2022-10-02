@@ -519,9 +519,9 @@ def addIO(skeleton_name):
     for eachKey, eachVal in IO2add.items():
         if eachKey=="in1" or eachKey=="in2":
             currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", input_code[eachVal])
-        if eachVal=="out1" or eachKey=="out2":
+        if eachKey=="out1" or eachKey=="out2":
             currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_code[eachVal])
-        if eachVal=="out1else" or eachKey=="out2else":
+        if eachKey=="out1else" or eachKey=="out2else":
             currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_else_code[eachVal])
     return currentSkeleton
 
