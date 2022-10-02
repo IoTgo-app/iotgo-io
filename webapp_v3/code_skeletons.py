@@ -15,22 +15,21 @@
 default_IO = {
     "":{},
     "lvl1a1-1in_1out"                   :{"in1":"buttonPress","out1":"iconHappy"},
-    "lvl1a2-1in_1out_else"              :{"in1":"buttonPress","out1":"iconHappy"},
-    "lvl1b1-1in_2out"                   :{"in1":"buttonPress","out1":"iconHappy","out2":"replaced"},
-    "lvl1b2-1in_2out_else"              :{"in1":"buttonPress","out1":"iconHappy","out2":"iconSad"},
-    "lvl1b2-1in_2out_else"              :{"in1":"buttonPress","out1":"iconHappy","out2":"iconSad"},
+    "lvl1a2-1in_1out_else"              :{"in1":"buttonPress","out1":"iconHappy","out1else":"iconHappy"},
+    "lvl1b1-1in_2out"                   :{"in1":"buttonPress","out1":"iconHappy","out2":"iconSad"},
+    "lvl1b2-1in_2out_else"              :{"in1":"buttonPress","out1":"iconHappy","out2":"iconSad","out1else":"iconHappy","out2else":"iconSad"},
     "lvl1c1-2in_1out"                   :{"in1":"buttonPress","in2":"tempLow","out1":"iconSad"},
-    "lvl1c2-2in_1out_else"              :{"in1":"buttonPress","in2":"tempLow","out1":"iconSad"},
+    "lvl1c2-2in_1out_else"              :{"in1":"buttonPress","in2":"tempLow","out1":"iconSad","out1else":"iconSad"},
     "lvl2a1-1in_1out-1in_1out"          :{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy"},
-    "lvl2a2-1in_1out_else-1in_1out_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy"},
+    "lvl2a2-1in_1out_else-1in_1out_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy","out1else":"iconHappy","out2else":"musicHappy"},
     "lvl2b1-1in_1out_elif_1in_1out"     :{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy"},
-    "lvl2b2-1in_1out_elif_1in_1out_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy"},
+    "lvl2b2-1in_1out_elif_1in_1out_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy","out1else":"iconHappy","out2else":"musicHappy"},
     "lvl2c1-1in_1out-nest-1in_1out"     :{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy"},
-    "lvl2c2-1in_1out-nest-1in_1out_else_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy"},
+    "lvl2c2-1in_1out-nest-1in_1out_else_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy","out1else":"iconHappy","out2else":"musicHappy"},
     "lvl3a1-1in_1out_var"               :{"in1":"buttonPress","out1":"displayInput"},####TOASK 
-    "lvl3a2-1in_1out_var_else"          :{"in1":"buttonPress","out1":"displayInput"},####TOASK
+    "lvl3a2-1in_1out_var_else"          :{"in1":"buttonPress","out1":"displayInput","out1else":"displayInput"},####TOASK
     "lvl3b1-1var_1out"                  :{"out1":"musicHappy"},####TOASK
-    "lvl3b2-1var_1out_else"             :{"out1":"musicHappy"}####TOASK
+    "lvl3b2-1var_1out_else"             :{"out1":"musicHappy","out1else":"musicHappy"}####TOASK
 }
 
 
@@ -133,12 +132,14 @@ code_skeletons = {
         basic.forever(function () {
             basic.pause(2000)
             valore_caratteristico += randint(1, 6)
-            basic.showNumber(valore_caratteristico)
             if (valore_caratteristico % 2 == 0) {
-                music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
+                _out1_
             }
         })
         """, 
+
+
+
 
 
     "lvl1a2-1in_1out_else" : 
@@ -150,11 +151,11 @@ code_skeletons = {
             if (_in1_) {
                 _out1_
             } else {
-                _out1_
+                _out1else_
             }
         })
         """, 
-    "lvl1b1-1in_2out_else" : 
+    "lvl1b2-1in_2out_else" : 
         """
         /**
         * CESTINO SORRIDENTE, ALTRIMENTI SPENTO
@@ -164,8 +165,8 @@ code_skeletons = {
                 _out1_
                 _out2_
             } else {
-                _out1_
-                _out2_
+                _out1else_
+                _out2else_
             }
         }) 
         """, 
@@ -178,7 +179,7 @@ code_skeletons = {
             if (_in1_ && _in2_) {
                 _out1_
             } else {
-                _out1_
+                _out1else_
             }
         })
         """, 
@@ -191,12 +192,12 @@ code_skeletons = {
             if (_in1_) {
                 _out1_
             } else {
-                _out1_
+                _out1else_
             }
             if (_in2_) {
                 _out2_
             } else {
-                _out2_
+                _out2else_
             }
         })
         """, 
@@ -211,8 +212,8 @@ code_skeletons = {
             } else if (_in2_) {
                 _out2_
             } else {
-                _out1_
-                _out2_
+                _out1else_
+                _out2else_
             }
         })
         """, 
@@ -227,10 +228,10 @@ code_skeletons = {
                 if (_in2_) {
                     _out2_
                 } else {
-                    _out2_
+                    _out2else_
                 }
             } else {
-                _out1_
+                _out1else_
             }
         })
         """, 
@@ -244,7 +245,7 @@ code_skeletons = {
                 conto += 1
                 _out1_
             } else {
-                _out1_
+                _out1else_
             }
         })
         """, 
@@ -260,11 +261,10 @@ code_skeletons = {
         basic.forever(function () {
             basic.pause(2000)
             valore_caratteristico += randint(1, 6)
-            basic.showNumber(valore_caratteristico)
             if (valore_caratteristico % 2 == 0) {
-                music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
+                _out1_
             } else {
-                music.stopAllSounds()
+                _out1else_
             }
         })
         """
