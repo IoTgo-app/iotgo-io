@@ -144,7 +144,7 @@ with edit_placeholder:
 
 with input_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],input_options,index=2")#,key='selInput')
+        st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],input_options,index=2) #,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']
             temp=default_IO[st.session_state['skeleton']]
@@ -193,7 +193,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.8.2")
+st.sidebar.write("version 6.8.3")
 # st.session_state 
 
 
