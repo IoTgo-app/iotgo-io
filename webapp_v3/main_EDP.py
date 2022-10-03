@@ -221,7 +221,7 @@ with code_placeholder:
         if codeLang=="js":
             st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
         else:
-            components.iframe(st.session_state['urlis'], height=500, scrolling=True)
+            components.iframe(st.session_state['urlis'], height=500, width=900, scrolling=True)
         st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):#     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     elif st.session_state['sidebar_mode']=="editing_example":
@@ -231,7 +231,7 @@ with code_placeholder:
         if codeLang=="js":
             st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
         else:
-            components.iframe(st.session_state['urlis'], height=500, scrolling=True)
+            components.iframe(st.session_state['urlis'], height=500, width=900, scrolling=True)
         st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):            # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     
