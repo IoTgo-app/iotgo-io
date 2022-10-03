@@ -74,13 +74,23 @@ prevInput="x" # get default value for this skeleton
 prevOutput="a" # get default value for this skeleton
 
 if 'input0is' not in st.session_state:
-    st.session_state['input0is'] = "x"
+    st.session_state['input0is'] = "no Input"
 if 'prevInput' not in st.session_state:
-    st.session_state['prevInput'] = "x"
+    st.session_state['prevInput'] = "no Input"
 if 'output0is' not in st.session_state:
-    st.session_state['output0is'] = "a"
+    st.session_state['output0is'] = "no Output"
 if 'prevOutput' not in st.session_state:
-    st.session_state['prevOutput'] = "x"
+    st.session_state['prevOutput'] = "no Output"
+# if 'input2is' not in st.session_state:
+#     st.session_state['input2is'] = "x"
+# if 'prevInput2' not in st.session_state:
+#     st.session_state['prevInput2'] = "x"
+# if 'output2is' not in st.session_state:
+#     st.session_state['output2is'] = "a"
+# if 'prevOutput2' not in st.session_state:
+#     st.session_state['prevOutput2'] = "x"
+
+
 if 'skeleton' not in st.session_state:
     st.session_state['skeleton'] = ""
 if 'sidebar_mode' not in st.session_state:
@@ -111,6 +121,8 @@ vertiPaddingWidthhalf=17
 select_placeholder  = st.sidebar.empty()
 input_placeholder   = st.sidebar.container()#empty()
 output_placeholder  = st.sidebar.container()#empty()
+input2_placeholder   = st.sidebar.container()#empty()
+output2_placeholder  = st.sidebar.container()#empty()
 change_placeholder  = st.sidebar.container()#empty()
 
 code_col, padding1  = st.columns([3,1])
@@ -196,7 +208,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.8.6")
+st.sidebar.write("version 6.8.7")
 
 # st.session_state 
 
