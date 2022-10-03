@@ -164,7 +164,7 @@ with input_placeholder:
             temp=default_IO[st.session_state['skeleton']]
             temp["in1"]=it2en_inout[st.session_state['input0is']]
             st.session_state['io_list']  = temp
-            changeIO(st.session_state['skeleton'],st.session_state['io_list']
+            changeIO(st.session_state['skeleton'],st.session_state['io_list'])
             st.experimental_rerun()
     else:
         st.empty()
@@ -177,7 +177,7 @@ with output_placeholder:
             temp=default_IO[st.session_state['skeleton']]
             temp["out1"]=it2en_inout[st.session_state['output0is']]
             st.session_state['io_list']  = temp          
-            changeIO(st.session_state['skeleton'],st.session_state['io_list']  
+            changeIO(st.session_state['skeleton'],st.session_state['io_list'])  
             st.experimental_rerun()
     else:
         st.empty()
@@ -223,7 +223,7 @@ with code_placeholder:
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.0.5")
+st.sidebar.write("version 7.0.6")
 st.session_state['io_list']  
 
 ########################### app end ########################################à
