@@ -46,11 +46,11 @@ on_start = {
 "EB_colorIsBlue":"envirobit.setLEDs(envirobit.OnOff.On)\nenvirobit.setColourIntegrationTime(100)",
 "EB_colorIsRed":"envirobit.setLEDs(envirobit.OnOff.On)\nenvirobit.setColourIntegrationTime(100)",
 "EB_colorIsBlack":"envirobit.setLEDs(envirobit.OnOff.On)\nenvirobit.setColourIntegrationTime(100)",
-"noInput": "basic.pause(1000)",
-"musicHappy": "music.setVolume(255)",
-"musicNone": "music.setVolume(255)",
-"musicSad": "music.setVolume(255)",
-"musicAlarm": "music.setVolume(255)",
+# "noInput": "basic.pause(1000)",
+# "musicHappy": "music.setVolume(255)",
+# "musicNone": "music.setVolume(255)",
+# "musicSad": "music.setVolume(255)",
+# "musicAlarm": "music.setVolume(255)",
 "sendData":  "radio.setGroup(99)",# todo: set group automatically
 "recieveData":"radio.setGroup(99)",# todo: set group automatically
 "rotateMax":"servos.P1.setRange(0,180)",
@@ -77,7 +77,7 @@ on_start = {
 "todayWeekend": "radio.setGroup(313)\nradio.onReceivedValue(function (name, value) {\n forecastName = name\nforecastValue = value\n})\nlet forecastValue = 0\nlet forecastName = \"none\" ",
 "tweetInput": "radio.setGroup(313)\nradio.setTransmitSerialNumber(true)\nradio.sendValue(\"b#\", 8903)",
 "tweetText" : "radio.setGroup(313)\nradio.setTransmitSerialNumber(true)\nradio.sendValue(\"b#\", 8903)",
-"noOutput": "basic.pause(1000)",
+# "noOutput": "basic.pause(1000)",
 }
  
 
