@@ -1,12 +1,12 @@
 microbitv1= ('suona una melodia allegra' ,
-'smette di suonare' ,
+# 'smette di suonare' ,
 'suona una melodia triste' ,
 "suona un allarme" ,
 'mostra un numero' ,
-'smette di mostrare testi o numeri' ,
+# 'smette di mostrare testi o numeri' ,
 'mostra del testo' ,
 'mostra un\'icona felice',
-'smette di mostrare un\'icona',
+# 'smette di mostrare un\'icona',
 'mostra un\'icona triste', 
 'mostra un\'icona grande',
 'mostra un\'icona piccola',
@@ -15,7 +15,7 @@ microbitv1= ('suona una melodia allegra' ,
 microbitv2= ()
 
 
-# exBosonKit= ('spegne un ventilatore (BosonKit)' ,
+# exBosonKitOLD= ('spegne un ventilatore (BosonKit)' ,
 # 'accende un ventilatore (BosonKit)' ,
 # 'spegne una luce (BosonKit)',
 # 'accende una luce (BosonKit)',
@@ -27,10 +27,11 @@ microbitv2= ()
 # 'spegne un\'animazione luminosa rossa (BosonKit)',
 # 		     )
 
-exBosonKit= ('spegne un ventilatore (BosonKit)' ,
-'accende un ventilatore (BosonKit)' ,
-'spegne un\'animazione luminosa (BosonKit)',
-'attiva un\'animazione luminosa (BosonKit)' ,
+exBosonKit= (
+	# 'spegne un ventilatore (BosonKit)' ,
+	'accende un ventilatore (BosonKit)' ,
+	# 'spegne un\'animazione luminosa (BosonKit)',
+	'attiva un\'animazione luminosa (BosonKit)' ,
 )
 
 exEnviroBit=()
