@@ -134,9 +134,9 @@ change_placeholder  = st.sidebar.container()#empty()
 #     with cardTab:
 #     with codeTab:
 
-# code_col, padding1  = st.columns([3,1])
-# with code_col:
-code_placeholder = st.container()
+code_col, padding1  = st.columns([3,1])
+with code_col:
+    code_placeholder = st.container()
 edit_placeholder     = st.empty()
 
 ########################### app sidebar ########################################à
