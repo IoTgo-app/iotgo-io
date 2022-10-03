@@ -152,12 +152,12 @@ with select_placeholder:
             st.session_state['sidebar_mode']="example_selected"
             st.session_state['io_list']=default_IO[st.session_state['skeleton']]#new
 
-with input_placeholder:
-    if st.session_state['sidebar_mode']=="editing_example":
         # 
         # 
         # set index to a variable. check if index of defaultIO in list of IO. 
         # make sure the default index is same as that one on next re.run
+with input_placeholder:
+    if st.session_state['sidebar_mode']=="editing_example":
         st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options)#,index=2) #,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']

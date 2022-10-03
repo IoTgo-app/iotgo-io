@@ -16,8 +16,8 @@ button[title="View fullscreen"]{
 
 fix_sidebar= """
 <style>
-[data-testid="stSidebar"][aria-expanded="true"] > div:first-child {width: 350px;}
-[data-testid="stSidebar"][aria-expanded="false"] > div:first-child {width: 350px;margin-left: -350px;}
+[data-testid="stSidebar"][aria-expanded="true"] > div:first-child {width: 300px;}
+[data-testid="stSidebar"][aria-expanded="false"] > div:first-child {width: 300px;margin-left: -300px;}
 </style>
 """
 
