@@ -8,7 +8,7 @@ textIT={ #this text will appear on the app in various places to guide the user
   "changeExample"      : "Scegli un altro esempio",
   "editExample"   : "Modifica questo esempio",#or Change input or ouput in this example #RG they are two different interactions
   "youSelected"   : "Hai scelto: ",
-  "downloadProgram"  : "Scarica il programma :arrow_upper_right:",#or Open this code in the editor
+  "downloadProgram"  : "Scarica il programma :arrow_right:",#or Open this code in the editor
   }
 
 exampleListIT= [ #these are the names of the example programs which users will select through a dropdown menu
