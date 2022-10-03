@@ -154,9 +154,14 @@ with select_placeholder:
         # 
         # set index to a variable. check if index of defaultIO in list of IO. 
         # make sure the default index is same as that one on next re.run
+
+
+
+
 with input_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options)#,index=2) #,key='selInput')
+        input1index = input_options.index(st.session_state['input0is'])
+        st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options,index=input1index)#,index=2) #,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']
             temp=default_IO[st.session_state['skeleton']]
@@ -230,7 +235,7 @@ with code_placeholder:
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.2.1")
+st.sidebar.write("version 7.2.2")
 # st.session_state['io_list']  
 
 ########################### app end ########################################à
