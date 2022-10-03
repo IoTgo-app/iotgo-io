@@ -1,2 +1,2 @@
-pip install click==8.0.4
 bokeh
+pip install click==8.0.4
