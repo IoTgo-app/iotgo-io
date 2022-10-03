@@ -6,6 +6,7 @@ import textwrap
 from bokeh.models.widgets import Div # for button-new-page
 
 
+
 from code_skeletons import changeIO, code_skeletons,default_IO
 import inputs_IT, outputs_IT
 from translations_IT import it2en_inout, exampleListIT, textIT, ITdescription2var
@@ -34,7 +35,7 @@ groupnum="0"
 p2p=True
 appTabs=True
 version="EDB.0.0.1"
-
+codeLang="blocks"#"js"
 
 ########################### app sidebar ########################################à
 #add iotgo logo-----------------------------------------------------------
@@ -215,23 +216,28 @@ with code_placeholder:
         st.empty()
     elif st.session_state['sidebar_mode']=="example_selected":
         st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
-        # st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
-        st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
         codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
-        st.session_state['urlis']=genURL_EDP(codeBodyis,st.session_state['io_list'],codetitle,codesubtitle)
+        st.session_state['urlis']=genURL_EDP(codeBodyis,st.session_state['io_list'],codetitle,codesubtitle)        
+        if codeLang=="js":
+            st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
+        else:
+            components.iframe(st.session_state['urlis'], height=1000, scrolling=True)
         st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):#     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     elif st.session_state['sidebar_mode']=="editing_example":
         # st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
-        st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
         codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
         st.session_state['urlis']=genURL_EDP(codeBodyis,st.session_state['io_list'],codetitle,codesubtitle)        
+        if codeLang=="js":
+            st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
+        else:
+            components.iframe(st.session_state['urlis'], height=1000, scrolling=True)
         st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):            # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.0.9")
+st.sidebar.write("version 7.1.0")
 st.session_state['io_list']  
 
 ########################### app end ########################################à
