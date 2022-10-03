@@ -133,7 +133,6 @@ input2_placeholder   = st.sidebar.container()#empty()
 output2_placeholder  = st.sidebar.container()#empty()
 change_placeholder  = st.sidebar.container()#empty()
 
-
 # if isTabbed:
 #     cardTab,codeTab= st.tabs(['Carte'.'Programma'])
 #     with cardTab:
@@ -222,7 +221,7 @@ with code_placeholder:
             st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
         else:
             components.iframe(st.session_state['urlis'], height=500, width=900, scrolling=True)
-        st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
+        st.markdown('[\t\t\t\t' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):#     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     elif st.session_state['sidebar_mode']=="editing_example":
         # st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
@@ -232,12 +231,12 @@ with code_placeholder:
             st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
         else:
             components.iframe(st.session_state['urlis'], height=500, width=900, scrolling=True)
-        st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
+        st.markdown('[\t\t\t\t' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):            # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.1.7")
+st.sidebar.write("version 7.1.8")
 # st.session_state['io_list']  
 
 ########################### app end ########################################à
