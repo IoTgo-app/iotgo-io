@@ -104,6 +104,10 @@ if 'io_list' not in st.session_state:
     else:
         st.session_state['io_list'] = {"":""}
 
+if 'urlis' not in st.session_state:
+    st.session_state['urlis'] = ""
+
+
 
 
 ########################### app init ########################################à
@@ -213,17 +217,21 @@ with code_placeholder:
         st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
         # st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
         st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
-        st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
+        codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+        st.session_state['urlis']=genURL_EDP(codeBodyis,st.session_state['io_list'],codetitle,codesubtitle)
+        st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):#     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     elif st.session_state['sidebar_mode']=="editing_example":
         # st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
         st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
-        st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
+        codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+        st.session_state['urlis']=genURL_EDP(codeBodyis,st.session_state['io_list'],codetitle,codesubtitle)        
+        st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):            # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.0.6")
+st.sidebar.write("version 7.0.7")
 st.session_state['io_list']  
 
 ########################### app end ########################################à
