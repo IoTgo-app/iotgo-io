@@ -164,6 +164,7 @@ with input_placeholder:
             temp=default_IO[st.session_state['skeleton']]
             temp["in1"]=it2en_inout[st.session_state['input0is']]
             st.session_state['io_list']  = temp
+            changeIO(st.session_state['skeleton'],st.session_state['io_list']
             st.experimental_rerun()
     else:
         st.empty()
@@ -175,7 +176,8 @@ with output_placeholder:
             st.session_state['prevOutput']=st.session_state['output0is']
             temp=default_IO[st.session_state['skeleton']]
             temp["out1"]=it2en_inout[st.session_state['output0is']]
-            st.session_state['io_list']  = temp            
+            st.session_state['io_list']  = temp          
+            changeIO(st.session_state['skeleton'],st.session_state['io_list']  
             st.experimental_rerun()
     else:
         st.empty()
@@ -212,18 +214,16 @@ with code_placeholder:
         # st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
         st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
         st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
-        # if st.button(textIT['downloadProgram']):
-        #     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
+        # if st.button(textIT['downloadProgram']):#     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     elif st.session_state['sidebar_mode']=="editing_example":
         # st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
         st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
         st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
-        # if st.button(textIT['downloadProgram']):
-            # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
+        # if st.button(textIT['downloadProgram']):            # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.0.4")
+st.sidebar.write("version 7.0.5")
 st.session_state['io_list']  
 
 ########################### app end ########################################à
