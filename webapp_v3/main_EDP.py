@@ -197,20 +197,20 @@ with code_placeholder:
     if st.session_state['sidebar_mode']=="app_start":
         st.empty()
     elif st.session_state['sidebar_mode']=="example_selected":
-        st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
         st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
+        st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
         # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     elif st.session_state['sidebar_mode']=="editing_example":
         # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
-        st.write("editing this....")
-        st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
+        # st.write("editing this....")
         st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
+        st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
 
 
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.8.9")
+st.sidebar.write("version 6.8.9b")
 
 # st.session_state 
 
