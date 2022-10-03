@@ -198,7 +198,6 @@ with code_placeholder:
         st.empty()
     elif st.session_state['sidebar_mode']=="example_selected":
         st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
-        link = 
         st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
         # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     elif st.session_state['sidebar_mode']=="editing_example":
