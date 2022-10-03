@@ -142,7 +142,7 @@ change_placeholder  = st.sidebar.container()#empty()
 code_col, padding1  = st.columns([3,1])
 with code_col:
     code_placeholder = st.container()
-edit_placeholder     = st.empty()
+edit_placeholder     = st.sidebar.empty()
 
 ########################### app sidebar ########################################à
 
@@ -237,7 +237,7 @@ with code_placeholder:
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.1.5")
+st.sidebar.write("version 7.1.6")
 # st.session_state['io_list']  
 
 ########################### app end ########################################à
