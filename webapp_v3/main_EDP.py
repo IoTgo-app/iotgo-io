@@ -32,10 +32,12 @@ baseURL_cards="https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_
 codetitle=""
 codesubtitle=""
 groupnum="0"
-p2p=True
-appTabs=True
+p2p=True        #not implemented yet.
+appTabs=True    #not implemented yet.
 version="EDB.0.0.1"
 codeLang="blocks"#"js"
+codeHeight=500
+codeWidth=800
 
 ########################### app sidebar ########################################à
 #add iotgo logo-----------------------------------------------------------
@@ -52,7 +54,7 @@ output1="no Output"
 input2="no Input"
 output2="no Output"
 gamelevel=0
-isTabbed = True
+
 
 def resetCards():
     gamelevel=0	 
@@ -220,7 +222,7 @@ with code_placeholder:
         if codeLang=="js":
             st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
         else:
-            components.iframe(st.session_state['urlis'], height=500, width=900, scrolling=True)
+            components.iframe(st.session_state['urlis'], height=codeHeight, width=codeWidth, scrolling=True)
         st.markdown('[\t\t\t\t' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):#     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     elif st.session_state['sidebar_mode']=="editing_example":
@@ -230,7 +232,7 @@ with code_placeholder:
         if codeLang=="js":
             st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
         else:
-            components.iframe(st.session_state['urlis'], height=500, width=900, scrolling=True)
+            components.iframe(st.session_state['urlis'], height=codeHeight, width=codeWidth, scrolling=True)
         st.markdown('[\t\t\t\t' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):            # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     
