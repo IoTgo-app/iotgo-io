@@ -199,21 +199,16 @@ with code_placeholder:
         st.empty()
     elif st.session_state['sidebar_mode']=="example_selected":
         st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
-        st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
         st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
-        # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
+        st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
     elif st.session_state['sidebar_mode']=="editing_example":
         st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
-        # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
-        # st.write("editing this....")
-        st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
         st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
-
-
+        st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.9.2")
+st.sidebar.write("version 6.9.3")
 
 # st.session_state 
 
