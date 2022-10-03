@@ -45,8 +45,8 @@ st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/imag
 # st.sidebar.markdown("""---""")
 
 #populate input and output lists------------------------------------------
-input_options=  ('no Input',) + inputs_IT.microbitv1 + inputs_IT.microbitv2 +inputs_IT.exOthers  
-output_options=  ('no Output',) + outputs_IT.microbitv1 + outputs_IT.microbitv2+ outputs_IT.exBosonKit
+input_options=   inputs_IT.microbitv1 + inputs_IT.microbitv2 +inputs_IT.exOthers  #('no Input',) +
+output_options=   outputs_IT.microbitv1 + outputs_IT.microbitv2+ outputs_IT.exBosonKit #('no Output',) +
 
 #initialize variables-----------------------------------------------------
 input1="no Input"
@@ -230,7 +230,7 @@ with code_placeholder:
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.2.0")
+st.sidebar.write("version 7.2.1")
 # st.session_state['io_list']  
 
 ########################### app end ########################################à
