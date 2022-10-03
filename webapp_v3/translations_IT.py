@@ -1,14 +1,14 @@
 
 textIT={ #this text will appear on the app in various places to guide the user
-  "Select an example:"   : "Scegli un esempio:",
-  "Select an output:"    : "Cambia un output:",
-  "Select an input:"     : "Cambia un input:",
-  "Select another output:"    : "Cambia un altro output:",
-  "Select another input:"     : "Cambia un altro input:",##############
-  "Select another example"      : "Scegli un altro esempio",
-  "Edit this example"   : "Modifica questo esempio",#or Change input or ouput in this example #RG they are two different interactions
-  "You have selected: "   : "Hai scelto: ",
-  "Download this program"  : "Scarica il programma",#or Open this code in the editor
+  "selectExample"   : "Scegli un esempio:",
+  "selectOutput1"    : "Cambia un output:",
+  "selectInput1"     : "Cambia un input:",
+  "selectOutput2"    : "Cambia un altro output:",
+  "selectInput2"     : "Cambia un altro input:",##############
+  "changeExample"      : "Scegli un altro esempio",
+  "editExample"   : "Modifica questo esempio",#or Change input or ouput in this example #RG they are two different interactions
+  "youSelected: "   : "Hai scelto: ",
+  "downloadProgram"  : "Scarica il programma",#or Open this code in the editor
   }
 
 exampleListIT= [ #these are the names of the example programs which users will select through a dropdown menu

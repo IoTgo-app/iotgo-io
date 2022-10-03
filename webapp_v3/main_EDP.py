@@ -53,7 +53,7 @@ gamelevel=0
 def resetCards():
     gamelevel=0	 
 
-
+urlis='https://makecode.microbit.org/'
 
 
  
@@ -132,9 +132,9 @@ edit_placeholder     = st.empty()
 
 with select_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.write(textIT['You have selected: '] + st.session_state['skeleton'])
+        st.write(textIT['youSelected'] + st.session_state['skeleton'])
     elif st.session_state['sidebar_mode']=="app_start" or "example_selected":
-        st.session_state['skeleton']=st.selectbox(textIT['Select an example:'],code_skeletons)
+        st.session_state['skeleton']=st.selectbox(textIT['selectExample'],code_skeletons)
         # st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)        
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
@@ -142,7 +142,7 @@ with select_placeholder:
     
 with edit_placeholder:
     if st.session_state['sidebar_mode']=="example_selected":
-        isClick=st.button(textIT['Edit this example'])
+        isClick=st.button(textIT['editExample'])
         if isClick:
             st.session_state['sidebar_mode']="editing_example"
             edit_placeholder.empty()
@@ -160,7 +160,7 @@ with input_placeholder:
         # 
         # set index to a variable. check if index of defaultIO in list of IO. 
         # make sure the default index is same as that one on next re.run
-        st.session_state['input0is'] =st.selectbox( textIT['Select an input:'],input_options)#,index=2) #,key='selInput')
+        st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options)#,index=2) #,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']
             temp=default_IO[st.session_state['skeleton']]
@@ -172,7 +172,7 @@ with input_placeholder:
 
 with output_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.session_state['output0is'] =st.selectbox( textIT['Select an output:'],output_options)#,key='selInput')
+        st.session_state['output0is'] =st.selectbox( textIT['selectOutput1'],output_options)#,key='selInput')
         if not st.session_state['prevOutput']==st.session_state['output0is']:
             st.session_state['prevOutput']=st.session_state['output0is']
             temp=default_IO[st.session_state['skeleton']]
@@ -185,7 +185,7 @@ with output_placeholder:
 
 with change_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        isclick2 = change_placeholder.button(textIT['Select another example'])
+        isclick2 = change_placeholder.button(textIT['changeExample'])
         if isclick2:
             st.session_state['sidebar_mode']="app_start"
             change_placeholder.empty()
@@ -198,11 +198,14 @@ with code_placeholder:
         st.empty()
     elif st.session_state['sidebar_mode']=="example_selected":
         st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
+        link = 
+        st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
         # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     elif st.session_state['sidebar_mode']=="editing_example":
         # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
         st.write("editing this....")
         st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
+        st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
 
 
 
