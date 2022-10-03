@@ -67,10 +67,11 @@ gamelevel=0
 # def updateCode():
 #     st.write("codeupdated")
 #     io_changed=False
-# prevSkeleton="" ####MOVE TO SESSION STATE
 # skeleton=""
 # prevInput="x" # get default value for this skeleton
 # prevOutput="a" # get default value for this skeleton
+
+prevSkeleton="" ####MOVE TO SESSION STATE
 
 if 'input0is' not in st.session_state:
     st.session_state['input0is'] = "no Input"
