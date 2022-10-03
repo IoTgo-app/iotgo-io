@@ -19,7 +19,7 @@ def genURL_EDP(codeBody,io_list,codetitle,codesubtitle): # (groupnum,p2ptype,gam
         if eachKey in on_end:
             on_end_code.append(on_end[eachKey]+ '\n')
         if eachKey in package_suffix:
-            package_code.append(on_end[eachKey]+ '\n')
+            package_code.append(package_code[eachKey]+ '\n')
     #----------add on-start-code---------
     on_start_code_noDup= list( dict.fromkeys(on_start_code) )
     for eachline in on_start_code_noDup:
