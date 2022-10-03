@@ -8,16 +8,18 @@ microbitv1= ('suona una melodia allegra' ,
 'mostra un\'icona felice',
 'smette di mostrare un\'icona',
 'mostra un\'icona triste', 
+'mostra un\'icona grande',
+'mostra un\'icona piccola',
 		    )
 
 microbitv2= ()
 
 
-# outputs_exBosonKit= ('spegne un ventilatore (BosonKit)' ,
+# exBosonKit= ('spegne un ventilatore (BosonKit)' ,
 # 'accende un ventilatore (BosonKit)' ,
 # 'spegne una luce (BosonKit)',
 # 'accende una luce (BosonKit)',
-# 'fa ruotare il motore (BosonKit)' ,
+# 'ruota il motore (BosonKit)' ,
 # 'smette di ruotare il motore (BosonKit)' ,
 # 'spegne un\'animazione luminosa (BosonKit)',
 # 'attiva un\'animazione luminosa (BosonKit)' ,
