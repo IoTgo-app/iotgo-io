@@ -14,11 +14,11 @@ def genURL_EDP(codeBody,io_list,codetitle,codesubtitle): # (groupnum,p2ptype,gam
     package_code=[]
     jscode=""
     for eachKey, eachValue in io_list.items():
-        if eachValue in on_start:
+        if eachKey in on_start:
             on_start_code.append(on_start[eachKey]+ '\n')
-        if eachValue in on_end:
+        if eachKey in on_end:
             on_end_code.append(on_end[eachKey]+ '\n')
-        if eachValue in package_suffix:
+        if eachKey in package_suffix:
             package_code.append(on_end[eachKey]+ '\n')
     #----------add on-start-code---------
     on_start_code_noDup= list( dict.fromkeys(on_start_code) )
