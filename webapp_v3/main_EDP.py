@@ -6,7 +6,7 @@ import textwrap
 from bokeh.models.widgets import Div # for button-new-page
 
 
-from code_skeletons import addDefaultIO,changeIO, code_skeletons,default_IO
+from code_skeletons import changeIO, code_skeletons,default_IO
 import inputs_IT, outputs_IT
 from translations_IT import it2en_inout, exampleListIT, textIT, ITdescription2var
 from imageURL import imageURL
