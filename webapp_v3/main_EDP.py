@@ -236,7 +236,7 @@ with code_placeholder:
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.1.9")
+st.sidebar.write("version 7.2.0")
 # st.session_state['io_list']  
 
 ########################### app end ########################################à
