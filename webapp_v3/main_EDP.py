@@ -25,6 +25,7 @@ langPrefix=['EN','IT','DE','UR']
 lang=1
 baseURL=   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/cards_v2/"
 baseURL_codeSkeletons=   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/"
+baseURL_cards="https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/cards/"
 codetitle=""
 codesubtitle=""
 groupnum="0"
@@ -197,12 +198,12 @@ with code_placeholder:
     if st.session_state['sidebar_mode']=="app_start":
         st.empty()
     elif st.session_state['sidebar_mode']=="example_selected":
-        st.image(st.session_state['skeleton'][3:6]+'png')
+        st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'.png')
         st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
         st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
         # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
     elif st.session_state['sidebar_mode']=="editing_example":
-        st.image(st.session_state['skeleton'][3:6]+'png')
+        st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'.png')
         # st.image(baseURL_codeSkeletons+str(st.session_state['skeleton'])+'.png')
         # st.write("editing this....")
         st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
@@ -212,7 +213,7 @@ with code_placeholder:
 
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.8.9b")
+st.sidebar.write("version 6.9.0")
 
 # st.session_state 
 
