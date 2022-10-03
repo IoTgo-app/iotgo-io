@@ -128,9 +128,15 @@ input2_placeholder   = st.sidebar.container()#empty()
 output2_placeholder  = st.sidebar.container()#empty()
 change_placeholder  = st.sidebar.container()#empty()
 
-code_col, padding1  = st.columns([3,1])
-with code_col:
-    code_placeholder = st.container()
+
+# if isTabbed:
+#     cardTab,codeTab= st.tabs(['Carte'.'Programma'])
+#     with cardTab:
+#     with codeTab:
+
+# code_col, padding1  = st.columns([3,1])
+# with code_col:
+code_placeholder = st.container()
 edit_placeholder     = st.empty()
 
 ########################### app sidebar ########################################à
@@ -184,69 +190,38 @@ with change_placeholder:
         st.empty() 
 
 ########################### app body ########################################à
-if isTabbed:
-    cardTab, codeTab=st.tabs(["Carte", "Programma"])
-    with cardTab:
-        with edit_placeholder:
-            if st.session_state['sidebar_mode']=="example_selected":
-                isClick=st.button(textIT['editExample'])
-                if isClick:
-                    st.session_state['sidebar_mode']="editing_example"
-                    edit_placeholder.empty()
-                    select_placeholder.empty()
-                    st.balloons()
-                    st.experimental_rerun()
-            else:
-                st.empty()
-    with codeTab:
-        with code_placeholder:
-            if st.session_state['sidebar_mode']=="app_start":
-                st.empty()
-            elif st.session_state['sidebar_mode']=="example_selected":
-                st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
-                st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
-                st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
-                # if st.button(textIT['downloadProgram']):
-                #     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
-            elif st.session_state['sidebar_mode']=="editing_example":
-                st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
-                st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
-                st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
-                # if st.button(textIT['downloadProgram']):
-                    # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
-        
-else:    
-    with edit_placeholder:
-        if st.session_state['sidebar_mode']=="example_selected":
-            isClick=st.button(textIT['editExample'])
-            if isClick:
-                st.session_state['sidebar_mode']="editing_example"
-                edit_placeholder.empty()
-                select_placeholder.empty()
-                st.balloons()
-                st.experimental_rerun()
-        else:
-            st.empty()
+
+with edit_placeholder:
+    if st.session_state['sidebar_mode']=="example_selected":
+        isClick=st.button(textIT['editExample'])
+        if isClick:
+            st.session_state['sidebar_mode']="editing_example"
+            edit_placeholder.empty()
+            select_placeholder.empty()
+            st.balloons()
+            st.experimental_rerun()
+    else:
+        st.empty()
+
+with code_placeholder:
+    if st.session_state['sidebar_mode']=="app_start":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="example_selected":
+        st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
+        st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
+        st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
+        # if st.button(textIT['downloadProgram']):
+        #     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
+    elif st.session_state['sidebar_mode']=="editing_example":
+        st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
+        st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
+        st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
+        # if st.button(textIT['downloadProgram']):
+            # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     
-    with code_placeholder:
-        if st.session_state['sidebar_mode']=="app_start":
-            st.empty()
-        elif st.session_state['sidebar_mode']=="example_selected":
-            st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
-            st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
-            st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
-            # if st.button(textIT['downloadProgram']):
-            #     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
-        elif st.session_state['sidebar_mode']=="editing_example":
-            st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
-            st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
-            st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
-            # if st.button(textIT['downloadProgram']):
-                # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
-        
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 6.9.9")
+st.sidebar.write("version 7.0.0")
 
 ########################### app end ########################################à
 
