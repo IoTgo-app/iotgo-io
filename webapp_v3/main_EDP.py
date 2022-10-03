@@ -56,28 +56,21 @@ output2="no Output"
 gamelevel=0
 
 
-def resetCards():
-    gamelevel=0	 
-
-urlis='https://makecode.microbit.org/'
-
-
- 
+# def resetCards():
+#     gamelevel=0	 
+# urlis='https://makecode.microbit.org/'
 # skeleton_list= ["",
                 # "lvl1-1con-1in-1out", 
                 # "lvl1-1con-1in-2out", 
                 # "lvl1-1con-2in-1out"]
-io_changed=False
-
+# io_changed=False
 # def updateCode():
 #     st.write("codeupdated")
 #     io_changed=False
-
-
-prevSkeleton="" ####MOVE TO SESSION STATE
-skeleton=""
-prevInput="x" # get default value for this skeleton
-prevOutput="a" # get default value for this skeleton
+# prevSkeleton="" ####MOVE TO SESSION STATE
+# skeleton=""
+# prevInput="x" # get default value for this skeleton
+# prevOutput="a" # get default value for this skeleton
 
 if 'input0is' not in st.session_state:
     st.session_state['input0is'] = "no Input"
@@ -87,16 +80,14 @@ if 'output0is' not in st.session_state:
     st.session_state['output0is'] = "no Output"
 if 'prevOutput' not in st.session_state:
     st.session_state['prevOutput'] = "no Output"
-# if 'input2is' not in st.session_state:
-#     st.session_state['input2is'] = "x"
-# if 'prevInput2' not in st.session_state:
-#     st.session_state['prevInput2'] = "x"
-# if 'output2is' not in st.session_state:
-#     st.session_state['output2is'] = "a"
-# if 'prevOutput2' not in st.session_state:
-#     st.session_state['prevOutput2'] = "x"
-
-
+if 'input2is' not in st.session_state:
+    st.session_state['input2is'] = "no Input"
+if 'prevInput2' not in st.session_state:
+    st.session_state['prevInput2'] = "no Input"
+if 'output2is' not in st.session_state:
+    st.session_state['output2is'] = "no Output"
+if 'prevOutput2' not in st.session_state:
+    st.session_state['prevOutput2'] = "no Output"
 if 'skeleton' not in st.session_state:
     st.session_state['skeleton'] = ""
 if 'sidebar_mode' not in st.session_state:
@@ -135,7 +126,7 @@ input2_placeholder   = st.sidebar.container()#empty()
 output2_placeholder  = st.sidebar.container()#empty()
 change_placeholder  = st.sidebar.container()#empty()
 
-# if isTabbed:
+# if appTabs:
 #     cardTab,codeTab= st.tabs(['Carte'.'Programma'])
 #     with cardTab:
 #     with codeTab:
