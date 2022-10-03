@@ -77,6 +77,8 @@ if 'input0is' not in st.session_state:
     st.session_state['input0is'] = "no Input"
 if 'prevInput' not in st.session_state:
     st.session_state['prevInput'] = "no Input"
+if 'input1index' not in st.session_state:
+    st.session_state['input1index'] = "0"
 if 'output0is' not in st.session_state:
     st.session_state['output0is'] = "no Output"
 if 'prevOutput' not in st.session_state:
@@ -156,11 +158,15 @@ with select_placeholder:
         # make sure the default index is same as that one on next re.run
 
 
-
-
+# list(mydict.keys())[list(mydict.values()).index(16)]
+        # if "in1" in st.session_state['io_list'].keys():
+        #     st.session_state['input1index'] = input_options.index(it2en_inout[st.session_state['io_list']['in1']])
+  
+  
 with input_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        input1index = input_options.index(st.session_state['input0is'])
+        # if "in1" in st.session_state['io_list'].keys():
+        #     st.session_state['input1index'] = input_options.index(it2en_inout[st.session_state['io_list']['in1']])
         st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options,index=input1index)#,index=2) #,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']
