@@ -209,7 +209,8 @@ with code_placeholder:
         st.empty()
     elif st.session_state['sidebar_mode']=="example_selected":
         st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
-        st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
+        # st.code(addDefaultIO(st.session_state['skeleton']), language="javascript")
+        st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
         st.markdown('[' + textIT['downloadProgram'] + '](' +urlis +')' , unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):
         #     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
@@ -222,7 +223,7 @@ with code_placeholder:
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.0.3")
+st.sidebar.write("version 7.0.4")
 st.session_state['io_list']  
 
 ########################### app end ########################################à
