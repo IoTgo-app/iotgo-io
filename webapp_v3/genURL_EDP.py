@@ -4,7 +4,7 @@ from code_components import on_end, on_start
 import urllib.parse
 
 
-def genURL_EDP(codeBody,io_list,codetitle,codesubtitle) # (groupnum,p2ptype,gamelevel,*args):#input_name, output_name):#here i am collecting chunks of code, encoding them, and concatenating them into a URL:
+def genURL_EDP(codeBody,io_list,codetitle,codesubtitle): # (groupnum,p2ptype,gamelevel,*args):#input_name, output_name):#here i am collecting chunks of code, encoding them, and concatenating them into a URL:
     # TO DO list
     # - remove clearscreen duplicates in output_else_code
     # 
