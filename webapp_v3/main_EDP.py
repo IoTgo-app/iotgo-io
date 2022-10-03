@@ -150,6 +150,7 @@ with select_placeholder:
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
             st.session_state['sidebar_mode']="example_selected"
+            st.session_state['io_list']=default_IO[st.session_state['skeleton']#new
 
 with input_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
