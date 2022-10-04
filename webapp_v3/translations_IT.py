@@ -16,7 +16,7 @@ descip2varIT= {#keys should contain the IT description needed to be shown in the
     "Albero Animato"          : "lvl1b1-1in_2out",
     "Orologio Segnafreddo"    : "lvl1c1-2in_1out",
     
-    "Cestino Sorridente, \n altrimenti Spento"   : "lvl1a2-1in_1out_else",
+    "Cestino Sorridente, altrimenti Spento"   : "lvl1a2-1in_1out_else",
     "Albero Animato, altrimenti Spento"       : "lvl1b2-1in_2out_else",
     "Orologio Segnafreddo, altrimenti Spento" : "lvl1c2-2in_1out_else",
 
