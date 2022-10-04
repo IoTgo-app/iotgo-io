@@ -12,6 +12,7 @@ textIT={ #this text will appear on the app in various places to guide the user
   }
 
 descip2varIT= {#keys should contain the IT description needed to be shown in the app for each example.
+    "":"",
     "Cestino Sorridente"      : "lvl1a1-1in_1out",
     "Albero Animato"          : "lvl1b1-1in_2out",
     "Orologio Segnafreddo"    : "lvl1c1-2in_1out",
