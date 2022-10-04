@@ -9,7 +9,7 @@ from bokeh.models.widgets import Div # for button-new-page
 
 from code_skeletons import changeIO, code_skeletons,default_IO
 import inputs_IT, outputs_IT
-from translations_IT import it2en_inout, en2it_inout, exampleListIT, textIT, ITdescription2var
+from translations_IT import it2en_inout, en2it_inout, desciit2p2varIT, textIT, 
 from imageURL import imageURL
 from genURL_EDP import genURL_EDP
 import mods #for custom modifications to default streamlit app style
@@ -145,7 +145,7 @@ with select_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
         st.write(textIT['youSelected'] + st.session_state['skeleton'])
     elif st.session_state['sidebar_mode']=="app_start" or "example_selected":
-        st.session_state['skeleton']=st.selectbox(textIT['selectExample'],code_skeletons)
+        st.session_state['skeleton']=st.selectbox(textIT['selectExample'],desciit2p2varIT.keys())#code_skeletons)
         # st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)        
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
@@ -243,7 +243,7 @@ with code_placeholder:
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.2.5")
+st.sidebar.write("version 7.2.6")
 # st.session_state['io_list']  
 
 ########################### app end ########################################à

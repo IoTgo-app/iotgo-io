@@ -11,43 +11,15 @@ textIT={ #this text will appear on the app in various places to guide the user
   "downloadProgram"  : "Scarica il programma :arrow_right:",#or Open this code in the editor
   }
 
-exampleListIT= [ #these are the names of the example programs which users will select through a dropdown menu
-    "1a1_toAddITdescription" ,#match the code i.e. "1a1" to the labelled taxonomy diagram
-    "1a2_toAddITdescription" ,
+descip2varIT= {#keys should contain the IT description needed to be shown in the app for each example.
+    "Cestino Sorridente"      : "lvl1a1-1in_1out",
+    "Albero Animato"          : "lvl1b1-1in_2out",
+    "Orologio Segnafreddo"    : "lvl1c1-2in_1out",
     
-    "1b1_toAddITdescription" ,
-    "1b2_toAddITdescription" ,
+    "Cestino Sorridente, altrimenti Spento"   : "lvl1a2-1in_1out_else",
+    "Albero Animato, altrimenti Spento"       : "lvl1b2-1in_2out_else",
+    "Orologio Segnafreddo, altrimenti Spento" : "lvl1c2-2in_1out_else",
 
-    "1c1_toAddITdescription" ,
-    "1c2_toAddITdescription" ,
-    
-    "2a1_toAddITdescription" ,
-    "2a2_toAddITdescription" ,
-
-    "2b1_toAddITdescription" ,
-    "2b2_toAddITdescription" ,
-
-    "2c1_toAddITdescription" ,
-    "2c2_toAddITdescription" ,
-
-    "3a1_toAddITdescription" ,
-    "3a2_toAddITdescription" ,
-
-    "3b1_toAddITdescription" ,
-    "3b2_toAddITdescription"  
-]
-
-
-ITdescription2var= {#keys should contain the IT description needed to be shown in the app for each example.
-    "1a1_toAddITdescription"  : "lvl1a1-1in_1out",
-    "1a2_toAddITdescription"  : "lvl1a2-1in_1out_else",
-    
-    "1b1_toAddITdescription"  : "lvl1b1-1in_2out",
-    "1b2_toAddITdescription"  : "lvl1b2-1in_2out_else",
-
-    "1c1_toAddITdescription"  : "lvl1c1-2in_1out",
-    "1c2_toAddITdescription"  : "lvl1c2-2in_1out_else",
-    
     "2a1_toAddITdescription"  : "lvl2a1-1in_1out-1in_1out",
     "2a2_toAddITdescription"  : "lvl2a2-1in_1out_else-1in_1out_else",
 
