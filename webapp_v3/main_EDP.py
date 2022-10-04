@@ -124,8 +124,8 @@ vertiPaddingWidthhalf=17
 # sidebar_mode        = "app_start" #"edit_example" #"app_start"
 select_placeholder  = st.sidebar.empty()
 input_placeholder   = st.sidebar.container()#empty()
-output_placeholder  = st.sidebar.container()#empty()
 input2_placeholder   = st.sidebar.container()#empty()
+output_placeholder  = st.sidebar.container()#empty()
 output2_placeholder  = st.sidebar.container()#empty()
 change_placeholder  = st.sidebar.container()#empty()
 
