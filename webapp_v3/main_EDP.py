@@ -174,7 +174,7 @@ with input_placeholder:
                 temp["in1"]=it2en_inout[st.session_state['input0is']]
                 st.session_state['io_list']  = temp
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])
-                st.experimental_rerun()ù
+                st.experimental_rerun()
         else:
             st.empty()
     else:
