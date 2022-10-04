@@ -162,19 +162,21 @@ with select_placeholder:
         # if "in1" in st.session_state['io_list'].keys():
         #     st.session_state['input1index'] = input_options.index(it2en_inout[st.session_state['io_list']['in1']])
   
-  
+
 with input_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
         if "in1" in st.session_state['io_list'].keys():
             st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
-        st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options,index= int(st.session_state['input1index']))#,index=2) #,key='selInput')
-        if not st.session_state['prevInput']==st.session_state['input0is']:  
-            st.session_state['prevInput']=st.session_state['input0is']
-            temp=default_IO[st.session_state['skeleton']]
-            temp["in1"]=it2en_inout[st.session_state['input0is']]
-            st.session_state['io_list']  = temp
-            changeIO(st.session_state['skeleton'],st.session_state['io_list'])
-            st.experimental_rerun()
+            st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options,index= int(st.session_state['input1index']))#,index=2) #,key='selInput')
+            if not st.session_state['prevInput']==st.session_state['input0is']:  
+                st.session_state['prevInput']=st.session_state['input0is']
+                temp=default_IO[st.session_state['skeleton']]
+                temp["in1"]=it2en_inout[st.session_state['input0is']]
+                st.session_state['io_list']  = temp
+                changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+                st.experimental_rerun()ù
+        else:
+            st.empty()
     else:
         st.empty()
 
