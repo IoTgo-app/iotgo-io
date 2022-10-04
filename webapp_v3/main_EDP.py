@@ -170,6 +170,24 @@ with input_placeholder:
     else:
         st.empty()
 
+with input2_placeholder:
+    if st.session_state['sidebar_mode']=="editing_example":
+        if "in2" in st.session_state['io_list'].keys():
+            st.session_state['input2index'] = input_options.index(en2it_inout[st.session_state['io_list']['in2']])
+            st.session_state['input2is'] =st.selectbox( textIT['selectInput2'],input_options,index= int(st.session_state['input2index']))#,index=2) #,key='selInput')
+            if not st.session_state['prevInput2']==st.session_state['input2is']:  
+                st.session_state['prevInput2']=st.session_state['input2is']
+                temp=default_IO[st.session_state['skeleton']]
+                temp["in2"]=it2en_inout[st.session_state['input2is']]
+                st.session_state['io_list']  = temp
+                changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+                st.experimental_rerun()
+        else:
+            st.empty()
+    else:
+        st.empty()
+
+
 with output_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
         if "out1" in st.session_state['io_list'].keys():
@@ -187,23 +205,6 @@ with output_placeholder:
     else:
         st.empty()
 
-
-with input2_placeholder:
-    if st.session_state['sidebar_mode']=="editing_example":
-        if "in2" in st.session_state['io_list'].keys():
-            st.session_state['input2index'] = input_options.index(en2it_inout[st.session_state['io_list']['in2']])
-            st.session_state['input2is'] =st.selectbox( textIT['selectInput2'],input_options,index= int(st.session_state['input2index']))#,index=2) #,key='selInput')
-            if not st.session_state['prevInput2']==st.session_state['input2is']:  
-                st.session_state['prevInput2']=st.session_state['input2is']
-                temp=default_IO[st.session_state['skeleton']]
-                temp["in2"]=it2en_inout[st.session_state['input2is']]
-                st.session_state['io_list']  = temp
-                changeIO(st.session_state['skeleton'],st.session_state['io_list'])
-                st.experimental_rerun()
-        else:
-            st.empty()
-    else:
-        st.empty()
 
 with output2_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
