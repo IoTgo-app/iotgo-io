@@ -221,15 +221,18 @@ with code_placeholder:
     if st.session_state['sidebar_mode']=="app_start":
         st.empty()
     elif st.session_state['sidebar_mode']=="example_selected":
-        st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
-        codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
-        st.session_state['urlis']=genURL_EDP(codeBodyis,st.session_state['io_list'],codetitle,codesubtitle)        
-        if codeLang=="js":
-            st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
+        if not  st.session_state['sidebar_mode']== "":
+            st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
+            codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+            st.session_state['urlis']=genURL_EDP(codeBodyis,st.session_state['io_list'],codetitle,codesubtitle)        
+            if codeLang=="js":
+                st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
+            else:
+                components.iframe(st.session_state['urlis'], height=codeHeight, width=codeWidth, scrolling=True)
+            st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
         else:
-            components.iframe(st.session_state['urlis'], height=codeHeight, width=codeWidth, scrolling=True)
-        st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
-        # if st.button(textIT['downloadProgram']):#     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
+            st.empty()
+            # if st.button(textIT['downloadProgram']):#     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     elif st.session_state['sidebar_mode']=="editing_example":
         # st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
         codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
@@ -243,7 +246,7 @@ with code_placeholder:
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.3.4")
+st.sidebar.write("version 7.3.5")
 # st.session_state['io_list']  
 
 ########################### app end ########################################à
