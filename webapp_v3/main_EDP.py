@@ -165,8 +165,8 @@ with select_placeholder:
   
 with input_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        # if "in1" in st.session_state['io_list'].keys():
-        #     st.session_state['input1index'] = input_options.index(it2en_inout[st.session_state['io_list']['in1']])
+        if "in1" in st.session_state['io_list'].keys():
+            st.session_state['input1index'] = input_options.index(it2en_inout[st.session_state['io_list']['in1']])
         st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options,index= int(st.session_state['input1index']))#,index=2) #,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']
@@ -241,7 +241,7 @@ with code_placeholder:
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.2.2")
+st.sidebar.write("version 7.2.3")
 # st.session_state['io_list']  
 
 ########################### app end ########################################à
