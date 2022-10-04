@@ -9,7 +9,7 @@ from bokeh.models.widgets import Div # for button-new-page
 
 from code_skeletons import changeIO, code_skeletons,default_IO
 import inputs_IT, outputs_IT
-from translations_IT import it2en_inout, exampleListIT, textIT, ITdescription2var
+from translations_IT import it2en_inout, en2it_inout, exampleListIT, textIT, ITdescription2var
 from imageURL import imageURL
 from genURL_EDP import genURL_EDP
 import mods #for custom modifications to default streamlit app style
@@ -166,7 +166,7 @@ with select_placeholder:
 with input_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
         if "in1" in st.session_state['io_list'].keys():
-            st.session_state['input1index'] = input_options.index(it2en_inout[st.session_state['io_list']['in1']])
+            st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
         st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options,index= int(st.session_state['input1index']))#,index=2) #,key='selInput')
         if not st.session_state['prevInput']==st.session_state['input0is']:  
             st.session_state['prevInput']=st.session_state['input0is']
@@ -241,7 +241,7 @@ with code_placeholder:
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.2.3")
+st.sidebar.write("version 7.2.4")
 # st.session_state['io_list']  
 
 ########################### app end ########################################à

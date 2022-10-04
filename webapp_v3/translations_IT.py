@@ -65,6 +65,7 @@ ITdescription2var= {#keys should contain the IT description needed to be shown i
 }
 
 
+
 it2en_inout={ #this is the text description of input, ouput cards.
   # NEW Cards to be added, 
   # if any new card is to be added, just add the text as a key, 
@@ -143,3 +144,5 @@ it2en_inout={ #this is the text description of input, ouput cards.
 "l\'umidità del suolo è alta":"soilMoistureHigh",#new
 "l\'umidità del suolo è bassa":"soilMoistureLow",#new
 }
+
+en2it_inout = {v: k for k, v in it2en_inout.items()}
