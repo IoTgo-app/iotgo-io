@@ -118,3 +118,4 @@ it2en_inout={ #this is the text description of input, ouput cards.
 }
 
 en2it_inout = {v: k for k, v in it2en_inout.items()}
+var2descipIT = {v: k for k, v in descip2varIT.items()}
