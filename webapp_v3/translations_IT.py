@@ -51,8 +51,10 @@ it2en_inout={ #this is the text description of input, ouput cards.
 'il logo non è toccato':"touchNo" , #v2 
 "l\'accelerazione è alta":"accelHigh" ,
 "l\'accelerazione è bassa":"accelLow" , #RG: fixed typo
-"il pulsante è premuto":"buttonPress",
-"il pulsante non è premuto":"buttonNotPress",
+"il pulsante (A) è premuto":"buttonPress",
+"il pulsante (A) non è premuto":"buttonNotPress",
+"il pulsante (B) è premuto":"buttonPressB", #new
+"il pulsante (B) non è premuto":"buttonNotPressB", #new
 "la bussola punta ad Est":"compassE" ,
 "la bussola punta a Nord":"compassN" ,
 "la bussola punta a Sud":"compassS" ,
