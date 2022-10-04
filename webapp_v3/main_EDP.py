@@ -9,7 +9,7 @@ from bokeh.models.widgets import Div # for button-new-page
 
 from code_skeletons import changeIO, code_skeletons,default_IO
 import inputs_IT, outputs_IT
-from translations_IT import it2en_inout, en2it_inout, desciit2p2varIT, textIT, 
+from translations_IT import it2en_inout, en2it_inout, desciit2p2varIT, textIT
 from imageURL import imageURL
 from genURL_EDP import genURL_EDP
 import mods #for custom modifications to default streamlit app style
@@ -243,7 +243,7 @@ with code_placeholder:
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.2.7")
+st.sidebar.write("version 7.2.8")
 # st.session_state['io_list']  
 
 ########################### app end ########################################à
