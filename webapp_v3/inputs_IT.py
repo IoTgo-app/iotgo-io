@@ -1,9 +1,9 @@
 microbitv1= ("l\'accelerazione è alta" ,
 		    "l\'accelerazione è bassa" ,
-		    "il pulsante (A) è premuto",
-		    "il pulsante (B) è premuto",
-		    "il pulsante (A) non è premuto",
-		    "il pulsante (B) non è premuto",
+			"il pulsante (A) è premuto",
+			"il pulsante (A) non è premuto",
+			"il pulsante (B) è premuto", #new
+			"il pulsante (B) non è premuto", #new
 		    "il gesto è scuotere" ,
 		    "il gesto è inclinare" ,
 		    "l\'intensità di luce è alta",
