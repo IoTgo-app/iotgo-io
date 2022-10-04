@@ -180,7 +180,9 @@ with input_placeholder:
 
 with output_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.session_state['output0is'] =st.selectbox( textIT['selectOutput1'],output_options)#,key='selInput')
+        if "out1" in st.session_state['io_list'].keys():
+            st.session_state['output1index'] = output_options.index(en2it_inout[st.session_state['io_list']['out1']])
+        st.session_state['output0is'] =st.selectbox( textIT['selectOutput1'],output_options,index= int(st.session_state['output1index']))#,key='selInput')
         if not st.session_state['prevOutput']==st.session_state['output0is']:
             st.session_state['prevOutput']=st.session_state['output0is']
             temp=default_IO[st.session_state['skeleton']]
@@ -241,7 +243,7 @@ with code_placeholder:
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.2.4")
+st.sidebar.write("version 7.2.5")
 # st.session_state['io_list']  
 
 ########################### app end ########################################à
