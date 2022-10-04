@@ -143,7 +143,7 @@ edit_placeholder     = st.sidebar.empty()
 
 with select_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.write(textIT['youSelected'] + var2descipIT[st.session_state['skeleton']])
+        st.write(textIT['youSelected'] + "**" +var2descipIT[st.session_state['skeleton']] + "**")
     elif st.session_state['sidebar_mode']=="app_start" or "example_selected":
         st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'],descip2varIT.keys())]#code_skeletons)
         # st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)        
