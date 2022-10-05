@@ -37,14 +37,8 @@ codeLang="blocks"#"js"
 input_options=    inputs_IT.microbitv1  + inputs_IT.microbitv2  + inputs_IT.exOthers   
 output_options=   outputs_IT.microbitv1 + outputs_IT.microbitv2 + outputs_IT.exBosonKit  
 
-# #initialize variables-----------------------------------------------------
-# input1="no Input"
-# output1="no Output"
-# input2="no Input"
-# output2="no Output"
-# gamelevel=0
 
-#initialize image sizes-----------------------------------------------------------
+#initialize image and iframe sizes-----------------------------------------------------------
 cardWidth=150
 pluscardwidht=150
 missionCardWidth=160
@@ -102,7 +96,8 @@ output2_placeholder     = st.sidebar.container()#empty()
 change_placeholder      = st.sidebar.container()#empty()
 # code_col, padding1      = st.columns([3,1])
 # with code_col:
-code_placeholder    = st.container()
+code_placeholder        = st.container()
+download_placeholder    = st.sidebar.empty()
 edit_placeholder        = st.sidebar.empty()
 
 ########################### app sidebar ########################################à
@@ -229,6 +224,15 @@ with code_placeholder:
             st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
         else:
             components.iframe(st.session_state['urlis'], height=codeHeight, width=codeWidth, scrolling=True)
+        # st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')'  , unsafe_allow_html=True)
+
+
+with download_placeholder:
+   if st.session_state['sidebar_mode']=="app_start":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="example_selected":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="editing_example":
         st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')'  , unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):            # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     # st.markdown(
@@ -236,10 +240,9 @@ with code_placeholder:
     # """,
     # unsafe_allow_html=True,)
 
-
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.4.5")
+st.sidebar.write("version 7.4.6")
 
 
 

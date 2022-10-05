@@ -240,9 +240,6 @@ code_skeletons = {
         """, 
     "lvl3b2-1var_1out_else" : 
         """   
-        /**
-        * IL DADO MUSICALE, ALTRIMENTI SPENTO
-        */
         let valore_caratteristico = 0
         basic.forever(function () {
             basic.pause(2000)
