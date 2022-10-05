@@ -272,7 +272,10 @@ with code_placeholder:
             components.iframe(st.session_state['urlis'], height=codeHeight, width=codeWidth, scrolling=True)
         st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')'  , unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):            # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
-    
+    # st.markdown(
+    # """<a style='display: block; text-align: center;' href="https://www.example.com/">example.com</a>
+    # """,
+    # unsafe_allow_html=True,)
 
 st.sidebar.markdown("---")
 st.sidebar.write("version 7.4.2")
