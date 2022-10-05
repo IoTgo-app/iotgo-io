@@ -4,9 +4,6 @@ import streamlit.components.v1 as components
 import time
 import textwrap
 from bokeh.models.widgets import Div # for button-new-page
-
-
-
 from code_skeletons import changeIO, code_skeletons,default_IO
 import inputs_IT, outputs_IT
 from translations_IT import it2en_inout, en2it_inout, descip2varIT, textIT, var2descipIT
@@ -32,21 +29,20 @@ baseURL_cards           =   "https://raw.githubusercontent.com/IoTgo-app/iotgo-i
 codetitle=""
 codesubtitle=""
 groupnum="0"
-p2p=True        #not implemented yet.
-appTabs=True    #not implemented yet.
-version="EDB.0.0.1"
+# p2p=True        #not implemented yet.
+# appTabs=True    #not implemented yet.
 codeLang="blocks"#"js"
 
 #populate input and output lists------------------------------------------
-input_options=    inputs_IT.microbitv1  + inputs_IT.microbitv2  + inputs_IT.exOthers  #('no Input',) +
-output_options=   outputs_IT.microbitv1 + outputs_IT.microbitv2 + outputs_IT.exBosonKit #('no Output',) +
+input_options=    inputs_IT.microbitv1  + inputs_IT.microbitv2  + inputs_IT.exOthers   
+output_options=   outputs_IT.microbitv1 + outputs_IT.microbitv2 + outputs_IT.exBosonKit  
 
-#initialize variables-----------------------------------------------------
-input1="no Input"
-output1="no Output"
-input2="no Input"
-output2="no Output"
-gamelevel=0
+# #initialize variables-----------------------------------------------------
+# input1="no Input"
+# output1="no Output"
+# input2="no Input"
+# output2="no Output"
+# gamelevel=0
 
 #initialize image sizes-----------------------------------------------------------
 cardWidth=150

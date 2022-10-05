@@ -2,16 +2,6 @@
 from code_components import input_code,output_code,output_else_code
 from code_components import package_suffix,on_end,on_start,input_sensorValue
 
-# def addIO(skeleton_name):
-#     currentSkeleton=code_skeletons[skeleton_name]
-#     IO2add=default_IO[skeleton_name]
-#     for eachKey, eachVal in IO2add.items():
-#         currentSkeleton=currentSkeleton.replace(eachKey, eachVal)
-#     return currentSkeleton
-
-
-
-
 
 default_IO = {
     "":{},
