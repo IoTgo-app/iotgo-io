@@ -93,11 +93,11 @@ input_placeholder       = st.sidebar.container()#empty()
 input2_placeholder      = st.sidebar.container()#empty()
 output_placeholder      = st.sidebar.container()#empty()
 output2_placeholder     = st.sidebar.container()#empty()
-nav_back, nav_fore = st.sidebar.columns(2)
-with nav_back:
-    st.button("⬅️back")
-with nav_fore:
-    st.button("next➡️")
+# nav_back, nav_fore = st.sidebar.columns(2)
+# with nav_back:
+#     st.button("⬅️back")
+# with nav_fore:
+#     st.button("next➡️")
 # code_col, padding1      = st.columns([3,1])
 # with code_col:
 code_placeholder        = st.container()
