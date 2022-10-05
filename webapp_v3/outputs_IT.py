@@ -22,7 +22,7 @@ exBosonKit= (
 	'accende una luce (BosonKit)',
 	'ruota il motore (BosonKit)' ,
 	'spegne un ventilatore (BosonKit)' ,
-	'spegne un\'animazione luminosa (BosonKit)'
+	'spegne un\'animazione luminosa (BosonKit)',
 	'spegne una luce (BosonKit)',
 	'smette di ruotare il motore (BosonKit)' ,
 )
