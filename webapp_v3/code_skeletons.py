@@ -117,7 +117,6 @@ code_skeletons = {
         /**
         * IL DADO MUSICALE
         */
-        basic.clearScreen()
         let valore_caratteristico = 0
         basic.forever(function () {
             basic.pause(2000)
@@ -244,9 +243,7 @@ code_skeletons = {
         /**
         * IL DADO MUSICALE, ALTRIMENTI SPENTO
         */
-        basic.clearScreen()
         let valore_caratteristico = 0
-
         basic.forever(function () {
             basic.pause(2000)
             valore_caratteristico += randint(1, 6)

@@ -90,10 +90,6 @@ if 'urlis' not in st.session_state:
 
 ########################### app init ########################################à
 
-#initialize list of inputs and outputs------------------------------------------
-# input_name= ["no Input"  ,"no Input"]#  ,"no Input"]
-# output_name=["no Output" ,"no Output"]# ,"no Output"]
-
 #add iotgo logo
 st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=150)
 
@@ -110,7 +106,6 @@ with code_col:
 edit_placeholder        = st.sidebar.empty()
 
 ########################### app sidebar ########################################à
-
 with select_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
         st.write(textIT['youSelected'] + " \n *" +var2descipIT[st.session_state['skeleton']] + "*")
@@ -204,8 +199,6 @@ with change_placeholder:
     else:
         st.empty() 
 
-########################### app body ########################################à
-
 with edit_placeholder:
     if st.session_state['sidebar_mode']=="example_selected":
         isClick=st.button(textIT['editExample'])
@@ -218,19 +211,14 @@ with edit_placeholder:
     else:
         st.empty()
 
+
+########################### app body ########################################à
 with code_placeholder:
     if st.session_state['sidebar_mode']=="app_start":
         st.empty()
     elif st.session_state['sidebar_mode']=="example_selected":
         if not  st.session_state['sidebar_mode']== "":
             st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
-            # codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
-            # st.session_state['urlis']=genURL_EDP(codeBodyis,st.session_state['io_list'],codetitle,codesubtitle)        
-            # if codeLang=="js":
-            #     st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
-            # else:
-            #     components.iframe(st.session_state['urlis'], height=codeHeight, width=codeWidth, scrolling=True)
-            # st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
         else:
             st.empty()
     elif st.session_state['sidebar_mode']=="editing_example":
@@ -248,14 +236,10 @@ with code_placeholder:
     # """,
     # unsafe_allow_html=True,)
 
-st.sidebar.markdown("---")
-st.sidebar.write("version 7.4.4")
-
-
-# st.session_state['io_list']  
 
 ########################### app end ########################################à
-
+st.sidebar.markdown("---")
+st.sidebar.write("version 7.4.4")
 
 
 
