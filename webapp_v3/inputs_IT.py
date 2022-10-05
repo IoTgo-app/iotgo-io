@@ -1,5 +1,6 @@
-microbitv1= ("l\'accelerazione è alta" ,
-		    "l\'accelerazione è bassa" ,
+microbitv1= (
+			# "l\'accelerazione è alta" ,
+		    # "l\'accelerazione è bassa" ,
 			"il pulsante (A) è premuto",
 			"il pulsante (A) non è premuto",
 			"il pulsante (B) è premuto", #new
@@ -10,10 +11,10 @@ microbitv1= ("l\'accelerazione è alta" ,
 		    'l\'intensità di luce è bassa',
 		    'la temperatura è alta' ,
 		    'la temperatura è bassa' ,
-		    "la bussola punta ad Est",
-		    "la bussola punta a Nord" ,
-		    "la bussola punta a Sud" ,
-		    "la bussola punta ad Ovest" ,
+		    # "la bussola punta ad Est",
+		    # "la bussola punta a Nord" ,
+		    # "la bussola punta a Sud" ,
+		    # "la bussola punta ad Ovest" ,
 	
 		   )
 microbitv2= ( "il rumore è alto" ,
@@ -25,10 +26,9 @@ exBosonKit= ('non c\'è movimento nei dintorni (BosonKit)' ,
 'c\'è movimento nei dintorni (BosonKit)' ,
 'il cursore è al massimo (BosonKit)' ,
 'il cursore è al minimo (BosonKit)' ,
-#"il cursore è al medio (BosonKit)" ,
-'il cursore è a metà (BosonKit)',
+# 'il cursore è a metà (BosonKit)',
 		   )
-exEnviroBit= ("c\'è tanta umidità (Envirobit)",
+exEnviroBit= ("c\'è tanta umidità (Envirobit)",#these all are not in use.
 "c\'è poca umidità (Envirobit)",
 "la pressione atmosferica è alta (Envirobit)",
 "la pressione atmosferica è bassa (Envirobit)",

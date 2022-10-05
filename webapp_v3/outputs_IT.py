@@ -1,4 +1,5 @@
-microbitv1= ('suona una melodia allegra' ,
+microbitv1= (
+	'suona una melodia allegra' ,
 # 'smette di suonare' ,
 'suona una melodia triste' ,
 "suona un allarme" ,
@@ -32,6 +33,7 @@ exBosonKit= (
 	'accende un ventilatore (BosonKit)' ,
 	# 'spegne un\'animazione luminosa (BosonKit)',
 	'attiva un\'animazione luminosa (BosonKit)' ,
+	'accende una luce (BosonKit)',
 )
 
 exEnviroBit=()
