@@ -26,9 +26,9 @@ st.markdown(mods.hide_top_padding, unsafe_allow_html=True)
 ############################# app settings ##########################################à
 langPrefix=['EN','IT','DE','UR']
 lang=1
-baseURL=   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/cards_v2/"
-baseURL_codeSkeletons=   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/"
-baseURL_cards="https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/cards/"
+baseURL                 =   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/cards_v2/"
+baseURL_codeSkeletons   =   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/"
+baseURL_cards           =   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/cards/"
 codetitle=""
 codesubtitle=""
 groupnum="0"
@@ -36,17 +36,10 @@ p2p=True        #not implemented yet.
 appTabs=True    #not implemented yet.
 version="EDB.0.0.1"
 codeLang="blocks"#"js"
-codeHeight=500
-codeWidth=800
-
-########################### app sidebar ########################################à
-#add iotgo logo-----------------------------------------------------------
-st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=150)
-# st.sidebar.markdown("""---""")
 
 #populate input and output lists------------------------------------------
-input_options=   inputs_IT.microbitv1 + inputs_IT.microbitv2 +inputs_IT.exOthers  #('no Input',) +
-output_options=   outputs_IT.microbitv1 + outputs_IT.microbitv2+ outputs_IT.exBosonKit #('no Output',) +
+input_options=    inputs_IT.microbitv1  + inputs_IT.microbitv2  + inputs_IT.exOthers  #('no Input',) +
+output_options=   outputs_IT.microbitv1 + outputs_IT.microbitv2 + outputs_IT.exBosonKit #('no Output',) +
 
 #initialize variables-----------------------------------------------------
 input1="no Input"
@@ -55,24 +48,17 @@ input2="no Input"
 output2="no Output"
 gamelevel=0
 
+#initialize image sizes-----------------------------------------------------------
+cardWidth=150
+pluscardwidht=150
+missionCardWidth=160
+vertiPaddingWidth=35
+vertiPaddingWidthhalf=17
+codeHeight=500
+codeWidth=800
 
-# def resetCards():
-#     gamelevel=0	 
-# urlis='https://makecode.microbit.org/'
-# skeleton_list= ["",
-                # "lvl1-1con-1in-1out", 
-                # "lvl1-1con-1in-2out", 
-                # "lvl1-1con-2in-1out"]
-# io_changed=False
-# def updateCode():
-#     st.write("codeupdated")
-#     io_changed=False
-# skeleton=""
-# prevInput="x" # get default value for this skeleton
-# prevOutput="a" # get default value for this skeleton
-
+#initialize session state variables----------------------------------------------------------
 prevSkeleton="" ####MOVE TO SESSION STATE
-
 if 'input0is' not in st.session_state:
     st.session_state['input0is'] = "no Input"
 if 'prevInput' not in st.session_state:
@@ -100,7 +86,6 @@ if 'io_list' not in st.session_state:
         st.session_state['io_list'] = default_IO[st.session_state['skeleton']]
     else:
         st.session_state['io_list'] = {"":""}
-
 if 'urlis' not in st.session_state:
     st.session_state['urlis'] = ""
 
@@ -110,15 +95,13 @@ if 'urlis' not in st.session_state:
 ########################### app init ########################################à
 
 #initialize list of inputs and outputs------------------------------------------
-input_name= ["no Input"  ,"no Input"]#  ,"no Input"]
-output_name=["no Output" ,"no Output"]# ,"no Output"]
+# input_name= ["no Input"  ,"no Input"]#  ,"no Input"]
+# output_name=["no Output" ,"no Output"]# ,"no Output"]
 
-#initialize image sizes-----------------------------------------------------------
-cardWidth=150
-pluscardwidht=150
-missionCardWidth=160
-vertiPaddingWidth=35
-vertiPaddingWidthhalf=17
+
+st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=150)
+
+
 
 
 # sidebar_mode        = "app_start" #"edit_example" #"app_start"
