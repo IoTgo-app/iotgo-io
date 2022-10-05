@@ -143,7 +143,7 @@ edit_placeholder     = st.sidebar.empty()
 
 with select_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
-        st.write(textIT['youSelected'] + "\n*" +var2descipIT[st.session_state['skeleton']] + "*")
+        st.write(textIT['youSelected'] + " \n *" +var2descipIT[st.session_state['skeleton']] + "*")
     elif st.session_state['sidebar_mode']=="app_start" or "example_selected":
         st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'],descip2varIT.keys())]#code_skeletons)
         # st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)        
@@ -276,7 +276,8 @@ with code_placeholder:
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.4.0")
+st.sidebar.write("version 7.4.1")
+
 # st.session_state['io_list']  
 
 ########################### app end ########################################à
