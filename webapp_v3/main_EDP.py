@@ -234,7 +234,8 @@ with download_placeholder:
         st.empty()
     elif st.session_state['sidebar_mode']=="editing_example":
         st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')'  , unsafe_allow_html=True)
-        # if st.button(textIT['downloadProgram']):            # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
+        if st.button(textIT['downloadProgram']):            
+            st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     # st.markdown(
     # """<a style='display: block; text-align: center;' href="https://www.example.com/">example.com</a>
     # """,
@@ -242,7 +243,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.4.7")
+st.sidebar.write("version 7.4.8")
 
 
 
