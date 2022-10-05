@@ -259,10 +259,9 @@ with code_placeholder:
                 st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
             else:
                 components.iframe(st.session_state['urlis'], height=codeHeight, width=codeWidth, scrolling=True)
-            st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
+            st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' ,align_text='right', unsafe_allow_html=True)
         else:
             st.empty()
-            # if st.button(textIT['downloadProgram']):#     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     elif st.session_state['sidebar_mode']=="editing_example":
         # st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
         codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
@@ -271,12 +270,12 @@ with code_placeholder:
             st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
         else:
             components.iframe(st.session_state['urlis'], height=codeHeight, width=codeWidth, scrolling=True)
-        st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
+        st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')'  ,align_text='right', unsafe_allow_html=True)
         # if st.button(textIT['downloadProgram']):            # st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+")")))
     
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.4.1")
+st.sidebar.write("version 7.4.2")
 
 # st.session_state['io_list']  
 
