@@ -214,7 +214,7 @@ with output2_placeholder:
             if not st.session_state['prevOutput2']==st.session_state['output2is']:
                 st.session_state['prevOutput2']=st.session_state['output2is']
                 temp=default_IO[st.session_state['skeleton']]
-                temp["out1"]=it2en_inout[st.session_state['output2is']]
+                temp["out2"]=it2en_inout[st.session_state['output2is']]
                 st.session_state['io_list']  = temp          
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])  
                 st.experimental_rerun()
