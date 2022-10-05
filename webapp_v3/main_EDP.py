@@ -95,9 +95,9 @@ output_placeholder      = st.sidebar.container()#empty()
 output2_placeholder     = st.sidebar.container()#empty()
 nav_back, nav_fore = st.sidebar.columns(2)
 with nav_back:
-    st.sidebar.button("➡️back")
+    st.button("⬅️back")
 with nav_fore:
-    st.sidebar.button("next➡️")
+    st.button("next➡️")
 # code_col, padding1      = st.columns([3,1])
 # with code_col:
 code_placeholder        = st.container()
@@ -244,7 +244,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.4.9")
+st.sidebar.write("version 7.5.0")
 
 
 
