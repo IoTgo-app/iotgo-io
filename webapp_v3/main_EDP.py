@@ -98,30 +98,20 @@ if 'urlis' not in st.session_state:
 # input_name= ["no Input"  ,"no Input"]#  ,"no Input"]
 # output_name=["no Output" ,"no Output"]# ,"no Output"]
 
-
+#add iotgo logo
 st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=150)
 
-
-
-
-# sidebar_mode        = "app_start" #"edit_example" #"app_start"
-select_placeholder  = st.sidebar.empty()
-input_placeholder   = st.sidebar.container()#empty()
-input2_placeholder   = st.sidebar.container()#empty()
-output_placeholder  = st.sidebar.container()#empty()
-output2_placeholder  = st.sidebar.container()#empty()
-st.sidebar.markdown("---")
-change_placeholder  = st.sidebar.container()#empty()
-
-# if appTabs:
-#     cardTab,codeTab= st.tabs(['Carte'.'Programma'])
-#     with cardTab:
-#     with codeTab:
-
-code_col, padding1  = st.columns([3,1])
+#init placeholders for app content
+select_placeholder      = st.sidebar.empty()
+input_placeholder       = st.sidebar.container()#empty()
+input2_placeholder      = st.sidebar.container()#empty()
+output_placeholder      = st.sidebar.container()#empty()
+output2_placeholder     = st.sidebar.container()#empty()
+change_placeholder      = st.sidebar.container()#empty()
+code_col, padding1      = st.columns([3,1])
 with code_col:
-    code_placeholder = st.container()
-edit_placeholder     = st.sidebar.empty()
+    code_placeholder    = st.container()
+edit_placeholder        = st.sidebar.empty()
 
 ########################### app sidebar ########################################à
 
@@ -209,6 +199,7 @@ with output2_placeholder:
 
 with change_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
+        st.markdown("---")
         isclick2 = change_placeholder.button(textIT['changeExample'])
         if isclick2:
             st.session_state['sidebar_mode']="app_start"
@@ -262,7 +253,8 @@ with code_placeholder:
     # unsafe_allow_html=True,)
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.4.2")
+st.sidebar.write("version 7.4.3")
+
 
 # st.session_state['io_list']  
 
