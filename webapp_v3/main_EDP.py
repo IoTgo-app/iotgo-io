@@ -96,7 +96,7 @@ output2_placeholder     = st.sidebar.container()#empty()
 # code_col, padding1      = st.columns([3,1])
 # with code_col:
 code_placeholder        = st.container()
-download_placeholder    = st.sidebar.empty()
+download_placeholder    = st.empty()
 edit_placeholder        = st.sidebar.empty()
 change_placeholder      = st.sidebar.container()#empty()
 
