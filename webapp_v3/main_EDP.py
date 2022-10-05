@@ -228,7 +228,7 @@ with code_placeholder:
 
 
 with download_placeholder:
-   if st.session_state['sidebar_mode']=="app_start":
+    if st.session_state['sidebar_mode']=="app_start":
         st.empty()
     elif st.session_state['sidebar_mode']=="example_selected":
         st.empty()
@@ -242,7 +242,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.4.6")
+st.sidebar.write("version 7.4.7")
 
 
 
