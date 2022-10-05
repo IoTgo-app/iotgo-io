@@ -100,9 +100,9 @@ input2_placeholder      = st.sidebar.container()#empty()
 output_placeholder      = st.sidebar.container()#empty()
 output2_placeholder     = st.sidebar.container()#empty()
 change_placeholder      = st.sidebar.container()#empty()
-code_col, padding1      = st.columns([3,1])
-with code_col:
-    code_placeholder    = st.container()
+# code_col, padding1      = st.columns([3,1])
+# with code_col:
+code_placeholder    = st.container()
 edit_placeholder        = st.sidebar.empty()
 
 ########################### app sidebar ########################################à
@@ -239,7 +239,7 @@ with code_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.4.4")
+st.sidebar.write("version 7.4.5")
 
 
 
