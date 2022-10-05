@@ -1,5 +1,5 @@
 microbitv1= (
-	'suona una melodia allegra' ,
+'suona una melodia allegra' ,
 'suona una melodia triste' ,
 "suona un allarme" ,
 'mostra un numero' ,
