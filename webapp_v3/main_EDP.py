@@ -127,6 +127,7 @@ input_placeholder   = st.sidebar.container()#empty()
 input2_placeholder   = st.sidebar.container()#empty()
 output_placeholder  = st.sidebar.container()#empty()
 output2_placeholder  = st.sidebar.container()#empty()
+st.sidebar.markdown("---")
 change_placeholder  = st.sidebar.container()#empty()
 
 # if appTabs:
@@ -242,7 +243,7 @@ with edit_placeholder:
             st.session_state['sidebar_mode']="editing_example"
             edit_placeholder.empty()
             select_placeholder.empty()
-            st.balloons()
+            # st.balloons()
             st.experimental_rerun()
     else:
         st.empty()

@@ -13,38 +13,36 @@ textIT={ #this text will appear on the app in various places to guide the user
 
 descip2varIT= {#keys should contain the IT description needed to be shown in the app for each example.
     "":"",
-    "Cestino Sorridente"      : "lvl1a1-1in_1out",
-    "Albero Animato"          : "lvl1b1-1in_2out",
-    "Orologio Segnafreddo"    : "lvl1c1-2in_1out",
+    "Cestino Sorridente"                      : "lvl1a1-1in_1out",
+    "Albero Animato"                          : "lvl1b1-1in_2out",
+    "Orologio Segnafreddo"                    : "lvl1c1-2in_1out",
     
     "Cestino Sorridente, altrimenti Spento"   : "lvl1a2-1in_1out_else",
     "Albero Animato, altrimenti Spento"       : "lvl1b2-1in_2out_else",
     "Orologio Segnafreddo, altrimenti Spento" : "lvl1c2-2in_1out_else",
 
-    "2a1_toAddITdescription"  : "lvl2a1-1in_1out-1in_1out",
-    "2a2_toAddITdescription"  : "lvl2a2-1in_1out_else-1in_1out_else",
+    "2a1_toAddITdescription"                  : "lvl2a1-1in_1out-1in_1out",
+    "2a2_toAddITdescription"                  : "lvl2a2-1in_1out_else-1in_1out_else",
 
-    "2b1_toAddITdescription"  : "lvl2b1-1in_1out_elif_1in_1out",
-    "2b2_toAddITdescription"  : "lvl2b2-1in_1out_elif_1in_1out_else",
+    "2b1_toAddITdescription"                  : "lvl2b1-1in_1out_elif_1in_1out",
+    "2b2_toAddITdescription"                  : "lvl2b2-1in_1out_elif_1in_1out_else",
 
-    "2c1_toAddITdescription"  : "lvl2c1-1in_1out-nest-1in_1out",
-    "2c2_toAddITdescription"  : "lvl2c2-1in_1out-nest-1in_1out_else_else",
+    "2c1_toAddITdescription"                  : "lvl2c1-1in_1out-nest-1in_1out",
+    "2c2_toAddITdescription"                  : "lvl2c2-1in_1out-nest-1in_1out_else_else",
 
-    "3a1_toAddITdescription"  : "lvl3a1-1in_1out_var",
-    "3a2_toAddITdescription"  : "lvl3a2-1in_1out_var_else",
+    "3a1_toAddITdescription"                  : "lvl3a1-1in_1out_var",
+    "3a2_toAddITdescription"                  : "lvl3a2-1in_1out_var_else",
 
-    "3b1_toAddITdescription"  : "lvl3b1-1var_1out",
-    "3b2_toAddITdescription"  : "lvl3b2-1var_1out_else"
+    "3b1_toAddITdescription"                  : "lvl3b1-1var_1out",
+    "3b2_toAddITdescription"                  : "lvl3b2-1var_1out_else"
 }
 
 
 
-it2en_inout={ #this is the text description of input, ouput cards.
-  # NEW Cards to be added, 
-  # if any new card is to be added, just add the text as a key, 
-  # and put anything in the value, i will take care of the rest.
-  # text can be revised of existing cards
-  # Should match the description that on the printed cards
+it2en_inout={ 
+  #this is the text description of input, ouput cards.
+  #this is an exhaustive list. do not delete parts. 
+  #to choose which options you want to show in the app, see inputs_IT.py and outputs_IT.py
 "il rumore è alto":"noiseHigh" ,
 'il rumore è basso':"noiseLow" ,
 'il logo è toccato':"touchYes" ,#v2 

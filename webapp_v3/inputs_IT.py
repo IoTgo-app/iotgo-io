@@ -1,6 +1,4 @@
 microbitv1= (
-			# "l\'accelerazione è alta" ,
-		    # "l\'accelerazione è bassa" ,
 			"il pulsante (A) è premuto",
 			"il pulsante (A) non è premuto",
 			"il pulsante (B) è premuto", #new
@@ -15,6 +13,8 @@ microbitv1= (
 		    # "la bussola punta a Nord" ,
 		    # "la bussola punta a Sud" ,
 		    # "la bussola punta ad Ovest" ,
+			# "l\'accelerazione è alta" ,
+		    # "l\'accelerazione è bassa" ,
 	
 		   )
 microbitv2= ( "il rumore è alto" ,
@@ -22,11 +22,12 @@ microbitv2= ( "il rumore è alto" ,
 		    'il logo non è toccato', #v2 
 		    'il logo è toccato' ,#v2 
 		   )
-exBosonKit= ('non c\'è movimento nei dintorni (BosonKit)' ,
-'c\'è movimento nei dintorni (BosonKit)' ,
-'il cursore è al massimo (BosonKit)' ,
-'il cursore è al minimo (BosonKit)' ,
-# 'il cursore è a metà (BosonKit)',
+exBosonKit= (
+	'non c\'è movimento nei dintorni (BosonKit)' ,
+	'c\'è movimento nei dintorni (BosonKit)' ,
+	'il cursore è al massimo (BosonKit)' ,
+	'il cursore è al minimo (BosonKit)' ,
+	# 'il cursore è a metà (BosonKit)',
 		   )
 exEnviroBit= ("c\'è tanta umidità (Envirobit)",#these all are not in use.
 "c\'è poca umidità (Envirobit)",
