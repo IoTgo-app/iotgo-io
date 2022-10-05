@@ -228,13 +228,13 @@ with code_placeholder:
     elif st.session_state['sidebar_mode']=="example_selected":
         if not  st.session_state['sidebar_mode']== "":
             st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
-            codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
-            st.session_state['urlis']=genURL_EDP(codeBodyis,st.session_state['io_list'],codetitle,codesubtitle)        
-            if codeLang=="js":
-                st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
-            else:
-                components.iframe(st.session_state['urlis'], height=codeHeight, width=codeWidth, scrolling=True)
-            st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
+            # codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+            # st.session_state['urlis']=genURL_EDP(codeBodyis,st.session_state['io_list'],codetitle,codesubtitle)        
+            # if codeLang=="js":
+            #     st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
+            # else:
+            #     components.iframe(st.session_state['urlis'], height=codeHeight, width=codeWidth, scrolling=True)
+            # st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')' , unsafe_allow_html=True)
         else:
             st.empty()
     elif st.session_state['sidebar_mode']=="editing_example":
@@ -253,7 +253,7 @@ with code_placeholder:
     # unsafe_allow_html=True,)
 
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.4.3")
+st.sidebar.write("version 7.4.4")
 
 
 # st.session_state['io_list']  
