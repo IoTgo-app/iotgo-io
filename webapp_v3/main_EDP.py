@@ -152,7 +152,7 @@ with cardDeck_placeholder:
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])
                 # st.session_state['changingCardsNow'] = "in1"
                 st.experimental_rerun()
-        elif st.session_state['nav_list'][st.session_state['io_index']+1] == "in2"
+        elif st.session_state['nav_list'][st.session_state['io_index']+1] == "in2":
         # st.session_state['io_index'] == "in2":
             # if "in2" in st.session_state['io_list'].keys():
             st.session_state['input2index'] = cardDeckOptions.index(en2it_inout[st.session_state['io_list']['in2']])
@@ -164,7 +164,7 @@ with cardDeck_placeholder:
                 st.session_state['io_list']  = temp
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])
                 st.experimental_rerun()
-        elif st.session_state['io_index'] == "out1":
+        elif st.session_state['nav_list'][st.session_state['io_index']+1] == "out1":
             # if "out1" in st.session_state['io_list'].keys():
             st.session_state['output1index'] = cardDeckOptions.index(en2it_inout[st.session_state['io_list']['out1']])
             st.session_state['output0is'] =st.selectbox( textIT['selectOutput1'],cardDeckOptions,index= int(st.session_state['output1index']))#,key='selInput')
@@ -175,7 +175,7 @@ with cardDeck_placeholder:
                 st.session_state['io_list']  = temp          
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])  
                 st.experimental_rerun()
-        elif st.session_state['io_index'] == "out2":
+        elif st.session_state['nav_list'][st.session_state['io_index']+1] == "out2":
             # if "out2" in st.session_state['io_list'].keys():
             st.session_state['output2index'] = cardDeckOptions.index(en2it_inout[st.session_state['io_list']['out2']])
             st.session_state['output2is'] =st.selectbox( textIT['selectOutput2'],cardDeckOptions,index= int(st.session_state['output2index']))#,key='selInput')
