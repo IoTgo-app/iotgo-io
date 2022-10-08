@@ -112,8 +112,8 @@ cardDeck_placeholder    = st.sidebar.container()
 nav_back, nav_fore = st.sidebar.columns(2)
 with nav_back:
     st.empty() #st.button("⬅️back")
-# with nav_fore:
-#     st.empty() #st.button("next➡️")
+with nav_fore:
+    st.empty() #st.button("next➡️")
 
 # code_col, padding1      = st.columns([3,1])
 # with code_col:
@@ -217,22 +217,22 @@ with cardDeck_placeholder:
 with nav_back:
     if st.session_state['sidebar_mode']=="editing_example":
         st.markdown("---")
-        isclick_nav_back = st.button(textIT['changeExample'])
+        isclick_nav_back = st.button("⬅️back")
         if isclick_nav_back:
             st.session_state['io_index']=st.session_state['io_index']-1 
             st.experimental_rerun()
     else:
         st.empty() 
 
-# with nav_fore:
-#     if st.session_state['sidebar_mode']=="editing_example":
-#         st.markdown("---")
-#         isclick_nav_fore = st.button(textIT['changeExample'])
-#         if isclick_nav_fore:
-#             st.session_state['io_index']=st.session_state['io_index']+1
-#             st.experimental_rerun()
-#     else:
-#         st.empty() 
+with nav_fore:
+    if st.session_state['sidebar_mode']=="editing_example":
+        st.markdown("---")
+        isclick_nav_fore = st.button("next➡️")
+        if isclick_nav_fore:
+            st.session_state['io_index']=st.session_state['io_index']+1
+            st.experimental_rerun()
+    else:
+        st.empty() 
             
             
 # if st.session_state['deckNumber'] < len(st.session_state['io_list']):
@@ -299,7 +299,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.5.8 testing new nav")
+st.sidebar.write("version 7.5.7 testing new nav")
 
 
 
