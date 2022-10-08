@@ -42,6 +42,8 @@ if 'sidebar_mode' not in st.session_state:
     st.session_state['sidebar_mode'] = "app_start"
     # st.session_state['sidebar_mode'] = "example_selected"
     # st.session_state['sidebar_mode'] = "editing_example"
+if 'io_index' not in st.session_state:
+    st.session_state['io_index'] = ""
 if 'forward2' not in st.session_state:
     st.session_state['forward2'] = ""
 if 'back2' not in st.session_state:
@@ -298,7 +300,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.5.2 testing new nav")
+st.sidebar.write("version 7.5.3 testing new nav")
 
 
 
