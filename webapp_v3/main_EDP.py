@@ -111,9 +111,9 @@ cardDeck_placeholder    = st.sidebar.container()
 # output2_placeholder     = st.sidebar.container()#empty()
 nav_back, nav_fore = st.sidebar.columns(2)
 with nav_back:
-    st.sidebar.empty() #st.button("⬅️back")
+    st.empty() #st.button("⬅️back")
 with nav_fore:
-    st.sidebar.empty() #st.button("next➡️")
+    st.empty() #st.button("next➡️")
 
 # code_col, padding1      = st.columns([3,1])
 # with code_col:
@@ -299,7 +299,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.5.6 testing new nav")
+st.sidebar.write("version 7.5.7 testing new nav")
 
 
 
