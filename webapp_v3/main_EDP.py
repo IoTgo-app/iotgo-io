@@ -133,11 +133,11 @@ with select_placeholder:
             st.session_state['nav_list']=["app_start"] + default_IO[st.session_state['skeleton']] + ["download"] #new
             
 
-
 with cardDeck_placeholder:
     #TO DO: move repeating code to Func
     if st.session_state['sidebar_mode']=="editing_example":
-        if st.session_state['sidebar_mode'] == "in1":
+        # if st.session_state['io_index'] == "in1":
+        if st.session_state['nav_list'][int(st.session_state['io_index'])+1] == "in1":
         # if "in1" in st.session_state['io_list'].keys():
             st.session_state['input1index'] = cardDeckOptions.index(en2it_inout[st.session_state['io_list']['in1']])
             # st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
@@ -150,7 +150,7 @@ with cardDeck_placeholder:
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])
                 # st.session_state['changingCardsNow'] = "in1"
                 st.experimental_rerun()
-        elif st.session_state['sidebar_mode'] == "in2":
+        elif st.session_state['io_index'] == "in2":
             # if "in2" in st.session_state['io_list'].keys():
             st.session_state['input2index'] = cardDeckOptions.index(en2it_inout[st.session_state['io_list']['in2']])
             st.session_state['input2is'] =st.selectbox( textIT['selectInput2'],cardDeckOptions,index= int(st.session_state['input2index']))#,index=2) #,key='selInput')
@@ -161,7 +161,7 @@ with cardDeck_placeholder:
                 st.session_state['io_list']  = temp
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])
                 st.experimental_rerun()
-        elif st.session_state['sidebar_mode'] == "out1":
+        elif st.session_state['io_index'] == "out1":
             # if "out1" in st.session_state['io_list'].keys():
             st.session_state['output1index'] = cardDeckOptions.index(en2it_inout[st.session_state['io_list']['out1']])
             st.session_state['output0is'] =st.selectbox( textIT['selectOutput1'],cardDeckOptions,index= int(st.session_state['output1index']))#,key='selInput')
@@ -172,7 +172,7 @@ with cardDeck_placeholder:
                 st.session_state['io_list']  = temp          
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])  
                 st.experimental_rerun()
-        elif st.session_state['sidebar_mode'] == "out2":
+        elif st.session_state['io_index'] == "out2":
             # if "out2" in st.session_state['io_list'].keys():
             st.session_state['output2index'] = cardDeckOptions.index(en2it_inout[st.session_state['io_list']['out2']])
             st.session_state['output2is'] =st.selectbox( textIT['selectOutput2'],cardDeckOptions,index= int(st.session_state['output2index']))#,key='selInput')
@@ -190,16 +190,7 @@ with cardDeck_placeholder:
 
 
 
-with change_placeholder:
-    if st.session_state['sidebar_mode']=="editing_example":
-        st.markdown("---")
-        isclick2 = change_placeholder.button(textIT['changeExample'])
-        if isclick2:
-            st.session_state['sidebar_mode']="app_start"
-            change_placeholder.empty()
-            st.experimental_rerun()
-    else:
-        st.empty() 
+
 
 
 # app_start
@@ -210,35 +201,32 @@ with change_placeholder:
 # -back=prevIO     fore=download
 # download 
 
+
+# st.session_state['nav_list'][int(st.session_state['io_index'])+1] == "in1":
 # io_list.keys =  in1 in2 out1
 # nav_list     = app_start in1 in2 out1 download
-# nav_back     nav_list[io_index]      
+# nav_back     nav_list[io_index - 1]      
 # nav_fore     nav_list[io_index + 2]
 # io_index -> 0  1  2 
 # nav_back -> 0  1  2 
-# nav_fore -> 2  3  4 
+# nav_fore -> 2  3  4  
 
 with nav_back:
     if st.session_state['sidebar_mode']=="editing_example":
         st.markdown("---")
-        isclick2 = nav_back.button(textIT['changeExample'])
-        if isclick2:
-            if st.session_state['deckNumber']==0:
-                st.session_state['back2']="app_start"
-                st.session_state['foreward2']="input2"
-            elif st.session_state['deckNumber']==1:
-                st.session_state['back2']="app_start"
-                st.session_state['foreward2']="input2"
-            nav_back.empty()
+        isclick_nav_back = nav_back.button(textIT['changeExample'])
+        if isclick_nav_back:
+            st.session_state['io_index']=st.session_state['io_index']+1 
             st.experimental_rerun()
     else:
         st.empty() 
 
+
 with nav_fore:
     if st.session_state['sidebar_mode']=="editing_example":
         st.markdown("---")
-        isclick2 = nav_fore.button(textIT['changeExample'])
-        if isclick2:
+        isclick_nav_fore = nav_fore.button(textIT['changeExample'])
+        if isclick_nav_fore:
             st.session_state['sidebar_mode']="app_start"
             nav_fore.empty()
             st.experimental_rerun()
@@ -249,6 +237,17 @@ with nav_fore:
 # if st.session_state['deckNumber'] < len(st.session_state['io_list']):
 #     # st.session_state['changingCardsNow'] = st.session_state['cardsList'][st.session_state['deckNumber'] ]
 #     st.session_state['deckNumber']      = st.session_state['deckNumber'] + 1
+
+with change_placeholder:
+    if st.session_state['sidebar_mode']=="editing_example":
+        st.markdown("---")
+        isclick2 = change_placeholder.button(textIT['changeExample'])
+        if isclick2:
+            st.session_state['sidebar_mode']="app_start"
+            change_placeholder.empty()
+            st.experimental_rerun()
+    else:
+        st.empty() 
 
 
 with edit_placeholder:
