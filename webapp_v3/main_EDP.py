@@ -130,7 +130,7 @@ with select_placeholder:
             prevSkeleton=st.session_state['skeleton']
             st.session_state['sidebar_mode']="example_selected"
             st.session_state['io_list']=default_IO[st.session_state['skeleton']]#new
-            st.session_state['nav_list']=["app_start"] + default_IO[st.session_state['skeleton']] + ["download"] #new
+            st.session_state['nav_list']=["app_start"] + default_IO[st.session_state['skeleton']].keys() + ["download"] #new
             
 
 with cardDeck_placeholder:
@@ -298,7 +298,8 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.5.0")
+st.sidebar.write("version 7.5.1 testing new nav")
+
 
 
 
