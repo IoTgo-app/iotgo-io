@@ -217,18 +217,17 @@ with cardDeck_placeholder:
 with nav_back:
     if st.session_state['sidebar_mode']=="editing_example":
         st.markdown("---")
-        isclick_nav_back = nav_back.button(textIT['changeExample'])
+        isclick_nav_back = st.button(textIT['changeExample'])
         if isclick_nav_back:
             st.session_state['io_index']=st.session_state['io_index']-1 
             st.experimental_rerun()
     else:
         st.empty() 
 
-
 with nav_fore:
     if st.session_state['sidebar_mode']=="editing_example":
         st.markdown("---")
-        isclick_nav_fore = nav_fore.button(textIT['changeExample'])
+        isclick_nav_fore = st.button(textIT['changeExample'])
         if isclick_nav_fore:
             st.session_state['io_index']=st.session_state['io_index']+1
             st.experimental_rerun()
@@ -300,7 +299,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.5.5 testing new nav")
+st.sidebar.write("version 7.5.6 testing new nav")
 
 
 
