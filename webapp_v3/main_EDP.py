@@ -139,7 +139,7 @@ with cardDeck_placeholder:
     #TO DO: move repeating code to Func
     if st.session_state['sidebar_mode']=="editing_example":
         # if st.session_state['io_index'] == "in1":
-        if st.session_state['nav_list'][int(st.session_state['io_index'])+1] == "in1":
+        if st.session_state['nav_list'][st.session_state['io_index']+1] == "in1":
         # if "in1" in st.session_state['io_list'].keys():
             st.session_state['input1index'] = cardDeckOptions.index(en2it_inout[st.session_state['io_list']['in1']])
             # st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
@@ -152,7 +152,8 @@ with cardDeck_placeholder:
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])
                 # st.session_state['changingCardsNow'] = "in1"
                 st.experimental_rerun()
-        elif st.session_state['io_index'] == "in2":
+        elif st.session_state['nav_list'][st.session_state['io_index']+1] == "in2"
+        # st.session_state['io_index'] == "in2":
             # if "in2" in st.session_state['io_list'].keys():
             st.session_state['input2index'] = cardDeckOptions.index(en2it_inout[st.session_state['io_list']['in2']])
             st.session_state['input2is'] =st.selectbox( textIT['selectInput2'],cardDeckOptions,index= int(st.session_state['input2index']))#,index=2) #,key='selInput')
