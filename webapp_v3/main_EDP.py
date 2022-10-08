@@ -219,7 +219,7 @@ with nav_back:
         st.markdown("---")
         isclick_nav_back = nav_back.button(textIT['changeExample'])
         if isclick_nav_back:
-            st.session_state['io_index']=st.session_state['io_index']+1 
+            st.session_state['io_index']=st.session_state['io_index']-1 
             st.experimental_rerun()
     else:
         st.empty() 
@@ -230,8 +230,7 @@ with nav_fore:
         st.markdown("---")
         isclick_nav_fore = nav_fore.button(textIT['changeExample'])
         if isclick_nav_fore:
-            st.session_state['sidebar_mode']="app_start"
-            nav_fore.empty()
+            st.session_state['io_index']=st.session_state['io_index']+1
             st.experimental_rerun()
     else:
         st.empty() 
@@ -301,7 +300,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.5.4 testing new nav")
+st.sidebar.write("version 7.5.5 testing new nav")
 
 
 
