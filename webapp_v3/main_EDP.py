@@ -43,7 +43,7 @@ if 'sidebar_mode' not in st.session_state:
     # st.session_state['sidebar_mode'] = "example_selected"
     # st.session_state['sidebar_mode'] = "editing_example"
 if 'io_index' not in st.session_state:
-    st.session_state['io_index'] = ""
+    st.session_state['io_index'] = 0
 if 'forward2' not in st.session_state:
     st.session_state['forward2'] = ""
 if 'back2' not in st.session_state:
