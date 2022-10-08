@@ -31,24 +31,29 @@ codesubtitle=""
 groupnum="0"
 # p2p=True        #not implemented yet.
 # appTabs=True    #not implemented yet.
-codeLang="blocks"#"js"
+codeLang="blocks" #or "js"
 
 #populate input and output lists------------------------------------------
 input_options=    inputs_IT.microbitv1  + inputs_IT.microbitv2  + inputs_IT.exOthers   
 output_options=   outputs_IT.microbitv1 + outputs_IT.microbitv2 + outputs_IT.exBosonKit  
 
-
-#initialize image and iframe sizes-----------------------------------------------------------
-cardWidth=150
-pluscardwidht=150
-missionCardWidth=160
-vertiPaddingWidth=35
-vertiPaddingWidthhalf=17
-codeHeight=500
-codeWidth=800
-
 #initialize session state variables----------------------------------------------------------
-prevSkeleton="" ####MOVE TO SESSION STATE
+if 'sidebar_mode' not in st.session_state:
+    st.session_state['sidebar_mode'] = "app_start"
+    # st.session_state['sidebar_mode'] = "example_selected"
+    # st.session_state['sidebar_mode'] = "editing_example"
+if 'forward2' not in st.session_state:
+    st.session_state['forward2'] = ""
+if 'back2' not in st.session_state:
+    st.session_state['back2']    = ""
+    # st.session_state['sidebar_mode'] = "input1"
+    # st.session_state['sidebar_mode'] = "input2"
+    # st.session_state['sidebar_mode'] = "output1"
+    # st.session_state['sidebar_mode'] = "output2" 
+if 'cardDeckOptions' not in st.session_state:
+    st.session_state['cardDeckOptions'] = {}
+if 'changingCardsNow' not in st.session_state:
+    st.session_state['changingCardsNow'] = ""
 if 'input0is' not in st.session_state:
     st.session_state['input0is'] = "no Input"
 if 'prevInput' not in st.session_state:
@@ -69,8 +74,6 @@ if 'prevOutput2' not in st.session_state:
     st.session_state['prevOutput2'] = "no Output"
 if 'skeleton' not in st.session_state:
     st.session_state['skeleton'] = ""
-if 'sidebar_mode' not in st.session_state:
-    st.session_state['sidebar_mode'] = "app_start"
 if 'io_list' not in st.session_state:
     if not st.session_state['skeleton']=="":
         st.session_state['io_list'] = default_IO[st.session_state['skeleton']]
@@ -78,7 +81,17 @@ if 'io_list' not in st.session_state:
         st.session_state['io_list'] = {"":""}
 if 'urlis' not in st.session_state:
     st.session_state['urlis'] = ""
+prevSkeleton="" ####MOVE TO SESSION STATE
 
+
+#initialize image and iframe sizes-----------------------------------------------------------
+cardWidth=150
+pluscardwidht=150
+missionCardWidth=160
+vertiPaddingWidth=35
+vertiPaddingWidthhalf=17
+codeHeight=500
+codeWidth=800
 
 
 
@@ -89,15 +102,17 @@ st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/imag
 
 #init placeholders for app content
 select_placeholder      = st.sidebar.empty()
-input_placeholder       = st.sidebar.container()#empty()
-input2_placeholder      = st.sidebar.container()#empty()
-output_placeholder      = st.sidebar.container()#empty()
-output2_placeholder     = st.sidebar.container()#empty()
-# nav_back, nav_fore = st.sidebar.columns(2)
-# with nav_back:
-#     st.button("⬅️back")
-# with nav_fore:
-#     st.button("next➡️")
+cardDeck_placeholder    = st.sidebar.container()
+# input_placeholder       = st.sidebar.container()#empty()
+# input2_placeholder      = st.sidebar.container()#empty()
+# output_placeholder      = st.sidebar.container()#empty()
+# output2_placeholder     = st.sidebar.container()#empty()
+nav_back, nav_fore = st.sidebar.columns(2)
+with nav_back:
+    st.sidebar.empty() #st.button("⬅️back")
+with nav_fore:
+    st.sidebar.empty() #st.button("next➡️")
+
 # code_col, padding1      = st.columns([3,1])
 # with code_col:
 code_placeholder        = st.container()
@@ -111,35 +126,34 @@ with select_placeholder:
         st.write(textIT['youSelected'] + " \n *" +var2descipIT[st.session_state['skeleton']] + "*")
     elif st.session_state['sidebar_mode']=="app_start" or "example_selected":
         st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'],descip2varIT.keys())]#code_skeletons)
-        # st.session_state['skeleton']=st.selectbox('Select an example',skeleton_list)        
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
             st.session_state['sidebar_mode']="example_selected"
             st.session_state['io_list']=default_IO[st.session_state['skeleton']]#new
+            st.session_state['nav_list']=["app_start"] + default_IO[st.session_state['skeleton']] + ["download"] #new
+            
 
 
-with input_placeholder:
+with cardDeck_placeholder:
+    #TO DO: move repeating code to Func
     if st.session_state['sidebar_mode']=="editing_example":
-        if "in1" in st.session_state['io_list'].keys():
-            st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
-            st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options,index= int(st.session_state['input1index']))#,index=2) #,key='selInput')
+        if st.session_state['sidebar_mode'] == "in1":
+        # if "in1" in st.session_state['io_list'].keys():
+            st.session_state['input1index'] = cardDeckOptions.index(en2it_inout[st.session_state['io_list']['in1']])
+            # st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
+            st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],cardDeckOptions,index= int(st.session_state['input1index']))#,index=2) #,key='selInput')
             if not st.session_state['prevInput']==st.session_state['input0is']:  
                 st.session_state['prevInput']=st.session_state['input0is']
                 temp=default_IO[st.session_state['skeleton']]
                 temp["in1"]=it2en_inout[st.session_state['input0is']]
                 st.session_state['io_list']  = temp
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+                # st.session_state['changingCardsNow'] = "in1"
                 st.experimental_rerun()
-        else:
-            st.empty()
-    else:
-        st.empty()
-
-with input2_placeholder:
-    if st.session_state['sidebar_mode']=="editing_example":
-        if "in2" in st.session_state['io_list'].keys():
-            st.session_state['input2index'] = input_options.index(en2it_inout[st.session_state['io_list']['in2']])
-            st.session_state['input2is'] =st.selectbox( textIT['selectInput2'],input_options,index= int(st.session_state['input2index']))#,index=2) #,key='selInput')
+        elif st.session_state['sidebar_mode'] == "in2":
+            # if "in2" in st.session_state['io_list'].keys():
+            st.session_state['input2index'] = cardDeckOptions.index(en2it_inout[st.session_state['io_list']['in2']])
+            st.session_state['input2is'] =st.selectbox( textIT['selectInput2'],cardDeckOptions,index= int(st.session_state['input2index']))#,index=2) #,key='selInput')
             if not st.session_state['prevInput2']==st.session_state['input2is']:  
                 st.session_state['prevInput2']=st.session_state['input2is']
                 temp=default_IO[st.session_state['skeleton']]
@@ -147,17 +161,10 @@ with input2_placeholder:
                 st.session_state['io_list']  = temp
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])
                 st.experimental_rerun()
-        else:
-            st.empty()
-    else:
-        st.empty()
-
-
-with output_placeholder:
-    if st.session_state['sidebar_mode']=="editing_example":
-        if "out1" in st.session_state['io_list'].keys():
-            st.session_state['output1index'] = output_options.index(en2it_inout[st.session_state['io_list']['out1']])
-            st.session_state['output0is'] =st.selectbox( textIT['selectOutput1'],output_options,index= int(st.session_state['output1index']))#,key='selInput')
+        elif st.session_state['sidebar_mode'] == "out1":
+            # if "out1" in st.session_state['io_list'].keys():
+            st.session_state['output1index'] = cardDeckOptions.index(en2it_inout[st.session_state['io_list']['out1']])
+            st.session_state['output0is'] =st.selectbox( textIT['selectOutput1'],cardDeckOptions,index= int(st.session_state['output1index']))#,key='selInput')
             if not st.session_state['prevOutput']==st.session_state['output0is']:
                 st.session_state['prevOutput']=st.session_state['output0is']
                 temp=default_IO[st.session_state['skeleton']]
@@ -165,17 +172,10 @@ with output_placeholder:
                 st.session_state['io_list']  = temp          
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])  
                 st.experimental_rerun()
-        else:
-            st.empty()
-    else:
-        st.empty()
-
-
-with output2_placeholder:
-    if st.session_state['sidebar_mode']=="editing_example":
-        if "out2" in st.session_state['io_list'].keys():
-            st.session_state['output2index'] = output_options.index(en2it_inout[st.session_state['io_list']['out2']])
-            st.session_state['output2is'] =st.selectbox( textIT['selectOutput2'],output_options,index= int(st.session_state['output2index']))#,key='selInput')
+        elif st.session_state['sidebar_mode'] == "out2":
+            # if "out2" in st.session_state['io_list'].keys():
+            st.session_state['output2index'] = cardDeckOptions.index(en2it_inout[st.session_state['io_list']['out2']])
+            st.session_state['output2is'] =st.selectbox( textIT['selectOutput2'],cardDeckOptions,index= int(st.session_state['output2index']))#,key='selInput')
             if not st.session_state['prevOutput2']==st.session_state['output2is']:
                 st.session_state['prevOutput2']=st.session_state['output2is']
                 temp=default_IO[st.session_state['skeleton']]
@@ -188,6 +188,8 @@ with output2_placeholder:
     else:
         st.empty()
 
+
+
 with change_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
         st.markdown("---")
@@ -199,11 +201,64 @@ with change_placeholder:
     else:
         st.empty() 
 
+
+# app_start
+# example_selected
+# editing_example
+# -back=app_start  fore=nextIO
+# -back=prevIO     fore=nextIO
+# -back=prevIO     fore=download
+# download 
+
+# io_list.keys =  in1 in2 out1
+# nav_list     = app_start in1 in2 out1 download
+# nav_back     nav_list[io_index]      
+# nav_fore     nav_list[io_index + 2]
+# io_index -> 0  1  2 
+# nav_back -> 0  1  2 
+# nav_fore -> 2  3  4 
+
+with nav_back:
+    if st.session_state['sidebar_mode']=="editing_example":
+        st.markdown("---")
+        isclick2 = nav_back.button(textIT['changeExample'])
+        if isclick2:
+            if st.session_state['deckNumber']==0:
+                st.session_state['back2']="app_start"
+                st.session_state['foreward2']="input2"
+            elif st.session_state['deckNumber']==1:
+                st.session_state['back2']="app_start"
+                st.session_state['foreward2']="input2"
+            nav_back.empty()
+            st.experimental_rerun()
+    else:
+        st.empty() 
+
+with nav_fore:
+    if st.session_state['sidebar_mode']=="editing_example":
+        st.markdown("---")
+        isclick2 = nav_fore.button(textIT['changeExample'])
+        if isclick2:
+            st.session_state['sidebar_mode']="app_start"
+            nav_fore.empty()
+            st.experimental_rerun()
+    else:
+        st.empty() 
+            
+            
+# if st.session_state['deckNumber'] < len(st.session_state['io_list']):
+#     # st.session_state['changingCardsNow'] = st.session_state['cardsList'][st.session_state['deckNumber'] ]
+#     st.session_state['deckNumber']      = st.session_state['deckNumber'] + 1
+
+
 with edit_placeholder:
     if st.session_state['sidebar_mode']=="example_selected":
         isClick=st.button(textIT['editExample'])
         if isClick:
-            st.session_state['sidebar_mode']="editing_example"
+            st.session_state['sidebar_mode'] = "editing_example"
+            # st.session_state['numCards']     = len(st.session_state['io_list'])
+            st.session_state['cardsList']    = st.session_state['io_list'].keys()
+            st.session_state['deckNumber'] = 0
             edit_placeholder.empty()
             select_placeholder.empty()
             # st.balloons()
@@ -247,6 +302,78 @@ st.sidebar.markdown("---")
 st.sidebar.write("version 7.5.0")
 
 
+
+
+
+# with input_placeholder:
+#     if st.session_state['sidebar_mode']=="editing_example":
+#         if "in1" in st.session_state['io_list'].keys():
+#             st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
+#             st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options,index= int(st.session_state['input1index']))#,index=2) #,key='selInput')
+#             if not st.session_state['prevInput']==st.session_state['input0is']:  
+#                 st.session_state['prevInput']=st.session_state['input0is']
+#                 temp=default_IO[st.session_state['skeleton']]
+#                 temp["in1"]=it2en_inout[st.session_state['input0is']]
+#                 st.session_state['io_list']  = temp
+#                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+#                 st.experimental_rerun()
+#         else:
+#             st.empty()
+#     else:
+#         st.empty()
+
+# with input2_placeholder:
+#     if st.session_state['sidebar_mode']=="editing_example":
+#         if "in2" in st.session_state['io_list'].keys():
+#             st.session_state['input2index'] = input_options.index(en2it_inout[st.session_state['io_list']['in2']])
+#             st.session_state['input2is'] =st.selectbox( textIT['selectInput2'],input_options,index= int(st.session_state['input2index']))#,index=2) #,key='selInput')
+#             if not st.session_state['prevInput2']==st.session_state['input2is']:  
+#                 st.session_state['prevInput2']=st.session_state['input2is']
+#                 temp=default_IO[st.session_state['skeleton']]
+#                 temp["in2"]=it2en_inout[st.session_state['input2is']]
+#                 st.session_state['io_list']  = temp
+#                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+#                 st.experimental_rerun()
+#         else:
+#             st.empty()
+#     else:
+#         st.empty()
+
+
+# with output_placeholder:
+#     if st.session_state['sidebar_mode']=="editing_example":
+#         if "out1" in st.session_state['io_list'].keys():
+#             st.session_state['output1index'] = output_options.index(en2it_inout[st.session_state['io_list']['out1']])
+#             st.session_state['output0is'] =st.selectbox( textIT['selectOutput1'],output_options,index= int(st.session_state['output1index']))#,key='selInput')
+#             if not st.session_state['prevOutput']==st.session_state['output0is']:
+#                 st.session_state['prevOutput']=st.session_state['output0is']
+#                 temp=default_IO[st.session_state['skeleton']]
+#                 temp["out1"]=it2en_inout[st.session_state['output0is']]
+#                 st.session_state['io_list']  = temp          
+#                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])  
+#                 st.experimental_rerun()
+#         else:
+#             st.empty()
+#     else:
+#         st.empty()
+
+
+# with output2_placeholder:
+#     if st.session_state['sidebar_mode']=="editing_example":
+#         if "out2" in st.session_state['io_list'].keys():
+#             st.session_state['output2index'] = output_options.index(en2it_inout[st.session_state['io_list']['out2']])
+#             st.session_state['output2is'] =st.selectbox( textIT['selectOutput2'],output_options,index= int(st.session_state['output2index']))#,key='selInput')
+#             if not st.session_state['prevOutput2']==st.session_state['output2is']:
+#                 st.session_state['prevOutput2']=st.session_state['output2is']
+#                 temp=default_IO[st.session_state['skeleton']]
+#                 temp["out2"]=it2en_inout[st.session_state['output2is']]
+#                 st.session_state['io_list']  = temp          
+#                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])  
+#                 st.experimental_rerun()
+#         else:
+#             st.empty()
+#     else:
+#         st.empty()
 
 
 
