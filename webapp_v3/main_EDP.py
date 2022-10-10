@@ -111,9 +111,9 @@ cardDeck_placeholder    = st.sidebar.container()
 # output2_placeholder     = st.sidebar.container()#empty()
 nav_back, nav_fore = st.sidebar.columns(2)
 with nav_back:
-    st.empty() #st.button("⬅️back")
+    st.container() #st.button("⬅️back")
 with nav_fore:
-    st.empty() #st.button("next➡️")
+    st.container() #st.button("next➡️")
 
 # code_col, padding1      = st.columns([3,1])
 # with code_col:
@@ -233,7 +233,7 @@ with nav_fore:
         st.markdown("---")
         isclick_nav_fore = st.button("next➡️")
         if isclick_nav_fore:
-            st.session_state['io_index']=st.session_state['1']+1
+            st.session_state['io_index']=st.session_state['io_index']+1
             st.experimental_rerun()
     else:
         st.empty() 
@@ -304,7 +304,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.6.0 testing new nav")
+st.sidebar.write("version 7.6.1 testing new nav")
 st.session_state['io_index']
 
 
