@@ -127,7 +127,11 @@ with select_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
         st.write(textIT['youSelected'] + " \n *" +var2descipIT[st.session_state['skeleton']] + "*")
     elif st.session_state['sidebar_mode']=="app_start" or "example_selected":
-        st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'],descip2varIT.keys())]#code_skeletons)
+        if not st.session_state['skeleton']=="":
+            currIndex=st.session_state['skeleton']
+        else:
+            currIndex=""
+        st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'],descip2varIT.keys()), index=currIndex]#code_skeletons)
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
             st.session_state['sidebar_mode']="example_selected"
@@ -310,7 +314,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.6.4 testing new nav")
+st.sidebar.write("version 7.6.5 testing new nav")
 st.session_state['io_index']
 st.session_state['sidebar_mode']
 
