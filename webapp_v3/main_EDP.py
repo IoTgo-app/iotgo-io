@@ -221,7 +221,8 @@ with nav_back:
         if isclick_nav_back:
             st.session_state['io_index']=st.session_state['io_index']-1 
             if st.session_state['io_index']==0:   
-                st.session_state['sidebar_mode']="app_start"
+                st.session_state['sidebar_mode']="app_start"  
+                st.session_state['io_index']=0
                 change_placeholder.empty()
             st.experimental_rerun()
     else:
@@ -232,7 +233,7 @@ with nav_fore:
         st.markdown("---")
         isclick_nav_fore = st.button("next➡️")
         if isclick_nav_fore:
-            st.session_state['io_index']=st.session_state['io_index']+1
+            st.session_state['io_index']=st.session_state['1']+1
             st.experimental_rerun()
     else:
         st.empty() 
@@ -248,6 +249,7 @@ with change_placeholder:
         isclick2 = change_placeholder.button(textIT['changeExample'])
         if isclick2:
             st.session_state['sidebar_mode']="app_start"
+            st.session_state['io_index']=0
             change_placeholder.empty()
             st.experimental_rerun()
     else:
@@ -302,7 +304,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.5.9 testing new nav")
+st.sidebar.write("version 7.6.0 testing new nav")
 st.session_state['io_index']
 
 
