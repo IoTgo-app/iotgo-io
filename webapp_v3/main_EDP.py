@@ -122,7 +122,7 @@ with nav_fore:
 code_placeholder        = st.container()
 download_placeholder    = st.empty()
 edit_placeholder        = st.sidebar.empty()
-change_placeholder      = st.sidebar.container()#empty()
+# change_placeholder      = st.sidebar.container()#empty()
 
 ########################### app sidebar ########################################à
 with select_placeholder:
@@ -232,7 +232,7 @@ with nav_back:
             if st.session_state['io_index']<=0:   
                 st.session_state['sidebar_mode']="example_selected"  
                 st.session_state['io_index']=0
-                change_placeholder.empty()
+                # change_placeholder.empty()
                 nav_back.empty()
                 nav_fore.empty()
             st.experimental_rerun()
@@ -256,17 +256,17 @@ with nav_fore:
 #     # st.session_state['changingCardsNow'] = st.session_state['cardsList'][st.session_state['deckNumber'] ]
 #     st.session_state['deckNumber']      = st.session_state['deckNumber'] + 1
 
-with change_placeholder:
-    if st.session_state['sidebar_mode']=="editing_example":
-        st.markdown("---")
-        isclick2 = change_placeholder.button(textIT['changeExample'])
-        if isclick2:
-            st.session_state['sidebar_mode']="app_start"
-            st.session_state['io_index']=0
-            change_placeholder.empty()
-            st.experimental_rerun()
-    else:
-        st.empty() 
+# with change_placeholder:
+#     if st.session_state['sidebar_mode']=="editing_example":
+#         st.markdown("---")
+#         isclick2 = change_placeholder.button(textIT['changeExample'])
+#         if isclick2:
+#             st.session_state['sidebar_mode']="app_start"
+#             st.session_state['io_index']=0
+#             change_placeholder.empty()
+#             st.experimental_rerun()
+#     else:
+#         st.empty() 
 
 
 with edit_placeholder:
@@ -317,7 +317,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.7.0 testing new nav")
+st.sidebar.write("version 7.7.1 testing new nav")
 st.session_state['io_index']
 st.session_state['sidebar_mode']
 
