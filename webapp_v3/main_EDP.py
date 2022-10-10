@@ -113,9 +113,9 @@ cardDeck_placeholder    = st.sidebar.container()
 # output2_placeholder     = st.sidebar.container()#empty()
 nav_back, nav_fore = st.sidebar.columns(2)
 with nav_back:
-    st.empty() #st.button("⬅️back")
+    st.container() #st.button("⬅️back")
 with nav_fore:
-    st.empty() #st.button("next➡️")
+    st.container() #st.button("next➡️")
 
 # code_col, padding1      = st.columns([3,1])
 # with code_col:
