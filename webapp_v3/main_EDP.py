@@ -167,7 +167,7 @@ with cardDeck_placeholder:
                 temp["in1"]=it2en_inout[st.session_state['input0is']]
                 st.session_state['io_list']  = temp
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])
-                st.image(baseURL+langPrefix[lang]+imageURL[st.session_state['input0is'], width=cardWidth)             
+                st.image(baseURL+langPrefix[lang]+imageURL[st.session_state['input0is']], width=cardWidth)             
                 # st.session_state['changingCardsNow'] = "in1"
                 st.experimental_rerun()
         elif st.session_state['nav_list'][st.session_state['io_index']+1] == "in2":
@@ -328,7 +328,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.7.2 testing new nav")
+st.sidebar.write("version 7.7.3 testing new nav")
 st.session_state['io_index']
 st.session_state['sidebar_mode']
 
