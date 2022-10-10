@@ -223,7 +223,7 @@ with nav_back:
             if st.session_state['io_index']==0:   
                 st.session_state['sidebar_mode']="app_start"
                 change_placeholder.empty()
-                st.experimental_rerun()
+            st.experimental_rerun()
     else:
         st.empty() 
 
@@ -302,7 +302,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.5.8 testing new nav")
+st.sidebar.write("version 7.5.9 testing new nav")
 st.session_state['io_index']
 
 
