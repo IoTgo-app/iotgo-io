@@ -99,6 +99,9 @@ codeWidth=800
 
 
 
+
+
+
 ########################### app init ########################################à
 
 #add iotgo logo
@@ -140,8 +143,15 @@ with select_placeholder:
             st.session_state['sidebar_mode']="example_selected"
             st.session_state['io_list']=default_IO[st.session_state['skeleton']]#new
             st.session_state['nav_list']=["app_start"] + list(st.session_state['io_list'].keys()) + ["download"] #new
-            
 
+# with cardImage_placeholder:
+#     if st.session_state['sidebar_mode']=="editing_example":
+#         cardPath=  baseURL+langPrefix[lang]+imageURL[ input_name[0]]
+#         st.image(cardPath, width=cardWidth)             
+#     else:
+#         st.empty()
+
+        
 with cardDeck_placeholder:
     #TO DO: move repeating code to Func
     if st.session_state['sidebar_mode']=="editing_example":
@@ -157,6 +167,7 @@ with cardDeck_placeholder:
                 temp["in1"]=it2en_inout[st.session_state['input0is']]
                 st.session_state['io_list']  = temp
                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+                st.image(baseURL+langPrefix[lang]+imageURL[st.session_state['input0is'], width=cardWidth)             
                 # st.session_state['changingCardsNow'] = "in1"
                 st.experimental_rerun()
         elif st.session_state['nav_list'][st.session_state['io_index']+1] == "in2":
@@ -317,7 +328,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.7.1 testing new nav")
+st.sidebar.write("version 7.7.2 testing new nav")
 st.session_state['io_index']
 st.session_state['sidebar_mode']
 
