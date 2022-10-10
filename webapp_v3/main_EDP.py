@@ -215,22 +215,28 @@ with cardDeck_placeholder:
 # nav_fore -> 2  3  4  
 
 with nav_back:
-    if st.session_state['sidebar_mode']=="editing_example":
-        st.markdown("---")
+    if st.session_state['sidebar_mode']=="example_selected" or st.session_state['sidebar_mode']=="app_start":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="editing_example":
+        # st.markdown("---")
         isclick_nav_back = st.button("⬅️back")
         if isclick_nav_back:
             st.session_state['io_index']=st.session_state['io_index']-1 
-            if st.session_state['io_index']==0:   
-                st.session_state['sidebar_mode']="app_start"  
+            if st.session_state['io_index']<=0:   
+                st.session_state['sidebar_mode']="example_selected"  
                 st.session_state['io_index']=0
                 change_placeholder.empty()
+                nav_back.empty()
+                nav_fore.empty()
             st.experimental_rerun()
     else:
         st.empty() 
 
 with nav_fore:
-    if st.session_state['sidebar_mode']=="editing_example":
-        st.markdown("---")
+    if st.session_state['sidebar_mode']=="example_selected" or st.session_state['sidebar_mode']=="app_start":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="editing_example":
+        # st.markdown("---")
         isclick_nav_fore = st.button("next➡️")
         if isclick_nav_fore:
             st.session_state['io_index']=st.session_state['io_index']+1
@@ -304,7 +310,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.6.1 testing new nav")
+st.sidebar.write("version 7.6.2 testing new nav")
 st.session_state['io_index']
 
 
