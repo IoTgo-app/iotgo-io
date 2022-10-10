@@ -130,7 +130,7 @@ with select_placeholder:
         st.write(textIT['youSelected'] + " \n *" +var2descipIT[st.session_state['skeleton']] + "*")
     elif st.session_state['sidebar_mode']=="app_start" or "example_selected":
         if not st.session_state['skeleton']=="":
-            currIndex=list(descip2varIT.keys()).index((st.session_state['skeleton']))
+            currIndex=list(var2descipIT.keys()).index((st.session_state['skeleton']))
         else:
             currIndex=0
         st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'],descip2varIT.keys(), index=currIndex)]#code_skeletons)
