@@ -332,8 +332,8 @@ with download_placeholder:
 ########################### app end ########################################à
 st.sidebar.markdown("---")
 st.sidebar.write("version 7.7.5 testing new nav")
-st.session_state['io_index']
-st.session_state['sidebar_mode']
+# st.session_state['io_index']
+# st.session_state['sidebar_mode']
 
 
 
