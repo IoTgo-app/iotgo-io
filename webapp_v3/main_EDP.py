@@ -114,19 +114,15 @@ cardDeck_placeholder    = st.sidebar.container()
 # input2_placeholder      = st.sidebar.container()#empty()
 # output_placeholder      = st.sidebar.container()#empty()
 # output2_placeholder     = st.sidebar.container()#empty()
-nav_back, nav_fore = st.sidebar.columns(2)
+edit_placeholder        = st.sidebar.empty()
 st.sidebar.markdown("---")
+nav_back, nav_fore = st.sidebar.columns(2)
 with nav_back:
-    st.container() #st.button("⬅️back")
+    st.container() 
 with nav_fore:
-    st.container() #st.button("next➡️")
-
-# code_col, padding1      = st.columns([3,1])
-# with code_col:
+    st.container() 
 code_placeholder        = st.container()
 download_placeholder    = st.empty()
-edit_placeholder        = st.sidebar.empty()
-# change_placeholder      = st.sidebar.container()#empty()
 
 ########################### app sidebar ########################################à
 with select_placeholder:
