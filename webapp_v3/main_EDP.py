@@ -27,7 +27,7 @@ lang=1
 baseURL_cards           =   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/cards/"
 baseURL_codeSkeletons   =   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/"
 baseURL_boards           =   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/cards/"
-baseURL_codeChunks      =.  "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/code/"
+baseURL_codeChunks      =  "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/code/"
 #https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/code/code_buttonNotPress.png
 #https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/cards/rotateMax.png 
 codetitle=""
