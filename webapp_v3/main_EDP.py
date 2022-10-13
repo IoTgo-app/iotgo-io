@@ -265,11 +265,12 @@ with nav_fore:
     if st.session_state['sidebar_mode']=="example_selected" or st.session_state['sidebar_mode']=="app_start":
         st.empty()
     elif st.session_state['sidebar_mode']=="editing_example":
-        # st.markdown("---")
-        isclick_nav_fore = st.button(textIT['goFront'])
-        if isclick_nav_fore:
-            st.session_state['io_index']=st.session_state['io_index']+1
-            st.experimental_rerun()
+        if not st.session_state['nav_list']=='download':
+            # st.markdown("---")
+            isclick_nav_fore = st.button(textIT['goFront'])
+            if isclick_nav_fore:
+                st.session_state['io_index']=st.session_state['io_index']+1
+                st.experimental_rerun()
     else:
         st.empty() 
             
@@ -340,7 +341,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 7.8.5")
+st.write("version 7.8.6")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
