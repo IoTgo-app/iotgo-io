@@ -110,8 +110,8 @@ codeWidth=800
 ########################### app init ########################################à
 
 #add iotgo logo
-st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/logo-hor.png",width=250)
-st.sidebar.markdown("---")
+st.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/logo-hor.png",width=250)
+#st.sidebar.markdown("---")
 
 #init placeholders for app content
 select_placeholder      = st.sidebar.empty()
