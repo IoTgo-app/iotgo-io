@@ -115,6 +115,7 @@ cardDeck_placeholder    = st.sidebar.container()
 # output_placeholder      = st.sidebar.container()#empty()
 # output2_placeholder     = st.sidebar.container()#empty()
 nav_back, nav_fore = st.sidebar.columns(2)
+st.sidebar.markdown("---")
 with nav_back:
     st.container() #st.button("⬅️back")
 with nav_fore:
