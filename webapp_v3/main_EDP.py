@@ -99,7 +99,7 @@ pluscardwidht=150
 missionCardWidth=160
 vertiPaddingWidth=35
 vertiPaddingWidthhalf=17
-codeHeight=500
+codeHeight=1500
 codeWidth=800
 
 
@@ -343,7 +343,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 7.8.9")
+st.write("version 7.9.0")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
