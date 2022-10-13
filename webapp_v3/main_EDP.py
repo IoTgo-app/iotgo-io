@@ -94,7 +94,7 @@ prevSkeleton="" ####MOVE TO SESSION STATE
 
 #initialize image and iframe sizes-----------------------------------------------------------
 cardWidth=150
-codeChunckWidth=250
+#codeChunckWidth=250
 pluscardwidht=150
 missionCardWidth=160
 vertiPaddingWidth=35
@@ -110,11 +110,11 @@ codeWidth=800
 ########################### app init ########################################à
 
 #add iotgo logo
-st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/logotrans.png",width=150)
+st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/logo-hor.png",width=250)
 
 #init placeholders for app content
 select_placeholder      = st.sidebar.empty()
-cardDeck_placeholder    = st.sidebar.container()
+cardDeck_placeholder    = st.sidebar.container()#has selectBox with cards, image of the card, and code for that card
 # input_placeholder       = st.sidebar.container()#empty()
 # input2_placeholder      = st.sidebar.container()#empty()
 # output_placeholder      = st.sidebar.container()#empty()
@@ -338,7 +338,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 7.8.3")
+st.write("version 7.8.4")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
