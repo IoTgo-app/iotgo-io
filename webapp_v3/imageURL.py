@@ -54,6 +54,8 @@ imageURL =    {
     
     "buttonNotPress":   "-inputPhysical-buttonNotPress.png",
     "buttonPress":      "-inputPhysical-buttonPress.png",
+    "buttonNotPressB":   "-inputPhysical-buttonNotPress.png",
+    "buttonPressB":      "-inputPhysical-buttonPress.png",
     "accelLow":         "-inputPhysical-accelLow.png",
     "accelHigh" :       "-inputPhysical-accelHigh.png",
     "compassN" :        "-inputPhysical-compassN.png",
@@ -95,6 +97,8 @@ imageURL =    {
     
     "iconHappy":    "-outputPhysical-iconHappy.png",
     "iconSad":      "-outputPhysical-iconSad.png",
+    "iconBig":    "-outputPhysical-iconBig.png",
+    "iconSmall":      "-outputPhysical-iconSmall.png",
     "iconNone":    "-outputPhysical-iconNone.png",
     "lightOn":      "-outputPhysical-lightOn.png",
     "lightOff":     "-outputPhysical-lightOff.png",
