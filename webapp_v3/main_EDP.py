@@ -240,7 +240,7 @@ with nav_back:
         st.empty()
     elif st.session_state['sidebar_mode']=="editing_example":
         # st.markdown("---")
-        isclick_nav_back = st.button("⬅️back")
+        isclick_nav_back = st.button(textIT['goBack'])
         if isclick_nav_back:
             st.session_state['io_index']=st.session_state['io_index']-1 
             if st.session_state['io_index']<=0:   
@@ -258,7 +258,7 @@ with nav_fore:
         st.empty()
     elif st.session_state['sidebar_mode']=="editing_example":
         # st.markdown("---")
-        isclick_nav_fore = st.button("next➡️")
+        isclick_nav_fore = st.button(textIT['goFront'])
         if isclick_nav_fore:
             st.session_state['io_index']=st.session_state['io_index']+1
             st.experimental_rerun()
@@ -331,7 +331,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 st.sidebar.markdown("---")
-st.sidebar.write("version 7.7.5 testing new nav")
+st.sidebar.write("version 7.7.6 testing new nav")
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
 

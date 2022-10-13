@@ -9,6 +9,8 @@ textIT={ #this text will appear on the app in various places to guide the user
   "editExample"   : "Modifica questo esempio ➡️",#or Change input or ouput in this example #RG they are two different interactions
   "youSelected"   : "Hai scelto: ",
   "downloadProgram"  : "Scarica il programma ⬇️",#or Open this code in the editor
+  "goFront"   : "Avanti ➡️",
+  "goBack"    : "⬅️ Indietro",
   }
 
 descip2varIT= {#keys should contain the IT description needed to be shown in the app for each example.
