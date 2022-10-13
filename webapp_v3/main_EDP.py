@@ -23,9 +23,13 @@ st.markdown(mods.hide_top_padding, unsafe_allow_html=True)
 ############################# app settings ##########################################à
 langPrefix=['EN','IT','DE','UR']
 lang=1
-baseURL                 =   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/cards_v2/"
-baseURL_codeSkeletons   =   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/"
+#baseURL                 =   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/images/cards_v2/"
 baseURL_cards           =   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/cards/"
+baseURL_codeSkeletons   =   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/"
+baseURL_boards           =   "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/cards/"
+baseURL_codeChunks      =.  "https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/code/"
+#https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/code/code_buttonNotPress.png
+#https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/cards/rotateMax.png 
 codetitle=""
 codesubtitle=""
 groupnum="0"
@@ -158,7 +162,9 @@ with cardDeck_placeholder:
             st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
             # st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
             st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options,index= int(st.session_state['input1index']))#,index=2) #,key='selInput')
-            st.image(baseURL+langPrefix[lang]+imageURL[it2en_inout[st.session_state['input0is']]], width=cardWidth) 
+            #st.image(baseURL_cards+langPrefix[lang]+imageURL[it2en_inout[st.session_state['input0is']]], width=cardWidth) 
+            st.image(baseURL_cards+it2en_inout[st.session_state['input0is']]+".png",                width=cardWidth)  
+            st.image(baseURL_codeChunks+"code_"+it2en_inout[st.session_state['input0is']]+".png",   width=cardWidth) 
             if not st.session_state['prevInput']==st.session_state['input0is']:  
                 st.session_state['prevInput']=st.session_state['input0is']
                 temp=default_IO[st.session_state['skeleton']]
@@ -172,7 +178,7 @@ with cardDeck_placeholder:
             # if "in2" in st.session_state['io_list'].keys():
             st.session_state['input2index'] = input_options.index(en2it_inout[st.session_state['io_list']['in2']])
             st.session_state['input2is'] =st.selectbox( textIT['selectInput2'],input_options,index= int(st.session_state['input2index']))#,index=2) #,key='selInput')
-            st.image(baseURL+langPrefix[lang]+imageURL[it2en_inout[st.session_state['input2is']]], width=cardWidth) 
+            st.image(baseURL_cards+langPrefix[lang]+imageURL[it2en_inout[st.session_state['input2is']]], width=cardWidth) 
             if not st.session_state['prevInput2']==st.session_state['input2is']:  
                 st.session_state['prevInput2']=st.session_state['input2is']
                 temp=default_IO[st.session_state['skeleton']]
@@ -184,7 +190,7 @@ with cardDeck_placeholder:
             # if "out1" in st.session_state['io_list'].keys():
             st.session_state['output1index'] = output_options.index(en2it_inout[st.session_state['io_list']['out1']])
             st.session_state['output0is'] =st.selectbox( textIT['selectOutput1'],output_options,index= int(st.session_state['output1index']))#,key='selInput')
-            st.image(baseURL+langPrefix[lang]+imageURL[it2en_inout[st.session_state['output0is']]], width=cardWidth) 
+            st.image(baseURL_cards+langPrefix[lang]+imageURL[it2en_inout[st.session_state['output0is']]], width=cardWidth) 
             if not st.session_state['prevOutput']==st.session_state['output0is']:
                 st.session_state['prevOutput']=st.session_state['output0is']
                 temp=default_IO[st.session_state['skeleton']]
@@ -196,7 +202,7 @@ with cardDeck_placeholder:
             # if "out2" in st.session_state['io_list'].keys():
             st.session_state['output2index'] = output_options.index(en2it_inout[st.session_state['io_list']['out2']])
             st.session_state['output2is'] =st.selectbox( textIT['selectOutput2'],output_options,index= int(st.session_state['output2index']))#,key='selInput')
-            st.image(baseURL+langPrefix[lang]+imageURL[it2en_inout[st.session_state['output0is']]], width=cardWidth) 
+            st.image(baseURL_cards+langPrefix[lang]+imageURL[it2en_inout[st.session_state['output0is']]], width=cardWidth) 
             if not st.session_state['prevOutput2']==st.session_state['output2is']:
                 st.session_state['prevOutput2']=st.session_state['output2is']
                 temp=default_IO[st.session_state['skeleton']]
@@ -302,11 +308,11 @@ with code_placeholder:
         st.empty()
     elif st.session_state['sidebar_mode']=="example_selected":
         if not  st.session_state['sidebar_mode']== "":
-            st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
+            st.image(baseURL_boards+st.session_state['skeleton'][3:6]+'cards.png')
         else:
             st.empty()
     elif st.session_state['sidebar_mode']=="editing_example":
-        # st.image(baseURL_cards+st.session_state['skeleton'][3:6]+'cards.png')
+        # st.image(baseURL_boards+st.session_state['skeleton'][3:6]+'cards.png')
         codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
         st.session_state['urlis']=genURL_EDP(codeBodyis,st.session_state['io_list'],codetitle,codesubtitle)        
         if codeLang=="js":
@@ -328,7 +334,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 7.7.8")
+st.write("version 7.7.9")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
