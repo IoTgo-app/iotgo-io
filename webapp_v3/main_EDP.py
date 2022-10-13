@@ -121,6 +121,7 @@ cardDeck_placeholder    = st.sidebar.container()#has selectBox with cards, image
 # output_placeholder      = st.sidebar.container()#empty()
 # output2_placeholder     = st.sidebar.container()#empty()
 edit_placeholder        = st.sidebar.empty()
+download_placeholder    = st.sidebar.empty()
 st.sidebar.markdown("---")
 nav_back, nav_fore = st.sidebar.columns(2)
 with nav_back:
@@ -128,7 +129,6 @@ with nav_back:
 with nav_fore:
     st.container() 
 code_placeholder        = st.container()
-download_placeholder    = st.sidebar.empty()
 
 ########################### app sidebar ########################################à
 with select_placeholder:
@@ -343,7 +343,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 7.8.8")
+st.write("version 7.8.9")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
