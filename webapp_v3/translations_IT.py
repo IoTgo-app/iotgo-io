@@ -21,21 +21,29 @@ descip2varIT= {#keys should contain the IT description needed to be shown in the
     "Albero Animato, altrimenti Spento"       : "lvl1b2-1in_2out_else",
     "Orologio Segnafreddo, altrimenti Spento" : "lvl1c2-2in_1out_else",
 
-    "2a1_toAddITdescription"                  : "lvl2a1-1in_1out-1in_1out",
-    "2a2_toAddITdescription"                  : "lvl2a2-1in_1out_else-1in_1out_else",
+    "Tavolo Gioco X 2, Faccina e Musica"                        : "lvl2a1-1in_1out-1in_1out",
+    "Tavolo Gioco X 2, Faccina e Musica, Altrimenti Spento"     : "lvl2a2-1in_1out_else-1in_1out_else",
 
-    "2b1_toAddITdescription"                  : "lvl2b1-1in_1out_elif_1in_1out",
-    "2b2_toAddITdescription"                  : "lvl2b2-1in_1out_elif_1in_1out_else",
+    "Cavallo Sfida X 2, o Faccina o Musica"                     : "lvl2b1-1in_1out_elif_1in_1out",
+    "Cavallo Sfida X 2, o Faccina o Musica, Altrimenti Spento"  : "lvl2b2-1in_1out_elif_1in_1out_else",
 
-    "2c1_toAddITdescription"                  : "lvl2c1-1in_1out-nest-1in_1out",
-    "2c2_toAddITdescription"                  : "lvl2c2-1in_1out-nest-1in_1out_else_else",
+    "Panchina X Due, con Faccina e poi Musica"                   : "lvl2c1-1in_1out-nest-1in_1out",
+    "Panchina X Due, con Faccina e poi Musica, Altrimenti Spenta": "lvl2c2-1in_1out-nest-1in_1out_else_else",
 
-    "3a1_toAddITdescription"                  : "lvl3a1-1in_1out_var",
-    "3a2_toAddITdescription"                  : "lvl3a2-1in_1out_var_else",
+    "Il Canestro Mostra-Punteggio"                              : "lvl3a1-1in_1out_var",
+    "Il Canestro Mostra-Punteggio, Altrimenti Spento"           : "lvl3a2-1in_1out_var_else",
 
-    "3b1_toAddITdescription"                  : "lvl3b1-1var_1out",
-    "3b2_toAddITdescription"                  : "lvl3b2-1var_1out_else"
+    "Il Dado Musicale"                                      : "lvl3b1-1var_1out",
+    "Il Dado Musicale, Altrimenti Spento"                   : "lvl3b2-1var_1out_else"
 }
+
+
+ 
+
+
+
+
+
 
 
 
