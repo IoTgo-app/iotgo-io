@@ -327,8 +327,9 @@ with download_placeholder:
         #     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+").focus()")))
 
 ########################### app end ########################################à
-st.sidebar.markdown("---")
-st.sidebar.write("version 7.7.7 testing new nav")
+#st.sidebar.markdown("---")
+st.write("version 7.7.8")
+
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
 
