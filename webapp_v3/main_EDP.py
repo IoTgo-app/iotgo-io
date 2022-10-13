@@ -128,7 +128,7 @@ with nav_back:
 with nav_fore:
     st.container() 
 code_placeholder        = st.container()
-download_placeholder    = st.empty()
+download_placeholder    = st.sidebar.empty()
 
 ########################### app sidebar ########################################à
 with select_placeholder:
