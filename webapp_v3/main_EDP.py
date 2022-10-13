@@ -265,7 +265,7 @@ with nav_fore:
     if st.session_state['sidebar_mode']=="example_selected" or st.session_state['sidebar_mode']=="app_start":
         st.empty()
     elif st.session_state['sidebar_mode']=="editing_example":
-        if not st.session_state['nav_list']=='download':
+        if not st.session_state['nav_list'][st.session_state['io_index']+1]=='download':
             # st.markdown("---")
             isclick_nav_fore = st.button(textIT['goFront'])
             if isclick_nav_fore:
@@ -334,16 +334,16 @@ with download_placeholder:
     elif st.session_state['sidebar_mode']=="example_selected":
         st.empty()
     elif st.session_state['sidebar_mode']=="editing_example":
-        if st.session_state['nav_list']=='download':
+        if st.session_state['nav_list'][st.session_state['io_index']+1]=='download':
             st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')'  , unsafe_allow_html=True)
-        else:
-            st.session_state['nav_list']
+        #else:
+         #   st.session_state['nav_list']
         # if st.button(textIT['downloadProgram']):            
         #     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+").focus()")))
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 7.8.7")
+st.write("version 7.8.8")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
