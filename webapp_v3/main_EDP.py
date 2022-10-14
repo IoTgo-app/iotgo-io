@@ -148,9 +148,9 @@ with select_placeholder:
             st.session_state['nav_list']=["app_start"] + list(st.session_state['io_list'].keys()) + ["download"] #new
 
 
-def playTheCards(deckType, selectedCard,prevSelectedCard): 
+def playTheCards(deckType, selectedCard,prevSelectedCard,options): 
     #"in1", st.session_state['input0is']  st.session_state['prevInput']  
-    selectedCard = st.selectbox( textIT['selectInput1'],input_options, index= int(input_options.index(en2it_inout[st.session_state['io_list'][deckType]]))) 
+    selectedCard = st.selectbox( textIT['selectInput1'],options, index= int(options.index(en2it_inout[st.session_state['io_list'][deckType]]))) 
     st.image(baseURL_cards+it2en_inout[selectedCard]+".png", width=cardWidth)  
     st.image(baseURL_codeChunks+"code_"+it2en_inout[selectedCard]+".png")
     if not prevSelectedCard == selectedCard:  
@@ -174,13 +174,13 @@ def playTheCards(deckType, selectedCard,prevSelectedCard):
 with cardDeck_placeholder:
     if st.session_state['sidebar_mode']=="editing_example": 
         if st.session_state['nav_list'][st.session_state['io_index']+1] == "in1":
-            playTheCards("in1", st.session_state['input0is'], st.session_state['prevInput']  )
+            playTheCards("in1", st.session_state['input0is'], st.session_state['prevInput'], input_options  )
         if st.session_state['nav_list'][st.session_state['io_index']+1] == "in2":
-            playTheCards("in2", st.session_state['input1is'], st.session_state['prevInput2']  )
+            playTheCards("in2", st.session_state['input1is'], st.session_state['prevInput2'], input_options  )
         if st.session_state['nav_list'][st.session_state['io_index']+1] == "out1":
-            playTheCards("out1", st.session_state['output0is'], st.session_state['prevOutput']  )
+            playTheCards("out1", st.session_state['output0is'], st.session_state['prevOutput'], output_options  )
         if st.session_state['nav_list'][st.session_state['io_index']+1] == "out2":
-            playTheCards("out2", st.session_state['output1is'], st.session_state['prevOutput2']  )
+            playTheCards("out2", st.session_state['output1is'], st.session_state['prevOutput2'], output_options  )
         #if st.session_state['nav_list'][st.session_state['io_index']+1] == "out1else":
         # if st.session_state['nav_list'][st.session_state['io_index']+1] == "out2else":
         else:
@@ -379,7 +379,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 7.9.3")
+st.write("version 7.9.4")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
