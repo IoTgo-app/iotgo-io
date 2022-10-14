@@ -159,7 +159,7 @@ def playTheCards(deckType, selectedCard,prevSelectedCard):
         temp["in1"]=it2en_inout[selectedCard]
         st.session_state['io_list']  = temp
         changeIO(st.session_state['skeleton'],st.session_state['io_list'])
-        st.experimental_rerun()
+        # st.experimental_rerun()
 #    st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
 #    st.session_state['input0is']    = st.selectbox( textIT['selectInput1'],input_options, index= int(st.session_state['input1index'])) 
 #    st.image(baseURL_cards+it2en_inout[st.session_state['input0is']]+".png", width=cardWidth)  
