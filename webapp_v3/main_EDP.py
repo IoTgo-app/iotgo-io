@@ -162,6 +162,12 @@ def playTheCards(deckType, selectedCard,prevSelectedCard):
     elif deckType == "out2": 
         options=output_options
         selectBoxText =textIT['selectOutput2']
+    elif deckType == "out1else": 
+        options=output_options
+        selectBoxText =textIT['selectOutput1']
+    elif deckType == "out2else": 
+        options=output_options
+        selectBoxText =textIT['selectOutput2']
     selectedCard = st.selectbox( selectBoxText,options, index= int(options.index(en2it_inout[st.session_state['io_list'][deckType]]))) 
     st.image(baseURL_cards      + it2en_inout[selectedCard]         +".png", width=cardWidth)  
     st.image(baseURL_codeChunks + "code_"+it2en_inout[selectedCard] +".png")
@@ -395,7 +401,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 7.9.7")
+st.write("version 7.9.8")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
