@@ -152,19 +152,23 @@ def playTheCards(deckType, selectedCard,prevSelectedCard):
     #"in1", st.session_state['input0is']  st.session_state['prevInput'] 
     if deckType == "in1": 
         options=input_options
+        selectBoxText =textIT['selectInput1']
     elif deckType == "in2": 
         options=input_options
+        selectBoxText =textIT['selectInput2']
     elif deckType == "out1": 
         options=output_options
+        selectBoxText =textIT['selectOutput1']
     elif deckType == "out2": 
         options=output_options
-    selectedCard = st.selectbox( textIT['selectInput1'],options, index= int(options.index(en2it_inout[st.session_state['io_list'][deckType]]))) 
-    st.image(baseURL_cards+it2en_inout[selectedCard]+".png", width=cardWidth)  
-    st.image(baseURL_codeChunks+"code_"+it2en_inout[selectedCard]+".png")
+        selectBoxText =textIT['selectOutput2']
+    selectedCard = st.selectbox( selectBoxText,options, index= int(options.index(en2it_inout[st.session_state['io_list'][deckType]]))) 
+    st.image(baseURL_cards      + it2en_inout[selectedCard]         +".png", width=cardWidth)  
+    st.image(baseURL_codeChunks + "code_"+it2en_inout[selectedCard] +".png")
     if not prevSelectedCard == selectedCard:  
         prevSelectedCard = selectedCard
         temp=default_IO[st.session_state['skeleton']]
-        temp["in1"]=it2en_inout[selectedCard]
+        temp[deckType]=it2en_inout[selectedCard]
         st.session_state['io_list']  = temp
         changeIO(st.session_state['skeleton'],st.session_state['io_list'])
         # st.experimental_rerun()
