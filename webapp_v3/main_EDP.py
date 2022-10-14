@@ -288,7 +288,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 8.0.2")
+st.write("version 8.0.3")
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
 
