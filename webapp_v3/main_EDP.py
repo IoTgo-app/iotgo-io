@@ -188,11 +188,11 @@ with cardDeck_placeholder:
         if st.session_state['nav_list'][st.session_state['io_index']+1] == "in1":
             playTheCards("in1", st.session_state['input0is'], st.session_state['prevInput']  )
         if st.session_state['nav_list'][st.session_state['io_index']+1] == "in2":
-            playTheCards("in2", st.session_state['input1is'], st.session_state['prevInput2']  )
+            playTheCards("in2", st.session_state['input2is'], st.session_state['prevInput2']  )
         if st.session_state['nav_list'][st.session_state['io_index']+1] == "out1":
             playTheCards("out1", st.session_state['output0is'], st.session_state['prevOutput']  )
         if st.session_state['nav_list'][st.session_state['io_index']+1] == "out2":
-            playTheCards("out2", st.session_state['output1is'], st.session_state['prevOutput2']  )
+            playTheCards("out2", st.session_state['output2is'], st.session_state['prevOutput2']  )
         #if st.session_state['nav_list'][st.session_state['io_index']+1] == "out1else":
         # if st.session_state['nav_list'][st.session_state['io_index']+1] == "out2else":
         else:
@@ -391,7 +391,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 7.9.5")
+st.write("version 7.9.6")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
