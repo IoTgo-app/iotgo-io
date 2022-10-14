@@ -155,11 +155,19 @@ def playTheCards(deckType, selectedCard,prevSelectedCard):
     st.image(baseURL_codeChunks+"code_"+it2en_inout[selectedCard]+".png")
     if not prevSelectedCard == selectedCard:  
         prevSelectedCard = selectedCard
-        default_IO[st.session_state['skeleton']][deckType]=it2en_inout[selectedCard]
-        st.session_state['io_list']  = temp
+        st.session_state['io_list']  = default_IO[st.session_state['skeleton']][deckType]=it2en_inout[selectedCard]
         changeIO(st.session_state['skeleton'],st.session_state['io_list'])
         st.experimental_rerun()
-        
+#    st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
+#    st.session_state['input0is']    = st.selectbox( textIT['selectInput1'],input_options, index= int(st.session_state['input1index'])) 
+#    st.image(baseURL_cards+it2en_inout[st.session_state['input0is']]+".png", width=cardWidth)  
+#    st.image(baseURL_codeChunks+"code_"+it2en_inout[st.session_state['input0is']]+".png")
+#    if not st.session_state['prevInput']==st.session_state['input0is']:  
+#        st.session_state['prevInput']=st.session_state['input0is']
+#        temp=default_IO[st.session_state['skeleton']]
+#        temp["in1"]=it2en_inout[st.session_state['input0is']]
+#        st.session_state['io_list']  = temp
+#        changeIO(st.session_state['skeleton'],st.session_state['io_list'])       
 
 with cardDeck_placeholder:
     if st.session_state['sidebar_mode']=="editing_example": 
@@ -177,16 +185,7 @@ with cardDeck_placeholder:
             st.empty()
     else:
         st.empty()
-#    st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
-#    st.session_state['input0is']    = st.selectbox( textIT['selectInput1'],input_options, index= int(st.session_state['input1index'])) 
-#    st.image(baseURL_cards+it2en_inout[st.session_state['input0is']]+".png", width=cardWidth)  
-#    st.image(baseURL_codeChunks+"code_"+it2en_inout[st.session_state['input0is']]+".png")
-#    if not st.session_state['prevInput']==st.session_state['input0is']:  
-#        st.session_state['prevInput']=st.session_state['input0is']
-#        temp=default_IO[st.session_state['skeleton']]
-#        temp["in1"]=it2en_inout[st.session_state['input0is']]
-#        st.session_state['io_list']  = temp
-#        changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+
         
 
 ##### old working
@@ -378,7 +377,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 7.9.1")
+st.write("version 7.9.2")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
