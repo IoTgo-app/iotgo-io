@@ -38,13 +38,14 @@ groupnum="0"
 codeLang="blocks" #or "js"
 
 #populate input and output lists------------------------------------------
-input_options=    inputs_IT.microbitv1  
+input_options=    inputs_IT.microbitv1_noCompass_noAccel  
                 + inputs_IT.microbitv2  
                 + inputs_IT.exOthers   
                 + inputs_IT.exBosonKit 
                 # + inputs_IT.exEnviroBit 
                 # + inputs_IT.exCloudBitPi
                 # + inputs_IT.p2p
+                # + inputs_IT.microbitv1 
 
 
 output_options=   outputs_IT.microbitv1 
