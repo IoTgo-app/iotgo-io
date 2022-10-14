@@ -176,11 +176,13 @@ with cardDeck_placeholder:
             playTheCards("out1", st.session_state['output0is'], st.session_state['prevOutput']  )
         elif st.session_state['nav_list'][st.session_state['io_index']+1] == "out2":
             playTheCards("out2", st.session_state['output2is'], st.session_state['prevOutput2']  )
-
         elif st.session_state['nav_list'][st.session_state['io_index']+1] == "out1else":
             playTheCards("out1else", st.session_state['output0is'], st.session_state['prevOutput']  )
         elif st.session_state['nav_list'][st.session_state['io_index']+1] == "out2else":
             playTheCards("out2else", st.session_state['output2is'], st.session_state['prevOutput2']  ) 
+        # to revert to automatic ouputElseCode:
+        # in code_skeletons, revert default_IO
+        # in code_components, revert output_else_code
         else:
             st.empty()
     else:
@@ -224,7 +226,6 @@ with edit_placeholder:
         isClick=st.button(textIT['editExample'])
         if isClick:
             st.session_state['sidebar_mode'] = "editing_example"
-            # st.session_state['numCards']     = len(st.session_state['io_list'])
             st.session_state['cardsList']    = st.session_state['io_list'].keys()
             st.session_state['deckNumber'] = 0
             edit_placeholder.empty()
