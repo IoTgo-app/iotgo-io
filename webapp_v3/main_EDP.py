@@ -155,7 +155,9 @@ def playTheCards(deckType, selectedCard,prevSelectedCard):
     st.image(baseURL_codeChunks+"code_"+it2en_inout[selectedCard]+".png")
     if not prevSelectedCard == selectedCard:  
         prevSelectedCard = selectedCard
-        st.session_state['io_list']  = default_IO[st.session_state['skeleton']][deckType]=it2en_inout[selectedCard]
+        temp=default_IO[st.session_state['skeleton']]
+        temp["in1"]=it2en_inout[selectedCard]
+        st.session_state['io_list']  = temp
         changeIO(st.session_state['skeleton'],st.session_state['io_list'])
         st.experimental_rerun()
 #    st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
@@ -377,7 +379,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 7.9.2")
+st.write("version 7.9.3")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
