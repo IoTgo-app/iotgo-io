@@ -61,19 +61,9 @@ output_options=   outputs_IT.microbitv1 \
 
 #initialize session state variables----------------------------------------------------------
 if 'sidebar_mode' not in st.session_state:
-    st.session_state['sidebar_mode'] = "app_start"
-    # st.session_state['sidebar_mode'] = "example_selected"
-    # st.session_state['sidebar_mode'] = "editing_example"
+    st.session_state['sidebar_mode'] = "app_start" # = "example_selected" # = "editing_example"
 if 'io_index' not in st.session_state:
     st.session_state['io_index'] = 0
-if 'forward2' not in st.session_state:
-    st.session_state['forward2'] = ""
-if 'back2' not in st.session_state:
-    st.session_state['back2']    = ""
-if 'cardDeckOptions' not in st.session_state:
-    st.session_state['cardDeckOptions'] = {}
-if 'changingCardsNow' not in st.session_state:
-    st.session_state['changingCardsNow'] = ""
 if 'input0is' not in st.session_state:
     st.session_state['input0is'] = "no Input"
 if 'prevInput' not in st.session_state:
@@ -105,6 +95,14 @@ if 'urlis' not in st.session_state:
     st.session_state['urlis'] = ""
 prevSkeleton="" ####MOVE TO SESSION STATE
 
+# if 'forward2' not in st.session_state:
+#     st.session_state['forward2'] = ""
+# if 'back2' not in st.session_state:
+#     st.session_state['back2']    = ""
+# if 'cardDeckOptions' not in st.session_state:
+#     st.session_state['cardDeckOptions'] = {}
+# if 'changingCardsNow' not in st.session_state:
+#     st.session_state['changingCardsNow'] = ""
 
 #initialize image and iframe sizes-----------------------------------------------------------
 cardWidth=150
