@@ -6,22 +6,43 @@ from code_components import package_suffix,on_end,on_start,input_sensorValue
 default_IO = {
     "":{},
     "lvl1a1-1in_1out"                   :{"in1":"buttonPress","out1":"iconHappy"},
-    "lvl1a2-1in_1out_else"              :{"in1":"buttonPress","out1":"iconHappy","out1else":"iconHappy"},
+    "lvl1a2-1in_1out_else"              :{"in1":"buttonPress","out1":"iconHappy","out1else":"iconNone"},
     "lvl1b1-1in_2out"                   :{"in1":"buttonPress","out1":"iconHappy","out2":"iconSad"},
-    "lvl1b2-1in_2out_else"              :{"in1":"buttonPress","out1":"iconHappy","out2":"iconSad","out1else":"iconHappy","out2else":"iconSad"},
+    "lvl1b2-1in_2out_else"              :{"in1":"buttonPress","out1":"iconHappy","out2":"iconSad","out1else":"iconNone","out2else":"iconNone"},
     "lvl1c1-2in_1out"                   :{"in1":"buttonPress","in2":"tempLow","out1":"iconSad"},
-    "lvl1c2-2in_1out_else"              :{"in1":"buttonPress","in2":"tempLow","out1":"iconSad","out1else":"iconSad"},
+    "lvl1c2-2in_1out_else"              :{"in1":"buttonPress","in2":"tempLow","out1":"iconSad","out1else":"iconNone"},
     "lvl2a1-1in_1out-1in_1out"          :{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy"},
-    "lvl2a2-1in_1out_else-1in_1out_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy","out1else":"iconHappy","out2else":"musicHappy"},
+    "lvl2a2-1in_1out_else-1in_1out_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy","out1else":"iconNone","out2else":"musicNone"},
     "lvl2b1-1in_1out_elif_1in_1out"     :{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy"},
-    "lvl2b2-1in_1out_elif_1in_1out_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy","out1else":"iconHappy","out2else":"musicHappy"},
+    "lvl2b2-1in_1out_elif_1in_1out_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy","out1else":"iconNone","out2else":"musicNone"},
     "lvl2c1-1in_1out-nest-1in_1out"     :{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy"},
-    "lvl2c2-1in_1out-nest-1in_1out_else_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy","out1else":"iconHappy","out2else":"musicHappy"},
+    "lvl2c2-1in_1out-nest-1in_1out_else_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy","out1else":"iconNone","out2else":"musicNone"},
     "lvl3a1-1in_1out_var"               :{"in1":"buttonPress","out1":"displayInput"},####TOASK 
-    "lvl3a2-1in_1out_var_else"          :{"in1":"buttonPress","out1":"displayInput","out1else":"displayInput"},####TOASK
+    "lvl3a2-1in_1out_var_else"          :{"in1":"buttonPress","out1":"displayInput","out1else":"displayNone"},####TOASK
     "lvl3b1-1var_1out"                  :{"out1":"musicHappy"},####TOASK
-    "lvl3b2-1var_1out_else"             :{"out1":"musicHappy","out1else":"musicHappy"}####TOASK
+    "lvl3b2-1var_1out_else"             :{"out1":"musicHappy","out1else":"musicNone"}####TOASK
 }
+
+
+# default_IO = {
+#     "":{},
+#     "lvl1a1-1in_1out"                   :{"in1":"buttonPress","out1":"iconHappy"},
+#     "lvl1a2-1in_1out_else"              :{"in1":"buttonPress","out1":"iconHappy","out1else":"iconHappy"},
+#     "lvl1b1-1in_2out"                   :{"in1":"buttonPress","out1":"iconHappy","out2":"iconSad"},
+#     "lvl1b2-1in_2out_else"              :{"in1":"buttonPress","out1":"iconHappy","out2":"iconSad","out1else":"iconHappy","out2else":"iconSad"},
+#     "lvl1c1-2in_1out"                   :{"in1":"buttonPress","in2":"tempLow","out1":"iconSad"},
+#     "lvl1c2-2in_1out_else"              :{"in1":"buttonPress","in2":"tempLow","out1":"iconSad","out1else":"iconSad"},
+#     "lvl2a1-1in_1out-1in_1out"          :{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy"},
+#     "lvl2a2-1in_1out_else-1in_1out_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy","out1else":"iconHappy","out2else":"musicHappy"},
+#     "lvl2b1-1in_1out_elif_1in_1out"     :{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy"},
+#     "lvl2b2-1in_1out_elif_1in_1out_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy","out1else":"iconHappy","out2else":"musicHappy"},
+#     "lvl2c1-1in_1out-nest-1in_1out"     :{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy"},
+#     "lvl2c2-1in_1out-nest-1in_1out_else_else":{"in1":"buttonPress","out1":"iconHappy","in2":"buttonPressB","out2":"musicHappy","out1else":"iconHappy","out2else":"musicHappy"},
+#     "lvl3a1-1in_1out_var"               :{"in1":"buttonPress","out1":"displayInput"},####TOASK 
+#     "lvl3a2-1in_1out_var_else"          :{"in1":"buttonPress","out1":"displayInput","out1else":"displayInput"},####TOASK
+#     "lvl3b1-1var_1out"                  :{"out1":"musicHappy"},####TOASK
+#     "lvl3b2-1var_1out_else"             :{"out1":"musicHappy","out1else":"musicHappy"}####TOASK
+# }
 
 
 
