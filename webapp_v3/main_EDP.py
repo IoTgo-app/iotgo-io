@@ -104,22 +104,14 @@ codeWidth=800
 
 
 
-
-
-
 ########################### app init ########################################à
-
 #add iotgo logo
 st.sidebar.image("https://raw.githubusercontent.com/IoTgo-app/iotgo-io/main/webapp_v3/images/logo_hor.png",width=250)
 #st.sidebar.markdown("---")
 
 #init placeholders for app content
 select_placeholder      = st.sidebar.empty()
-cardDeck_placeholder    = st.sidebar.container()#has selectBox with cards, image of the card, and code for that card
-# input_placeholder       = st.sidebar.container()#empty()
-# input2_placeholder      = st.sidebar.container()#empty()
-# output_placeholder      = st.sidebar.container()#empty()
-# output2_placeholder     = st.sidebar.container()#empty()
+cardDeck_placeholder    = st.sidebar.container() #has selectBox with cards, image of the card, and code for that card
 edit_placeholder        = st.sidebar.empty()
 download_placeholder    = st.sidebar.empty()
 st.sidebar.markdown("---")
@@ -148,8 +140,7 @@ with select_placeholder:
             st.session_state['nav_list']=["app_start"] + list(st.session_state['io_list'].keys()) + ["download"] #new
 
 
-def playTheCards(deckType, selectedCard,prevSelectedCard): 
-    #"in1", st.session_state['input0is']  st.session_state['prevInput'] 
+def playTheCards(deckType, selectedCard,prevSelectedCard):     #"in1", st.session_state['input0is']  st.session_state['prevInput'] 
     if deckType == "in1": 
         options=input_options
         selectBoxText =textIT['selectInput1']
@@ -177,34 +168,23 @@ def playTheCards(deckType, selectedCard,prevSelectedCard):
         temp[deckType]=it2en_inout[selectedCard]
         st.session_state['io_list']  = temp
         changeIO(st.session_state['skeleton'],st.session_state['io_list'])
-        # st.experimental_rerun()
-#    st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
-#    st.session_state['input0is']    = st.selectbox( textIT['selectInput1'],input_options, index= int(st.session_state['input1index'])) 
-#    st.image(baseURL_cards+it2en_inout[st.session_state['input0is']]+".png", width=cardWidth)  
-#    st.image(baseURL_codeChunks+"code_"+it2en_inout[st.session_state['input0is']]+".png")
-#    if not st.session_state['prevInput']==st.session_state['input0is']:  
-#        st.session_state['prevInput']=st.session_state['input0is']
-#        temp=default_IO[st.session_state['skeleton']]
-#        temp["in1"]=it2en_inout[st.session_state['input0is']]
-#        st.session_state['io_list']  = temp
-#        changeIO(st.session_state['skeleton'],st.session_state['io_list'])       
+        # st.experimental_rerun()      
 
 with cardDeck_placeholder:
     if st.session_state['sidebar_mode']=="editing_example": 
         if st.session_state['nav_list'][st.session_state['io_index']+1] == "in1":
             playTheCards("in1", st.session_state['input0is'], st.session_state['prevInput']  )
-        if st.session_state['nav_list'][st.session_state['io_index']+1] == "in2":
+        elif st.session_state['nav_list'][st.session_state['io_index']+1] == "in2":
             playTheCards("in2", st.session_state['input2is'], st.session_state['prevInput2']  )
-        if st.session_state['nav_list'][st.session_state['io_index']+1] == "out1":
+        elif st.session_state['nav_list'][st.session_state['io_index']+1] == "out1":
             playTheCards("out1", st.session_state['output0is'], st.session_state['prevOutput']  )
-        if st.session_state['nav_list'][st.session_state['io_index']+1] == "out2":
+        elif st.session_state['nav_list'][st.session_state['io_index']+1] == "out2":
             playTheCards("out2", st.session_state['output2is'], st.session_state['prevOutput2']  )
-        if st.session_state['nav_list'][st.session_state['io_index']+1] == "out1else":
+
+        elif st.session_state['nav_list'][st.session_state['io_index']+1] == "out1else":
             playTheCards("out1else", st.session_state['output0is'], st.session_state['prevOutput']  )
-        if st.session_state['nav_list'][st.session_state['io_index']+1] == "out2else":
-            playTheCards("out2else", st.session_state['output2is'], st.session_state['prevOutput2']  )
-        #if st.session_state['nav_list'][st.session_state['io_index']+1] == "out1else":
-        # if st.session_state['nav_list'][st.session_state['io_index']+1] == "out2else":
+        elif st.session_state['nav_list'][st.session_state['io_index']+1] == "out2else":
+            playTheCards("out2else", st.session_state['output2is'], st.session_state['prevOutput2']  ) 
         else:
             st.empty()
     else:
@@ -212,7 +192,112 @@ with cardDeck_placeholder:
 
         
 
-##### old working
+with nav_back:
+    if st.session_state['sidebar_mode']=="example_selected" or st.session_state['sidebar_mode']=="app_start":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="editing_example":
+        # st.markdown("---")
+        isclick_nav_back = st.button(textIT['goBack'])
+        if isclick_nav_back:
+            st.session_state['io_index']=st.session_state['io_index']-1 
+            if st.session_state['io_index']<=0:   
+                st.session_state['sidebar_mode']="example_selected"  
+                st.session_state['io_index']=0
+                # change_placeholder.empty()
+                nav_back.empty()
+                nav_fore.empty()
+            st.experimental_rerun()
+    else:
+        st.empty() 
+
+with nav_fore:
+    if st.session_state['sidebar_mode']=="example_selected" or st.session_state['sidebar_mode']=="app_start":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="editing_example":
+        if not st.session_state['nav_list'][st.session_state['io_index']+1]=='download':
+            # st.markdown("---")
+            isclick_nav_fore = st.button(textIT['goFront'])
+            if isclick_nav_fore:
+                st.session_state['io_index']=st.session_state['io_index']+1
+                st.experimental_rerun()
+    else:
+        st.empty() 
+
+with edit_placeholder:
+    if st.session_state['sidebar_mode']=="example_selected":
+        isClick=st.button(textIT['editExample'])
+        if isClick:
+            st.session_state['sidebar_mode'] = "editing_example"
+            # st.session_state['numCards']     = len(st.session_state['io_list'])
+            st.session_state['cardsList']    = st.session_state['io_list'].keys()
+            st.session_state['deckNumber'] = 0
+            edit_placeholder.empty()
+            select_placeholder.empty()
+            # st.balloons()
+            st.experimental_rerun()
+    else:
+        st.empty()
+
+
+########################### app body ########################################à
+with code_placeholder:
+    if st.session_state['sidebar_mode']=="app_start":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="example_selected":
+        if not  st.session_state['sidebar_mode']== "":
+            st.image(baseURL_boards+st.session_state['skeleton'][3:6]+'cards.png')
+        else:
+            st.empty()
+    elif st.session_state['sidebar_mode']=="editing_example":
+        # st.image(baseURL_boards+st.session_state['skeleton'][3:6]+'cards.png')
+        codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+        st.session_state['urlis']=genURL_EDP(codeBodyis,st.session_state['io_list'],codetitle,codesubtitle)        
+        if codeLang=="js":
+            st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
+        else:
+            components.iframe(st.session_state['urlis'], height=codeHeight, width=codeWidth, scrolling=True)
+        # st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')'  , unsafe_allow_html=True)
+
+
+with download_placeholder:
+    if st.session_state['sidebar_mode']=="app_start":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="example_selected":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="editing_example":
+        if st.session_state['nav_list'][st.session_state['io_index']+1]=='download':
+            st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')'  , unsafe_allow_html=True)
+        #else:
+         #   st.session_state['nav_list']
+        # if st.button(textIT['downloadProgram']):            
+        #     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+").focus()")))
+
+########################### app end ########################################à
+#st.sidebar.markdown("---")
+st.write("version 8.0.2")
+
+# st.session_state['io_index']
+# st.session_state['sidebar_mode']
+
+
+###########################
+# if st.session_state['deckNumber'] < len(st.session_state['io_list']):
+#     # st.session_state['changingCardsNow'] = st.session_state['cardsList'][st.session_state['deckNumber'] ]
+#     st.session_state['deckNumber']      = st.session_state['deckNumber'] + 1
+
+# with change_placeholder:
+#     if st.session_state['sidebar_mode']=="editing_example":
+#         st.markdown("---")
+#         isclick2 = change_placeholder.button(textIT['changeExample'])
+#         if isclick2:
+#             st.session_state['sidebar_mode']="app_start"
+#             st.session_state['io_index']=0
+#             change_placeholder.empty()
+#             st.experimental_rerun()
+#     else:
+#         st.empty() 
+
+################################ old working
 # with cardDeck_placeholder:
 #     #TO DO: move repeating code to Func
 #     if st.session_state['sidebar_mode']=="editing_example":
@@ -280,7 +365,7 @@ with cardDeck_placeholder:
 
 
 
-
+######################################################
 
 
 # app_start
@@ -299,118 +384,10 @@ with cardDeck_placeholder:
 # nav_fore     nav_list[io_index + 2]
 # io_index -> 0  1  2 
 # nav_back -> 0  1  2 
-# nav_fore -> 2  3  4  
-
-with nav_back:
-    if st.session_state['sidebar_mode']=="example_selected" or st.session_state['sidebar_mode']=="app_start":
-        st.empty()
-    elif st.session_state['sidebar_mode']=="editing_example":
-        # st.markdown("---")
-        isclick_nav_back = st.button(textIT['goBack'])
-        if isclick_nav_back:
-            st.session_state['io_index']=st.session_state['io_index']-1 
-            if st.session_state['io_index']<=0:   
-                st.session_state['sidebar_mode']="example_selected"  
-                st.session_state['io_index']=0
-                # change_placeholder.empty()
-                nav_back.empty()
-                nav_fore.empty()
-            st.experimental_rerun()
-    else:
-        st.empty() 
-
-with nav_fore:
-    if st.session_state['sidebar_mode']=="example_selected" or st.session_state['sidebar_mode']=="app_start":
-        st.empty()
-    elif st.session_state['sidebar_mode']=="editing_example":
-        if not st.session_state['nav_list'][st.session_state['io_index']+1]=='download':
-            # st.markdown("---")
-            isclick_nav_fore = st.button(textIT['goFront'])
-            if isclick_nav_fore:
-                st.session_state['io_index']=st.session_state['io_index']+1
-                st.experimental_rerun()
-    else:
-        st.empty() 
-            
-            
-# if st.session_state['deckNumber'] < len(st.session_state['io_list']):
-#     # st.session_state['changingCardsNow'] = st.session_state['cardsList'][st.session_state['deckNumber'] ]
-#     st.session_state['deckNumber']      = st.session_state['deckNumber'] + 1
-
-# with change_placeholder:
-#     if st.session_state['sidebar_mode']=="editing_example":
-#         st.markdown("---")
-#         isclick2 = change_placeholder.button(textIT['changeExample'])
-#         if isclick2:
-#             st.session_state['sidebar_mode']="app_start"
-#             st.session_state['io_index']=0
-#             change_placeholder.empty()
-#             st.experimental_rerun()
-#     else:
-#         st.empty() 
+# nav_fore -> 2  3  4 
 
 
-with edit_placeholder:
-    if st.session_state['sidebar_mode']=="example_selected":
-        isClick=st.button(textIT['editExample'])
-        if isClick:
-            st.session_state['sidebar_mode'] = "editing_example"
-            # st.session_state['numCards']     = len(st.session_state['io_list'])
-            st.session_state['cardsList']    = st.session_state['io_list'].keys()
-            st.session_state['deckNumber'] = 0
-            edit_placeholder.empty()
-            select_placeholder.empty()
-            # st.balloons()
-            st.experimental_rerun()
-    else:
-        st.empty()
-
-
-########################### app body ########################################à
-with code_placeholder:
-    if st.session_state['sidebar_mode']=="app_start":
-        st.empty()
-    elif st.session_state['sidebar_mode']=="example_selected":
-        if not  st.session_state['sidebar_mode']== "":
-            st.image(baseURL_boards+st.session_state['skeleton'][3:6]+'cards.png')
-        else:
-            st.empty()
-    elif st.session_state['sidebar_mode']=="editing_example":
-        # st.image(baseURL_boards+st.session_state['skeleton'][3:6]+'cards.png')
-        codeBodyis=changeIO(st.session_state['skeleton'],st.session_state['io_list'])
-        st.session_state['urlis']=genURL_EDP(codeBodyis,st.session_state['io_list'],codetitle,codesubtitle)        
-        if codeLang=="js":
-            st.code(changeIO(st.session_state['skeleton'],st.session_state['io_list']), language="javascript")
-        else:
-            components.iframe(st.session_state['urlis'], height=codeHeight, width=codeWidth, scrolling=True)
-        # st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')'  , unsafe_allow_html=True)
-
-
-with download_placeholder:
-    if st.session_state['sidebar_mode']=="app_start":
-        st.empty()
-    elif st.session_state['sidebar_mode']=="example_selected":
-        st.empty()
-    elif st.session_state['sidebar_mode']=="editing_example":
-        if st.session_state['nav_list'][st.session_state['io_index']+1]=='download':
-            st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')'  , unsafe_allow_html=True)
-        #else:
-         #   st.session_state['nav_list']
-        # if st.button(textIT['downloadProgram']):            
-        #     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+").focus()")))
-
-########################### app end ########################################à
-#st.sidebar.markdown("---")
-st.write("version 8.0.1")
-
-# st.session_state['io_index']
-# st.session_state['sidebar_mode']
-
-
-
-
-
-
+######################################################
 
 # with input_placeholder:
 #     if st.session_state['sidebar_mode']=="editing_example":
