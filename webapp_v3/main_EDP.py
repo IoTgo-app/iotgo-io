@@ -147,78 +147,113 @@ with select_placeholder:
             st.session_state['io_list']=default_IO[st.session_state['skeleton']]#new
             st.session_state['nav_list']=["app_start"] + list(st.session_state['io_list'].keys()) + ["download"] #new
 
-# with cardImage_placeholder:
-#     if st.session_state['sidebar_mode']=="editing_example":
-#         cardPath=  baseURL+langPrefix[lang]+imageURL[ input_name[0]]
-#         st.image(cardPath, width=cardWidth)             
-#     else:
-#         st.empty()
 
+def playTheCards(deckType, selectedCard,prevSelectedCard): 
+    #"in1", st.session_state['input0is']  st.session_state['prevInput']  
+    selectedCard = st.selectbox( textIT['selectInput1'],input_options, index= int(input_options.index(en2it_inout[st.session_state['io_list'][deckType]]))) 
+    st.image(baseURL_cards+it2en_inout[selectedCard]+".png", width=cardWidth)  
+    st.image(baseURL_codeChunks+"code_"+it2en_inout[selectedCard]+".png")
+    if not prevSelectedCard == selectedCard:  
+        prevSelectedCard = selectedCard
+        default_IO[st.session_state['skeleton']][deckType]=it2en_inout[selectedCard]
+        st.session_state['io_list']  = temp
+        changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+        st.experimental_rerun()
         
+
 with cardDeck_placeholder:
-    #TO DO: move repeating code to Func
-    if st.session_state['sidebar_mode']=="editing_example":
-        # if st.session_state['io_index'] == "in1":
+    if st.session_state['sidebar_mode']=="editing_example": 
         if st.session_state['nav_list'][st.session_state['io_index']+1] == "in1":
-        # if "in1" in st.session_state['io_list'].keys():
-            st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
-            # st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
-            st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options,index= int(st.session_state['input1index']))#,index=2) #,key='selInput')
-            #st.image(baseURL_cards+langPrefix[lang]+imageURL[it2en_inout[st.session_state['input0is']]], width=cardWidth) 
-            st.image(baseURL_cards+it2en_inout[st.session_state['input0is']]+".png",                width=cardWidth)  
-            st.image(baseURL_codeChunks+"code_"+it2en_inout[st.session_state['input0is']]+".png")#,   width=codeChunckWidth) 
-            if not st.session_state['prevInput']==st.session_state['input0is']:  
-                st.session_state['prevInput']=st.session_state['input0is']
-                temp=default_IO[st.session_state['skeleton']]
-                temp["in1"]=it2en_inout[st.session_state['input0is']]
-                st.session_state['io_list']  = temp
-                changeIO(st.session_state['skeleton'],st.session_state['io_list'])            
-                # st.session_state['changingCardsNow'] = "in1"
-                st.experimental_rerun()
-        elif st.session_state['nav_list'][st.session_state['io_index']+1] == "in2":
-        # st.session_state['io_index'] == "in2":
-            # if "in2" in st.session_state['io_list'].keys():
-            st.session_state['input2index'] = input_options.index(en2it_inout[st.session_state['io_list']['in2']])
-            st.session_state['input2is'] =st.selectbox( textIT['selectInput2'],input_options,index= int(st.session_state['input2index']))#,index=2) #,key='selInput')
-            st.image(baseURL_cards+it2en_inout[st.session_state['input2is']]+".png",                width=cardWidth)  
-            st.image(baseURL_codeChunks+"code_"+it2en_inout[st.session_state['input2is']]+".png")#,   width=codeChunckWidth)             
-            if not st.session_state['prevInput2']==st.session_state['input2is']:  
-                st.session_state['prevInput2']=st.session_state['input2is']
-                temp=default_IO[st.session_state['skeleton']]
-                temp["in2"]=it2en_inout[st.session_state['input2is']]
-                st.session_state['io_list']  = temp
-                changeIO(st.session_state['skeleton'],st.session_state['io_list'])
-                st.experimental_rerun()
-        elif st.session_state['nav_list'][st.session_state['io_index']+1] == "out1":
-            # if "out1" in st.session_state['io_list'].keys():
-            st.session_state['output1index'] = output_options.index(en2it_inout[st.session_state['io_list']['out1']])
-            st.session_state['output0is'] =st.selectbox( textIT['selectOutput1'],output_options,index= int(st.session_state['output1index']))#,key='selInput')
-            st.image(baseURL_cards+it2en_inout[st.session_state['output0is']]+".png",                width=cardWidth)  
-            st.image(baseURL_codeChunks+"code_"+it2en_inout[st.session_state['output0is']]+".png")#,   width=codeChunckWidth)             
-            if not st.session_state['prevOutput']==st.session_state['output0is']:
-                st.session_state['prevOutput']=st.session_state['output0is']
-                temp=default_IO[st.session_state['skeleton']]
-                temp["out1"]=it2en_inout[st.session_state['output0is']]
-                st.session_state['io_list']  = temp          
-                changeIO(st.session_state['skeleton'],st.session_state['io_list'])  
-                st.experimental_rerun()
-        elif st.session_state['nav_list'][st.session_state['io_index']+1] == "out2":
-            # if "out2" in st.session_state['io_list'].keys():
-            st.session_state['output2index'] = output_options.index(en2it_inout[st.session_state['io_list']['out2']])
-            st.session_state['output2is'] =st.selectbox( textIT['selectOutput2'],output_options,index= int(st.session_state['output2index']))#,key='selInput')
-            st.image(baseURL_cards+it2en_inout[st.session_state['output2is']]+".png",                width=cardWidth)  
-            st.image(baseURL_codeChunks+"code_"+it2en_inout[st.session_state['output2is']]+".png")#,   width=codeChunckWidth)             
-            if not st.session_state['prevOutput2']==st.session_state['output2is']:
-                st.session_state['prevOutput2']=st.session_state['output2is']
-                temp=default_IO[st.session_state['skeleton']]
-                temp["out2"]=it2en_inout[st.session_state['output2is']]
-                st.session_state['io_list']  = temp          
-                changeIO(st.session_state['skeleton'],st.session_state['io_list'])  
-                st.experimental_rerun()
+            playTheCards("in1", st.session_state['input0is'], st.session_state['prevInput']  )
+        if st.session_state['nav_list'][st.session_state['io_index']+1] == "in2":
+            playTheCards("in2", st.session_state['input1is'], st.session_state['prevInput2']  )
+        if st.session_state['nav_list'][st.session_state['io_index']+1] == "out1":
+            playTheCards("out1", st.session_state['output0is'], st.session_state['prevOutput']  )
+        if st.session_state['nav_list'][st.session_state['io_index']+1] == "out2":
+            playTheCards("out2", st.session_state['output1is'], st.session_state['prevOutput2']  )
+        #if st.session_state['nav_list'][st.session_state['io_index']+1] == "out1else":
+        # if st.session_state['nav_list'][st.session_state['io_index']+1] == "out2else":
         else:
             st.empty()
     else:
         st.empty()
+#    st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
+#    st.session_state['input0is']    = st.selectbox( textIT['selectInput1'],input_options, index= int(st.session_state['input1index'])) 
+#    st.image(baseURL_cards+it2en_inout[st.session_state['input0is']]+".png", width=cardWidth)  
+#    st.image(baseURL_codeChunks+"code_"+it2en_inout[st.session_state['input0is']]+".png")
+#    if not st.session_state['prevInput']==st.session_state['input0is']:  
+#        st.session_state['prevInput']=st.session_state['input0is']
+#        temp=default_IO[st.session_state['skeleton']]
+#        temp["in1"]=it2en_inout[st.session_state['input0is']]
+#        st.session_state['io_list']  = temp
+#        changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+        
+
+##### old working
+# with cardDeck_placeholder:
+#     #TO DO: move repeating code to Func
+#     if st.session_state['sidebar_mode']=="editing_example":
+#         # if st.session_state['io_index'] == "in1":
+#         if st.session_state['nav_list'][st.session_state['io_index']+1] == "in1":
+#         # if "in1" in st.session_state['io_list'].keys():
+#             st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
+#             # st.session_state['input1index'] = input_options.index(en2it_inout[st.session_state['io_list']['in1']])
+#             st.session_state['input0is'] =st.selectbox( textIT['selectInput1'],input_options,index= int(st.session_state['input1index']))#,index=2) #,key='selInput')
+#             #st.image(baseURL_cards+langPrefix[lang]+imageURL[it2en_inout[st.session_state['input0is']]], width=cardWidth) 
+#             st.image(baseURL_cards+it2en_inout[st.session_state['input0is']]+".png",                width=cardWidth)  
+#             st.image(baseURL_codeChunks+"code_"+it2en_inout[st.session_state['input0is']]+".png")#,   width=codeChunckWidth) 
+#             if not st.session_state['prevInput']==st.session_state['input0is']:  
+#                 st.session_state['prevInput']=st.session_state['input0is']
+#                 temp=default_IO[st.session_state['skeleton']]
+#                 temp["in1"]=it2en_inout[st.session_state['input0is']]
+#                 st.session_state['io_list']  = temp
+#                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])            
+#                 # st.session_state['changingCardsNow'] = "in1"
+#                 st.experimental_rerun()
+#         elif st.session_state['nav_list'][st.session_state['io_index']+1] == "in2":
+#         # st.session_state['io_index'] == "in2":
+#             # if "in2" in st.session_state['io_list'].keys():
+#             st.session_state['input2index'] = input_options.index(en2it_inout[st.session_state['io_list']['in2']])
+#             st.session_state['input2is'] =st.selectbox( textIT['selectInput2'],input_options,index= int(st.session_state['input2index']))#,index=2) #,key='selInput')
+#             st.image(baseURL_cards+it2en_inout[st.session_state['input2is']]+".png",                width=cardWidth)  
+#             st.image(baseURL_codeChunks+"code_"+it2en_inout[st.session_state['input2is']]+".png")#,   width=codeChunckWidth)             
+#             if not st.session_state['prevInput2']==st.session_state['input2is']:  
+#                 st.session_state['prevInput2']=st.session_state['input2is']
+#                 temp=default_IO[st.session_state['skeleton']]
+#                 temp["in2"]=it2en_inout[st.session_state['input2is']]
+#                 st.session_state['io_list']  = temp
+#                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])
+#                 st.experimental_rerun()
+#         elif st.session_state['nav_list'][st.session_state['io_index']+1] == "out1":
+#             # if "out1" in st.session_state['io_list'].keys():
+#             st.session_state['output1index'] = output_options.index(en2it_inout[st.session_state['io_list']['out1']])
+#             st.session_state['output0is'] =st.selectbox( textIT['selectOutput1'],output_options,index= int(st.session_state['output1index']))#,key='selInput')
+#             st.image(baseURL_cards+it2en_inout[st.session_state['output0is']]+".png",                width=cardWidth)  
+#             st.image(baseURL_codeChunks+"code_"+it2en_inout[st.session_state['output0is']]+".png")#,   width=codeChunckWidth)             
+#             if not st.session_state['prevOutput']==st.session_state['output0is']:
+#                 st.session_state['prevOutput']=st.session_state['output0is']
+#                 temp=default_IO[st.session_state['skeleton']]
+#                 temp["out1"]=it2en_inout[st.session_state['output0is']]
+#                 st.session_state['io_list']  = temp          
+#                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])  
+#                 st.experimental_rerun()
+#         elif st.session_state['nav_list'][st.session_state['io_index']+1] == "out2":
+#             # if "out2" in st.session_state['io_list'].keys():
+#             st.session_state['output2index'] = output_options.index(en2it_inout[st.session_state['io_list']['out2']])
+#             st.session_state['output2is'] =st.selectbox( textIT['selectOutput2'],output_options,index= int(st.session_state['output2index']))#,key='selInput')
+#             st.image(baseURL_cards+it2en_inout[st.session_state['output2is']]+".png",                width=cardWidth)  
+#             st.image(baseURL_codeChunks+"code_"+it2en_inout[st.session_state['output2is']]+".png")#,   width=codeChunckWidth)             
+#             if not st.session_state['prevOutput2']==st.session_state['output2is']:
+#                 st.session_state['prevOutput2']=st.session_state['output2is']
+#                 temp=default_IO[st.session_state['skeleton']]
+#                 temp["out2"]=it2en_inout[st.session_state['output2is']]
+#                 st.session_state['io_list']  = temp          
+#                 changeIO(st.session_state['skeleton'],st.session_state['io_list'])  
+#                 st.experimental_rerun()
+#         else:
+#             st.empty()
+#     else:
+#         st.empty()
 
 
 
@@ -343,7 +378,7 @@ with download_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 7.9.0")
+st.write("version 7.9.1")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
