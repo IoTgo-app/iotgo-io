@@ -265,54 +265,55 @@ output_code = {
 "noOutput":"",
 }
 
+output_else_code=output_code
 
-#defining a dictionary for inverse code for each output: 
-output_else_code={
-"musicHappy": "music.stopMelody(MelodyStopOptions.All)\n\tbasic.pause(1000)",
-"musicNone" : "music.startMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.Forever)\n\tbasic.pause(1000)",
-"musicSad" : "music.stopMelody(MelodyStopOptions.All)\n\tbasic.pause(1000)",
-"musicAlarm" : "music.stopMelody(MelodyStopOptions.All)\n\tbasic.pause(1000)",
-"displayInput": "basic.clearScreen()\n\tbasic.pause(1000)" ,
-"displayNone" : "basic.showString(\"hello\")\n\tbasic.pause(1000)" ,
-"displayText" : "basic.clearScreen()\n\tbasic.pause(1000)" ,
-"iconHappy":"basic.clearScreen()\n\tbasic.pause(1000)",
-"iconNone": "basic.showIcon(IconNames.Happy)\n\tbasic.pause(1000)",
-"iconSad": "basic.clearScreen()\n\tbasic.pause(1000)",
-"iconBig": "basic.clearScreen()\n\tbasic.pause(1000)",
-"iconSmall": "basic.clearScreen()\n\tbasic.pause(1000)",
-"sendData": "radio.sendValue(\"inputName\",0)\n\tbasic.pause(2000)", #was: "sendData":"basic.pause(1000)",
-"EB_whiteLEDon":"LEDs On",
-"EB_whiteLEDoff":"LEDs Off",
-"fanOff" : "pins.digitalWritePin(DigitalPin.P1,1)\n\tbasic.pause(1000)",
-"fanOn" : "pins.digitalWritePin(DigitalPin.P1,0)\n\tbasic.pause(1000)",
-"lightOff": "pins.digitalWritePin(DigitalPin.P1,1)\n\tbasic.pause(1000)",
-"lightOn": "pins.digitalWritePin(DigitalPin.P1,0)\n\tbasic.pause(1000)",
-"rotateMax" :"servos.P1.setAngle(0)\n\tbasic.pause(1000)" , #card not used 
-"rotateMid" :"servos.P1.setAngle(0)\n\tbasic.pause(1000)" , #card not used 
-"rotateMin" :"servos.P1.setAngle(180)\n\tbasic.pause(1000)",#card not used 
-"showStripBlack" :"strip.showRainbow(1, 360)\n\tbasic.pause(1000)",
-"showStripRainbow": "strip.showColor(neopixel.colors(NeoPixelColors.Black))\n\tbasic.pause(1000)",
-"showStripBlack" :"strip.showRainbow(1, 360)\n\tbasic.pause(1000)",
-"showStripBlack" :"strip.showRainbow(1, 360)\n\tbasic.pause(1000)",
-"forecastHumidityHigh" :"radio.sendString(\"get_humid\")\n\tbasic.pause(2000)",
-"forecastHumidityLow" :"radio.sendString(\"get_humid\")\n\tbasic.pause(2000)",
-"forecastprecipHigh" :"radio.sendString(\"get_precip\")\n\tbasic.pause(2000)",
-"forecastprecipLow" :"radio.sendString(\"get_precip\")\n\tbasic.pause(2000)",
-"forecastTempHigh" :"radio.sendString(\"get_temp\")\n\tbasic.pause(2000)",
-"forecastTempLow" :"radio.sendString(\"get_temp\")\n\tbasic.pause(2000)",
-"forecastWindHigh" :"radio.sendString(\"get_wind\")\n\tbasic.pause(2000)",
-"forecastWindLow" :"radio.sendString(\"get_wind\")\n\tbasic.pause(2000)",
-"logInput" : "basic.pause(1000)", #not needed for cloud cards, can else statement remains empty??
-"timeForSchool" :"radio.sendString(\"get_time\")\n\tbasic.pause(2000)",
-"todayNewYear" :"radio.sendString(\"get_year\")\n\tbasic.pause(2000)",
-"todayStartOfMonth" :"radio.sendString(\"get_date\")\n\tbasic.pause(2000)",
-"todaySummerMonth" :"radio.sendString(\"get_month\")\n\tbasic.pause(2000)",
-"todayWeekday" :"radio.sendString(\"get_day\")\n\tbasic.pause(2000)",
-"todayWeekend" :"radio.sendString(\"get_day\")\n\tbasic.pause(2000)",
-"tweetInput" : "basic.pause(1000)" , #not needed for cloud cards, can else statement remains empty??
-"tweetText" : "basic.pause(1000)" , #not needed for cloud cards, can else statement remains empty??
-"noOutput":"",
-}
+# #defining a dictionary for inverse code for each output: 
+# output_else_code={
+# "musicHappy": "music.stopMelody(MelodyStopOptions.All)\n\tbasic.pause(1000)",
+# "musicNone" : "music.startMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.Forever)\n\tbasic.pause(1000)",
+# "musicSad" : "music.stopMelody(MelodyStopOptions.All)\n\tbasic.pause(1000)",
+# "musicAlarm" : "music.stopMelody(MelodyStopOptions.All)\n\tbasic.pause(1000)",
+# "displayInput": "basic.clearScreen()\n\tbasic.pause(1000)" ,
+# "displayNone" : "basic.showString(\"hello\")\n\tbasic.pause(1000)" ,
+# "displayText" : "basic.clearScreen()\n\tbasic.pause(1000)" ,
+# "iconHappy":"basic.clearScreen()\n\tbasic.pause(1000)",
+# "iconNone": "basic.showIcon(IconNames.Happy)\n\tbasic.pause(1000)",
+# "iconSad": "basic.clearScreen()\n\tbasic.pause(1000)",
+# "iconBig": "basic.clearScreen()\n\tbasic.pause(1000)",
+# "iconSmall": "basic.clearScreen()\n\tbasic.pause(1000)",
+# "sendData": "radio.sendValue(\"inputName\",0)\n\tbasic.pause(2000)", #was: "sendData":"basic.pause(1000)",
+# "EB_whiteLEDon":"LEDs On",
+# "EB_whiteLEDoff":"LEDs Off",
+# "fanOff" : "pins.digitalWritePin(DigitalPin.P1,1)\n\tbasic.pause(1000)",
+# "fanOn" : "pins.digitalWritePin(DigitalPin.P1,0)\n\tbasic.pause(1000)",
+# "lightOff": "pins.digitalWritePin(DigitalPin.P1,1)\n\tbasic.pause(1000)",
+# "lightOn": "pins.digitalWritePin(DigitalPin.P1,0)\n\tbasic.pause(1000)",
+# "rotateMax" :"servos.P1.setAngle(0)\n\tbasic.pause(1000)" , #card not used 
+# "rotateMid" :"servos.P1.setAngle(0)\n\tbasic.pause(1000)" , #card not used 
+# "rotateMin" :"servos.P1.setAngle(180)\n\tbasic.pause(1000)",#card not used 
+# "showStripBlack" :"strip.showRainbow(1, 360)\n\tbasic.pause(1000)",
+# "showStripRainbow": "strip.showColor(neopixel.colors(NeoPixelColors.Black))\n\tbasic.pause(1000)",
+# "showStripBlack" :"strip.showRainbow(1, 360)\n\tbasic.pause(1000)",
+# "showStripBlack" :"strip.showRainbow(1, 360)\n\tbasic.pause(1000)",
+# "forecastHumidityHigh" :"radio.sendString(\"get_humid\")\n\tbasic.pause(2000)",
+# "forecastHumidityLow" :"radio.sendString(\"get_humid\")\n\tbasic.pause(2000)",
+# "forecastprecipHigh" :"radio.sendString(\"get_precip\")\n\tbasic.pause(2000)",
+# "forecastprecipLow" :"radio.sendString(\"get_precip\")\n\tbasic.pause(2000)",
+# "forecastTempHigh" :"radio.sendString(\"get_temp\")\n\tbasic.pause(2000)",
+# "forecastTempLow" :"radio.sendString(\"get_temp\")\n\tbasic.pause(2000)",
+# "forecastWindHigh" :"radio.sendString(\"get_wind\")\n\tbasic.pause(2000)",
+# "forecastWindLow" :"radio.sendString(\"get_wind\")\n\tbasic.pause(2000)",
+# "logInput" : "basic.pause(1000)", #not needed for cloud cards, can else statement remains empty??
+# "timeForSchool" :"radio.sendString(\"get_time\")\n\tbasic.pause(2000)",
+# "todayNewYear" :"radio.sendString(\"get_year\")\n\tbasic.pause(2000)",
+# "todayStartOfMonth" :"radio.sendString(\"get_date\")\n\tbasic.pause(2000)",
+# "todaySummerMonth" :"radio.sendString(\"get_month\")\n\tbasic.pause(2000)",
+# "todayWeekday" :"radio.sendString(\"get_day\")\n\tbasic.pause(2000)",
+# "todayWeekend" :"radio.sendString(\"get_day\")\n\tbasic.pause(2000)",
+# "tweetInput" : "basic.pause(1000)" , #not needed for cloud cards, can else statement remains empty??
+# "tweetText" : "basic.pause(1000)" , #not needed for cloud cards, can else statement remains empty??
+# "noOutput":"",
+# }
 
 
 
