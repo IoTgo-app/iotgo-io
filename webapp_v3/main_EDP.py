@@ -52,10 +52,6 @@ if 'forward2' not in st.session_state:
     st.session_state['forward2'] = ""
 if 'back2' not in st.session_state:
     st.session_state['back2']    = ""
-    # st.session_state['sidebar_mode'] = "input1"
-    # st.session_state['sidebar_mode'] = "input2"
-    # st.session_state['sidebar_mode'] = "output1"
-    # st.session_state['sidebar_mode'] = "output2" 
 if 'cardDeckOptions' not in st.session_state:
     st.session_state['cardDeckOptions'] = {}
 if 'changingCardsNow' not in st.session_state:
@@ -275,27 +271,9 @@ with download_placeholder:
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
 st.write("version 8.0.2")
-
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
 
-
-###########################
-# if st.session_state['deckNumber'] < len(st.session_state['io_list']):
-#     # st.session_state['changingCardsNow'] = st.session_state['cardsList'][st.session_state['deckNumber'] ]
-#     st.session_state['deckNumber']      = st.session_state['deckNumber'] + 1
-
-# with change_placeholder:
-#     if st.session_state['sidebar_mode']=="editing_example":
-#         st.markdown("---")
-#         isclick2 = change_placeholder.button(textIT['changeExample'])
-#         if isclick2:
-#             st.session_state['sidebar_mode']="app_start"
-#             st.session_state['io_index']=0
-#             change_placeholder.empty()
-#             st.experimental_rerun()
-#     else:
-#         st.empty() 
 
 ################################ old working
 # with cardDeck_placeholder:
@@ -366,8 +344,6 @@ st.write("version 8.0.2")
 
 
 ######################################################
-
-
 # app_start
 # example_selected
 # editing_example
@@ -386,6 +362,22 @@ st.write("version 8.0.2")
 # nav_back -> 0  1  2 
 # nav_fore -> 2  3  4 
 
+###########################
+# if st.session_state['deckNumber'] < len(st.session_state['io_list']):
+#     # st.session_state['changingCardsNow'] = st.session_state['cardsList'][st.session_state['deckNumber'] ]
+#     st.session_state['deckNumber']      = st.session_state['deckNumber'] + 1
+
+# with change_placeholder:
+#     if st.session_state['sidebar_mode']=="editing_example":
+#         st.markdown("---")
+#         isclick2 = change_placeholder.button(textIT['changeExample'])
+#         if isclick2:
+#             st.session_state['sidebar_mode']="app_start"
+#             st.session_state['io_index']=0
+#             change_placeholder.empty()
+#             st.experimental_rerun()
+#     else:
+#         st.empty() 
 
 ######################################################
 
