@@ -293,7 +293,7 @@ with code_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 8.1.4")
+st.write("version 8.1.5")
 var2descipIT[st.session_state['skeleton']] 
 st.session_state['io_index']
 # st.session_state['sidebar_mode']
