@@ -96,7 +96,7 @@ if 'urlis' not in st.session_state:
 prevSkeleton="" ####MOVE TO SESSION STATE
 
 if 'skeletonKeys' not in st.session_state:
-    st.session_state['skeletonKeys'] = descip2varIT.keys()
+    st.session_state['skeletonKeys'] = list(descip2varIT.keys())
 
 
 #initialize image and iframe sizes-----------------------------------------------------------
@@ -287,7 +287,7 @@ with code_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 8.0.8")
+st.write("version 8.0.9")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
