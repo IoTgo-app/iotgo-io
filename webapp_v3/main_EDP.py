@@ -292,8 +292,8 @@ with code_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 8.1.1")
-# st.session_state['skeletonKeys']
+st.write("version 8.1.2")
+st.session_state['skeletonKeys']
 st.session_state['io_index']
 # st.session_state['sidebar_mode']
 
