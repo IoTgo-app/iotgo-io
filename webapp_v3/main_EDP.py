@@ -84,6 +84,8 @@ if 'prevOutput2' not in st.session_state:
     st.session_state['prevOutput2'] = "no Output"
 if 'skeleton' not in st.session_state:
     st.session_state['skeleton'] = ""
+if 'prevSkeleton' not in st.session_state:
+    st.session_state['prevSkeleton'] = ""
 if 'skeletonIndex' not in st.session_state:
     st.session_state['skeletonIndex'] = 0
 if 'io_list' not in st.session_state:
@@ -145,13 +147,13 @@ with select_placeholder:
             st.session_state['currIndex']=0
         st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'],descip2varIT.keys(), index=st.session_state['currIndex'])] 
         #st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'], st.session_state['skeletonKeys'] , index=currIndex)] 
-        if not st.session_state['skeleton']==prevSkeleton:
+        if not st.session_state['skeleton']==st.session_state['prevSkeleton']#prevSkeleton:
             # if st.session_state['skeleton']=="":
             #     st.session_state['sidebar_mode']="app_start"
             #     st.ballons()
             #     st.experimental_rerun()
             #if ""in st.session_state['skeletonKeys']: st.session_state['skeletonKeys'].remove("") #added
-            prevSkeleton=st.session_state['skeleton']
+            st.session_state['prevSkeleton']=st.session_state['skeleton']
             st.session_state['sidebar_mode']="example_selected"
             st.session_state['io_list']=default_IO[st.session_state['skeleton']]#new
             st.session_state['nav_list']=["app_start"] + list(st.session_state['io_list'].keys()) + ["download"] #new
@@ -290,7 +292,7 @@ with code_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 8.0.9")
+st.write("version 8.1.0")
 # st.session_state['skeletonKeys']
 st.session_state['io_index']
 # st.session_state['sidebar_mode']
