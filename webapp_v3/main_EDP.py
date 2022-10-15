@@ -234,7 +234,9 @@ with nav_fore:
         st.empty() 
 
 with edit_placeholder:
-    if st.session_state['sidebar_mode']=="example_selected":
+    if st.session_state['sidebar_mode']=="app_start":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="example_selected":
         isClick=st.button(textIT['editExample'])
         if isClick:
             st.session_state['sidebar_mode'] = "editing_example"
@@ -281,9 +283,20 @@ with code_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 8.0.4")
+st.write("version 8.0.5")
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
+
+
+
+
+
+
+
+
+
+
+
 
 
 ################################ old working
