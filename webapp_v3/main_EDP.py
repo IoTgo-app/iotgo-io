@@ -95,6 +95,9 @@ if 'urlis' not in st.session_state:
     st.session_state['urlis'] = ""
 prevSkeleton="" ####MOVE TO SESSION STATE
 
+if 'skeletonKeys' not in st.session_state:
+    st.session_state['skeletonKeys'] = descip2varIT.keys()
+
 
 #initialize image and iframe sizes-----------------------------------------------------------
 cardWidth=150
@@ -137,12 +140,14 @@ with select_placeholder:
             currIndex=list(var2descipIT.keys()).index((st.session_state['skeleton']))
         else:
             currIndex=0
-        st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'],descip2varIT.keys(), index=currIndex)]#code_skeletons)
+        # st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'],descip2varIT.keys(), index=currIndex)] 
+        st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'], st.session_state['skeletonKeys'] , index=currIndex)] 
         if not st.session_state['skeleton']==prevSkeleton:
-            if st.session_state['skeleton']=="":
-                st.session_state['sidebar_mode']="app_start"
-                st.ballons()
-                st.experimental_rerun() 
+            # if st.session_state['skeleton']=="":
+            #     st.session_state['sidebar_mode']="app_start"
+            #     st.ballons()
+            #     st.experimental_rerun()
+            st.session_state['skeletonKeys'].remove("") #added
             prevSkeleton=st.session_state['skeleton']
             st.session_state['sidebar_mode']="example_selected"
             st.session_state['io_list']=default_IO[st.session_state['skeleton']]#new
@@ -282,7 +287,7 @@ with code_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 8.0.7")
+st.write("version 8.0.8")
 
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
