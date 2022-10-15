@@ -140,8 +140,8 @@ with select_placeholder:
             currIndex=list(var2descipIT.keys()).index((st.session_state['skeleton']))
         else:
             currIndex=0
-        # st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'],descip2varIT.keys(), index=currIndex)] 
-        st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'], st.session_state['skeletonKeys'] , index=currIndex)] 
+        st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'],descip2varIT.keys(), index=currIndex)] 
+        #st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'], st.session_state['skeletonKeys'] , index=currIndex)] 
         if not st.session_state['skeleton']==prevSkeleton:
             # if st.session_state['skeleton']=="":
             #     st.session_state['sidebar_mode']="app_start"
@@ -287,7 +287,7 @@ with code_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 8.0.9")
+st.write("version 8.0.8")
 # st.session_state['skeletonKeys']
 st.session_state['io_index']
 # st.session_state['sidebar_mode']
