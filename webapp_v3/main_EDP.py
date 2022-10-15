@@ -95,14 +95,6 @@ if 'urlis' not in st.session_state:
     st.session_state['urlis'] = ""
 prevSkeleton="" ####MOVE TO SESSION STATE
 
-# if 'forward2' not in st.session_state:
-#     st.session_state['forward2'] = ""
-# if 'back2' not in st.session_state:
-#     st.session_state['back2']    = ""
-# if 'cardDeckOptions' not in st.session_state:
-#     st.session_state['cardDeckOptions'] = {}
-# if 'changingCardsNow' not in st.session_state:
-#     st.session_state['changingCardsNow'] = ""
 
 #initialize image and iframe sizes-----------------------------------------------------------
 cardWidth=150
@@ -147,6 +139,9 @@ with select_placeholder:
             currIndex=0
         st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'],descip2varIT.keys(), index=currIndex)]#code_skeletons)
         if not st.session_state['skeleton']==prevSkeleton:
+            if st.session_state['skeleton']=="":
+                st.session_state['sidebar_mode']="app_start"
+                st.experimental_rerun() 
             prevSkeleton=st.session_state['skeleton']
             st.session_state['sidebar_mode']="example_selected"
             st.session_state['io_list']=default_IO[st.session_state['skeleton']]#new
@@ -286,7 +281,7 @@ with code_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 8.0.3")
+st.write("version 8.0.4")
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
 

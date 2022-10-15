@@ -292,6 +292,12 @@ def changeIO(skeleton_name,IO2change):
             currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_else_code[eachVal]) 
         if eachKey=="out2else":
             currentSkeleton=currentSkeleton.replace("_"+eachKey+"_", output_else_code[eachVal])
+    #logic for catch logical errors shoudl go here
+    # for example if there is a negative output but no positive output in the code
+    #
+    # if negativeOutputs in currentSkeleton:
+    #     if not corresponding_positiveOutput in currentSkeleton:
+    #         add logical-warning
     return currentSkeleton
 
 
