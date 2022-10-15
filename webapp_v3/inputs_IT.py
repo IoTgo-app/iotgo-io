@@ -42,8 +42,8 @@ microbitv2= ( "il rumore è alto" ,
 		    'il logo è toccato' ,#v2 
 		   )
 exBosonKit= (
-	'non c\'è movimento nei dintorni (BosonKit)' ,
 	'c\'è movimento nei dintorni (BosonKit)' ,
+	'non c\'è movimento nei dintorni (BosonKit)' ,
 	'il cursore è al massimo (BosonKit)' ,
 	'il cursore è al minimo (BosonKit)' ,
 	# 'il cursore è a metà (BosonKit)',
@@ -71,8 +71,8 @@ exEnviroBit= (
 exCloudBitPi= ()
 
 exOthers= (
-	"l\'umidità del suolo è bassa",
 	"l\'umidità del suolo è alta",
+	"l\'umidità del suolo è bassa",
 )
 
 

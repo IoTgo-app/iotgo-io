@@ -135,6 +135,8 @@ with nav_fore:
 code_placeholder        = st.container()
 
 ########################### app sidebar ########################################à
+#fill in each placeholder:
+
 with select_placeholder:
     if st.session_state['sidebar_mode']=="editing_example":
         st.write(textIT['youSelected'] + " \n *" +var2descipIT[st.session_state['skeleton']] + "*")
@@ -144,7 +146,6 @@ with select_placeholder:
         else:
             currIndex=0
         st.session_state['skeleton']=descip2varIT[st.selectbox(textIT['selectExample'],descip2varIT.keys(), index=currIndex)]#code_skeletons)
-        # st.session_state['skeletonIndex']  = list(descip2varIT.keys()).index(en2it_inout[st.session_state['io_list']['in1']])
         if not st.session_state['skeleton']==prevSkeleton:
             prevSkeleton=st.session_state['skeleton']
             st.session_state['sidebar_mode']="example_selected"
@@ -252,6 +253,16 @@ with edit_placeholder:
         st.empty()
 
 
+with download_placeholder:
+    if st.session_state['sidebar_mode']=="app_start":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="example_selected":
+        st.empty()
+    elif st.session_state['sidebar_mode']=="editing_example":
+        if st.session_state['nav_list'][st.session_state['io_index']+1]=='download':
+            st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')'  , unsafe_allow_html=True)
+        #     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+").focus()")))
+
 ########################### app body ########################################à
 with code_placeholder:
     if st.session_state['sidebar_mode']=="app_start":
@@ -272,18 +283,6 @@ with code_placeholder:
         # st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')'  , unsafe_allow_html=True)
 
 
-with download_placeholder:
-    if st.session_state['sidebar_mode']=="app_start":
-        st.empty()
-    elif st.session_state['sidebar_mode']=="example_selected":
-        st.empty()
-    elif st.session_state['sidebar_mode']=="editing_example":
-        if st.session_state['nav_list'][st.session_state['io_index']+1]=='download':
-            st.markdown('[' + textIT['downloadProgram'] + '](' +st.session_state['urlis'] +')'  , unsafe_allow_html=True)
-        #else:
-         #   st.session_state['nav_list']
-        # if st.button(textIT['downloadProgram']):            
-        #     st.bokeh_chart( Div(text='<img src onerror="{}">'.format("window.open("+urlis+").focus()")))
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
