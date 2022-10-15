@@ -157,6 +157,7 @@ with select_placeholder:
             st.session_state['sidebar_mode']="example_selected"
             st.session_state['io_list']=default_IO[st.session_state['skeleton']]#new
             st.session_state['nav_list']=["app_start"] + list(st.session_state['io_list'].keys()) + ["download"] #new
+            st.experimental_rerun()
 
 
 def playTheCards(deckType, selectedCard,prevSelectedCard):     #"in1", st.session_state['input0is']  st.session_state['prevInput'] 
@@ -293,7 +294,7 @@ with code_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 8.1.5")
+st.write("version 8.1.6")
 var2descipIT[st.session_state['skeleton']] 
 st.session_state['io_index']
 # st.session_state['sidebar_mode']
