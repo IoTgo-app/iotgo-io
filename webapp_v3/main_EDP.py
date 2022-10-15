@@ -221,7 +221,8 @@ with nav_back:
         isclick_nav_back = st.button(textIT['goBack'])
         if isclick_nav_back:
             st.session_state['io_index']=st.session_state['io_index']-1 
-            if st.session_state['io_index']<=0:   
+            # if st.session_state['io_index']<=0:   
+            if st.session_state['io_index']<0:   
                 st.session_state['sidebar_mode']="example_selected"  
                 st.session_state['io_index']=0
                 # change_placeholder.empty()
@@ -292,7 +293,7 @@ with code_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 8.1.3")
+st.write("version 8.1.4")
 var2descipIT[st.session_state['skeleton']] 
 st.session_state['io_index']
 # st.session_state['sidebar_mode']
