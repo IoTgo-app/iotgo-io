@@ -119,14 +119,16 @@ input_code = {
 "EB_colorIsBlack":"envirobit.getRed() < 80 && (envirobit.getGreen() < 80 && envirobit.getBlue() < 100)",
 "EB_clapYes":"envirobit.waitForClap(1000)",
 "EB_clapNo":"!(envirobit.waitForClap(1000))",
-"movementNotPresent":"pins.digitalReadPin(DigitalPin.P2) == 0" ,
-"movementPresent" :"pins.digitalReadPin(DigitalPin.P2) >= 1" , # >= 1000" ,
-"sliderHigh":"pins.analogReadPin(AnalogPin.P2) >= 1000" ,
-"sliderLow":"pins.analogReadPin(AnalogPin.P2) <= 100" ,
-"sliderMid":"pins.analogReadPin(AnalogPin.P2) > 500 && pins.analogReadPin(AnalogPin.P2) <= 700",
+"movementNotPresent":"pins.digitalReadPin(DigitalPin.P1) == 0" ,
+"movementPresent"   :"pins.digitalReadPin(DigitalPin.P1) >= 1" , # >= 1000" ,
+"sliderHigh":		"pins.analogReadPin(AnalogPin.P1) >= 1000" ,
+"sliderLow":		"pins.analogReadPin(AnalogPin.P1) <= 100" ,
+"sliderMid":		"pins.analogReadPin(AnalogPin.P1) > 500 && pins.analogReadPin(AnalogPin.P2) <= 700",
 
-"soilMoistureHigh":"pins.analogReadPin(AnalogPin.P1) >= 500",#new
-"soilMoistureLow":"pins.analogReadPin(AnalogPin.P1) < 500",#new
+# "soilMoistureHigh":"pins.analogReadPin(AnalogPin.P1) >= 500",#new
+# "soilMoistureLow":"pins.analogReadPin(AnalogPin.P1) < 500",#new
+"soilMoistureHigh":"pins.digitalReadPin(DigitalPin.P1) >= 1",#new
+"soilMoistureLow" :"pins.digitalReadPin(DigitalPin.P1) == 0",#new
 
 "forecastHumidityHigh" :"forecastName == \"humid\" && forecastValue >= 0.4",
 "forecastHumidityLow" :"forecastName == \"humid\" && forecastValue < 0.4",
@@ -187,15 +189,16 @@ input_sensorValue = {
 "EB_colorIsBlack":"envirobit.getLight()",
 "EB_clapYes":"envirobit.waitForClap(1000)",
 "EB_clapNo":"!(envirobit.waitForClap(1000))",
-"movementNotPresent":"pins.digitalReadPin(DigitalPin.P0)" ,
-"movementPresent" :"pins.digitalReadPin(DigitalPin.P0)" ,
-"sliderHigh":"pins.analogReadPin(AnalogPin.P0)" ,
-"sliderLow":"pins.analogReadPin(AnalogPin.P0)" ,
-"sliderMid":"pins.analogReadPin(AnalogPin.P0)",
+"movementNotPresent":"pins.digitalReadPin(DigitalPin.P1)" ,
+"movementPresent" :"pins.digitalReadPin(DigitalPin.P1)" ,
+"sliderHigh":"pins.analogReadPin(AnalogPin.P1)" ,
+"sliderLow":"pins.analogReadPin(AnalogPin.P1)" ,
+"sliderMid":"pins.analogReadPin(AnalogPin.P1)",
 
-"soilMoistureHigh":"pins.analogReadPin(AnalogPin.P1)",#new
-"soilMoistureLow":"pins.analogReadPin(AnalogPin.P1)",#new
-
+# "soilMoistureHigh":"pins.analogReadPin(AnalogPin.P1)",#new
+# "soilMoistureLow":"pins.analogReadPin(AnalogPin.P1)",#new
+"soilMoistureHigh":"pins.digitalReadPin(DigitalPin.P1)",#new
+"soilMoistureLow" :"pins.digitalReadPin(DigitalPin.P1)",#new
 
 "forecastHumidityHigh" :"forecastValue",
 "forecastHumidityLow" :"forecastValue",
