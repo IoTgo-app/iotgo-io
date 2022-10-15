@@ -147,7 +147,7 @@ with select_placeholder:
             #     st.session_state['sidebar_mode']="app_start"
             #     st.ballons()
             #     st.experimental_rerun()
-            if ""in st.session_state['skeletonKeys']: st.session_state['skeletonKeys'].remove("") #added
+            #if ""in st.session_state['skeletonKeys']: st.session_state['skeletonKeys'].remove("") #added
             prevSkeleton=st.session_state['skeleton']
             st.session_state['sidebar_mode']="example_selected"
             st.session_state['io_list']=default_IO[st.session_state['skeleton']]#new
@@ -287,7 +287,7 @@ with code_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 8.0.8")
+st.write("version 8.0.9")
 # st.session_state['skeletonKeys']
 st.session_state['io_index']
 # st.session_state['sidebar_mode']
