@@ -141,6 +141,7 @@ with select_placeholder:
         if not st.session_state['skeleton']==prevSkeleton:
             if st.session_state['skeleton']=="":
                 st.session_state['sidebar_mode']="app_start"
+                st.ballons()
                 st.experimental_rerun() 
             prevSkeleton=st.session_state['skeleton']
             st.session_state['sidebar_mode']="example_selected"
@@ -234,14 +235,12 @@ with nav_fore:
         st.empty() 
 
 with edit_placeholder:
-    if st.session_state['sidebar_mode']=="app_start":
-        st.empty()
-    elif st.session_state['sidebar_mode']=="example_selected":
+    if st.session_state['sidebar_mode']=="example_selected":
         isClick=st.button(textIT['editExample'])
         if isClick:
             st.session_state['sidebar_mode'] = "editing_example"
-            st.session_state['cardsList']    = st.session_state['io_list'].keys()
-            st.session_state['deckNumber'] = 0
+            #st.session_state['cardsList']    = st.session_state['io_list'].keys()
+            #st.session_state['deckNumber'] = 0
             edit_placeholder.empty()
             select_placeholder.empty()
             # st.balloons()
@@ -283,7 +282,8 @@ with code_placeholder:
 
 ########################### app end ########################################à
 #st.sidebar.markdown("---")
-st.write("version 8.0.5")
+st.write("version 8.0.7")
+
 # st.session_state['io_index']
 # st.session_state['sidebar_mode']
 
