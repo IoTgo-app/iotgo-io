@@ -12,7 +12,7 @@ textIT={ #this text will appear on the app in various places to guide the user
   "changeExample"      : "⬅️ Scegli un altro esempio",
   "editExample"   : "Modifica questo esempio ➡️",#or Change input or ouput in this example #RG they are two different interactions
   "youSelected"   : "Hai scelto: ",
-  "downloadProgram"  : "Scarica il programma ⬇️",#or Open this code in the editor
+  "downloadProgram"  : "Scarica il programma ↗️ ",#or Open this code in the editor
   "goFront"   : "Avanti ➡️",
   "goBack"    : "⬅️ Indietro",
   }
